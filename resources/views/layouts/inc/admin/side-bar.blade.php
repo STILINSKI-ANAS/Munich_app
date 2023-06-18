@@ -11,7 +11,7 @@
                     <ul class="dashboard-mainmenu rbt-default-sidebar-list">
                         <li><a href="instructor-dashboard.html"><i class="feather-home"></i><span>Dashboard</span></a></li>
                         <li><a href="instructor-profile.html"><i class="feather-user"></i><span>My Profile</span></a></li>
-                        <li><a href="instructor-enrolled-courses.html"><i class="feather-book-open"></i><span>Enrolled Courses</span></a></li>
+                        <li><a href="{{ url('admin/Languages') }}"><i class="feather-book-open"></i><span>Languages</span></a></li>
                         <li><a href="instructor-wishlist.html"><i class="feather-bookmark"></i><span>Wishlist</span></a></li>
                         <li><a href="instructor-reviews.html"><i class="feather-star"></i><span>Reviews</span></a></li>
                         <li><a href="instructor-my-quiz-attempts.html"><i class="feather-help-circle"></i><span>My Quiz Attempts</span></a></li>

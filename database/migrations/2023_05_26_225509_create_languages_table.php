@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('languages', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('name')->nullable();
+            $table->string('name');
+            $table->mediumText('description');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

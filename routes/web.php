@@ -31,10 +31,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
     Route::get('Dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index']);
     Route::controller(\App\Http\Controllers\Admin\LanguaguesController::class)->group(function (){
-        Route::get('Languages', 'index');
-        Route::get('Languages/create', 'create');
-        Route::post('Languages', 'store');
-        Route::get('Languages/{Language}/edit', 'edit');
+        Route::get('/Languages', 'index');
+        Route::get('/Languages/create', 'create');
+        Route::get('/Languages/{language}/edit', 'edit');
+        Route::post('/Languages', 'store');
         Route::put('Languages/{Language}', 'update');
     });
 

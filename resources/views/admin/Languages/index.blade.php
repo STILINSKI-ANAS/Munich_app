@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-Languages page
+<div>
+    <livewire:admin.languages.index/>
+</div>
 @endsection
