@@ -17,4 +17,9 @@ class Test extends Model
         'name',
         'price',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

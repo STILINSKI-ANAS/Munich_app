@@ -32,12 +32,13 @@ class CoursController extends Controller
         $course->overview = $validatedData['overview'];
         $course->price = $validatedData['price'];
         $course->time = $validatedData['time'];
-        if ($request->hasFile('image')){
-            $file = $request->file('image');
-            $ext = $file->getClientOriginalExtension();
+
+        if ($request->hasFile('Image')){
+            $file = $request->file('Image');
+            $ext = $file->getClientOriginalName();
             $filename = time().'-'.$ext;
-            $file->move('uploads/course/', $filename);
-            $course->image = $validatedData['image'];
+            $file->move('uploads/Course/', $filename);
+            $course->image = $filename;
         }
         $course->save();
         return redirect('/admin/Course')->with('message','Course added successfully');
@@ -59,17 +60,17 @@ class CoursController extends Controller
         $course->overview = $validatedData['overview'];
         $course->price = $validatedData['price'];
         $course->time = $validatedData['time'];
-        if ($request->hasFile('image')){
-            $path = 'uploads/course/'.$course->image;
+        if ($request->hasFile('Image')){
+            $path = 'uploads/Course/'.$course->image;
             if (File::exists($path)){
                 File::delete($path);
             }
 
             $file = $request->file('image');
-            $ext = $file->getClientOriginalExtension();
+            $ext = $file->getClientOriginalName();
             $filename = time().'-'.$ext;
             $file->move('uploads/course/', $filename);
-            $course->image = $validatedData['image'];
+            $course->image = $filename;
         }
         $course->update();
         return redirect('/admin/Course')->with('message','Course added successfully');

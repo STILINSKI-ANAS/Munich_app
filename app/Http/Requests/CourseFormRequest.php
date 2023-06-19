@@ -27,7 +27,7 @@ class CourseFormRequest extends FormRequest
             'content'=>['required'],
             'time'=>['required'],
             'price'=>['required'],
-            'image'=>['nullable','mimes:jpg,jpeg,png']
+            'Image'=>['nullable','mimes:jpg,jpeg,png']
         ];
     }
 }
