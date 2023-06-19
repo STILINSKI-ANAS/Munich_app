@@ -27,7 +27,7 @@ class CoursController extends Controller
     {
         $validatedData = $request->validated();
         $course = new Course();
-        $course->name = $validatedData['name'];
+        $course->name = $validatedData['content'];
         $course->level = $validatedData['level'];
         $course->overview = $validatedData['overview'];
         $course->price = $validatedData['price'];
@@ -54,7 +54,7 @@ class CoursController extends Controller
     {
         $course = Course::findOrFail($course);
         $validatedData = $request->validated();
-        $course->name = $validatedData['name'];
+        $course->name = $validatedData['content'];
         $course->level = $validatedData['level'];
         $course->overview = $validatedData['overview'];
         $course->price = $validatedData['price'];
