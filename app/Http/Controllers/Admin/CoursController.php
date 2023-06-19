@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CourseFormRequest;
 use App\Models\Course;
+use App\Models\Language;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -19,7 +20,10 @@ class CoursController extends Controller
 
     public function create()
     {
-        return view('admin.Course.create');
+        $languages = Language::all();
+        return view('admin.Course.create')->with([
+            'languages' => $languages
+        ]);
     }
 
 
@@ -47,7 +51,10 @@ class CoursController extends Controller
 
     public function edit(Course $course)
     {
-        return view('admin.Course.edit',compact('course'));
+        $languages = Language::all();
+        return view('admin.Course.edit',compact('course'))->with([
+            'languages' => $languages
+        ]);
     }
 
 

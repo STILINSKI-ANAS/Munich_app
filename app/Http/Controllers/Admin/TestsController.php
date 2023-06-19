@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TestFormRequest;
+use App\Models\Language;
 use App\Models\Test;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,10 @@ class TestsController extends Controller
 
     public function create()
     {
-        return view('admin.Test.create');
+        $languages = Language::all();
+        return view('admin.Test.create')->with([
+            'languages' => $languages
+        ]);
     }
 
 
@@ -38,7 +42,10 @@ class TestsController extends Controller
 
     public function edit(Test $test)
     {
-        return view('admin.Test.edit',compact('test'));
+        $languages = Language::all();
+        return view('admin.Test.edit',compact('test'))->with([
+            'languages' => $languages
+        ]);
     }
 
 
