@@ -60,4 +60,5 @@ class LanguaguesController extends Controller
         $Language->update();
         return redirect('/admin/Languages')->with('message','Language added');
     }
+
 }
