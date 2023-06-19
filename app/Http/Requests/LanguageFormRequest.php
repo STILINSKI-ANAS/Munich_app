@@ -25,7 +25,7 @@ class LanguageFormRequest extends FormRequest
             //
             'name'=>['required','string'],
             'description'=>['required'],
-            'image'=>['nullable','mimes:jpg,jpeg,png']
+            'Image'=>['nullable','mimes:jpg,jpeg,png']
         ];
     }
 }

@@ -8,10 +8,11 @@
             </h4>
                 <div class="card-body">
                     <!-- Start Course Field Wrapper  -->
-                    <form action="{{ url('admin/Languages/'. $language->id) }}" method="POST" enctype="multipart/form-data">
+                    <form  enctype="multipart/form-data" action="{{ url('admin/Languages/'. $language->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-                                            <div class="rbt-course-field-wrapper rbt-default-form">
+                        <input type="file" class="form-group" name="Image">
+                        <div class="rbt-course-field-wrapper rbt-default-form">
                             <div class="course-field mb--15">
                                 <label for="field-1">Language :</label>
                                 <input id="field-1" type="text" name="name" value="{{$language->name }}">
@@ -24,6 +25,7 @@
 
                             <div class="course-field mb--20">
                                 <h6>Language Thumbnail</h6>
+
                                 <div class="rbt-create-course-thumbnail upload-area">
                                     <div class="upload-area">
                                         <div class="brows-file-wrapper" data-black-overlay="9">

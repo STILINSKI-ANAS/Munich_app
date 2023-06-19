@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LanguageFormRequest;
 use App\Models\Language;
 use Illuminate\Support\Facades\File;
+use Illuminate\Http\Request;
 
 class LanguaguesController extends Controller
 {
@@ -20,20 +21,23 @@ class LanguaguesController extends Controller
     }
     public function store(LanguageFormRequest $request)
     {
+//        dd($request);
         $validatedData = $request->validated();
         $Language = new Language;
         $Language->name = $validatedData['name'];
         $Language->description = $validatedData['description'];
-        if ($request->hasFile('image')){
-            $file = $request->file('image');
-            $ext = $file->getClientOriginalExtension();
+
+        if ($request->hasFile('Image')){
+            $file = $request->file('Image');
+            $ext = $file->getClientOriginalName();
             $filename = time().'-'.$ext;
-            $file->move('uploads/category/', $filename);
-            $Language->image = $validatedData['image'];
+            $file->move('uploads/Language/', $filename);
+            $Language->Image = $filename;
         }
         $Language->save();
         return redirect('/admin/Languages')->with('message','Language added');
     }
+
     public function edit(Language $language)
     {
         return view('admin.languages.edit',compact('language'));
@@ -45,20 +49,22 @@ class LanguaguesController extends Controller
         $validatedData = $request->validated();
         $Language->name = $validatedData['name'];
         $Language->description = $validatedData['description'];
-        if ($request->hasFile('image')){
-            $path = 'uploads/language/'.$language->image;
+
+        if ($request->hasFile('Image')){
+            $path = 'uploads/Language/'.$Language->image;
             if (File::exists($path)){
                 File::delete($path);
             }
-
-            $file = $request->file('image');
-            $ext = $file->getClientOriginalExtension();
+            $file = $request->Image;
+            $ext = $file->getClientOriginalName();
             $filename = time().'-'.$ext;
-            $file->move('uploads/language/', $filename);
-            $Language->image = $validatedData['image'];
+            $file->move('uploads/Language/', $filename);
+            $Language->image = $filename;
         }
+
         $Language->update();
         return redirect('/admin/Languages')->with('message','Language added');
+//        return dd($request->all());
     }
 
 }
