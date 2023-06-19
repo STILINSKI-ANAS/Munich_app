@@ -18,8 +18,8 @@ class Test extends Model
         'price',
     ];
 
-    public function user()
+    public function language()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Language::class);
     }
 }

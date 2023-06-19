@@ -15,4 +15,14 @@ class Language extends Model
         'description',
         'Image'
     ];
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
+
+    public function tests()
+    {
+        return $this->hasMany(Test::class);
+    }
 }
