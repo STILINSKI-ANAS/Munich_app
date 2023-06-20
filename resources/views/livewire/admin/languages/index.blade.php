@@ -1,8 +1,8 @@
 <!-- Start Enrole Course  -->
 <div class="rbt-dashboard-content bg-color-white rbt-shadow-box">
     <div class="content">
-        <h4 class="rbt-title-style-3 align-items-center d-flex justify-content-between">Langues
-            <a class="rbt-btn hover-icon-reverse" href="#">
+        <h4 class="rbt-title-style-1 align-items-center d-flex justify-content-between">Langues
+            <a class="rbt-btn hover-icon-reverse" href="{{url('admin/Languages/create')}}">
                 <span class="icon-reverse-wrapper">
                     <span class="btn-text">Ajouter une nouvelle langue</span>
                     <span class="btn-icon"><i class="feather-plus"></i></span>
