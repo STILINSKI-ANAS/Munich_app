@@ -1,24 +1,15 @@
 <!-- Start Enrole Course  -->
 <div class="rbt-dashboard-content bg-color-white rbt-shadow-box">
     <div class="content">
-        <div class="row align-items-center">
-            <div class="col">
-                <h4 class="rbt-title-style-3">Languages</h4>
-            </div>
-            <div class="col text-end">
-                <div class="tutor-btn">
-                    <a class="rbt-btn btn-md hover-icon-reverse" href="{{ url('admin/Languages/create') }}">
-                        <span class="icon-reverse-wrapper">
-                            <span class="btn-text">Create a New Language</span>
-                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-
+        <h4 class="rbt-title-style-3 align-items-center d-flex justify-content-between">Langues
+            <a class="rbt-btn hover-icon-reverse" href="#">
+                <span class="icon-reverse-wrapper">
+                    <span class="btn-text">Ajouter une nouvelle langue</span>
+                    <span class="btn-icon"><i class="feather-plus"></i></span>
+                    <span class="btn-icon"><i class="feather-plus"></i></span>
+                </span>
+            </a>
+        </h4>
 
         <hr class="mt--30">
 
@@ -27,7 +18,7 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Nom</th>
                     <th>Description</th>
                     <th>Actions</th>
                 </tr>
@@ -56,9 +47,7 @@
                 </tr>
                 @endforeach
                 </tbody>
-
             </table>
-
         </div>
     {{ $languages->links() }}
 

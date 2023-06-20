@@ -38,6 +38,13 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         Route::put('Languages/{Language}', 'update');
     });
 
+    Route::controller(\App\Http\Controllers\Admin\CoursController::class)->group(function (){
+        Route::get('/Course', 'index');
+        Route::get('/Course/create', 'create');
+        Route::get('/Course/{language}/edit', 'edit');
+        Route::post('/Course', 'store');
+        Route::put('Course/{Course}', 'update');
+    });
 
     Route::get('Cours', [\App\Http\Controllers\Admin\CoursController::class, 'index']);
     Route::get('Tests', [\App\Http\Controllers\Admin\TestsController::class, 'index']);
