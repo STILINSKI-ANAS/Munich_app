@@ -25,4 +25,9 @@ class Language extends Model
     {
         return $this->hasMany(Test::class);
     }
+
+
+    public function announcements(){
+        return $this->hasMany(Announcement::class,'language_id','id');
+    }
 }

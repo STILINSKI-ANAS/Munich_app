@@ -46,7 +46,15 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         Route::put('Course/{Course}', 'update');
     });
 
-    Route::get('Cours', [\App\Http\Controllers\Admin\CoursController::class, 'index']);
+    Route::controller(\App\Http\Controllers\Admin\AnnouncementsController::class)->group(function (){
+        Route::get('/Announcements', 'index');
+        Route::get('/Announcements/create', 'create');
+        Route::get('/Announcements/{language}/edit', 'edit');
+        Route::post('/Announcements', 'store');
+        Route::put('Announcements/{Announcements}', 'update');
+    });
+
+        Route::get('Cours', [\App\Http\Controllers\Admin\CoursController::class, 'index']);
     Route::get('Tests', [\App\Http\Controllers\Admin\TestsController::class, 'index']);
     Route::get('Orders', [\App\Http\Controllers\Admin\OrdersController::class, 'index']);
     Route::get('Clients', [\App\Http\Controllers\Admin\ClientsController::class, 'index']);
