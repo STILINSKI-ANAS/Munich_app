@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div>
-    <livewire:admin.languages.index/>
-</div>
+    <div>
+        @livewire('admin.orders.index')
+    </div>
 @endsection
