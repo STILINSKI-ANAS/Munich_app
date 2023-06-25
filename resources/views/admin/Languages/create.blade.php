@@ -29,15 +29,14 @@
                             </div>
                             <div class="course-field mb--20">
                                 <h6>Vignette de la langue</h6>
-                                <input type="file" class="inputfile" name="Image" id="image">
                                 <div class="rbt-create-course-thumbnail upload-area">
                                     <div class="upload-area">
                                         <div class="brows-file-wrapper" data-black-overlay="9">
                                             <!-- actual upload which is hidden -->
-                                            <input id="createinputfile" type="file" class="inputfile" name="image">
+                                            <input id="createinputfile" type="file" class="inputfile" name="Image">
                                             <img id="createfileImage" src="{{ asset('assets/images/others/thumbnail-placeholder.svg') }}" alt="file image">
                                             <!-- our custom upload button -->
-                                            <label class="d-flex" for="createinputfile" title="No File Choosen">
+                                            <label class="d-flex" for="createinputfile" title="">
                                                 <i class="feather-upload"></i>
                                                 <span class="text-center">Choisissez un fichier</span>
                                             </label>

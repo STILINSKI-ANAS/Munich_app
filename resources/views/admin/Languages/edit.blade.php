@@ -11,7 +11,6 @@
                     <form  enctype="multipart/form-data" action="{{ url('admin/Languages/'. $language->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-                        <input type="file" class="form-group" name="Image">
                         <div class="rbt-course-field-wrapper rbt-default-form">
                             <div class="course-field mb--15">
                                 <label for="field-1">Langue :</label>
@@ -30,8 +29,8 @@
                                     <div class="upload-area">
                                         <div class="brows-file-wrapper" data-black-overlay="9">
                                             <!-- actual upload which is hidden -->
-                                            <input id="createinputfile" type="file" class="inputfile" name="image">
-                                            <img id="createfileImage" src="assets/images/others/thumbnail-placeholder.svg" alt="file image">
+                                            <input id="createinputfile" type="file" class="inputfile" name="Image">
+                                            <img id="createfileImage" src="{{ asset("uploads/Language/$language->image") }}" alt="file image">
                                             <!-- our custom upload button -->
                                             <label class="d-flex" for="createinputfile" title="No File Choosen">
                                                 <i class="feather-upload"></i>

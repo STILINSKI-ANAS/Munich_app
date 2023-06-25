@@ -11,23 +11,40 @@ class Index extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
-    public $language_id;
-
-    public function destroyLanguage($language_id)
+    public $name;
+    public $showSubmitButton = 'hidden';
+    public $languages = [];
+    public $idLang;
+    public function mount()
     {
-//        dd($language_id);
-        $this->language_id = $language_id;
-        $language = Language::find($this->language_id);
-        $path = 'uploads/language/'. $language->image;
-        if (File::exists($path)){
+        $this->languages = Language::all();
+    }
+    public function createButton($idLang){
+        $this->idLang = $idLang;
+        $this->showSubmitButton = '';
+    }
+
+    public function hide_validation()
+    {
+        $this->idLang = 0;
+        $this->showSubmitButton = 'hidden';
+    }
+
+    public function destroyLanguage()
+    {
+        $language = Language::find($this->idLang);
+//        dd($language);
+        if ($language->Image){
+            $path = 'uploads/language/'. $language->Image;
             File::delete($path);
         }
         $language->delete();
-        session()->flash('message','language deleted');
+        $this->showSubmitButton = 'hidden';
+        $this->mount();
     }
     public function render()
     {
-        $languages = Language::orderBy('id','DESC')->paginate(10);
-        return view('livewire.admin.languages.index',['languages'=>$languages]);
+//        $languages = Language::orderBy('id','DESC')->paginate(50);
+        return view('livewire.admin.languages.index');
     }
 }

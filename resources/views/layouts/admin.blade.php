@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/magnigy-popup.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/plyr.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
+    @livewireStyles
 </head>
 <body>
 @include('layouts.inc.admin.header')
@@ -89,4 +90,5 @@
 <script src="{{ asset('assets/js/vendor/plyr.js')}}"></script>
 <!-- Main JS -->
 <script src="{{ asset('assets/js/main.js')}}"></script>
+@livewireScripts
 </body>

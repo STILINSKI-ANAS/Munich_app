@@ -31,12 +31,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
     Route::get('Dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index']);
+
     Route::controller(\App\Http\Controllers\Admin\LanguaguesController::class)->group(function (){
         Route::get('/Languages', 'index');
         Route::get('/Languages/create', 'create');
         Route::get('/Languages/{language}/edit', 'edit');
         Route::post('/Languages', 'store');
         Route::put('Languages/{Language}', 'update');
+    });
+    Route::controller(\App\Http\Controllers\Admin\InscriptionController::class)->group(function (){
+        Route::get('/Inscription', 'index');
+        Route::get('/Inscription/create', 'create');
+        Route::get('/Inscription/{inscription}/edit', 'edit');
+        Route::post('/Inscription', 'store');
+        Route::put('Inscription/{inscription}', 'update');
     });
 
     Route::controller(\App\Http\Controllers\Admin\CoursController::class)->group(function (){
@@ -45,14 +53,6 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         Route::get('/Course/{Course}/edit', 'edit');
         Route::post('/Course', 'store');
         Route::put('Course/{Course}', 'update');
-    });
-
-    Route::controller(\App\Http\Controllers\Admin\TestsController::class)->group(function (){
-        Route::get('/Test', 'index');
-        Route::get('/Test/create', 'create');
-        Route::get('/Test/{Test}/edit', 'edit');
-        Route::post('/Test', 'store');
-        Route::put('Test/{Test}', 'update');
     });
 
     Route::get('Cours', [\App\Http\Controllers\Admin\CoursController::class, 'index']);
