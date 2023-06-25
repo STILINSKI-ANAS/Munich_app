@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,9 +42,17 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
     Route::controller(\App\Http\Controllers\Admin\CoursController::class)->group(function (){
         Route::get('/Course', 'index');
         Route::get('/Course/create', 'create');
-        Route::get('/Course/{language}/edit', 'edit');
+        Route::get('/Course/{Course}/edit', 'edit');
         Route::post('/Course', 'store');
         Route::put('Course/{Course}', 'update');
+    });
+
+    Route::controller(\App\Http\Controllers\Admin\TestsController::class)->group(function (){
+        Route::get('/Test', 'index');
+        Route::get('/Test/create', 'create');
+        Route::get('/Test/{Test}/edit', 'edit');
+        Route::post('/Test', 'store');
+        Route::put('Test/{Test}', 'update');
     });
 
     Route::get('Cours', [\App\Http\Controllers\Admin\CoursController::class, 'index']);
