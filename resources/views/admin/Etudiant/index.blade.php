@@ -2,6 +2,7 @@
 
 @section('content')
     <div>
-        @livewire('admin.languages.index')
+
+        @livewire('admin.etudiant.index')
     </div>
 @endsection

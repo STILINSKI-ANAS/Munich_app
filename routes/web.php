@@ -38,12 +38,12 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         Route::post('/Languages', 'store');
         Route::put('Languages/{Language}', 'update');
     });
-    Route::controller(\App\Http\Controllers\Admin\InscriptionController::class)->group(function (){
-        Route::get('/Inscription', 'index');
-        Route::get('/Inscription/create', 'create');
-        Route::get('/Inscription/{inscription}/edit', 'edit');
-        Route::post('/Inscription', 'store');
-        Route::put('Inscription/{inscription}', 'update');
+    Route::controller(\App\Http\Controllers\Admin\EtudiantController::class)->group(function (){
+        Route::get('/Etudiant', 'index');
+        Route::get('/Etudiant/create', 'create');
+        Route::get('/Etudiant/edit/{etudiant}', 'edit');
+        Route::post('/Etudiant', 'store');
+        Route::put('Etudiant/{etudiant}', 'update');
     });
 
     Route::controller(\App\Http\Controllers\Admin\CoursController::class)->group(function (){
@@ -52,6 +52,14 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         Route::get('/Course/{language}/edit', 'edit');
         Route::post('/Course', 'store');
         Route::put('Course/{Course}', 'update');
+    });
+
+    Route::controller(\App\Http\Controllers\Admin\OrdersController::class)->group(function (){
+        Route::get('/Orders', 'index');
+        Route::get('/Orders/create', 'create');
+        Route::get('/Orders/{Order}/edit', 'edit');
+        Route::post('/Orders', 'store');
+        Route::put('Orders/{Order}', 'update');
     });
 
     Route::controller(\App\Http\Controllers\Admin\AnnouncementsController::class)->group(function (){
