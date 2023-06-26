@@ -35,16 +35,18 @@ class TestsController extends Controller
         $test->price = $validatedData['price'];
         $test->time = $validatedData['time'];
         $test->content = $validatedData['content'];
+        $test->language_id = $validatedData['language_id'];
         $test->save();
         return redirect('/admin/Test')->with('message','Test added successfully');
     }
 
 
-    public function edit(Test $test)
+    public function edit($test)
     {
         $languages = Language::all();
         return view('admin.Test.edit',compact('test'))->with([
-            'languages' => $languages
+            'languages' => $languages,
+            'test' => Test::find($test),
         ]);
     }
 
@@ -59,6 +61,7 @@ class TestsController extends Controller
         $test->price = $validatedData['price'];
         $test->time = $validatedData['time'];
         $test->content = $validatedData['content'];
+        $test->language_id = $validatedData['language_id'];
         $test->update();
         return redirect('/admin/Test')->with('message','Test added successfully');
     }

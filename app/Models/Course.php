@@ -16,6 +16,7 @@ class Course extends Model
         'time',
         'image',
         'price',
+        'language_id',
     ];
 
     public function language()

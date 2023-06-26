@@ -11,7 +11,7 @@ class TestFormRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,7 +27,8 @@ class TestFormRequest extends FormRequest
             'content'=>['required'],
             'time'=>['required'],
             'price'=>['required'],
-            'name'=>['required']
+            'name'=>['required'],
+            'language_id'=>['required']
         ];
     }
 }

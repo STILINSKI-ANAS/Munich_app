@@ -21,7 +21,7 @@ class LanguaguesController extends Controller
     }
     public function store(LanguageFormRequest $request)
     {
-//        dd($request);
+    //    dd($request);
         $validatedData = $request->validated();
         $Language = new Language;
         $Language->name = $validatedData['name'];

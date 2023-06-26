@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CourseFormRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class CourseFormRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,6 +28,7 @@ class CourseFormRequest extends FormRequest
             'content'=>['required'],
             'time'=>['required'],
             'price'=>['required'],
+            'language_id'=>['required'],
             'Image'=>['nullable','mimes:jpg,jpeg,png']
         ];
     }
