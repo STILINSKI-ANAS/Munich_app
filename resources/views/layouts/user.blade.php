@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/magnify.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/odometer.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/animation.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/bootstrap-select.min.css')}}">
+{{--    <link rel="stylesheet" href="{{ asset('assets/css/plugins/bootstrap-select.min.css')}}">--}}
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/magnigy-popup.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/plyr.css')}}">
@@ -44,7 +44,7 @@
 <!-- jQuery JS -->
 <script src="{{ asset('assets/js/vendor/jquery.js')}}"></script>
 <!-- Bootstrap JS -->
-<script src="{{ asset('assets/js/vendor/bootstrap.min.js')}}"></script>
+{{--<script src="{{ asset('assets/js/vendor/bootstrap.min.js')}}"></script>--}}
 <!-- sal.js -->
 <script src="{{ asset('assets/js/vendor/sal.js')}}"></script>
 <script src="{{ asset('assets/js/vendor/swiper.js')}}"></script>
@@ -60,7 +60,7 @@
 <script src="{{ asset('assets/js/vendor/easypie.js')}}"></script>
 <script src="{{ asset('assets/js/vendor/text-type.js')}}"></script>
 <script src="{{ asset('assets/js/vendor/jquery-one-page-nav.js')}}"></script>
-<script src="{{ asset('assets/js/vendor/bootstrap-select.min.js')}}"></script>
+{{--<script src="{{ asset('assets/js/vendor/bootstrap-select.min.js')}}"></script>--}}
 <script src="{{ asset('assets/js/vendor/jquery-ui.js')}}"></script>
 <script src="{{ asset('assets/js/vendor/magnify-popup.min.js')}}"></script>
 <script src="{{ asset('assets/js/vendor/paralax-scroll.js')}}"></script>
