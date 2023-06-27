@@ -8,7 +8,7 @@
     </h4>
     <div class="card-body">
         <!-- Start Course Field Wrapper  -->
-        <form action="{{ url('admin/Announcements') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ url('admin/Announcements/'. $announcement->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="rbt-course-field-wrapper rbt-default-form row">
@@ -22,7 +22,6 @@
                     <div class="rbt-modern-select bg-transparent height-45 mb--10">
                         <select class="w-100" id="field-4" name="language_id">
                             @foreach($languages as $language)
-                                <option value="{{ $language->id }}">{{ $language->name }}</option>
                                 <option value="{{ $language->id }}" {{ $announcement->language_id == $language->id ? 'selected' : '' }}>{{ $language->name }}</option>
 
                             @endforeach
@@ -42,15 +41,8 @@
                         <div class="upload-area">
                             <div class="brows-file-wrapper" data-black-overlay="9">
                                 <!-- actual upload which is hidden -->
-                                <input name="createinputfile" id="createinputfile" type="file" class="inputfile" name="image">
-                                @if(isset($announcement) && $announcement->Image)
-                                    <div class="mt-2">
-                                        <img src="{{ asset($announcement->Image) }}" alt="Product Image" class="img-thumbnail mr-2" width="200">
-                                        <a href="{{url('admin/announcements/'.$announcement->id.'/delete')}}" class="d-block">remove</a>
-                                    </div>
-                                @endif
-
-                                <img id="createfileImage" src="assets/images/others/thumbnail-placeholder.svg" alt="file image">
+                                <input id="createinputfile" type="file" class="inputfile" name="Image">
+                                <img id="createfileImage" src="{{asset('./uploads/Announcements/'.$announcement->image)}}" alt="file image">
                                 <!-- our custom upload button -->
                                 <label class="d-flex" for="createinputfile" title="No File Chosen">
                                     <i class="feather-upload"></i>

@@ -2,6 +2,6 @@
 
 @section('content')
     <div>
-        <livewire:admin.announcements.index/>
+        @livewire('admin.announcements.index')
     </div>
 @endsection
