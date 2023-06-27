@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('language_id');
             $table->foreign('language_id')->references('id')->on('languages')->onDelete('cascade');
-            $table->string('title');
+            $table->string('titre');
             $table->longText('description')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

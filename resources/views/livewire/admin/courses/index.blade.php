@@ -1,7 +1,4 @@
-<!-- Start Enrole Course  -->
-<head>
-    @livewireStyles
-</head>
+
 <body>
     <div class="rbt-dashboard-content bg-color-white rbt-shadow-box" id="main">
         <div class="content">
@@ -19,6 +16,13 @@
                     </span>
                 </a>
             </h4>
+
+            <div class="card rbt-shadow-box p-3 m-2" {{$showSubmitButton}}>
+                {{--        <input type="text" wire:model="idLang" {{$showSubmitButton}}>--}}
+                <button type="submit"  wire:click.prevent="destroyCourse" class="rbt-btn btn-xs bg-color-danger-opacity radius-round color-danger m-1">Oui</button>
+                <button type="submit" {{$showSubmitButton}} wire:click.prevent="hide_validation" class="rbt-btn btn-xs bg-color-success-opacity radius-round color-success m-1">Non</button>
+        
+            </div>
     
             <div class="rbt-dashboard-table table-responsive mobile-table-750 mt--30">
                 <table class="rbt-table table table-borderless">
@@ -57,7 +61,7 @@
                             <td>
                                 <div class="rbt-button-group justify-content-start">
                                     <a class="rbt-btn btn-xs bg-primary-opacity radius-round" href="{{ url('admin/Course/'.$course->id.'/edit') }}" title="Edit"><i class="feather-edit pl--0"></i></a>
-                                    <a class="rbt-btn btn-xs bg-color-danger-opacity radius-round color-danger" href="#" wire:click.prevent="deleteConfirmation({{ $course->id }})" title="Delete"><i class="feather-trash-2 pl--0"></i></a>
+                                    <a wire:click.prevent="createButton({{ $course->id }})" onclick="toggleButton({{ $course->id }})" class="rbt-btn btn-xs bg-color-danger-opacity radius-round color-danger" href="#"  title="Delete"><i class="feather-trash-2 pl--0"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -65,10 +69,9 @@
                     </tbody>
                 </table>
             </div>
-            {{ $courses->links() }}
+            {{-- {{ $courses->links() }} --}}
         </div>
     </div>
-    @livewireScripts
 </body>
 
 <!-- End Enrole Course  -->
@@ -76,7 +79,7 @@
 <!-- End Enrole Course  -->
 
     {{-- Sweet alert delete Script--}}
-    
+{{--     
     <script>
         window.addEventListener('show-delete-confirmation', event => {
             Swal.fire({
@@ -94,4 +97,4 @@
             })
         });
     </script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> --}}

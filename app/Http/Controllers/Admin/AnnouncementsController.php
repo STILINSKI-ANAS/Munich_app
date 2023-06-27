@@ -34,7 +34,7 @@ class AnnouncementsController extends Controller
 
         if ($request->hasFile('Image')) {
             $file = $request->file('Image');
-            $ext = $file->getClientOriginalExtension();
+            $ext = $file->getClientOriginalName();
             $filename = time() . '-' . $ext;
             $file->move('uploads/Announcements/', $filename);
             $announcement->image = $filename;
@@ -71,7 +71,7 @@ class AnnouncementsController extends Controller
                     File::delete($path);
                 }
                 $file = $request->file('Image');
-                $ext = $file->getClientOriginalExtension();
+                $ext = $file->getClientOriginalName();
                 $filename = time() . '-' . $ext;
                 $file->move('uploads/Announcements/', $filename);
                 $announcement->image = $filename;
