@@ -72,6 +72,8 @@
                     </div>
                 </div>
 
+                @if (isset($languages))
+                
                 <div class="rbt-main-navigation d-none d-xl-block">
                     <nav class="mainmenu-nav">
                         <ul class="mainmenu">
@@ -83,16 +85,9 @@
                                     <i class="feather-chevron-down"></i>
                                 </a>
                                 <ul class="submenu">
-                                    <li class="has-dropdown"><a href="#">Allemand</a>
-                                    </li>
-                                    <li class="has-dropdown"><a href="#">Anglais</a>
-                                    </li>
-                                    <li class="has-dropdown"><a href="#">Espagnol</a>
-                                    </li>
-                                    <li class="has-dropdown"><a href="#">Français</a>
-                                    </li>
-                                    <li class="has-dropdown"><a href="#">Arabe</a>
-                                    </li>
+                                    @foreach($languages as $language)
+                                    <li class="has-dropdown"><a href="{{url('user/home/Language/Courses/'.$language->id)}}">{{$language->name}}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="has-dropdown has-menu-child-item">
@@ -100,10 +95,9 @@
                                     <i class="feather-chevron-down"></i>
                                 </a>
                                 <ul class="submenu">
-                                    <li class="has-dropdown"><a href="#">Allemand</a>
-                                    </li>
-                                    <li class="has-dropdown"><a href="#">Espagnol</a>
-                                    </li>
+                                    @foreach($languages as $language)
+                                    <li class="has-dropdown"><a href="{{url('user/home/Language/Tests/'.$language->id)}}">{{$language->name}}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="with-megamenu has-menu-child-item position-static">
@@ -118,6 +112,7 @@
                         </ul>
                     </nav>
                 </div>
+                @endif
 
                 <div class="header-right">
                     <!-- Navbar Icons -->
