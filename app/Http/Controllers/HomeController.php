@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Course;
 use App\Models\Language;
 use App\Models\Test;
@@ -27,8 +28,12 @@ class HomeController extends Controller
     public function index()
     {
         $languages = Language::all();
+        $tests = Test::all();
+        $categories = Category::all();
         return view('user.home')->with([
-            'languages' => $languages
+            'languages' => $languages,
+            'tests' => $tests,
+            'categories'=>$categories
         ]);
     }
 

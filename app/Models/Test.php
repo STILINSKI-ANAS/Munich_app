@@ -9,14 +9,17 @@ class Test extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
+    protected $fillable = [
         'level',
         'overview',
         'content',
         'time',
         'name',
         'price',
+        'image',
+        'short_description',
     ];
+
 
     public function language()
     {

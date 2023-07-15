@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EtudiantRequest;
+use App\Models\Course;
 use App\Models\Etudiant;
+use App\Models\Language;
 use App\Models\paiement;
+use App\Models\Test;
 
 class EtudiantController extends Controller
 {
@@ -16,7 +19,13 @@ class EtudiantController extends Controller
     }
     public function create()
     {
-        return view('admin.Etudiant.create');
+        $languages = Language::all();
+        $courses = Course::all();
+        $tests = Test::all();
+
+        return view('admin.Etudiant.create')->with([
+            'languages' => $languages,'courses'=>$courses,"tests"=>$tests
+        ]);
     }
     public function store(EtudiantRequest $request)
     {

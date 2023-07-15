@@ -21,9 +21,9 @@
                 {{--        <input type="text" wire:model="idLang" {{$showSubmitButton}}>--}}
                 <button type="submit"  wire:click.prevent="destroyCourse" class="rbt-btn btn-xs bg-color-danger-opacity radius-round color-danger m-1">Oui</button>
                 <button type="submit" {{$showSubmitButton}} wire:click.prevent="hide_validation" class="rbt-btn btn-xs bg-color-success-opacity radius-round color-success m-1">Non</button>
-        
+
             </div>
-    
+
             <div class="rbt-dashboard-table table-responsive mobile-table-750 mt--30">
                 <table class="rbt-table table table-borderless">
                     <thead>
@@ -79,7 +79,7 @@
 <!-- End Enrole Course  -->
 
     {{-- Sweet alert delete Script--}}
-{{--     
+{{--
     <script>
         window.addEventListener('show-delete-confirmation', event => {
             Swal.fire({

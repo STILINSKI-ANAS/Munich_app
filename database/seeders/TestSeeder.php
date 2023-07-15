@@ -16,12 +16,38 @@ class TestSeeder extends Seeder
 
         Test::create([
             'level' => 'Intermediate',
-            'name' => 'Sample Test',
-            'overview' => 'Overview of the test',
-            'content' => 'Test content goes here',
-            'time' => '1 hour',
-            'price' => '19.99',
-            'language_id' => 2,
+            'name' => 'TOEFL',
+            'overview' => 'TOEFL Test Overview',
+            'content' => 'TOEFL Test Content',
+            'time' => '4 hours',
+            'price' => '100.00',
+            'image' => 'toefl.png',
+            'short_description' => 'This is an intermediate level test.',
+            'language_id' => 1,
+        ]);
+
+        Test::create([
+            'level' => 'Advanced',
+            'name' => 'TOEIC',
+            'overview' => 'TOEIC Test Overview',
+            'content' => 'TOEIC Test Content',
+            'time' => '2 hours',
+            'price' => '75.00',
+            'image' => 'toeic.png',
+            'short_description' => 'This is an advanced level test.',
+            'language_id' => 1,
+        ]);
+
+        Test::create([
+            'level' => 'Intermediate',
+            'name' => 'TELC',
+            'overview' => 'TELC Test Overview',
+            'content' => 'TELC Test Content',
+            'time' => '2 hours',
+            'price' => '80.00',
+            'image' => 'telc.png',
+            'short_description' => 'This is a test offered by TELC.',
+            'language_id' => 1,
         ]);
     }
 }

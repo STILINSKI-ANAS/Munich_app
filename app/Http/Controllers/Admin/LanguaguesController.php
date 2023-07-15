@@ -6,10 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LanguageFormRequest;
 use App\Models\Language;
 use Illuminate\Support\Facades\File;
-use Illuminate\Http\Request;
 
 class LanguaguesController extends Controller
 {
+    //
     //
     public function index()
     {
@@ -21,7 +21,7 @@ class LanguaguesController extends Controller
     }
     public function store(LanguageFormRequest $request)
     {
-    //    dd($request);
+        //    dd($request);
         $validatedData = $request->validated();
         $Language = new Language;
         $Language->name = $validatedData['name'];
@@ -66,5 +66,4 @@ class LanguaguesController extends Controller
         return redirect('/admin/Languages')->with('message','Language added');
 //        return dd($request->all());
     }
-
 }

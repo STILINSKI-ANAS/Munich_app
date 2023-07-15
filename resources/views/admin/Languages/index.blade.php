@@ -5,3 +5,4 @@
         @livewire('admin.languages.index')
     </div>
 @endsection
+

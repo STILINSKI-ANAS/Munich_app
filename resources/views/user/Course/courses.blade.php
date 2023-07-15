@@ -1,253 +1,146 @@
 @extends('layouts.user')
 
 @section('content')
-    <main class="rbt-main-wrapper">
-        <div class="rbt-page-banner-wrapper">
-            <!-- Start Banner BG Image  -->
-            <div class="rbt-banner-image"></div>
-            <!-- End Banner BG Image  -->
-            <div class="rbt-banner-content">
-    
-                <!-- Start Banner Content Top  -->
-                <div class="rbt-banner-content-top">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <!-- Start Breadcrumb Area  -->
-                                <ul class="page-list">
-                                    <li class="rbt-breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li>
-                                        <div class="icon-right"><i class="feather-chevron-right"></i></div>
-                                    </li>
-                                    <li class="rbt-breadcrumb-item active">All Courses</li>
-                                </ul>
-                                <!-- End Breadcrumb Area  -->
-    
-                                <div class=" title-wrapper">
-                                    <h1 class="title mb--0">All Courses</h1>
-                                    <a href="#" class="rbt-badge-2">
-                                        <div class="image">🎉</div> 50 Courses
-                                    </a>
-                                </div>
-    
-                                <p class="description">Courses that help beginner designers become true unicorns. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Banner Content Top  -->
-                <!-- Start Course Top  -->
-                <div class="rbt-course-top-wrapper mt--40 mt_sm--20">
-                    <div class="container">
-                        <div class="row g-5 align-items-center">
-    
-                            <div class="col-lg-5 col-md-12">
-                                <div class="rbt-sorting-list d-flex flex-wrap align-items-center">
-                                    <div class="rbt-short-item switch-layout-container">
-                                        <ul class="course-switch-layout">
-                                            <li class="course-switch-item"><button class="rbt-grid-view active" title="Grid Layout"><i class="feather-grid"></i> <span class="text">Grid</span></button></li>
-                                            <li class="course-switch-item"><button class="rbt-list-view" title="List Layout"><i class="feather-list"></i> <span class="text">List</span></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="rbt-short-item">
-                                        <span class="course-index">Showing 1-9 of 19 results</span>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="col-lg-7 col-md-12">
-                                <div class="rbt-sorting-list d-flex flex-wrap align-items-center justify-content-start justify-content-lg-end">
-                                    <div class="rbt-short-item">
-                                        <form action="#" class="rbt-search-style me-0">
-                                            <input type="text" placeholder="Search Your Course..">
-                                            <button type="submit" class="rbt-search-btn rbt-round-btn">
-                                                <i class="feather-search"></i>
-                                            </button>
-                                        </form>
-                                    </div>
-    
-                                    <div class="rbt-short-item">
-                                        <div class="view-more-btn text-start text-sm-end">
-                                            <button class="discover-filter-button discover-filter-activation rbt-btn btn-white btn-md radius-round">Filter<i class="feather-filter"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <!-- Start Filter Toggle  -->
-                        <div class="default-exp-wrapper default-exp-expand">
-                            <div class="filter-inner">
-                                <div class="filter-select-option">
-                                    <div class="filter-select rbt-modern-select">
-                                        <span class="select-label d-block">Short By</span>
-                                        <select>
-                                            <option>Default</option>
-                                            <option>Latest</option>
-                                            <option>Popularity</option>
-                                            <option>Trending</option>
-                                            <option>Price: low to high</option>
-                                            <option>Price: high to low</option>
-                                        </select>
-                                    </div>
-                                </div>
-    
-                                <div class="filter-select-option">
-                                    <div class="filter-select rbt-modern-select">
-                                        <span class="select-label d-block">Short By Author</span>
-                                        <select data-live-search="true" title="Select Author" multiple data-size="7" data-actions-box="true" data-selected-text-format="count > 2">
-                                            <option data-subtext="Experts">Janin Afsana</option>
-                                            <option data-subtext="Experts">Joe Biden</option>
-                                            <option data-subtext="Experts">Fatima Asrafy</option>
-                                            <option data-subtext="Experts">Aysha Baby</option>
-                                            <option data-subtext="Experts">Mohamad Ali</option>
-                                            <option data-subtext="Experts">Jone Li</option>
-                                            <option data-subtext="Experts">Alberd Roce</option>
-                                            <option data-subtext="Experts">Zeliski Noor</option>
-                                        </select>
-                                    </div>
-                                </div>
-    
-                                <div class="filter-select-option">
-                                    <div class="filter-select rbt-modern-select">
-                                        <span class="select-label d-block">Short By Offer</span>
-                                        <select>
-                                            <option>Free</option>
-                                            <option>Paid</option>
-                                            <option>Premium</option>
-                                        </select>
-                                    </div>
-                                </div>
-    
-                                <div class="filter-select-option">
-                                    <div class="filter-select rbt-modern-select">
-                                        <span class="select-label d-block">Short By Category</span>
-                                        <select data-live-search="true">
-                                            <option>Web Design</option>
-                                            <option>Graphic</option>
-                                            <option>App Development</option>
-                                            <option>Figma Design</option>
-                                        </select>
-                                    </div>
-                                </div>
-    
-                                <div class="filter-select-option">
-                                    <div class="filter-select">
-                                        <span class="select-label d-block">Price Range</span>
-    
-                                        <div class="price_filter s-filter clear">
-                                            <form action="#" method="GET">
-                                                <div id="slider-range"></div>
-                                                <div class="slider__range--output">
-                                                    <div class="price__output--wrap">
-                                                        <div class="price--output">
-                                                            <span>Price :</span><input type="text" id="amount">
-                                                        </div>
-                                                        <div class="price--filter">
-                                                            <a class="rbt-btn btn-gradient btn-sm" href="#">Filter</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-    
-    
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Filter Toggle  -->
-                    </div>
-                </div>
-                <!-- End Course Top  -->
-            </div>
-        </div>
-    
-    
-        <div class="rbt-section-overlayping-top rbt-section-gapBottom">
-            <div class="inner">
+
+    <div class="rbt-page-banner-wrapper">
+        <!-- Start Banner BG Image  -->
+        <div class="rbt-banner-image"></div>
+        <!-- End Banner BG Image  -->
+        <div class="rbt-banner-content">
+
+            <!-- Start Banner Content Top  -->
+            <div class="rbt-banner-content-top">
                 <div class="container">
-                    <div class="rbt-course-grid-column">
-                        @foreach ($courses as $course)
-                        <div class="course-grid-3">
-                            <div class="rbt-card variation-01 rbt-hover">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Start Breadcrumb Area  -->
+                            <ul class="page-list">
+                                <li class="rbt-breadcrumb-item"><a href="index.html">Accueil</a></li>
+                                <li>
+                                    <div class="icon-right"><i class="feather-chevron-right"></i></div>
+                                </li>
+                                <li class="rbt-breadcrumb-item active">Englais</li>
+                            </ul>
+                            <!-- End Breadcrumb Area  -->
+
+                            <div class=" title-wrapper">
+                                <h1 class="title mb--0">Tout les cours</h1>
+                                <a href="#" class="rbt-badge-2">
+                                    <div class="image">🎉</div> 50 cours
+                                </a>
+                            </div>
+
+                            <p class="description">
+                                L'anglais est devenu la langue la plus utilisée dans le monde du travail et pour la communication internationale.
+                                Parlée par plus de 2 milliards de personnes dans plus de 75 pays, elle offre de nombreux avantages.
+                                La maîtrise de l'anglais permet de réussir dans sa carrière en accédant à des postes à responsabilité,
+                                en développant son entreprise et en utilisant les ressources infinies d'Internet. Elle facilite également
+                                les voyages, renforce la confiance et favorise les rencontres interculturelles. Les cours d'anglais à
+                                l'Institut Munich offrent une approche pédagogique interactive, permettant aux étudiants de développer des
+                                compétences linguistiques précises et de maîtriser l'anglais à long terme.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Banner Content Top  -->
+            <!-- Start Course Top  -->
+            <div class="rbt-course-top-wrapper mt--40">
+                <div class="container">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-5 col-md-12">
+                            <div class="rbt-sorting-list d-flex flex-wrap align-items-center">
+                                <div class="rbt-short-item switch-layout-container">
+                                    <ul class="course-switch-layout">
+                                        <li class="course-switch-item"><button class="rbt-grid-view" title="Grid Layout"><i class="feather-grid"></i> <span class="text">Grid</span></button></li>
+                                        <li class="course-switch-item"><button class="rbt-list-view active" title="List Layout"><i class="feather-list"></i> <span class="text">List</span></button></li>
+                                    </ul>
+                                </div>
+                                <div class="rbt-short-item">
+                                    <span class="course-index">Showing 1-9 of 19 results</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7 col-md-12">
+                            <div class="rbt-sorting-list d-flex flex-wrap align-items-center justify-content-start justify-content-lg-end">
+                                <div class="rbt-short-item">
+                                    <form action="#" class="rbt-search-style me-0">
+                                        <input type="text" placeholder="Search Your Course..">
+                                        <button type="submit" class="rbt-search-btn rbt-round-btn">
+                                            <i class="feather-search"></i>
+                                        </button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End Course Top  -->
+        </div>
+    </div>
+
+
+    <!-- Start Card Style -->
+    <div class="rbt-section-overlayping-top rbt-section-gapBottom">
+        <div class="container">
+            <!-- Start Card Area -->
+            <div class="rbt-course-grid-column list-column-half active-list-view">
+
+                <!-- Start Single Card  -->
+                @foreach($courses as $course)
+                    <div class="col-lg-12 col-md-6">
+                        <div class="course-grid-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                            <div class="rbt-card variation-03 rbt-hover">
                                 <div class="rbt-card-img">
-                                    <a href="course-details.html">
-                                        <img src="assets/images/course/course-online-01.jpg" alt="Card image">
-                                        <div class="rbt-badge-3 bg-white">
-                                            <span>-40%</span>
-                                            <span>Off</span>
-                                        </div>
+                                    <a class="thumbnail-link" href="{{ route('getCourse', $course->id) }}">
+                                        <img src="{{ asset('storage/' . $course['image']) }}"  alt="{{ $course->level }}">
+                                        <span class="rbt-btn btn-white icon-hover">
+                                            <span class="btn-text">En savoir plus</span>
+                                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        </span>
                                     </a>
                                 </div>
                                 <div class="rbt-card-body">
-                                    <div class="rbt-card-top">
-                                        <div class="rbt-review">
-                                            <div class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                            <span class="rating-count"> (15 Reviews)</span>
-                                        </div>
-                                        <div class="rbt-bookmark-btn">
-                                            <a class="rbt-round-btn" title="Bookmark" href="#"><i
-                                                    class="feather-bookmark"></i></a>
-                                        </div>
-                                    </div>
-    
-                                    <h4 class="rbt-card-title"><a href="{{url('user/home/Language/Course/'.$course->id)}}">{{$course->level}}</a>
-                                    </h4>
-    
-                                    <ul class="rbt-meta">
-                                        <li><i class="feather-book"></i>12 Lessons</li>
-                                        <li><i class="feather-users"></i>50 Students</li>
-                                    </ul>
-    
-                                    <p class="rbt-card-text">It is a long established fact that a reader will be
-                                        distracted.</p>
-                                    <div class="rbt-author-meta mb--10">
-                                        <div class="rbt-avater">
-                                            <a href="#">
-                                                <img src="assets/images/client/avatar-02.png" alt="Sophia Jaymes">
-                                            </a>
-                                        </div>
-                                        <div class="rbt-author-info">
-                                            By <a href="profile.html">Angela</a> In <a href="#">Development</a>
-                                        </div>
-                                    </div>
+                                    <h5 class="rbt-card-title">
+                                        <a href="{{ route('getCourse', $course->id) }}">{{ $course->level }}</a>
+                                    </h5>
                                     <div class="rbt-card-bottom">
-                                        <div class="rbt-price">
-                                            <span class="current-price">$60</span>
-                                            <span class="off-price">$120</span>
-                                        </div>
-                                        <a class="rbt-btn-link" href="course-details.html">Learn
-                                            More<i class="feather-arrow-right"></i></a>
+                                        <a class="transparent-button" href="{{ route('getCourse', $course->id) }}">
+                                            <i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"></path><path stroke-linecap="square" d="M.663 5.572h14.594"></path></g></svg></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        @endforeach
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 mt--60">
-                            <nav>
-                                <ul class="rbt-pagination">
-                                    <li><a href="#" aria-label="Previous"><i class="feather-chevron-left"></i></a></li>
-                                    <li><a href="#">1</a></li>
-                                    <li class="active"><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#" aria-label="Next"><i class="feather-chevron-right"></i></a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
+                @endforeach                <!-- End Single Card  -->
+
+            </div>
+            <!-- End Card Area -->
+
+            <div class="row">
+                <div class="col-lg-12 mt--60">
+                    <nav>
+                        <ul class="rbt-pagination">
+                            <li ><a href="#" aria-label="Previous"><i class="feather-chevron-left"></i></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li ><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#" aria-label="Next"><i class="feather-chevron-right"></i></a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
-    </main>
-@include('layouts.inc.admin.footer')
+    </div>
+    <!-- End Card Style -->
+
+
+
+    @include('layouts.inc.admin.footer')
 
 @endsection

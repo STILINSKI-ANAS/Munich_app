@@ -1,6 +1,7 @@
 @extends('layouts.user')
 
 @section('content')
+
     <!-- Content Section -->
 
     <main class="rbt-main-wrapper">
@@ -32,12 +33,12 @@
                                 </div>
                             </div>
                             <div class="shape-wrapper" id="scene">
-                                <img src="{{ asset('assets/images/banner/banner-01.png') }}" alt="Hero Image">
+                                <img src="assets/images/banner/banner-01.png" alt="Hero Image">
                                 <div class="hero-bg-shape-1 layer" data-depth="0.4">
-                                    <img src="{{ asset('assets/images/shape/shape-01.png') }}" alt="Hero Image Background Shape">
+                                    <img src="assets/images/shape/shape-01.png" alt="Hero Image Background Shape">
                                 </div>
                                 <div class="hero-bg-shape-2 layer" data-depth="0.4">
-                                    <img src="{{ asset('assets/images/shape/shape-02.png') }}" alt="Hero Image Background Shape">
+                                    <img src="assets/images/shape/shape-02.png" alt="Hero Image Background Shape">
                                 </div>
                             </div>
 
@@ -47,33 +48,33 @@
                                     <!-- Start Single Card  -->
                                     @foreach($tests as $test)
 
-                                        <div class="swiper-slide">
-                                            <div class="rbt-card variation-01 rbt-hover">
-                                                <div class="rbt-card-img">
-                                                    <a href="course-details.html">
-                                                        <img src="{{ asset('storage/' . $test['image']) }}" alt="{{ $test['name'] }} Images">
-                                                    </a>
-                                                </div>
-                                                <div class="rbt-card-body">
-                                                    <ul class="rbt-meta">
-                                                        <li><i class="feather-users"></i>50 Students</li>|
-                                                        <li><i class="feather-calendar"></i>11/02/2023</li>
+                                    <div class="swiper-slide">
+                                        <div class="rbt-card variation-01 rbt-hover">
+                                            <div class="rbt-card-img">
+                                                <a href="course-details.html">
+                                                    <img src="{{ asset('storage/' . $test['image']) }}" alt="{{ $test['name'] }} Images">
+                                                </a>
+                                            </div>
+                                            <div class="rbt-card-body">
+                                                <ul class="rbt-meta">
+                                                    <li><i class="feather-users"></i>50 Students</li>|
+                                                    <li><i class="feather-calendar"></i>11/02/2023</li>
 
-                                                    </ul>
-                                                    <h4 class="rbt-card-title"><a href="course-details.html">{{ $test['name'] }}</a>
-                                                    </h4>
-                                                    <p class="rbt-card-text">{{ $test['short_description'] }}</p>
+                                                </ul>
+                                                <h4 class="rbt-card-title"><a href="course-details.html">{{ $test['name'] }}</a>
+                                                </h4>
+                                                <p class="rbt-card-text">{{ $test['short_description'] }}</p>
 
-                                                    <div class="rbt-card-bottom">
-                                                        <div class="rbt-price">
-                                                            <span class="current-price">{{ $test['price'] }} MAD</span>
-                                                        </div>
-                                                        <a class="rbt-btn-link" href="course-details.html">Learn More<i
-                                                                class="feather-arrow-right"></i></a>
+                                                <div class="rbt-card-bottom">
+                                                    <div class="rbt-price">
+                                                        <span class="current-price">{{ $test['price'] }} MAD</span>
                                                     </div>
+                                                    <a class="rbt-btn-link" href="course-details.html">Learn More<i
+                                                            class="feather-arrow-right"></i></a>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                     @endforeach
 
                                     <!-- End Single Card  -->
@@ -141,34 +142,34 @@
 
                     <!-- Start Single Card  -->
                     @foreach($languages as $language)
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                            <div class="rbt-card variation-03 rbt-hover">
-                                <div class="rbt-card-img">
-                                    <a class="thumbnail-link" href="course-details.html">
-                                        <img src="{{ asset('uploads/Language/' . $language->image) }}" alt="Card image">
-                                        <span class="rbt-btn btn-white icon-hover btn-md">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                        <div class="rbt-card variation-03 rbt-hover">
+                            <div class="rbt-card-img">
+                                <a class="thumbnail-link" href="course-details.html">
+                                    <img src="{{ asset('uploads/Language/' . $language->image) }}" alt="Card image">
+                                    <span class="rbt-btn btn-white icon-hover btn-md">
                                     <span class="btn-text">Voir Plus</span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                 </span>
-                                    </a>
+                                </a>
+                            </div>
+                            <div class="rbt-card-body">
+                                <h5 class="rbt-card-title"><a href="course-details.html"> {{ $language['name'] }}</a>
+                                </h5>
+                                <div class="rbt-card-bottom">
+                                    <a class="transparent-button" href="course-details.html"><i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
                                 </div>
-                                <div class="rbt-card-body">
-                                    <h5 class="rbt-card-title"><a href="course-details.html"> {{ $language['name'] }}</a>
-                                    </h5>
-                                    <div class="rbt-card-bottom">
-                                        <a class="transparent-button" href="course-details.html"><i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
-                                    </div>
+                            </div>
+                            <div class="card-information">
+                                <div class="card-flag">
+                                    <img src="assets/images/shape/{{ $language['name'] }}.svg" alt="{{ $language['name'] }}">
                                 </div>
-                                <div class="card-information">
-                                    <div class="card-flag">
-                                        <img src="assets/images/shape/{{ $language['name'] }}.svg" alt="{{ $language['name'] }}">
-                                    </div>
-                                    <div class="card-count">    {{ $language->name }} - {{ $language->courses->count() }} cours
-                                    </div>
+                                <div class="card-count">    {{ $language->name }} - {{ $language->courses->count() }} cours
                                 </div>
                             </div>
                         </div>
-                        <!-- End Single Card  -->
+                    </div>
+                    <!-- End Single Card  -->
                     @endforeach
                 </div>
                 <!-- End Card Area -->
@@ -182,13 +183,13 @@
                     <div class="col-lg-6">
                         <div class="thumbnail-wrapper">
                             <div class="thumbnail image-1">
-                                <img data-parallax='{"x": 0, "y": -20}' src="{{ asset('assets/images/about/about-01.png')}}" alt="Education Images">
+                                <img data-parallax='{"x": 0, "y": -20}' src="assets/images/about/about-01.png" alt="Education Images">
                             </div>
                             <div class="thumbnail image-2 d-none d-xl-block">
-                                <img data-parallax='{"x": 0, "y": 60}' src="{{ asset('assets/images/about/about-02.png')}}" alt="Education Images">
+                                <img data-parallax='{"x": 0, "y": 60}' src="assets/images/about/about-02.png" alt="Education Images">
                             </div>
                             <div class="thumbnail image-3 d-none d-md-block">
-                                <img data-parallax='{"x": 0, "y": 80}' src="{{ asset('assets/images/about/about-03.png')}}" alt="Education Images">
+                                <img data-parallax='{"x": 0, "y": 80}' src="assets/images/about/about-03.png" alt="Education Images">
                             </div>
                         </div>
                     </div>
@@ -260,7 +261,7 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-7">
                                     <div class="video-popup-wrapper mt_lg--10 mt_md--20 mt_sm--20">
-                                        <img class="w-100 rbt-radius" src="{{ asset('assets/images/others/video-01.jpg')}}" alt="Video Images">
+                                        <img class="w-100 rbt-radius" src="assets/images/others/video-01.jpg" alt="Video Images">
                                         <a class="rbt-btn rounded-player-2 sm-size popup-video position-to-top with-animation" href="https://www.youtube.com/watch?v=nA1Aqp0sPQo">
                                             <span class="play-icon"></span>
                                         </a>
@@ -312,7 +313,7 @@
                             <div class="top-circle-shape"></div>
                             <div class="inner">
                                 <div class="rbt-round-icon">
-                                    <img src="{{ asset('assets/images/icons/counter-01.png') }}" alt="Icons Images">
+                                    <img src="assets/images/icons/counter-01.png" alt="Icons Images">
                                 </div>
                                 <div class="content">
                                     <h3 class="counter"><span class="odometer" data-count="30">00</span>
@@ -330,7 +331,7 @@
                             <div class="top-circle-shape"></div>
                             <div class="inner">
                                 <div class="rbt-round-icon">
-                                    <img src="{{ asset('assets/images/icons/counter-02.png') }}" alt="Icons Images">
+                                    <img src="assets/images/icons/counter-02.png" alt="Icons Images">
                                 </div>
                                 <div class="content">
                                     <h3 class="counter"><span class="odometer" data-count="50">00</span>
@@ -348,7 +349,7 @@
                             <div class="top-circle-shape"></div>
                             <div class="inner">
                                 <div class="rbt-round-icon">
-                                    <img src="{{ asset('assets/images/icons/counter-03.png') }}" alt="Icons Images">
+                                    <img src="assets/images/icons/counter-03.png" alt="Icons Images">
                                 </div>
                                 <div class="content">
                                     <h3 class="counter"><span class="odometer" data-count="50">00</span>
@@ -366,7 +367,7 @@
                             <div class="top-circle-shape"></div>
                             <div class="inner">
                                 <div class="rbt-round-icon">
-                                    <img src="{{ asset('assets/images/icons/counter-04.png') }}" alt="Icons Images">
+                                    <img src="assets/images/icons/counter-04.png" alt="Icons Images">
                                 </div>
                                 <div class="content">
                                     <h3 class="counter"><span class="odometer" data-count="120">00</span>
@@ -1525,6 +1526,5 @@
 
     </main>
     <!-- End Content Section -->
-    @include('layouts.inc.admin.footer')
 
 @endsection
