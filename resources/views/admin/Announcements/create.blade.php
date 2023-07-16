@@ -40,7 +40,7 @@
                             <div class="brows-file-wrapper" data-black-overlay="9">
                                 <!-- actual upload which is hidden -->
                                 <input  id="createinputfile" type="file" class="inputfile" name="Image">
-                                <img id="createfileImage" src="assets/images/others/thumbnail-placeholder.svg" alt="file image">
+                                <img id="createfileImage" src="{{asset('assets/images/others/thumbnail-placeholder.svg')}}" alt="file image">
                                 <!-- our custom upload button -->
                                 <label class="d-flex" for="createinputfile" title="No File Chosen">
                                     <i class="feather-upload"></i>

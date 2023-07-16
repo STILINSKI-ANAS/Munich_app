@@ -20,16 +20,16 @@
                             <h2 class="title">{{$course->level}}</h2>
                             <p class="description">Master Python by building 100 projects in 100 days. Learn data
                                 science, automation, build websites, games and apps!</p>
-    
+
                             <div class="d-flex align-items-center mb--20 flex-wrap rbt-course-details-feature">
-    
+
                                 <div class="feature-sin best-seller-badge">
                                     <span class="rbt-badge-2">
                                         <span class="image"><img src="assets/images/icons/card-icon-1.png"
                                                 alt="Best Seller Icon"></span> Bestseller
                                     </span>
                                 </div>
-    
+
                                 <div class="feature-sin rating">
                                     <a href="#">4.8</a>
                                     <a href="#"><i class="fa fa-star"></i></a>
@@ -38,17 +38,17 @@
                                     <a href="#"><i class="fa fa-star"></i></a>
                                     <a href="#"><i class="fa fa-star"></i></a>
                                 </div>
-    
+
                                 <div class="feature-sin total-rating">
                                     <a class="rbt-badge-4" href="#">215,475 rating</a>
                                 </div>
-    
+
                                 <div class="feature-sin total-student">
                                     <span>616,029 students</span>
                                 </div>
-    
+
                             </div>
-    
+
                             <div class="rbt-author-meta mb--20">
                                 <div class="rbt-avater">
                                     <a href="#">
@@ -59,30 +59,30 @@
                                     By <a href="profile.html">Angela</a> In <a href="#">Development</a>
                                 </div>
                             </div>
-    
+
                             <ul class="rbt-meta">
                                 <li><i class="feather-calendar"></i>Last updated 12/2024</li>
                                 <li><i class="feather-globe"></i>English</li>
                                 <li><i class="feather-award"></i>Certified Course</li>
                             </ul>
-    
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End Breadcrumb Area -->
-    
+
         <div class="rbt-course-details-area ptb--60">
             <div class="container">
                 <div class="row g-5">
-    
+
                     <div class="col-lg-8">
                         <div class="course-details-content">
                             <div class="rbt-course-feature-box rbt-shadow-box thuumbnail">
-                                <img class="w-100" src="assets/images/course/course-01.jpg" alt="Card image">
+                                <img class="w-100" src="{{asset('./uploads/Course/'.$course->image)}}" alt="Card image">
                             </div>
-    
+
                             <div class="rbt-inner-onepage-navigation sticky-top mt--30">
                                 <nav class="mainmenu-nav onepagenav">
                                     <ul class="mainmenu">
@@ -104,7 +104,7 @@
                                     </ul>
                                 </nav>
                             </div>
-    
+
                             <!-- Start Course Feature Box  -->
                             <div class="rbt-course-feature-box overview-wrapper rbt-shadow-box mt--30 has-show-more" id="overview">
                                 <div class="rbt-course-feature-inner has-show-more-inner-content">
@@ -115,7 +115,7 @@
                                 </div>
                             </div>
                             <!-- End Course Feature Box  -->
-    
+
                             <!-- Start Course Content  -->
                             <div class="course-content rbt-shadow-box coursecontent-wrapper mt--30" id="coursecontent">
                                 <div class="rbt-course-feature-inner">
@@ -124,7 +124,7 @@
                                     </div>
                                     <div class="rbt-accordion-style rbt-accordion-02 accordion">
                                         <div class="accordion" id="accordionExampleb2">
-    
+
                                             <div class="accordion-item card">
                                                 <h2 class="accordion-header card-header" id="headingTwo1">
                                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="true" aria-controls="collapseTwo1">
@@ -146,7 +146,7 @@
                                                                     </div>
                                                                 </a>
                                                             </li>
-    
+
                                                             <li>
                                                                 <a href="lesson.html">
                                                                     <div class="course-content-left">
@@ -159,7 +159,7 @@
                                                                     </div>
                                                                 </a>
                                                             </li>
-    
+
                                                             <li>
                                                                 <a href="lesson.html">
                                                                     <div class="course-content-left">
@@ -171,12 +171,12 @@
                                                                     </div>
                                                                 </a>
                                                             </li>
-    
+
                                                         </ul>
                                                     </div>
                                                 </div>
                                             </div>
-    
+
                                             <div class="accordion-item card">
                                                 <h2 class="accordion-header card-header" id="headingTwo2">
                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
@@ -204,7 +204,7 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-play-circle"></i> <span
@@ -215,7 +215,7 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-file-text"></i> <span
@@ -225,8 +225,8 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
-    
+
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-play-circle"></i> <span
@@ -237,7 +237,7 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-file-text"></i> <span
@@ -251,7 +251,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-    
+
                                             <div class="accordion-item card">
                                                 <h2 class="accordion-header card-header" id="headingTwo3">
                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo3" aria-expanded="false" aria-controls="collapseTwo3">
@@ -279,7 +279,7 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-play-circle"></i> <span
@@ -290,7 +290,7 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-file-text"></i> <span
@@ -300,8 +300,8 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
-    
+
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-play-circle"></i> <span
@@ -312,7 +312,7 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-file-text"></i> <span
@@ -326,7 +326,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-    
+
                                             <div class="accordion-item card">
                                                 <h2 class="accordion-header card-header" id="headingTwo4">
                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo4" aria-expanded="false" aria-controls="collapseTwo4">
@@ -354,7 +354,7 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-play-circle"></i> <span
@@ -365,7 +365,7 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-file-text"></i> <span
@@ -375,8 +375,8 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
-    
+
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-play-circle"></i> <span
@@ -387,7 +387,7 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-file-text"></i> <span
@@ -401,7 +401,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-    
+
                                             <div class="accordion-item card">
                                                 <h2 class="accordion-header card-header" id="headingTwo5">
                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo5" aria-expanded="false" aria-controls="collapseTwo5">
@@ -429,7 +429,7 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-play-circle"></i> <span
@@ -440,7 +440,7 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-file-text"></i> <span
@@ -450,8 +450,8 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
-    
+
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-play-circle"></i> <span
@@ -462,7 +462,7 @@
                                                                         <span class="course-lock"><i class="feather-lock"></i></span>
                                                                     </div>
                                                                 </a></li>
-    
+
                                                             <li><a href="lesson.html">
                                                                     <div class="course-content-left">
                                                                         <i class="feather-file-text"></i> <span
@@ -476,13 +476,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-    
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- End Course Content  -->
-    
+
                             <!-- Start Course Feature Box  -->
                             <div class="rbt-course-feature-box rbt-shadow-box details-wrapper mt--30" id="details">
                                 <div class="row g-5">
@@ -503,7 +503,7 @@
                                         </ul>
                                     </div>
                                     <!-- End Feture Box  -->
-    
+
                                     <!-- Start Feture Box  -->
                                     <div class="col-lg-6">
                                         <div class="section-title">
@@ -524,7 +524,7 @@
                                 </div>
                             </div>
                             <!-- End Course Feature Box  -->
-    
+
                             <!-- Start Intructor Area  -->
                             <div class="rbt-instructor rbt-shadow-box intructor-wrapper mt--30" id="intructor">
                                 <div class="about-author border-0 pb--0 pt--0">
@@ -552,7 +552,7 @@
                                             <div class="content">
                                                 <p class="description">John is a brilliant educator, whose life was spent
                                                     for computer science and love of nature.</p>
-    
+
                                                 <ul class="social-icon social-default icon-naked justify-content-start">
                                                     <li><a href="https://www.facebook.com/">
                                                             <i class="feather-facebook"></i>
@@ -571,15 +571,15 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-    
+
                                             </div>
-    
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- End Intructor Area  -->
-    
+
                             <!-- Start Edu Review List  -->
                             <div class="rbt-review-wrapper rbt-shadow-box review-wrapper mt--30" id="review">
                                 <div class="course-content">
@@ -635,7 +635,7 @@
                                                     </div>
                                                     <span class="value-text">63%</span>
                                                 </div>
-    
+
                                                 <div class="single-progress-bar">
                                                     <div class="rating-text">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -659,7 +659,7 @@
                                                     </div>
                                                     <span class="value-text">29%</span>
                                                 </div>
-    
+
                                                 <div class="single-progress-bar">
                                                     <div class="rating-text">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -683,7 +683,7 @@
                                                     </div>
                                                     <span class="value-text">6%</span>
                                                 </div>
-    
+
                                                 <div class="single-progress-bar">
                                                     <div class="rating-text">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -707,7 +707,7 @@
                                                     </div>
                                                     <span class="value-text">1%</span>
                                                 </div>
-    
+
                                                 <div class="single-progress-bar">
                                                     <div class="rating-text">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -737,7 +737,7 @@
                                 </div>
                             </div>
                             <!-- End Edu Review List  -->
-    
+
                             <div class="about-author-list rbt-shadow-box featured-wrapper mt--30 has-show-more">
                                 <div class="section-title">
                                     <h4 class="rbt-title-style-3">Featured review</h4>
@@ -985,15 +985,15 @@
                                                             class="feather-bookmark"></i></a>
                                                 </div>
                                             </div>
-    
+
                                             <h4 class="rbt-card-title"><a href="course-details.html">React Front To Back</a>
                                             </h4>
-    
+
                                             <ul class="rbt-meta">
                                                 <li><i class="feather-book"></i>12 Lessons</li>
                                                 <li><i class="feather-users"></i>50 Students</li>
                                             </ul>
-    
+
                                             <p class="rbt-card-text">It is a long established fact that a reader will be
                                                 distracted.</p>
                                             <div class="rbt-author-meta mb--10">
@@ -1018,7 +1018,7 @@
                                     </div>
                                 </div>
                                 <!-- End Single Card  -->
-    
+
                                 <!-- Start Single Card  -->
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
                                     <div class="rbt-card variation-01 rbt-hover">
@@ -1050,7 +1050,7 @@
                                                 <li><i class="feather-book"></i>12 Lessons</li>
                                                 <li><i class="feather-users"></i>50 Students</li>
                                             </ul>
-    
+
                                             <p class="rbt-card-text">It is a long established fact that a reader will be
                                                 distracted.</p>
                                             <div class="rbt-author-meta mb--10">
@@ -1078,11 +1078,11 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="col-lg-4">
                         <div class="course-sidebar sticky-top rbt-shadow-box course-sidebar-top rbt-gradient-border">
                             <div class="inner">
-    
+
                                 <!-- Start Viedo Wrapper  -->
                                 <a class="video-popup-with-text video-popup-wrapper text-center popup-video sidebar-video-hidden mb--15" href="https://www.youtube.com/watch?v=nA1Aqp0sPQo">
                                     <div class="video-content">
@@ -1096,7 +1096,7 @@
                                     </div>
                                 </a>
                                 <!-- End Viedo Wrapper  -->
-    
+
                                 <div class="content-item-content">
                                     <div class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">
                                         <div class="rbt-price">
@@ -1108,25 +1108,25 @@
                                                     class="feather-clock"></i> 3 days left!</span>
                                         </div>
                                     </div>
-    
+
                                     <div class="add-to-card-button mt--15">
                                         <a class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" href="#">
                                             <span class="btn-text">Add to Cart</span>
                                             <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         </a>
                                     </div>
-    
+
                                     <div class="buy-now-btn mt--15">
                                         <a class="rbt-btn btn-border icon-hover w-100 d-block text-center" href="#">
                                             <span class="btn-text">Buy Now</span>
                                             <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         </a>
                                     </div>
-    
+
                                     <span class="subtitle"><i class="feather-rotate-ccw"></i> 30-Day Money-Back
                                         Guarantee</span>
-    
-    
+
+
                                     <div class="rbt-widget-details has-show-more">
                                         <ul class="has-show-more-inner-content rbt-course-details-list-wrapper">
                                             <li><span>Start Date</span><span class="rbt-feature-value rbt-badge-5">5 Hrs 20 Min</span>
@@ -1141,7 +1141,7 @@
                                         </ul>
                                         <div class="rbt-show-more-btn">Show More</div>
                                     </div>
-    
+
                                     <div class="social-share-wrapper mt--30 text-center">
                                         <div class="rbt-post-share d-flex align-items-center justify-content-center">
                                             <ul class="social-icon social-default transparent-with-border justify-content-center">
@@ -1176,13 +1176,13 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="rbt-separator-mid">
             <div class="container">
                 <hr class="rbt-separator m-0">
             </div>
         </div>
-    
+
         <div class="rbt-related-course-area bg-color-white pt--60 rbt-section-gapBottom">
             <div class="container">
                 <div class="section-title mb--30">
@@ -1190,7 +1190,7 @@
                     <h4 class="title">Related Courses</h4>
                 </div>
                 <div class="row g-5">
-    
+
                     <!-- Start Single Card  -->
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                         <div class="rbt-card variation-01 rbt-hover">
@@ -1228,7 +1228,7 @@
                                 </ul>
                                 <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
                                     the readable.</p>
-    
+
                                 <div class="rbt-author-meta mb--20">
                                     <div class="rbt-avater">
                                         <a href="#">
@@ -1251,7 +1251,7 @@
                         </div>
                     </div>
                     <!-- End Single Card  -->
-    
+
                     <!-- Start Single Card  -->
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                         <div class="rbt-card variation-01 rbt-hover">
@@ -1281,7 +1281,7 @@
                                                 class="feather-bookmark"></i></a>
                                     </div>
                                 </div>
-    
+
                                 <h4 class="rbt-card-title"><a href="course-details.html">Web Front To Back</a>
                                 </h4>
                                 <ul class="rbt-meta">
@@ -1300,7 +1300,7 @@
                                         By <a href="profile.html">Patrick</a> In <a href="#">Languages</a>
                                     </div>
                                 </div>
-    
+
                                 <div class="rbt-card-bottom">
                                     <div class="rbt-price">
                                         <span class="current-price">$60</span>
@@ -1313,7 +1313,7 @@
                         </div>
                     </div>
                     <!-- End Single Card  -->
-    
+
                     <!-- Start Single Card  -->
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                         <div class="rbt-card variation-01 rbt-hover">
@@ -1374,11 +1374,11 @@
                         </div>
                     </div>
                     <!-- End Single Card  -->
-    
+
                 </div>
             </div>
         </div>
-    
+
         <!-- Start Course Action Bottom  -->
         <div class="rbt-course-action-bottom">
             <div class="container">

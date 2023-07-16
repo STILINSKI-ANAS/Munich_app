@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/account', function () {
     return view('welcome');
 });
 
@@ -27,13 +27,14 @@ Route::get('/user', function () {
 
 Auth::routes();
 
-Route::prefix('user/home')->group(function () {
+Route::prefix('/')->group(function () {
     Route::controller(\App\Http\Controllers\HomeController::class)->group(function () {
         Route::get('/', 'index');
-        Route::get('/Language/Courses/{Language}', 'getLanguageCourses');
+        Route::get('/{Language}/Courses', 'getLanguageCourses');
         Route::get('/Language/Course/{Course}', 'getCourse');
-        Route::get('/Language/Tests/{Language}', 'getLanguageTests');
+        Route::get('/{Language}/Tests', 'getLanguageTests');
         Route::get('/Language/Test/{Test}', 'getTest');
+        Route::get('/Language/Course/{courseId}', 'HomeController@getCourse')->name('getCourse');
     });
 });
 

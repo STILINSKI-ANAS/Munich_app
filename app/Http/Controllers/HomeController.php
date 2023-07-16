@@ -17,7 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -37,30 +37,33 @@ class HomeController extends Controller
         ]);
     }
 
-    public function getLanguageCourses($languageId)
+    public function getLanguageCourses($languageName)
     {
         $languages = Language::all();
-        $courses = Language::find($languageId)->courses;
+        $courses = Language::Where('name',$languageName)->first()->courses;
         return view('user.Course.courses')->with([
             'courses' => $courses,
             'languages' => $languages
         ]);
     }
 
-    public function getCourse($courseId)
+    public function getCourse($courseLevel)
     {
         $languages = Language::all();
-        $course = Course::find($courseId);
+        $course = Course::Where('level',$courseLevel)->first();
+//        $course = $course->toarray();
+//        dd($course->level);
         return view('user.Course.course-details')->with([
             'course' => $course,
             'languages' => $languages
         ]);
     }
 
-    public function getLanguageTests($languageId)
+    public function getLanguageTests($languageName)
     {
         $languages = Language::all();
-        $tests = Language::find($languageId)->tests;
+        $tests = Language::Where('name',$languageName)->first()->tests;
+        dd($tests);
         return view('user.Test.tests')->with([
             'tests' => $tests,
             'languages' => $languages

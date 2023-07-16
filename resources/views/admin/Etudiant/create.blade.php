@@ -37,7 +37,7 @@
                 <!-- Start Photo  -->
                 <div class="rbt-tutor-information-left">
                     <div class="thumbnail rbt-avatars size-lg position-relative">
-                        <img src="assets/images/team/avatar.jpg" alt="Instructor">
+                        <img src="{{asset('assets/images/team/avatar.jpg')}}" alt="Instructor">
                         <div class="rbt-edit-photo-inner">
                             <button class="rbt-edit-photo" title="Upload Photo">
                                 <i class="feather-camera"></i>

@@ -15,7 +15,7 @@
                 <li class="minicart-item">
                     <div class="thumbnail">
                         <a href="#">
-                            <img src="assets/images/product/1.jpg" alt="Product Images">
+                            <img src="{{asset('assets/images/product/1.jpg')}}" alt="Product Images">
                         </a>
                     </div>
                     <div class="product-content">
@@ -31,7 +31,7 @@
                 <li class="minicart-item">
                     <div class="thumbnail">
                         <a href="#">
-                            <img src="assets/images/product/7.jpg" alt="Product Images">
+                            <img src="{{asset('assets/images/product/7.jpg')}}" alt="Product Images">
                         </a>
                     </div>
                     <div class="product-content">
@@ -47,7 +47,7 @@
                 <li class="minicart-item">
                     <div class="thumbnail">
                         <a href="#">
-                            <img src="assets/images/product/3.jpg" alt="Product Images">
+                            <img src="{{asset('assets/images/product/3.jpg')}}" alt="Product Images">
                         </a>
                     </div>
                     <div class="product-content">
@@ -63,7 +63,7 @@
                 <li class="minicart-item">
                     <div class="thumbnail">
                         <a href="#">
-                            <img src="assets/images/product/4.jpg" alt="Product Images">
+                            <img src="{{asset('assets/images/product/4.jpg')}}" alt="Product Images">
                         </a>
                     </div>
                     <div class="product-content">

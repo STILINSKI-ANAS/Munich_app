@@ -73,12 +73,12 @@
                 </div>
 
                 @if (isset($languages))
-                
+
                 <div class="rbt-main-navigation d-none d-xl-block">
                     <nav class="mainmenu-nav">
                         <ul class="mainmenu">
                             <li class="with-megamenu has-menu-child-item position-static">
-                                <a href="#">Accueil</a>
+                                <a href="{{url('/')}}">Accueil</a>
                             </li>
                             <li class="has-dropdown has-menu-child-item">
                                 <a href="#">Cours de langue
@@ -86,7 +86,7 @@
                                 </a>
                                 <ul class="submenu">
                                     @foreach($languages as $language)
-                                    <li class="has-dropdown"><a href="{{url('user/home/Language/Courses/'.$language->id)}}">{{$language->name}}</a></li>
+                                    <li class="has-dropdown"><a href="{{url('/'.$language->name.'/Courses/')}}">{{$language->name}}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -96,7 +96,7 @@
                                 </a>
                                 <ul class="submenu">
                                     @foreach($languages as $language)
-                                    <li class="has-dropdown"><a href="{{url('user/home/Language/Tests/'.$language->id)}}">{{$language->name}}</a></li>
+                                    <li class="has-dropdown"><a href="{{url('/'.$language->name.'/Tests/')}}">{{$language->name}}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -132,7 +132,7 @@
                                 <div class="rbt-user-menu-list-wrapper">
                                     <div class="inner">
                                         <div class="rbt-admin-profile">
-                                            
+
                                             <div class="admin-info">
                                                 <span class="name">{{ Auth::user()->name }}</span>
                                             </div>
@@ -144,7 +144,7 @@
                                                     <span>My Dashboard</span>
                                                 </a>
                                             </li>
-                                          
+
                                         </ul>
                                         <hr class="mt--10 mb--10">
                                         <ul class="user-list-wrapper">
@@ -215,7 +215,7 @@
                         <div class="rbt-card variation-01 rbt-hover">
                             <div class="rbt-card-img">
                                 <a href="course-details.html">
-                                    <img src="assets/images/course/course-online-01.jpg" alt="Card image">
+                                    <img src="{{asset('assets/images/course/course-online-01.jpg')}}" alt="Card image">
                                 </a>
                             </div>
                             <div class="rbt-card-body">
@@ -247,7 +247,7 @@
                         <div class="rbt-card variation-01 rbt-hover">
                             <div class="rbt-card-img">
                                 <a href="course-details.html">
-                                    <img src="assets/images/course/course-online-02.jpg" alt="Card image">
+                                    <img src="{{asset('assets/images/course/course-online-02.jpg')}}" alt="Card image">
                                 </a>
                             </div>
                             <div class="rbt-card-body">
@@ -279,7 +279,7 @@
                         <div class="rbt-card variation-01 rbt-hover">
                             <div class="rbt-card-img">
                                 <a href="course-details.html">
-                                    <img src="assets/images/course/course-online-03.jpg" alt="Card image">
+                                    <img src="{{asset('assets/images/course/course-online-03.jpg')}}" alt="Card image">
                                 </a>
                             </div>
                             <div class="rbt-card-body">
@@ -311,7 +311,7 @@
                         <div class="rbt-card variation-01 rbt-hover">
                             <div class="rbt-card-img">
                                 <a href="course-details.html">
-                                    <img src="assets/images/course/course-online-04.jpg" alt="Card image">
+                                    <img src="{{asset('assets/images/course/course-online-04.jpg')}}" alt="Card image">
                                 </a>
                             </div>
                             <div class="rbt-card-body">

@@ -193,20 +193,6 @@
                                    placeholder="Autre" value="{{ $Etudiant->referral }}">
                         </div>
                     </div>
-                    <script>
-                        function handlereferralChange(value) {
-                            var otherreferral = document.getElementById('otherreferral');
-                            var customreferral = document.getElementById('customreferral');
-
-                            if (value === 'autre') {
-                                otherreferral.style.display = 'block';
-                                customreferral.required = true;
-                            } else {
-                                otherreferral.style.display = 'none';
-                                customreferral.required = false;
-                            }
-                        }
-                    </script>
                 </div>
                 <div class="row">
                     <div class="course-field mb--15 col-12">

@@ -9,8 +9,8 @@
                 </div>
                 <nav class="mainmenu-nav">
                     <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                        <li><a href="instructor-dashboard.html"><i class="feather-home"></i><span>Dashboard</span></a></li>
-                        <li><a href="instructor-profile.html"><i class="feather-user"></i><span>Mon profil</span></a></li>
+                        <li><a href="{{ url('admin/Dashboard') }}"><i class="feather-home"></i><span>Dashboard</span></a></li>
+                        <li><a href="#"><i class="feather-user"></i><span>Mon profil</span></a></li>
                         <li><a href="{{ url('admin/Languages') }}"><i class="feather-message-square"></i><span>Langues</span></a></li>
                         <li><a href="{{ url('admin/Course') }}"><i class="feather-book-open"></i><span>Cours</span></a></li>
                         <li><a href="{{ url('admin/Test') }}"><i class="feather-help-circle"></i><span>Tests</span></a></li>
@@ -23,9 +23,9 @@
 
                 <nav class="mainmenu-nav">
                     <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                        <li><a href="instructor-quiz-attempts.html"><i class="feather-users"></i><span>Étudiants</span></a></li>
-                        <li><a href="instructor-order-history.html"><i class="feather-shopping-bag"></i><span>Inscriptions</span></a></li>
-                        <li><a href="instructor-quiz-attempts.html"><i class="feather-message-square"></i><span>Resultats</span></a></li>
+                        <li><a href="{{ url('admin/Etudiant') }}"><i class="feather-users"></i><span>Étudiants</span></a></li>
+                        <li><a href="#"><i class="feather-shopping-bag"></i><span>Inscriptions</span></a></li>
+                        <li><a href="#"><i class="feather-message-square"></i><span>Resultats</span></a></li>
                     </ul>
                 </nav>
 
@@ -35,8 +35,8 @@
 
                 <nav class="mainmenu-nav">
                     <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                        <li><a href="instructor-settings.html"><i class="feather-settings"></i><span>Paramètres</span></a></li>
-                        <li><a href="index.html"><i class="feather-log-out"></i><span>Déconnecter</span></a></li>
+                        <li><a href="#"><i class="feather-settings"></i><span>Paramètres</span></a></li>
+                        <li><a href="#"><i class="feather-log-out"></i><span>Déconnecter</span></a></li>
                     </ul>
                 </nav>
             </div>
