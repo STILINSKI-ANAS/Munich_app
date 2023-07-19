@@ -172,7 +172,7 @@
                             <div class="course-grid-3">
                                 <div class="rbt-card variation-01 rbt-hover">
                                     <div class="rbt-card-img">
-                                        <a href="course-details.html">
+                                        <a href="{{url('/Language/Course/'.$course->level)}}">
                                             <img src="{{asset('./uploads/Course/'.$course->image)}}" alt="Card image">
                                             <div class="rbt-badge-3 bg-white">
                                                 <span>-40%</span>
@@ -198,7 +198,7 @@
                                             </div>
                                         </div>
 
-                                        <h4 class="rbt-card-title"><a href="{{url('user/home/Language/Course/'.$course->level)}}">{{$course->level}}</a>
+                                        <h4 class="rbt-card-title"><a href="{{url('/Language/Course/'.$course->level)}}">{{$course->level}}</a>
                                         </h4>
 
                                         <ul class="rbt-meta">
@@ -211,11 +211,11 @@
                                         <div class="rbt-author-meta mb--10">
                                             <div class="rbt-avater">
                                                 <a href="#">
-                                                    <img src="assets/images/client/avatar-02.png" alt="Sophia Jaymes">
+                                                    <img src="{{ asset('assets/images/client/avatar-02.png') }}" alt="Sophia Jaymes">
                                                 </a>
                                             </div>
                                             <div class="rbt-author-info">
-                                                By <a href="profile.html">Angela</a> In <a href="#">Development</a>
+                                                By <a href="profile.html">Professor</a> In <a href="#">{{$course->language->name}}</a>
                                             </div>
                                         </div>
                                         <div class="rbt-card-bottom">
@@ -223,7 +223,7 @@
                                                 <span class="current-price">$60</span>
                                                 <span class="off-price">$120</span>
                                             </div>
-                                            <a class="rbt-btn-link" href="course-details.html">Learn
+                                            <a class="rbt-btn-link" href="{{url('/Language/Course/'.$course->level)}}">Learn
                                                 More<i class="feather-arrow-right"></i></a>
                                         </div>
                                     </div>
@@ -248,6 +248,5 @@
             </div>
         </div>
     </main>
-    @include('layouts.inc.admin.footer')
 
 @endsection
