@@ -51,7 +51,7 @@
                                             <div class="rbt-card variation-01 rbt-hover">
                                                 <div class="rbt-card-img">
                                                     <a href="course-details.html">
-                                                        <img src="{{ asset('storage/' . $test['image']) }}" alt="{{ $test['name'] }} Images">
+                                                        <img src="{{ asset('assets/images/course/' . $test['image']) }}" alt="{{ $test['name'] }} Images">
                                                     </a>
                                                 </div>
                                                 <div class="rbt-card-body">
