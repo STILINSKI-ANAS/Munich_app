@@ -29,7 +29,8 @@
                 <div class="content">
                     <div class="post-thumbnail mb--30 position-relative wp-block-image alignwide">
                         <figure>
-                            <img src="assets/images/blog/test.jpg" alt="Blog Images">
+                            <img src="{{asset('assets/images/blog/blog-card-01.jpg')}}" alt="Education Images">
+
                         </figure>
                     </div>
                     <p>Que ce soit pour des études, des voyages touristiques ou des projets professionnels, l'Allemagne attire de nombreux Marocains chaque année. Pour faciliter leur séjour et leurs démarches administratives, il est essentiel pour les Marocains
