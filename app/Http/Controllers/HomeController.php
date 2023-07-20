@@ -63,17 +63,17 @@ class HomeController extends Controller
     {
         $languages = Language::all();
         $tests = Language::Where('name',$languageName)->first()->tests;
-        dd($tests);
+//        dd($tests);
         return view('user.Test.tests')->with([
             'tests' => $tests,
             'languages' => $languages
         ]);
     }
 
-    public function getTest($testId)
+    public function getTest($testLevel)
     {
         $languages = Language::all();
-        $test = Test::find($testId);
+        $test = Test::Where('level',$testLevel)->first();
         return view('user.Test.test-details')->with([
             'test' => $test,
             'languages' => $languages
