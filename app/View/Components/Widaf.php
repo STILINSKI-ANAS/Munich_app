@@ -2,6 +2,8 @@
 
 namespace App\View\Components;
 
+use App\Models\Course;
+use App\Models\Test;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +23,8 @@ class Widaf extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.widaf');
+        $courses = Course::all(); // This assumes you have a 'Course' model representing your courses
+        $tests = Test::all(); // This assumes you have a 'Course' model representing your courses
+        return view('components.widaf', compact('courses','tests'));
     }
 }

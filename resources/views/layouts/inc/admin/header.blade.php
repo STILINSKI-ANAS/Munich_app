@@ -10,7 +10,7 @@
                             <div class="header-info">
                                 <ul class="rbt-information-list">
                                     <li>
-                                        <a href="#"><i class="feather-help-circle"></i>Have any Question?</a>
+                                        <a href="#"><i class="feather-help-circle"></i>Vous Avez Des Question?</a>
                                     </li>
                                     <li>
                                         <a href="mailto:hello@example.com"><i class="feather-mail"></i>info@institut-munich.ma</a>
@@ -107,7 +107,7 @@
                                 <a href="#">Formation continue</a>
                             </li>
                             <li class="with-megamenu has-menu-child-item position-static">
-                                <a href="#">l'instut</a>
+                                <a href="{{ url('/aboutUs') }}">l'instut</a>
                             </li>
                         </ul>
                     </nav>
@@ -120,7 +120,7 @@
                         @if (Route::has('login'))
                             <div class="rbt-btn-wrapper d-none d-xl-block">
                                 <a class="rbt-btn rbt-marquee-btn marquee-auto btn-border-gradient radius-round btn-sm hover-transform-none" href="{{ route('login') }}">
-                                    <span data-text="S'inscrire">Login</span>
+                                    <span data-text="Login">Login</span>
                                 </a>
                             </div>
                         @endif

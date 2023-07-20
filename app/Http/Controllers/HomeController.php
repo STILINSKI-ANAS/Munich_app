@@ -40,13 +40,28 @@ class HomeController extends Controller
 
     public function privacyPolicy()
     {
-        return view('user.politiques');
+        $languages = Language::all();
+        $tests = Test::all();
+        $categories = Category::all();
+        return view('user.politiques')->with([
+            'languages' => $languages,
+            'tests' => $tests,
+            'categories'=>$categories
+        ]);
     }
 
 
     public function aboutUs()
     {
-        return view('user.aboutus');
+        $languages = Language::all();
+        $tests = Test::all();
+        $categories = Category::all();
+        return view('user.aboutus')->with([
+            'languages' => $languages,
+            'tests' => $tests,
+            'categories'=>$categories
+        ]);
+
     }
 
 

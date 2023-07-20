@@ -62,14 +62,14 @@
                                                     </ul>
                                                     <h4 class="rbt-card-title"><a href="course-details.html">{{ $test['name'] }}</a>
                                                     </h4>
-                                                    <p class="rbt-card-text">{{ $test['short_description'] }}</p>
+                                                    <p class="rbt-card-text">{{ substr($test['overview'], 0, 80) }}</p>
 
                                                     <div class="rbt-card-bottom">
                                                         <div class="rbt-price">
                                                             <span class="current-price">{{ $test['price'] }} MAD</span>
                                                         </div>
-                                                        <a class="rbt-btn-link" href="course-details.html">Learn More<i
-                                                                class="feather-arrow-right"></i></a>
+                                                        <a class="rbt-btn-link" href="{{url('/Language/Test/'.$test->level)}}">S'avoir
+                                                            Plus<i class="feather-arrow-right"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -227,7 +227,7 @@
 
                             <!-- End Feature List  -->
                             <div class="about-btn mt--40">
-                                <a class="rbt-btn btn-gradient hover-icon-reverse" href="#">
+                                <a class="rbt-btn btn-gradient hover-icon-reverse"  href="{{ url('/aboutUs') }}">
                                     <span class="icon-reverse-wrapper">
                             <span class="btn-text">Plus Sur Nous</span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>

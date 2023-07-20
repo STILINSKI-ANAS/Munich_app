@@ -139,8 +139,7 @@
                                                 <span class="current-price">{{$price}} MAD</span>
                                                 <span class="off-price">{{$totalPrice}} MAD</span>
                                             </div>
-                                            <a class="rbt-btn-link" href="{{url('/Language/Test/'.$test->level)}}">Learn
-                                                More<i class="feather-arrow-right"></i></a>
+                                            <a class="rbt-btn-link" href="{{url('/Language/Test/'.$test->level)}}">S'avoir Plus<i class="feather-arrow-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -152,6 +151,5 @@
             </div>
         </div>
     </main>
-    @include('layouts.inc.admin.footer')
 
 @endsection
