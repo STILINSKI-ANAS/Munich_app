@@ -67,7 +67,14 @@ class HomeController extends Controller
 
     public function blog()
     {
-        return view('user.blog');
+        $languages = Language::all();
+        $tests = Test::all();
+        $categories = Category::all();
+        return view('user.blog')->with([
+            'languages' => $languages,
+            'tests' => $tests,
+            'categories'=>$categories
+        ]);
     }
 
 
