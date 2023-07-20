@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Instructor Dashboard - Online Courses & Education Bootstrap5 Template</title>
+    <title>Instut Munich -  Votre porte vers le succès !</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,7 +33,7 @@
 <body>
 @include('layouts.inc.admin.header')
 @include('layouts.inc.admin.mobile-menu')
-@include('layouts.inc.admin.side-menu')
+
 @yield('content')
 
 @include('layouts.inc.admin.footer')

@@ -48,6 +48,9 @@
                                 <a href="contact.html">Contactez-nous</a>
                             </li>
                             <li>
+                                <a href="{{ url('/privacy-policy') }}">Politique de confidentialité</a>
+                            </li>
+                            <li>
                                 <a href="become-a-teacher.html">Devenir Enseignant</a>
                             </li>
                             <li>

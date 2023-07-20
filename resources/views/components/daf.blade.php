@@ -56,8 +56,8 @@
 
 
                             <ul class="rbt-meta">
-                                <li><i class="feather-calendar"></i>Dernière mise à jour 12/07/2023</li>
-                                <li><i class="feather-globe"></i>Français</li>
+                                <li><i class="feather-calendar"></i>Dernière mise à jour </li>
+                                <li><i class="feather-globe"></i>allemande</li>
                                 <li><i class="feather-award"></i>Cours certifié</li>
                             </ul>
 

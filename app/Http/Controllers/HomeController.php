@@ -37,6 +37,12 @@ class HomeController extends Controller
         ]);
     }
 
+
+    public function privacyPolicy()
+    {
+        return view('user.politiques');
+    }
+
     public function getLanguageCourses($languageName)
     {
         $languages = Language::all();

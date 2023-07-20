@@ -306,7 +306,7 @@
                                                         <li>
                                                             <a href="">
                                                                 <div class="course-content-left">
-                                                                    <i class="feather-check"></i><span class="text">LPrésent, passé, futur</span>
+                                                                    <i class="feather-check"></i><span class="text">Présent, passé, futur</span>
                                                                 </div>
 
                                                             </a>
@@ -837,221 +837,6 @@
                         <!-- End Edu Review List  -->
 
 
-                        <div class="about-author-list rbt-border-with-box featured-wrapper mt--30 has-show-more">
-                            <div class="section-title">
-                                <h4 class="rbt-title-style-3">Featured review</h4>
-                            </div>
-                            <div class="has-show-more-inner-content rbt-featured-review-list-wrapper">
-                                <div class="rbt-course-review about-author">
-                                    <div class="media">
-                                        <div class="thumbnail">
-                                            <a href="#">
-                                                <img src="{{ asset('assets/images/testimonial/testimonial-3.jpg') }}"
-                                                     alt="Author Images">
-                                            </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="author-info">
-                                                <h5 class="title">
-                                                    <a class="hover-flip-item-wrapper" href="#">
-                                                        Farjana Bawnia
-                                                    </a>
-                                                </h5>
-                                                <div class="rating">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <p class="description">At 29 years old, my favorite compliment is being
-                                                    told that I look like my mom. Seeing myself in her image, like this
-                                                    daughter up top.</p>
-                                                <ul class="social-icon social-default transparent-with-border justify-content-start">
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="feather-thumbs-up"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="feather-thumbs-down"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="rbt-course-review about-author">
-                                    <div class="media">
-                                        <div class="thumbnail">
-                                            <a href="#">
-                                                <img src="{{ asset('assets/images/testimonial/testimonial-4.jpg') }}"
-                                                     alt="Author Images">
-                                            </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="author-info">
-                                                <h5 class="title">
-                                                    <a class="hover-flip-item-wrapper" href="#">Razwan Islam</a>
-                                                </h5>
-                                                <div class="rating">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <p class="description">My favorite compliment is being told that I look
-                                                    like my mom. Seeing myself in her image, like this daughter up
-                                                    top.</p>
-                                                <ul class="social-icon social-default transparent-with-border justify-content-start">
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="feather-thumbs-up"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="feather-thumbs-down"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="rbt-course-review about-author">
-                                    <div class="media">
-                                        <div class="thumbnail">
-                                            <a href="#">
-                                                <img src="{{ asset('assets/images/testimonial/testimonial-1.jpg') }}"
-                                                     alt="Author Images">
-                                            </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="author-info">
-                                                <h5 class="title">
-                                                    <a class="hover-flip-item-wrapper" href="#">Babor Azom</a>
-                                                </h5>
-                                                <div class="rating">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <p class="description">My favorite compliment is being told that I look
-                                                    like my mom. Seeing myself in her image, like this daughter up
-                                                    top.</p>
-                                                <ul class="social-icon social-default transparent-with-border justify-content-start">
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="feather-thumbs-up"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="feather-thumbs-down"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="rbt-course-review about-author">
-                                    <div class="media">
-                                        <div class="thumbnail">
-                                            <a href="#">
-                                                <img src="{{ asset('assets/images/testimonial/testimonial-6.jpg') }}"
-                                                     alt="Author Images">
-                                            </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="author-info">
-                                                <h5 class="title">
-                                                    <a class="hover-flip-item-wrapper" href="#">Mohammad Ali</a>
-                                                </h5>
-                                                <div class="rating">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <p class="description">My favorite compliment is being told that I look
-                                                    like my mom. Seeing myself in her image, like this daughter up
-                                                    top.</p>
-                                                <ul class="social-icon social-default transparent-with-border justify-content-start">
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="feather-thumbs-up"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="feather-thumbs-down"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="rbt-course-review about-author">
-                                    <div class="media">
-                                        <div class="thumbnail">
-                                            <a href="#">
-                                                <img src="{{ asset('assets/images/testimonial/testimonial-8.jpg') }}"
-                                                     alt="Author Images">
-                                            </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="author-info">
-                                                <h5 class="title">
-                                                    <a class="hover-flip-item-wrapper" href="#">Sakib Al Hasan</a>
-                                                </h5>
-                                                <div class="rating">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <p class="description">My favorite compliment is being told that I look
-                                                    like my mom. Seeing myself in her image, like this daughter up
-                                                    top.</p>
-                                                <ul class="social-icon social-default transparent-with-border justify-content-start">
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="feather-thumbs-up"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="feather-thumbs-down"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="rbt-show-more-btn">Show More</div>
-                        </div>
 
 
                     </div>
@@ -1067,112 +852,18 @@
 
                         </div>
                         <div class="row g-5">
-                            <!-- Start Single Card  -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
-                                 data-sal-duration="800">
-                                <div class="rbt-card variation-01 rbt-hover">
-                                    <div class="rbt-card-img">
-                                        <a href="course-details.html">
-                                            <img src="{{ asset('assets/images/course/A1.jpg') }}" alt="Card image">
 
-                                        </a>
-                                    </div>
-                                    <div class="rbt-card-body">
-                                        <div class="rbt-card-top">
-                                            <div class="rbt-review">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <span class="rating-count"> (15 Avis)</span>
-                                            </div>
-                                            <div class="rbt-bookmark-btn">
-                                                <a class="rbt-round-btn" title="Bookmark" href="#"><i
-                                                        class="feather-bookmark"></i></a>
-                                            </div>
-                                        </div>
-
-                                        <h4 class="rbt-card-title"><a href="course-details.html">Allemand A1
-                                            </a>
-                                        </h4>
-
-
-                                        <p class="rbt-card-text">"Une personne de niveau A1 en allemand peut comprendre
-                                            et utiliser des expressions simples de la vie quotidienne…
-                                        </p>
-
-                                        <div class="rbt-card-bottom">
-                                            <div class="rbt-price">
-                                                <span class="current-price">$60</span>
-                                                <span class="off-price">$120</span>
-                                            </div>
-                                            <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i
-                                                    class="feather-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Card  -->
-
-                            <!-- Start Single Card  -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
-                                 data-sal-duration="800">
-                                <div class="rbt-card variation-01 rbt-hover">
-                                    <div class="rbt-card-img">
-                                        <a href="course-details.html">
-                                            <img src="{{ asset('assets/images/course/B1.jpg') }}" alt="Card image">
-
-                                        </a>
-                                    </div>
-                                    <div class="rbt-card-body">
-                                        <div class="rbt-card-top">
-                                            <div class="rbt-review">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <span class="rating-count"> (15 Avis)</span>
-                                            </div>
-                                            <div class="rbt-bookmark-btn">
-                                                <a class="rbt-round-btn" title="Bookmark" href="#"><i
-                                                        class="feather-bookmark"></i></a>
-                                            </div>
-                                        </div>
-
-                                        <h4 class="rbt-card-title"><a href="course-details.html">Allemand B1
-                                            </a>
-                                        </h4>
-
-
-                                        <p class="rbt-card-text">Une personne de niveau B1 en allemand est capable
-                                            d'interagir dans des situations courantes..</p>
-
-                                        <div class="rbt-card-bottom">
-                                            <div class="rbt-price">
-                                                <span class="current-price">$60</span>
-                                                <span class="off-price">$120</span>
-                                            </div>
-                                            <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i
-                                                    class="feather-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row g-5">
-                                <!-- Start Single Card  -->
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt--50" data-sal-delay="150"
-                                     data-sal="slide-up" data-sal-duration="800">
+                            @foreach ($courses as $course)
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
+                                     data-sal-duration="800">
                                     <div class="rbt-card variation-01 rbt-hover">
                                         <div class="rbt-card-img">
-                                            <a href="course-details.html">
-                                                <img src="{{ asset('assets/images/course/B2.jpg') }}" alt="Card image">
-
+                                            <a href="{{url('/Language/Course/'.$course->level)}}">
+                                                <img src="{{asset('./uploads/Course/'.$course->image)}}" alt="Card image">
+                                                <div class="rbt-badge-3 bg-white">
+                                                    <span>-40%</span>
+                                                    <span>Off</span>
+                                                </div>
                                             </a>
                                         </div>
                                         <div class="rbt-card-body">
@@ -1185,86 +876,49 @@
                                                         <i class="fas fa-star"></i>
                                                         <i class="fas fa-star"></i>
                                                     </div>
-                                                    <span class="rating-count"> (15 Avis)</span>
+                                                    <span class="rating-count"> (15 Reviews)</span>
                                                 </div>
-                                                <div class="rbt-bookmark-btn">
-                                                    <a class="rbt-round-btn" title="Bookmark" href="#"><i
-                                                            class="feather-bookmark"></i></a>
-                                                </div>
+
                                             </div>
 
-                                            <h4 class="rbt-card-title"><a href="course-details.html">Allemand B2
-                                                </a>
+                                            <h4 class="rbt-card-title"><a href="{{url('/Language/Course/'.$course->level)}}">{{$course->level}}</a>
                                             </h4>
 
+                                            <ul class="rbt-meta">
+                                                <li><i class="feather-book"></i>6 Modules</li>
+                                                <li><i class="feather-users"></i>50 Etudiants</li>
+                                            </ul>
 
-                                            <p class="rbt-card-text">Au niveau B2 en allemand, la personne est capable
-                                                de communiquer de manière avancée et précise....
-                                            </p>
-
-                                            <div class="rbt-card-bottom">
-                                                <div class="rbt-price">
-                                                    <span class="current-price">$60</span>
-                                                    <span class="off-price">$120</span>
+                                            <p class="rbt-card-text">{{ substr($course->overview, 0, 85) }}...</p>
+                                            <div class="rbt-author-meta mb--10">
+                                                <div class="rbt-avater">
+                                                    <a href="#">
+                                                        <img src="{{ asset('assets/images/client/avatar-02.png') }}" alt="Sophia Jaymes">
+                                                    </a>
                                                 </div>
-                                                <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i
-                                                        class="feather-arrow-right"></i></a>
+                                                <div class="rbt-author-info">
+                                                    By <a href="profile.html">Professor</a> In <a href="#">{{$course->language->overview}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="rbt-card-bottom">
+                                                    <?php
+                                                    $price = $course->price;
+                                                    $totalPrice = $price + ($price * 0.4); // Price + 40% of the price
+                                                    ?>
+
+                                                <div class="rbt-price">
+                                                    <span class="current-price">{{$price}} MAD</span>
+                                                    <span class="off-price">{{$totalPrice}} MAD</span>
+                                                </div>
+                                                <a class="rbt-btn-link" href="{{url('/Language/Course/'.$course->level)}}">S'avoir
+                                                    Plus<i class="feather-arrow-right"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End Single Card  -->
-
-                                <!-- Start Single Card  -->
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt--50" data-sal-delay="150"
-                                     data-sal="slide-up" data-sal-duration="800">
-                                    <div class="rbt-card variation-01 rbt-hover">
-                                        <div class="rbt-card-img">
-                                            <a href="course-details.html">
-                                                <img src="{{ asset('assets/images/course/C1.jpg') }}" alt="Card image">
-
-                                            </a>
-                                        </div>
-                                        <div class="rbt-card-body">
-                                            <div class="rbt-card-top">
-                                                <div class="rbt-review">
-                                                    <div class="rating">
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                    </div>
-                                                    <span class="rating-count"> (15 Avis)</span>
-                                                </div>
-                                                <div class="rbt-bookmark-btn">
-                                                    <a class="rbt-round-btn" title="Bookmark" href="#"><i
-                                                            class="feather-bookmark"></i></a>
-                                                </div>
-                                            </div>
-
-                                            <h4 class="rbt-card-title"><a href="course-details.html">Allemand C1
-                                                </a>
-                                            </h4>
+                            @endforeach
 
 
-                                            <p class="rbt-card-text">Une personne de niveau C1 en allemand maîtrise la
-                                                langue de manière avancée et peut communiquer avec aisance et
-                                                spontanéité.. </p>
-
-                                            <div class="rbt-card-bottom">
-                                                <div class="rbt-price">
-                                                    <span class="current-price">$60</span>
-                                                    <span class="off-price">$120</span>
-                                                </div>
-                                                <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i
-                                                        class="feather-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Card  -->
-                            </div>
                             <!-- End Single Card  -->
                         </div>
                     </div>
@@ -1334,104 +988,73 @@
                 </div>
                 <div class="row g-5">
                     <!-- Start Single Card  -->
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
-                         data-sal-duration="800">
-                        <div class="rbt-card variation-01 rbt-hover">
-                            <div class="rbt-card-img">
-                                <a href="course-details.html">
-                                    <img src="{{ asset('assets/images/course/DSH.jpg') }}" alt="Card image">
-                                </a>
-                            </div>
-                            <div class="rbt-card-body">
-                                <div class="rbt-card-top">
-                                    <div class="rbt-review">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
+
+                        @foreach ($tests as $test)
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
+                             data-sal-duration="800">
+                                <div class="rbt-card variation-01 rbt-hover">
+                                    <div class="rbt-card-img">
+                                        <a href="{{url('/Language/Test/'.$test->level)}}">
+                                            <img src="{{asset('./uploads/Course/'.$test->image)}}" alt="Card image">
+                                            <div class="rbt-badge-3 bg-white">
+                                                <span>-40%</span>
+                                                <span>Off</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="rbt-card-body">
+                                        <div class="rbt-card-top">
+                                            <div class="rbt-review">
+                                                <div class="rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="rating-count"> (15 Reviews)</span>
+                                            </div>
+                                            <div class="rbt-bookmark-btn">
+                                                <a class="rbt-round-btn" title="Bookmark" href="#"><i
+                                                        class="feather-bookmark"></i></a>
+                                            </div>
                                         </div>
-                                        <span class="rating-count"> (15 Avis)</span>
-                                    </div>
-                                    <div class="rbt-bookmark-btn">
-                                        <a class="rbt-round-btn" title="Bookmark" href="#"><i
-                                                class="feather-bookmark"></i></a>
-                                    </div>
-                                </div>
 
-                                <h4 class="rbt-card-title"><a href="course-details.html">Test DSH
-                                    </a>
-                                </h4>
+                                        <h4 class="rbt-card-title"><a href="{{url('/Language/Test/'.$test->level)}}">{{$test->level}}</a>
+                                        </h4>
 
+                                        <ul class="rbt-meta">
+                                            <li><i class="feather-book"></i>12 Lessons</li>
+                                            <li><i class="feather-users"></i>50 Students</li>
+                                        </ul>
 
-                                <p class="rbt-card-text">Le DSH est un examen de compétences en langue allemande qui
-                                    vous permet d’étudier dans une université allemande. L’examen écrit comprend 3
-                                    parties: compréhension orale, compréhension écrite et rédaction (durée totale: 4
-                                    heures). L’examen oral dure environ 20 minutes.</p>
-
-                                <div class="rbt-card-bottom">
-                                    <div class="rbt-price">
-                                        <span class="current-price">$60</span>
-                                        <span class="off-price">$120</span>
-                                    </div>
-                                    <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i
-                                            class="feather-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Card  -->
-                    <!-- Start Single Card  -->
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
-                         data-sal-duration="800">
-                        <div class="rbt-card variation-01 rbt-hover">
-                            <div class="rbt-card-img">
-                                <a href="course-details.html">
-                                    <img src="{{ asset('assets/images/course/DAF.jpg') }}" alt="Card image">
-                                </a>
-                            </div>
-                            <div class="rbt-card-body">
-                                <div class="rbt-card-top">
-                                    <div class="rbt-review">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
+                                        <p class="rbt-card-text">It is a long established fact that a reader will be
+                                            distracted.</p>
+                                        <div class="rbt-author-meta mb--10">
+                                            <div class="rbt-avater">
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/client/avatar-02.png') }}" alt="Sophia Jaymes">
+                                                </a>
+                                            </div>
+                                            <div class="rbt-author-info">
+                                                By <a href="profile.html">Professor</a> In <a href="#">{{$test->language->name}}</a>
+                                            </div>
                                         </div>
-                                        <span class="rating-count"> (15 Avis)</span>
-                                    </div>
-                                    <div class="rbt-bookmark-btn">
-                                        <a class="rbt-round-btn" title="Bookmark" href="#"><i
-                                                class="feather-bookmark"></i></a>
+                                        <div class="rbt-card-bottom">
+                                            <div class="rbt-price">
+                                                <span class="current-price">$60</span>
+                                                <span class="off-price">$120</span>
+                                            </div>
+                                            <a class="rbt-btn-link" href="{{url('/Language/Test/'.$test->level)}}">Learn
+                                                More<i class="feather-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <h4 class="rbt-card-title"><a href="course-details.html">Test DAF
-                                    </a>
-                                </h4>
-
-
-                                <p class="rbt-card-text">Le Test DAF est un examen destiné aux personnes étrangères qui
-                                    apprennent l’allemand et qui souhaitent étudier en Allemagne, ou qui ont besoin d’un
-                                    certificat qui atteste de leurs compétences linguistiques. Le résultat
-                                    attribué correspond à l’un des 3 niveaux mentionnés dans le « Cadre Européen Commun
-                                    de Référence pour les Langues » (de B2 à C2). </p>
-
-                                <div class="rbt-card-bottom">
-                                    <div class="rbt-price">
-                                        <span class="current-price">$60</span>
-                                        <span class="off-price">$120</span>
-                                    </div>
-                                    <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i
-                                            class="feather-arrow-right"></i></a>
-                                </div>
-                            </div>
                         </div>
-                    </div>
+
+                    @endforeach
                     <!-- End Single Card  -->
+
                 </div>
             </div>
         </div>
@@ -1445,7 +1068,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6">
                         <div class="section-title text-center text-md-start">
-                            <h5 class="title mb--0">Saisissez votre chance et inscrivez-vous à l'Institut Munich!</h5>
+                            <h5 class="title mb--0">Inscrivez-vous à l'Institut Munich!</h5>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 mt_sm--15">
