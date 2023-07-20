@@ -43,6 +43,19 @@ class HomeController extends Controller
         return view('user.politiques');
     }
 
+
+    public function aboutUs()
+    {
+        return view('user.aboutus');
+    }
+
+
+    public function blog()
+    {
+        return view('user.blog');
+    }
+
+
     public function getLanguageCourses($languageName)
     {
         $languages = Language::all();

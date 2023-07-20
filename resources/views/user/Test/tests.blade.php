@@ -15,22 +15,22 @@
                             <div class="col-lg-12">
                                 <!-- Start Breadcrumb Area  -->
                                 <ul class="page-list">
-                                    <li class="rbt-breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="rbt-breadcrumb-item"><a href="index.html">Accueil</a></li>
                                     <li>
                                         <div class="icon-right"><i class="feather-chevron-right"></i></div>
                                     </li>
-                                    <li class="rbt-breadcrumb-item active">All Courses</li>
+                                    <li class="rbt-breadcrumb-item active">Tous les Tests</li>
                                 </ul>
                                 <!-- End Breadcrumb Area  -->
 
                                 <div class=" title-wrapper">
-                                    <h1 class="title mb--0">All Courses</h1>
+                                    <h1 class="title mb--0">Les Tests</h1>
                                     <a href="#" class="rbt-badge-2">
-                                        <div class="image">🎉</div> 50 Courses
+                                        <div class="image">🎉</div> 3 Tests
                                     </a>
                                 </div>
 
-                                <p class="description">Courses that help beginner designers become true unicorns. </p>
+                                <p class="description">Des tests pour évaluer vos compétences en allemand !</p>
                             </div>
                         </div>
                     </div>
@@ -49,9 +49,7 @@
                                             <li class="course-switch-item"><button class="rbt-list-view" title="List Layout"><i class="feather-list"></i> <span class="text">List</span></button></li>
                                         </ul>
                                     </div>
-                                    <div class="rbt-short-item">
-                                        <span class="course-index">Showing 1-9 of 19 results</span>
-                                    </div>
+
                                 </div>
                             </div>
 
@@ -59,104 +57,18 @@
                                 <div class="rbt-sorting-list d-flex flex-wrap align-items-center justify-content-start justify-content-lg-end">
                                     <div class="rbt-short-item">
                                         <form action="#" class="rbt-search-style me-0">
-                                            <input type="text" placeholder="Search Your Course..">
+                                            <input type="text" placeholder="Cherche Votre Test..">
                                             <button type="submit" class="rbt-search-btn rbt-round-btn">
                                                 <i class="feather-search"></i>
                                             </button>
                                         </form>
                                     </div>
 
-                                    <div class="rbt-short-item">
-                                        <div class="view-more-btn text-start text-sm-end">
-                                            <button class="discover-filter-button discover-filter-activation rbt-btn btn-white btn-md radius-round">Filter<i class="feather-filter"></i></button>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Start Filter Toggle  -->
-                        <div class="default-exp-wrapper default-exp-expand">
-                            <div class="filter-inner">
-                                <div class="filter-select-option">
-                                    <div class="filter-select rbt-modern-select">
-                                        <span class="select-label d-block">Short By</span>
-                                        <select>
-                                            <option>Default</option>
-                                            <option>Latest</option>
-                                            <option>Popularity</option>
-                                            <option>Trending</option>
-                                            <option>Price: low to high</option>
-                                            <option>Price: high to low</option>
-                                        </select>
-                                    </div>
-                                </div>
 
-                                <div class="filter-select-option">
-                                    <div class="filter-select rbt-modern-select">
-                                        <span class="select-label d-block">Short By Author</span>
-                                        <select data-live-search="true" title="Select Author" multiple data-size="7" data-actions-box="true" data-selected-text-format="count > 2">
-                                            <option data-subtext="Experts">Janin Afsana</option>
-                                            <option data-subtext="Experts">Joe Biden</option>
-                                            <option data-subtext="Experts">Fatima Asrafy</option>
-                                            <option data-subtext="Experts">Aysha Baby</option>
-                                            <option data-subtext="Experts">Mohamad Ali</option>
-                                            <option data-subtext="Experts">Jone Li</option>
-                                            <option data-subtext="Experts">Alberd Roce</option>
-                                            <option data-subtext="Experts">Zeliski Noor</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="filter-select-option">
-                                    <div class="filter-select rbt-modern-select">
-                                        <span class="select-label d-block">Short By Offer</span>
-                                        <select>
-                                            <option>Free</option>
-                                            <option>Paid</option>
-                                            <option>Premium</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="filter-select-option">
-                                    <div class="filter-select rbt-modern-select">
-                                        <span class="select-label d-block">Short By Category</span>
-                                        <select data-live-search="true">
-                                            <option>Web Design</option>
-                                            <option>Graphic</option>
-                                            <option>App Development</option>
-                                            <option>Figma Design</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="filter-select-option">
-                                    <div class="filter-select">
-                                        <span class="select-label d-block">Price Range</span>
-
-                                        <div class="price_filter s-filter clear">
-                                            <form action="#" method="GET">
-                                                <div id="slider-range"></div>
-                                                <div class="slider__range--output">
-                                                    <div class="price__output--wrap">
-                                                        <div class="price--output">
-                                                            <span>Price :</span><input type="text" id="amount">
-                                                        </div>
-                                                        <div class="price--filter">
-                                                            <a class="rbt-btn btn-gradient btn-sm" href="#">Filter</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Filter Toggle  -->
                     </div>
                 </div>
                 <!-- End Course Top  -->
@@ -206,8 +118,7 @@
                                             <li><i class="feather-users"></i>50 Students</li>
                                         </ul>
 
-                                        <p class="rbt-card-text">It is a long established fact that a reader will be
-                                            distracted.</p>
+                                        <p class="rbt-card-text">{{ substr($test->overview, 0, 85) }}...</p>
                                         <div class="rbt-author-meta mb--10">
                                             <div class="rbt-avater">
                                                 <a href="#">
@@ -219,9 +130,14 @@
                                             </div>
                                         </div>
                                         <div class="rbt-card-bottom">
+                                                <?php
+                                                $price = $test->price;
+                                                $totalPrice = $price + ($price * 0.4); // Price + 40% of the price
+                                                ?>
+
                                             <div class="rbt-price">
-                                                <span class="current-price">$60</span>
-                                                <span class="off-price">$120</span>
+                                                <span class="current-price">{{$price}} MAD</span>
+                                                <span class="off-price">{{$totalPrice}} MAD</span>
                                             </div>
                                             <a class="rbt-btn-link" href="{{url('/Language/Test/'.$test->level)}}">Learn
                                                 More<i class="feather-arrow-right"></i></a>
@@ -231,23 +147,11 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12 mt--60">
-                            <nav>
-                                <ul class="rbt-pagination">
-                                    <li><a href="#" aria-label="Previous"><i class="feather-chevron-left"></i></a></li>
-                                    <li><a href="#">1</a></li>
-                                    <li class="active"><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#" aria-label="Next"><i class="feather-chevron-right"></i></a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
     </main>
-@include('layouts.inc.admin.footer')
+    @include('layouts.inc.admin.footer')
 
 @endsection

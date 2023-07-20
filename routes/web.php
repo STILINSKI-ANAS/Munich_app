@@ -31,6 +31,8 @@ Route::prefix('/')->group(function () {
     Route::controller(\App\Http\Controllers\HomeController::class)->group(function () {
         Route::get('/', 'index');
         Route::get('/privacy-policy', 'privacyPolicy');
+        Route::get('/blog', 'blog');
+
         Route::get('/{Language}/Courses', 'getLanguageCourses');
         Route::get('/Language/Course/{Course}', 'getCourse');
         Route::get('/{Language}/Tests', 'getLanguageTests');
