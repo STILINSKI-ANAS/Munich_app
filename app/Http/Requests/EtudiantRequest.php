@@ -29,6 +29,7 @@ class EtudiantRequest extends FormRequest
             'tel'=>['required','string'],
             'addresse'=>['required','string'],
             'dateNaissance'=>['required','string'],
+            'email'=>['required','string'],
             'status' => ['nullable', 'string'],
             'status_pro' => ['nullable', 'string'],
             'Cours_options' => ['nullable', 'string'],

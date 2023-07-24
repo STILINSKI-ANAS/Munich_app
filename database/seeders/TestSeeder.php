@@ -15,7 +15,7 @@ class TestSeeder extends Seeder
     {
 
         Test::create([
-            'level' => 'Intermediate',
+            'level' => 'DAF',
             'name' => 'TOEFL',
             'overview' => 'TOEFL Test Overview',
             'content' => 'TOEFL Test Content',
@@ -27,7 +27,7 @@ class TestSeeder extends Seeder
         ]);
 
         Test::create([
-            'level' => 'Advanced',
+            'level' => 'WIDAF',
             'name' => 'TOEIC',
             'overview' => 'TOEIC Test Overview',
             'content' => 'TOEIC Test Content',
@@ -39,7 +39,7 @@ class TestSeeder extends Seeder
         ]);
 
         Test::create([
-            'level' => 'Intermediate',
+            'level' => 'DSH',
             'name' => 'TELC',
             'overview' => 'TELC Test Overview',
             'content' => 'TELC Test Content',

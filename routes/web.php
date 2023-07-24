@@ -40,6 +40,9 @@ Route::prefix('/')->group(function () {
         Route::get('/Language/Test/{Test}', 'getTest');
         Route::get('/Language/Course/{courseId}', 'HomeController@getCourse')->name('getCourse');
     });
+    Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
+        Route::post('/EtudiantTest', 'store');
+    });
 });
 
 

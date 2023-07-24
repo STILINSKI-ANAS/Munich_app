@@ -25,4 +25,9 @@ class Test extends Model
     {
         return $this->belongsTo(Language::class);
     }
+
+    public function etudiants()
+    {
+        return $this->belongsToMany(Etudiant::class, 'etudiant_tests', 'test_id', 'etudiant_id')->withTimestamps();
+    }
 }
