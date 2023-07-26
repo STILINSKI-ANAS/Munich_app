@@ -4,20 +4,20 @@
             <div class="content">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="{{asset('assets/images/logo/logo.png')}}" alt="Education Logo Images">
+                        <img src="{{ asset('assets/images/logo/logo-full-white.png') }}" alt="Institut Munich Logo">
                     </a>
                 </div>
                 <div class="rbt-btn-close">
                     <button class="close-button rbt-round-btn"><i class="feather-x"></i></button>
                 </div>
             </div>
-            <p class="description">Histudy is a education website template. You can customize all.</p>
+            <p class="description">Institut Munich : Cours de langues, examens et plus pour une expérience immersive d'apprentissage et de développement personnel.</p>
             <ul class="navbar-top-left rbt-information-list justify-content-start">
                 <li>
-                    <a href="mailto:hello@example.com"><i class="feather-mail"></i>example@gmail.com</a>
+                    <a href="mailto:info@institut-munich.ma"><i class="feather-mail"></i>info@institut-munich.ma</a>
                 </li>
                 <li>
-                    <a href="#"><i class="feather-phone"></i>(302) 555-0107</a>
+                    <a href="#"><i class="feather-phone"></i>+212-615-845-697</a>
                 </li>
             </ul>
         </div>
@@ -34,9 +34,9 @@
                     <!-- Start Mega Menu  -->
                     <div class="rbt-megamenu grid-item-2">
                         <ul class="submenu">
-                            <li><a href="instructor-dashboard.html">Englais</a></li>
-                            <li><a href="instructor-profile.html" class="active">Français</a></li>
-
+                            @foreach($languages as $language)
+                                <li class="has-dropdown"><a href="{{url('/'.$language->name.'/Courses/')}}">{{$language->name}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <!-- End Mega Menu  -->
@@ -48,9 +48,9 @@
                     <!-- Start Mega Menu  -->
                     <div class="rbt-megamenu grid-item-2">
                         <ul class="submenu">
-                            <li><a href="instructor-dashboard.html">Englais</a></li>
-                            <li><a href="instructor-profile.html" class="active">Français</a></li>
-
+                            @foreach($languages as $language)
+                                <li class="has-dropdown"><a href="{{url('/'.$language->name.'/Tests/')}}">{{$language->name}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <!-- End Mega Menu  -->
@@ -64,19 +64,21 @@
                 <li class="with-megamenu position-static">
                     <a href="#">Formation Continue</a>
                 </li>
-
+                <li class="with-megamenu has-menu-child-item position-static">
+                    <a href="{{ url('/aboutUs') }}">l'instut</a>
+                </li>
             </ul>
         </nav>
 
         <div class="mobile-menu-bottom">
             <div class="rbt-btn-wrapper mb--20">
                 <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center" href="#">
-                    <span>Enroll Now</span>
+                    <span>s'inscrire</span>
                 </a>
             </div>
 
             <div class="social-share-wrapper">
-                <span class="rbt-short-title d-block">Find With Us</span>
+                <span class="rbt-short-title d-block">Nous Suivre</span>
                 <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
                     <li><a href="https://www.facebook.com/">
                             <i class="feather-facebook"></i>
