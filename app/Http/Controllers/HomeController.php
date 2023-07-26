@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Course;
 use App\Models\Language;
+use App\Models\Subscriber;
 use App\Models\Test;
 use Illuminate\Http\Request;
 
@@ -119,5 +120,20 @@ class HomeController extends Controller
             'test' => $test,
             'languages' => $languages
         ]);
+    }
+
+    public function subscribe(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|unique:subscribers,email',
+        ]);
+
+        $subscriber = new Subscriber([
+            'email' => $request->input('email'),
+        ]);
+
+        $subscriber->save();
+
+        return redirect()->back()->with('success', 'Successfully subscribed to the newsletter.');
     }
 }

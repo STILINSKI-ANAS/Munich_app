@@ -275,13 +275,13 @@
                                 <div class="col-lg-12">
                                     <div class="inner">
                                         <div class="rbt-category mb--20">
-                                            <a href="#">Devenir Enseignant</a>
+                                            <a href="{{ url('/Instructor/register') }}">Devenir Enseignant</a>
                                         </div>
                                         <p class="mb--15">
                                             Si vous aspirez à devenir enseignant, nous sommes là pour vous aider à réaliser votre ambition.<br>
                                         Ensemble, nous pouvons façonner l'avenir de l'éducation.</p>
                                         <div class="about-btn mt--40">
-                                            <a class="rbt-btn btn-gradient hover-icon-reverse" href="#">
+                                            <a class="rbt-btn btn-gradient hover-icon-reverse" href="{{ url('/Instructor/register') }}">
                                     <span class="icon-reverse-wrapper">
                             <span class="btn-text">Rejoignez maintenant</span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -1238,8 +1238,9 @@
                                 <h2 class="title color-white"><strong>Abonnez-Vous</strong> À Notre Newsletter</h2>
                                 <p class="description color-white mt--20">Recevoir des informations sur nos cours, nos événements spéciaux et nos offres exclusives.</p>
                             </div>
-                            <form action="#" class="newsletter-form-1 mt--40">
-                                <input type="email" placeholder="Entrez votre adresse e-mail">
+                            <form action="{{ url('/Subscribe')}}" method="post" class="newsletter-form-1 mt--40">
+                                    @csrf
+                                <input type="email" name="email" placeholder="Entrez votre adresse e-mail">
                                 <button type="submit" class="rbt-btn btn-md btn-gradient hover-icon-reverse">
                                     <span class="icon-reverse-wrapper">
                             <span class="btn-text">S'abonner</span>

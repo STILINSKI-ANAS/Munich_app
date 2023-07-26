@@ -32,6 +32,8 @@ Route::prefix('/')->group(function () {
         Route::get('/', 'index');
         Route::get('/privacy-policy', 'privacyPolicy');
         Route::get('/blog', 'blog');
+        Route::post('/Subscribe', 'subscribe');
+
         Route::get('/aboutUs', 'aboutUs');
 
         Route::get('/{Language}/Courses', 'getLanguageCourses');
@@ -39,6 +41,10 @@ Route::prefix('/')->group(function () {
         Route::get('/{Language}/Tests', 'getLanguageTests');
         Route::get('/Language/Test/{Test}', 'getTest');
         Route::get('/Language/Course/{courseId}', 'HomeController@getCourse')->name('getCourse');
+    });
+    Route::controller(\App\Http\Controllers\InstructorController::class)->group(function () {
+        Route::get('/Instructor/register', 'index');
+        Route::post('/Instructor/Register', 'store');
     });
     Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
         Route::post('/EtudiantTest', 'store');
