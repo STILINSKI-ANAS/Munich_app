@@ -15,6 +15,7 @@ class Etudiant extends Model
         'prenom',
         'cin',
         'tel',
+        'email',
         'addresse',
         'dateNaissance',
         'status',

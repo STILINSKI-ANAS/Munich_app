@@ -1,6 +1,8 @@
 <?php
 
+use App\Mail\EmailService;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +44,9 @@ Route::prefix('/')->group(function () {
     });
     Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
         Route::post('/EtudiantTest', 'store');
+    });
+    Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
+        Route::get('/EtudiantTests', 'showTests');
     });
 });
 
