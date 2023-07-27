@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Language;
+use App\Models\Test;
 use Illuminate\Http\Request;
 
 class InstructorController extends Controller
@@ -11,7 +14,15 @@ class InstructorController extends Controller
      */
     public function index()
     {
-        return view('user.Instructor.register');
+
+        $languages = Language::all();
+        $tests = Test::all();
+        $categories = Category::all();
+        return view('user.Instructor.register')->with([
+            'languages' => $languages,
+            'tests' => $tests,
+            'categories'=>$categories
+        ]);
     }
 
     /**
