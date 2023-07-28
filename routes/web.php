@@ -34,6 +34,12 @@ Route::prefix('/')->group(function () {
         Route::get('/', 'index');
         Route::get('/privacy-policy', 'privacyPolicy');
         Route::get('/blog', 'blog');
+        Route::get('/blog1', 'blog1');
+        Route::get('/blog2', 'blog2');
+        Route::get('/blog3', 'blog3');
+        Route::get('/blog4', 'blog4');
+        Route::get('/blog5', 'blog5');
+
         Route::post('/Subscribe', 'subscribe');
 
         Route::get('/aboutUs', 'aboutUs');

@@ -78,6 +78,67 @@ class HomeController extends Controller
         ]);
     }
 
+    public function blog1()
+    {
+        $languages = Language::all();
+        $tests = Test::all();
+        $categories = Category::all();
+        return view('user.Blogs.blogDetails1')->with([
+            'languages' => $languages,
+            'tests' => $tests,
+            'categories'=>$categories
+        ]);
+    }
+
+    public function blog2()
+    {
+        $languages = Language::all();
+        $tests = Test::all();
+        $categories = Category::all();
+        return view('user.Blogs.blogDetails2')->with([
+            'languages' => $languages,
+            'tests' => $tests,
+            'categories'=>$categories
+        ]);
+    }
+
+    public function blog3()
+    {
+        $languages = Language::all();
+        $tests = Test::all();
+        $categories = Category::all();
+        return view('user.Blogs.blogDetails3')->with([
+            'languages' => $languages,
+            'tests' => $tests,
+            'categories'=>$categories
+        ]);
+    }
+
+    public function blog4()
+    {
+        $languages = Language::all();
+        $tests = Test::all();
+        $categories = Category::all();
+        return view('user.Blogs.blogDetails4')->with([
+            'languages' => $languages,
+            'tests' => $tests,
+            'categories'=>$categories
+        ]);
+    }
+    public function blog5()
+    {
+        $languages = Language::all();
+        $tests = Test::all();
+        $categories = Category::all();
+        return view('user.Blogs.blogDetails5')->with([
+            'languages' => $languages,
+            'tests' => $tests,
+            'categories'=>$categories
+        ]);
+    }
+
+
+
 
     public function getLanguageCourses($languageName)
     {
