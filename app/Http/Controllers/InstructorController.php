@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Instructor;
 use App\Models\Language;
 use App\Models\Test;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class InstructorController extends Controller
     /**
      * Process the instructor registration form submission.
      */
-    public function register(Request $request)
+    public function store(Request $request)
     {
         // Validate the form data
         $request->validate([
@@ -44,6 +45,7 @@ class InstructorController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Assuming image uploads with a maximum size of 2MB
             'national_id' => 'nullable|string|max:255',
         ]);
+
 
         // Handle file uploads
         $cvPath = null;
@@ -73,9 +75,15 @@ class InstructorController extends Controller
         ]);
 
         // Save the instructor record to the database
-        $instructor->save();
+        if ($instructor->save()) {
+            // Redirect to a success page or show a success message
+            return redirect()->route('instructor.register')->with('success', 'Instructor registration successful!');
+        } else {
+            // If there was an error, display it to identify the issue
+            dd("Error: Unable to save instructor record.");
+        }
 
-        // Redirect to a success page or show a success message
-        return redirect()->route('instructor.register')->with('success', 'Instructor registration successful!');
+
+
     }
 }
