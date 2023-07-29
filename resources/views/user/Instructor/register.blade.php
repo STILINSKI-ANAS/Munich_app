@@ -90,7 +90,7 @@
                         <h3 class="title">Inscription de l'instructeur</h3>
                         <hr class="mb--30">
 
-                        <form action="{{ url('/Instructor/Register')}}"  method="post" enctype="multipart/form-data" class="row row--15">
+                        <form action="{{ url('/Instructor/Register') }}" method="post" enctype="multipart/form-data" class="row row--15">
                             @csrf
                             <div class="col-lg-6">
                                 <div class="form-group">
@@ -109,7 +109,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input name="last_name" type="text">
+                                    <input name="national_id" type="text">
                                     <label>CIN || Passeport</label>
                                     <span class="focus-border"></span>
                                 </div>
@@ -123,13 +123,11 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input name="con_email" type="email">
+                                    <input name="email" type="email">
                                     <label>Email</label>
                                     <span class="focus-border"></span>
                                 </div>
                             </div>
-
-
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <input name="phone" type="tel">
@@ -145,9 +143,6 @@
                                     <span class="focus-border"></span>
                                 </div>
                             </div>
-
-
-
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <input name="specialisation" type="text">
@@ -155,8 +150,6 @@
                                     <span class="focus-border"></span>
                                 </div>
                             </div>
-
-
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <textarea name="description"></textarea>

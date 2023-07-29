@@ -818,8 +818,9 @@
                             <h2 class="title color-white">Inscrivez-vous</h2>
                             <p class="description color-white mt--20">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam explicabo sit est eos earum reprehenderit inventore nam autem corrupti rerum!</p>
                         </div>
-                        <form action="#" class="newsletter-form-1 mt--40">
-                            <input type="email" placeholder="Entrez Votre Adresse E-mail">
+                        <form action="{{ url('/Subscribe')}}" method="post" class="newsletter-form-1 mt--40">
+                            @csrf
+                            <input name="email" type="email" placeholder="Entrez Votre Adresse E-mail">
                             <button type="submit" class="rbt-btn btn-md btn-gradient hover-icon-reverse">
                                 <span class="icon-reverse-wrapper">
                             <span class="btn-text">Inscrivez-vous</span>

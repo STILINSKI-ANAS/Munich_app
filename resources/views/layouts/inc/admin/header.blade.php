@@ -106,8 +106,15 @@
                             <li class="with-megamenu has-menu-child-item position-static">
                                 <a href="#">Formation continue</a>
                             </li>
-                            <li class="with-megamenu has-menu-child-item position-static">
-                                <a href="{{ url('/aboutUs') }}">l'instut</a>
+                            <li class="has-dropdown has-menu-child-item">
+                                <a href="#">l'instut
+                                    <i class="feather-chevron-down"></i>
+                                </a>
+                                <ul class="submenu">
+                                        <li class="has-dropdown"><a href="{{ url('/aboutUs') }}">A Propos De Nous</a></li>
+                                    <li class="has-dropdown"><a href="{{ url('/blog') }}">Articles</a></li>
+
+                                </ul>
                             </li>
                         </ul>
                     </nav>
