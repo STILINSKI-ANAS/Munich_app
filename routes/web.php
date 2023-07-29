@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Admin\Inscriptions\TestsInscriptions\Index;
 use App\Mail\EmailService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -50,6 +51,9 @@ Route::prefix('/')->group(function () {
     });
     Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
         Route::post('/EtudiantTest', 'store');
+    });
+    Route::controller(\App\Http\Controllers\EtudiantCourseController::class)->group(function () {
+        Route::post('/EtudiantCourse', 'store');
     });
     Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
         Route::get('/EtudiantTests', 'showTests');
@@ -113,4 +117,6 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('Tests', [\App\Http\Controllers\Admin\TestsController::class, 'index']);
     Route::get('Orders', [\App\Http\Controllers\Admin\OrdersController::class, 'index']);
     Route::get('Clients', [\App\Http\Controllers\Admin\ClientsController::class, 'index']);
+    Route::get('CoursInscriptions', [\App\Http\Controllers\Admin\CoursInscriptionsController::class, 'index']);
+    Route::get('TestsInscriptions', [\App\Http\Controllers\Admin\TestsInscriptionsController::class, 'index']);
 });

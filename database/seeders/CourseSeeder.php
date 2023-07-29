@@ -19,7 +19,7 @@ class CourseSeeder extends Seeder
         $language = Language::first();
 
         Course::create([
-            'level' => 'Beginner',
+            'level' => 'Niveau A1',
             'overview' => 'Introduction to the course',
             'content' => 'Course content for beginners',
             'time' => '2 hours',
@@ -29,7 +29,27 @@ class CourseSeeder extends Seeder
         ]);
 
         Course::create([
-            'level' => 'Intermediate',
+            'level' => 'Niveau B1',
+            'overview' => 'Intermediate course overview',
+            'content' => 'Course content for intermediate learners',
+            'time' => '3 hours',
+            'image' => 'course2.jpg',
+            'price' => 39.99,
+            'language_id' => $language->id,
+        ]);
+
+        Course::create([
+            'level' => 'Niveau B2',
+            'overview' => 'Intermediate course overview',
+            'content' => 'Course content for intermediate learners',
+            'time' => '3 hours',
+            'image' => 'course2.jpg',
+            'price' => 39.99,
+            'language_id' => $language->id,
+        ]);
+
+        Course::create([
+            'level' => 'Niveau C1',
             'overview' => 'Intermediate course overview',
             'content' => 'Course content for intermediate learners',
             'time' => '3 hours',

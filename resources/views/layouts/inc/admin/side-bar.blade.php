@@ -24,7 +24,8 @@
                 <nav class="mainmenu-nav">
                     <ul class="dashboard-mainmenu rbt-default-sidebar-list">
                         <li><a href="{{ url('admin/Etudiant') }}"><i class="feather-users"></i><span>Étudiants</span></a></li>
-                        <li><a href="#"><i class="feather-shopping-bag"></i><span>Inscriptions</span></a></li>
+                        <li><a href="{{ url('admin/TestsInscriptions') }}"><i class="feather-shopping-bag"></i><span>Tests Inscriptions</span></a></li>
+                        <li><a href="{{ url('admin/CoursInscriptions') }}"><i class="feather-shopping-bag"></i><span> Cours Inscriptions</span></a></li>
                         <li><a href="#"><i class="feather-message-square"></i><span>Resultats</span></a></li>
                     </ul>
                 </nav>

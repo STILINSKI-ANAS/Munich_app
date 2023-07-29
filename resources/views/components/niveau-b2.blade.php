@@ -1023,8 +1023,8 @@
 
                                         <div class="rbt-card-bottom">
                                             <div class="rbt-price">
-                                                <span class="current-price">$60</span>
-                                                <span class="off-price">$120</span>
+                                                <span class="current-price">{{ $price }} MAD</span>
+                                                <span class="off-price">{{ $price * 1.4 }} MAD</span>
                                             </div>
                                             <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i class="feather-arrow-right"></i></a>
                                         </div>
@@ -1185,45 +1185,45 @@
                         <div class="inner">
 
                             <!-- Start formulaire  -->
-                            <div class="content-item-content">
-                                <div class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">
-                                    <div class="rbt-price">
-                                        <span class="current-price">MAD {{$price}}</span>
-                                        <span class="off-price">MAD {{$price+125}}</span>
-                                    </div>
-                                </div>
-
-                                <div class="rbt-widget-details ">
-                                    <ul class=" rbt-course-details-list-wrapper">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <li><input type="text" placeholder="Nom" required></li>
-                                                <li><input type="text" placeholder="Prénom" required></li>
-                                                <li><input type="text" placeholder="Sexe" required></li>
-                                                <li><input type="text" placeholder="Date de naissance" required></li>
-                                            </div>
-                                            <div class="col-6">
-                                                <li><input type="text" placeholder="Numéro de téléphone" required></li>
-                                                <li><input type="text" placeholder="Adresse e-mail" required></li>
-                                                <li><input type="text" placeholder="Lieu de naissance" required></li>
-                                                <li><input type="text" placeholder="Pays de naissance" required></li>
-                                            </div>
+                            <form method="POST" action="{{ url('/EtudiantCourse')}}" enctype="multipart/form-data">
+                                @csrf
+                                <div class="content-item-content">
+                                    <div class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">
+                                        <div class="rbt-price">
+                                            <span class="current-price">{{ $price }} MAD</span>
+                                            <span class="off-price">{{ $price * 1.4 }} MAD</span>
                                         </div>
-                                        <li><input type="text" placeholder="Numéro de passeport ou CNE" required></li>
-                                        <li><input type="text" placeholder="Adresse actuelle" required></li>
-                                    </ul>
-                                    <div class="add-to-card-button">
-                                        <a class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" href="#">
-                                            <span class="btn-text">S'inscrire</span>
-                                        </a>
                                     </div>
-
+    
+                                    <div class="rbt-widget-details ">
+                                        <ul class=" rbt-course-details-list-wrapper">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <li><input type="text" name="nom" placeholder="Nom" required></li>
+                                                    <li><input type="text" name="prenom" placeholder="Prénom" required></li>
+                                                    <li><input type="text" name="sexe" placeholder="Sexe" required></li>
+                                                    <li><input type="date" name="dateNaissance" placeholder="Date de naissance" required></li>
+                                                </div>
+                                                <div class="col-6">
+                                                    <li><input type="tel" name="tel" placeholder="Numéro de téléphone" required></li>
+                                                    <li><input type="text" name="email" placeholder="Adresse e-mail" required></li>
+                                                    <li><input type="text" name="placeOfBirth" placeholder="Lieu de naissance" required></li>
+                                                    <li><input type="text" name="countryOfBirth" placeholder="Pays de naissance" required></li>
+                                                </div>
+                                            </div>
+                                            <li><input type="text" name="cin" placeholder="Numéro de passeport ou CIN" required></li>
+                                            <li><input type="text" name="addresse" placeholder="Adresse actuelle" required></li>
+                                        </ul>
+                                        <input type="hidden" id="courseId" name="courseId" value="{{$courseId}}">
+                                        <div class="add-to-card-button">
+                                            <button class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" type="submit">
+                                                <span class="btn-text">S'inscrire</span>
+                                            </button>
+                                        </div>
+    
+                                    </div>
                                 </div>
-
-
-
-
-                            </div>
+                            </form>
                             <!-- end formulaire  -->
                         </div>
                     </div>

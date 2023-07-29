@@ -23,4 +23,9 @@ class Course extends Model
     {
         return $this->belongsTo(Language::class);
     }
+
+    public function etudiants()
+    {
+        return $this->belongsToMany(Etudiant::class, 'etudiant_courses', 'course_id', 'etudiant_id')->withTimestamps();
+    }
 }

@@ -23,7 +23,7 @@ class TestSeeder extends Seeder
             'price' => '100.00',
             'image' => 'toefl.png',
             'short_description' => 'This is an intermediate level test.',
-            'language_id' => 1,
+            'language_id' => 2,
         ]);
 
         Test::create([
@@ -35,7 +35,7 @@ class TestSeeder extends Seeder
             'price' => '75.00',
             'image' => 'toeic.png',
             'short_description' => 'This is an advanced level test.',
-            'language_id' => 1,
+            'language_id' => 2,
         ]);
 
         Test::create([
@@ -47,7 +47,7 @@ class TestSeeder extends Seeder
             'price' => '80.00',
             'image' => 'telc.png',
             'short_description' => 'This is a test offered by TELC.',
-            'language_id' => 1,
+            'language_id' => 2,
         ]);
     }
 }

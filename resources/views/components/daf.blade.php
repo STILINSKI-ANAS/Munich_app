@@ -575,8 +575,8 @@
 
                                         <div class="rbt-card-bottom">
                                             <div class="rbt-price">
-                                                <span class="current-price">$60</span>
-                                                <span class="off-price">$120</span>
+                                                <span class="current-price">{{ $price }} MAD</span>
+                                                <span class="off-price">{{ $price * 1.4 }} MAD</span>
                                             </div>
                                             <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i class="feather-arrow-right"></i></a>
                                         </div>

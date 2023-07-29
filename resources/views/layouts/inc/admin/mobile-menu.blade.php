@@ -33,11 +33,11 @@
                     <a href="#">Cours de langue <i class="feather-chevron-down"></i></a>
                     <!-- Start Mega Menu  -->
                     <div class="rbt-megamenu grid-item-2">
-                        <ul class="submenu">
+                        {{-- <ul class="submenu">
                             @foreach($languages as $language)
                                 <li class="has-dropdown"><a href="{{url('/'.$language->name.'/Courses/')}}">{{$language->name}}</a></li>
                             @endforeach
-                        </ul>
+                        </ul> --}}
                     </div>
                     <!-- End Mega Menu  -->
                 </li>
@@ -47,11 +47,11 @@
                     <a href="#">Examens International <i class="feather-chevron-down"></i></a>
                     <!-- Start Mega Menu  -->
                     <div class="rbt-megamenu grid-item-2">
-                        <ul class="submenu">
+                        {{-- <ul class="submenu">
                             @foreach($languages as $language)
                                 <li class="has-dropdown"><a href="{{url('/'.$language->name.'/Tests/')}}">{{$language->name}}</a></li>
                             @endforeach
-                        </ul>
+                        </ul> --}}
                     </div>
                     <!-- End Mega Menu  -->
                 </li>

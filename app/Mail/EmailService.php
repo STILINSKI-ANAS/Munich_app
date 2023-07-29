@@ -17,7 +17,7 @@ class EmailService extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public $etudiant, public $test)
+    public function __construct(public $etudiant, public $inscription, public $typeOfInscription)
     {
         //
     }
