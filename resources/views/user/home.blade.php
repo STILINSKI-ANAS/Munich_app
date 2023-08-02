@@ -627,143 +627,31 @@
 
                             <div class="swiper-wrapper">
                                 <!-- Start Single Slide  -->
-                                <div class="swiper-slide">
-                                    <div class="single-slide">
-                                        <div class="rbt-card event-grid-card variation-01 rbt-hover">
-                                            <div class="rbt-card-img">
-                                                <a href="event-details.html">
-                                                    <img src="assets/images/event/grid-type-02.jpg" alt="Card image">
-                                                    <div class="rbt-badge-3 bg-white">
-                                                        <span>11 Mar</span>
-                                                        <span>2023</span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="rbt-card-body">
-                                                <ul class="rbt-meta">
-                                                    <li><i class="feather-map-pin"></i>Vancouver</li>
-                                                    <li><i class="feather-clock"></i>8:00 am - 5:00 pm</li>
-                                                </ul>
-                                                <h4 class="rbt-card-title"><a href="event-details.html">Painting Art Contest 2020 for histudy Clud</a></h4>
-
-                                                <div class="read-more-btn">
-                                                    <a class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round" href="event-details.html">
-                                                        <span class="icon-reverse-wrapper">
-                                    <span class="btn-text">Get Ticket</span>
-                                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                                        </span>
+                                @foreach($annocements as $annocement)
+                                    <div class="swiper-slide">
+                                        <div class="single-slide">
+                                            <div class="rbt-card event-grid-card variation-01 rbt-hover">
+                                                <div class="rbt-card-img">
+                                                    <a href="event-details.html">
+                                                        <img src="{{ asset('uploads/Announcements/' . $annocement->image) }}" alt="Card image" style="width: 400px; height: 150px;"> <!-- Replace 'image' with the actual property name for the image URL and set your desired width and height -->
+                                                        <div class="rbt-badge-3 bg-white">
+                                                            <span>{{ date('d M', strtotime($annocement->created_at)) }}</span> <!-- Display the day and month of creation -->
+                                                            <span>{{ date('Y', strtotime($annocement->created_at)) }}</span> <!-- Display the year of creation -->
+                                                        </div>
                                                     </a>
+                                                </div>
+                                                <div class="rbt-card-body">
+                                                    <h4 class="rbt-card-title"><a href="event-details.html">{{ $annocement->titre }}</a></h4> <!-- Replace 'titre' with the actual property name for the event title -->
+                                                    <p class="rbt-card-text">{{ $annocement->description }}</p>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- End Single Slide  -->
-                                <!-- Start Single Slide  -->
-                                <div class="swiper-slide">
-                                    <div class="single-slide">
-                                        <div class="rbt-card event-grid-card variation-01 rbt-hover">
-                                            <div class="rbt-card-img">
-                                                <a href="event-details.html">
-                                                    <img src="assets/images/event/grid-type-04.jpg" alt="Card image">
-                                                    <div class="rbt-badge-3 bg-white">
-                                                        <span>11 Jan</span>
-                                                        <span>2023</span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="rbt-card-body">
-                                                <ul class="rbt-meta">
-                                                    <li><i class="feather-map-pin"></i>IAC Building</li>
-                                                    <li><i class="feather-clock"></i>8:00 am - 5:00 pm</li>
-                                                </ul>
-                                                <h4 class="rbt-card-title"><a href="event-details.html">Elegant Light Box Paper Cut Dioramas in UK</a></h4>
+                                @endforeach
 
-                                                <div class="read-more-btn">
-                                                    <a class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round" href="event-details.html">
-                                                        <span class="icon-reverse-wrapper">
-                                    <span class="btn-text">Get Ticket</span>
-                                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <!-- End Single Slide  -->
 
-                                <!-- Start Single Slide  -->
-                                <div class="swiper-slide">
-                                    <div class="single-slide">
-                                        <div class="rbt-card event-grid-card variation-01 rbt-hover">
-                                            <div class="rbt-card-img">
-                                                <a href="event-details.html">
-                                                    <img src="assets/images/event/grid-type-05.jpg" alt="Card image">
-                                                    <div class="rbt-badge-3 bg-white">
-                                                        <span>11 Mar</span>
-                                                        <span>2023</span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="rbt-card-body">
-                                                <ul class="rbt-meta">
-                                                    <li><i class="feather-map-pin"></i>Vancouver</li>
-                                                    <li><i class="feather-clock"></i>8:00 am - 5:00 pm</li>
-                                                </ul>
-                                                <h4 class="rbt-card-title"><a href="event-details.html">Most Effective Ways for Education's Problem</a></h4>
-
-                                                <div class="read-more-btn">
-                                                    <a class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round" href="event-details.html">
-                                                        <span class="icon-reverse-wrapper">
-                                    <span class="btn-text">Get Ticket</span>
-                                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Slide  -->
-
-                                <!-- Start Single Slide  -->
-                                <div class="swiper-slide">
-                                    <div class="single-slide">
-                                        <div class="rbt-card event-grid-card variation-01 rbt-hover">
-                                            <div class="rbt-card-img">
-                                                <a href="event-details.html">
-                                                    <img src="assets/images/event/grid-type-01.jpg" alt="Card image">
-                                                    <div class="rbt-badge-3 bg-white">
-                                                        <span>11 Jan</span>
-                                                        <span>2023</span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="rbt-card-body">
-                                                <ul class="rbt-meta">
-                                                    <li><i class="feather-map-pin"></i>IAC Building</li>
-                                                    <li><i class="feather-clock"></i>8:00 am - 5:00 pm</li>
-                                                </ul>
-                                                <h4 class="rbt-card-title"><a href="event-details.html">International Education Fair 2023</a></h4>
-
-                                                <div class="read-more-btn">
-                                                    <a class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round" href="event-details.html">
-                                                        <span class="icon-reverse-wrapper">
-                                    <span class="btn-text">Get Ticket</span>
-                                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Slide  -->
                             </div>
 
                             <div class="rbt-swiper-arrow rbt-arrow-left">

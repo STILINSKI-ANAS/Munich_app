@@ -21,7 +21,7 @@
                 </li>
             </ul>
         </div>
-
+        @if (isset($languages))
         <nav class="mainmenu-nav">
             <ul class="mainmenu">
                 <li class="with-megamenu position-static">
@@ -33,11 +33,11 @@
                     <a href="#">Cours de langue <i class="feather-chevron-down"></i></a>
                     <!-- Start Mega Menu  -->
                     <div class="rbt-megamenu grid-item-2">
-                        {{-- <ul class="submenu">
+                         <ul class="submenu">
                             @foreach($languages as $language)
-                                <li class="has-dropdown"><a href="{{url('/'.$language->name.'/Courses/')}}">{{$language->name}}</a></li>
+                                <li><a href="{{url('/'.$language->name.'/Courses/')}}">{{$language->name}}</a></li>
                             @endforeach
-                        </ul> --}}
+                        </ul>
                     </div>
                     <!-- End Mega Menu  -->
                 </li>
@@ -47,11 +47,11 @@
                     <a href="#">Examens International <i class="feather-chevron-down"></i></a>
                     <!-- Start Mega Menu  -->
                     <div class="rbt-megamenu grid-item-2">
-                        {{-- <ul class="submenu">
+                        <ul class="submenu">
                             @foreach($languages as $language)
-                                <li class="has-dropdown"><a href="{{url('/'.$language->name.'/Tests/')}}">{{$language->name}}</a></li>
+                                <li><a href="{{url('/'.$language->name.'/Tests/')}}">{{$language->name}}</a></li>
                             @endforeach
-                        </ul> --}}
+                        </ul>
                     </div>
                     <!-- End Mega Menu  -->
                 </li>
@@ -64,12 +64,20 @@
                 <li class="with-megamenu position-static">
                     <a href="#">Formation Continue</a>
                 </li>
-                <li class="with-megamenu has-menu-child-item position-static">
-                    <a href="{{ url('/aboutUs') }}">l'instut</a>
+                <li class="with-megamenu has-menu-child-item">
+                    <a href="#">l'instut<i class="feather-chevron-down"></i></a>
+                    <div class="rbt-megamenu grid-item-2">
+                        <ul class="submenu">
+                            <li ><a href="{{ url('/aboutUs') }}">A Propos De Nous</a></li>
+                            <li ><a href="{{ url('/Instructor/register') }}">Devenir Enseignant</a></li>
+                            <li><a href="{{ url('/blog') }}">Articles</a></li>
+
+                        </ul>
+                    </div>
                 </li>
             </ul>
         </nav>
-
+        @endif
         <div class="mobile-menu-bottom">
             <div class="rbt-btn-wrapper mb--20">
                 <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center" href="#">

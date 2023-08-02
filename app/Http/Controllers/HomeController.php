@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use App\Models\Category;
 use App\Models\Course;
 use App\Models\Language;
@@ -31,10 +32,12 @@ class HomeController extends Controller
         $languages = Language::all();
         $tests = Test::all();
         $categories = Category::all();
+        $annocements = Announcement::all();
         return view('user.home')->with([
             'languages' => $languages,
             'tests' => $tests,
-            'categories'=>$categories
+            'categories'=>$categories,
+            'annocements'=>$annocements
         ]);
     }
 

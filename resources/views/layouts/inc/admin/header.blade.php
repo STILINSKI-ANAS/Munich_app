@@ -111,7 +111,8 @@
                                     <i class="feather-chevron-down"></i>
                                 </a>
                                 <ul class="submenu">
-                                        <li class="has-dropdown"><a href="{{ url('/aboutUs') }}">A Propos De Nous</a></li>
+                                    <li class="has-dropdown"><a href="{{ url('/aboutUs') }}">A Propos De Nous</a></li>
+                                    <li class="has-dropdown"><a href="{{ url('/Instructor/register') }}">Devenir Enseignant</a></li>
                                     <li class="has-dropdown"><a href="{{ url('/blog') }}">Articles</a></li>
 
                                 </ul>

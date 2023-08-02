@@ -76,13 +76,26 @@ class InstructorController extends Controller
 
         // Save the instructor record to the database
         if ($instructor->save()) {
+            // Move the uploaded files to the instructor's folder
+            if ($cvPath) {
+                $cvPath = $request->file('cv_file')->store('uploads/Instructor/' . $instructor->id . '/cv/' . rand(10, 99), 'public');
+                $instructor->cv_file = $cvPath;
+            }
+
+            if ($imagePath) {
+                $imagePath = $request->file('image')->store('uploads/Instructor/' . $instructor->id . '/image/' . rand(10, 99), 'public');
+                $instructor->image = $imagePath;
+            }
+
+            // Update the instructor record with the new file paths
+            $instructor->save();
+
             // Redirect to a success page or show a success message
             return redirect()->route('instructor.register')->with('success', 'Instructor registration successful!');
         } else {
             // If there was an error, display it to identify the issue
             dd("Error: Unable to save instructor record.");
         }
-
 
 
     }
