@@ -29,17 +29,17 @@ class EtudiantTestController extends Controller
             'addresse' => 'required',
             'testId' => 'required',
         ]);
-        
+
         $etudiant = Etudiant::create($validator->validated());
         $etudiant->tests()->attach($request->testId);
-
         $this->sendEmail($etudiant->nom, Test::find($request->testId)->level, $etudiant->email);
-        
-        return redirect('/');
+        dd($etudiant->nom);
+
+//        return redirect('/');
     }
-    
+
     public function sendEmail($name, $level, $email)
     {
-        Mail::to($email)->send(new EmailService($name, $level, 'test'));
+        dd(Mail::to($email)->send(new EmailService($name, $level, 'test')));
     }
 }

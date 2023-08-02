@@ -55,6 +55,7 @@
                         <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
                     </div>
                 </div>
+
                 <div class="course-field mb--20">
                     <h6>Language Thumbnail</h6>
                     <div class="rbt-create-course-thumbnail upload-area">

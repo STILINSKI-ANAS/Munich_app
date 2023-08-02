@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Admin\Inscriptions\TestsInscriptions\Index;
 use App\Mail\EmailService;
+use App\Mail\GreetingEmail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -125,4 +126,12 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('Clients', [\App\Http\Controllers\Admin\ClientsController::class, 'index']);
     Route::get('CoursInscriptions', [\App\Http\Controllers\Admin\CoursInscriptionsController::class, 'index']);
     Route::get('TestsInscriptions', [\App\Http\Controllers\Admin\TestsInscriptionsController::class, 'index']);
+});
+
+Route::get('/send-greeting-email', function () {
+    $recipientEmail = 'hakeemkadim@gmail.com';
+
+    Mail::to($recipientEmail)->send(new GreetingEmail());
+
+    return "Greeting email sent successfully!";
 });

@@ -67,7 +67,7 @@ class Etudiant extends Model
     public function scopeSearch($query, $search, $language, $targetTable)
     {
         return $query->whereHas($targetTable, function ($query) use ($search, $language) {
-            $query->where('level', 'LIKE', '%' . $search . '%');
+            $query->where('level', 'LIKE', $search . '%');
             $query->whereHas('language', function ($query) use ($language) {
                 $query->where('name', $language);
             });

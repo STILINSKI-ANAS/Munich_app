@@ -5,19 +5,18 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class EmailService extends Mailable
+class GreetingEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(public $etudiant, public $inscription, public $typeOfInscription)
+    public function __construct()
     {
         //
     }
@@ -28,8 +27,7 @@ class EmailService extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'institu inscription',
-            from: new Address('info@institutmunich.com', 'Institu Munich')
+            subject: 'Greeting Email',
         );
     }
 
@@ -39,7 +37,7 @@ class EmailService extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'emails.custom-email',
+            view: 'emails.greeting',
         );
     }
 
