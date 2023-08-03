@@ -1,4 +1,4 @@
-<header class="rbt-header rbt-header-1">
+<header class="rbt-header rbt-header-1 rbt-header-wrapper  @sticky">
     <div class="rbt-sticky-placeholder"></div>
     <!-- Start Header Top -->
     <div class="rbt-header-top rbt-header-top-1 header-space-betwween bg-color-darker rbt-border-bottom top-expended-activation">

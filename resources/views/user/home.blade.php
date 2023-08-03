@@ -43,14 +43,12 @@
 
                             <div class="banner-card pb--60 mb--50 swiper rbt-dot-bottom-center banner-swiper-active">
                                 <div class="swiper-wrapper">
-
-                                    <!-- Start Single Card  -->
                                     @foreach($tests as $test)
 
                                         <div class="swiper-slide">
                                             <div class="rbt-card variation-01 rbt-hover">
                                                 <div class="rbt-card-img">
-                                                    <a href="course-details.html">
+                                                    <a href="{{url('/Language/Test/'.$test->level)}}">
                                                         <img src="{{ asset('assets/images/course/' . $test['image']) }}" alt="{{ $test['name'] }} Images">
                                                     </a>
                                                 </div>
@@ -60,7 +58,7 @@
                                                         <li><i class="feather-calendar"></i>11/02/2023</li>
 
                                                     </ul>
-                                                    <h4 class="rbt-card-title"><a href="course-details.html">{{ $test['name'] }}</a>
+                                                    <h4 class="rbt-card-title"><a href="{{url('/Language/Test/'.$test->level)}}">{{ $test['name'] }}</a>
                                                     </h4>
                                                     <p class="rbt-card-text">{{ substr($test['overview'], 0, 80) }}</p>
 
@@ -76,7 +74,7 @@
                                         </div>
                                     @endforeach
 
-                                    <!-- End Single Card  -->
+
 
 
                                 </div>
@@ -89,13 +87,13 @@
         </div>
         <!-- End Banner Area -->
 
-        <div class="rbt-categories-area bg-color-white rbt-section-gapBottom">
+        <div class="rbt-categories-area bg-color-white ">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-center">
                             <span class="subtitle bg-primary-opacity">CATEGORIES</span>
-                            <h2 class="title">Explorez nos principales catégories<br>à l'Institut Munich :</h2>
+                            <h4 class="title">Explorez Nos Principales Catégories</h4>
                         </div>
                     </div>
                 </div>
@@ -103,16 +101,14 @@
                     <!-- Start Category Box Layout -->
                     @foreach($categories as $category)
                         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                            <a class="rbt-cat-box rbt-cat-box-1 text-center" href="course-filter-one-toggle.html">
+                            <a class="rbt-cat-box rbt-cat-box-1 text-center">
                                 <div class="inner">
                                     <div class="icons">
                                         <img src="{{ asset('storage/' . $category['image']) }}" alt="Icons Images">
                                     </div>
                                     <div class="content">
                                         <h5 class="title">{{ $category['name'] }}</h5>
-                                        <div class="read-more-btn">
-                                            <span class="rbt-btn-link">Plus de {{ $category['number'] }} <i class="feather-arrow-right"></i></span>
-                                        </div>
+
                                     </div>
                                 </div>
                             </a>
@@ -130,9 +126,8 @@
                 <div class="row align-items-center mb--60">
                     <div class="col-lg-12">
                         <div class="section-title text-center">
-                            <span class="subtitle bg-pink-opacity">Notre Cours de langue</span>
-                            <h2 class="title">Cours de langues</h2>
-                            <p class="description has-medium-font-size mt--20">Les cours de langue que l'Institut Munich offre !</p>
+                            <span class="subtitle bg-pink-opacity">COURS</span>
+                            <h3 class="title">Notre Cours De Langue</h3>
                         </div>
                     </div>
                 </div>
@@ -144,7 +139,7 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
                             <div class="rbt-card variation-03 rbt-hover">
                                 <div class="rbt-card-img">
-                                    <a class="thumbnail-link" href="course-details.html">
+                                    <a class="thumbnail-link" href="{{url('/'.$language->name.'/Courses/')}}">
                                         <img src="{{ asset('uploads/Language/' . $language->image) }}" alt="Card image">
                                         <span class="rbt-btn btn-white icon-hover btn-md">
                                     <span class="btn-text">Voir Plus</span>
@@ -153,10 +148,10 @@
                                     </a>
                                 </div>
                                 <div class="rbt-card-body">
-                                    <h5 class="rbt-card-title"><a href="course-details.html"> {{ $language['name'] }}</a>
+                                    <h5 class="rbt-card-title"><a href="{{url('/'.$language->name.'/Courses/')}}"> {{ $language['name'] }}</a>
                                     </h5>
                                     <div class="rbt-card-bottom">
-                                        <a class="transparent-button" href="course-details.html"><i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
+                                        <a class="transparent-button" href="{{url('/'.$language->name.'/Courses/')}}"><i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
                                     </div>
                                 </div>
                                 <div class="card-information">
@@ -195,8 +190,8 @@
                     <div class="col-lg-6">
                         <div class="inner pl--50 pl_sm--0 pl_md--0">
                             <div class="section-title text-start">
-                                <span class="subtitle bg-coral-opacity">Découvrez Qui Nous Sommes</span>
-                                <h2 class="title">Découvrez Notre instut <br /> Instut Munich</h2>
+                                <span class="subtitle bg-coral-opacity">Qui Nous Sommes</span>
+                                <h3 class="title">Découvrez Notre Institut</h3>
                             </div>
 
                             <p class="description mt--30">Votre destination pour l'apprentissage des langues. Expérience linguistique enrichissante. Programmes adaptés à tous les niveaux et besoins. Découvrez de nouvelles cultures. Créez des liens internationaux. Ouverture de perspectives professionnelles. Rejoignez-nous dès maintenant.</p>
@@ -252,16 +247,16 @@
                                 <div class="col-lg-12 col-xl-5">
                                     <div class="inner">
                                         <div class="rbt-category mb--20">
-                                            <a href="#">New Collection</a>
+                                            <a href="#">Cours en ligne</a>
                                         </div>
-                                        <h4 class="title mb--15">Online Courses from Histudy</h4>
-                                        <p class="mb--15">Top instructors from around the world</p>
+                                        <h4 class="title mb--15">Cours en ligne de l'Institut Munich</h4>
+                                        <p class="mb--15">Les meilleurs instructeurs du monde</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-7">
                                     <div class="video-popup-wrapper mt_lg--10 mt_md--20 mt_sm--20">
                                         <img class="w-100 rbt-radius" src="{{ asset('assets/images/others/video-01.jpg')}}" alt="Video Images">
-                                        <a class="rbt-btn rounded-player-2 sm-size popup-video position-to-top with-animation" href="https://www.youtube.com/watch?v=nA1Aqp0sPQo">
+                                        <a class="rbt-btn rounded-player-2 sm-size popup-video position-to-top with-animation" href="https://www.youtube.com/watch?v=Arz7mKqYaOE">
                                             <span class="play-icon"></span>
                                         </a>
                                     </div>
@@ -306,7 +301,7 @@
                     <div class="col-lg-12">
                         <div class="section-title text-center">
                             <span class="subtitle bg-primary-opacity">Pourquoi Nous Choisir</span>
-                            <h2 class="title">Votre Passerelle Vers <br>Une Carrière Florissante.</h2>
+                            <h3 class="title">Porte D'Accès Au Succès</h3>
                         </div>
                     </div>
                 </div>
@@ -392,7 +387,7 @@
                 <div class="row align-items-center g-5">
                     <div class="col-lg-3">
                         <div class="brand-content-left">
-                            <h4 class="mb--0">Nos Partenaires de Confiance</h4>
+                            <h3 class="mb--0">Nos Partenaires </h3>
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -415,10 +410,9 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section-title text-center mb--10">
-                                <span class="subtitle bg-primary-opacity">Notre institut rend l'apprentissage des langues facile POUR TOUT LE MONDE.</span>
-                                <h2 class="title">
-                                    Les gens aiment notre institut.
-                                    Pas de plaisanterie - voici la preuve !</h2>
+                                <span class="subtitle bg-primary-opacity">Avis</span>
+                                <h3 class="title">
+                                    Voix De Nos Étudiants</h3>
                             </div>
                         </div>
                     </div>
@@ -618,7 +612,7 @@
                 <div class="row mb--55">
                     <div class="section-title text-center">
                         <span class="subtitle bg-white-opacity">ANNONCES</span>
-                        <h2 class="title color-white">ANNONCES </h2>
+                        <h3 class="title color-white"> Nous Annonces</h3>
                     </div>
                 </div>
                 <div class="row">
@@ -681,8 +675,8 @@
                 <div class="row mb--60">
                     <div class="col-lg-12">
                         <div class="section-title text-center">
-                            <span class="subtitle bg-primary-opacity">Notre Personnel</span>
-                            <h2 class="title">Une Équipe Exceptionnelle</h2>
+                            <span class="subtitle bg-primary-opacity">NOTRE PERSONNEL</span>
+                            <h3 class="title">Une Équipe Exceptionnelle</h3>
                         </div>
                     </div>
                 </div>
@@ -1029,13 +1023,13 @@
                 <div class="row g-5 align-items-center mb--30">
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="section-title">
-                            <span class="subtitle bg-pink-opacity">Article de blog</span>
-                            <h2 class="title">Articles Populaires.</h2>
+                            <span class="subtitle bg-pink-opacity">ARTICLES</span>
+                            <h3 class="title">Articles Populaires</h3>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="read-more-btn text-start text-md-end">
-                            <a class="rbt-btn btn-gradient hover-icon-reverse" href="blog.html">
+                            <a class="rbt-btn btn-gradient hover-icon-reverse" href="{{ url('/blog') }}">
                                 <div class="icon-reverse-wrapper">
                                     <span class="btn-text">Voir tous les articles</span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -1055,9 +1049,11 @@
                                     <img src="assets/images/blog/blog-card-01.jpg" alt="Image de la carte"> </a>
                             </div>
                             <div class="rbt-card-body">
-                                <h3 class="rbt-card-title"><a href="{{ url('/blog') }}">Les Tests d'Allemand Importants pour les Marocains souhaitant Visiter l'Allemagne ou Obtenir un Visa</a></h3>
+                                <h5 class="rbt-card-title"><a href="{{ url('/blog1') }}">Apprendre l’allemand</a></h5>
+                                <p class="rbt-card-text">L'allemand, une langue aux multiples facettes, vous invite à une aventure passionnante à travers les...</p>
+
                                 <div class="rbt-card-bottom">
-                                    <a class="transparent-button"href="{{ url('/blog') }}">En savoir plus<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
+                                    <a class="transparent-button"href="{{ url('/blog1') }}">En savoir plus<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1068,13 +1064,13 @@
                         <!-- Start Single Card  -->
                         <div class="rbt-card card-list variation-02 rbt-hover">
                             <div class="rbt-card-img">
-                                <a href="blog-details.html">
+                                <a href="{{ url('/blog2') }}">
                                     <img src="assets/images/blog/blog-card-02.jpg" alt="Image de la carte"> </a>
                             </div>
                             <div class="rbt-card-body">
-                                <p class="rbt-card-text">Que ce soit pour des études, des voyages touristiques ou des projets ...</p>
+                                <h5 class="rbt-card-text">Les Tests d'Allemand Importants</h5>
                                 <div class="rbt-card-bottom">
-                                    <a class="transparent-button" href="blog-details.html">Lire l'article<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
+                                    <a class="transparent-button" href="{{ url('/blog2') }}">Lire l'article<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1083,13 +1079,13 @@
                         <!-- Start Single Card  -->
                         <div class="rbt-card card-list variation-02 rbt-hover mt--30">
                             <div class="rbt-card-img">
-                                <a href="blog-details.html">
+                                <a href="{{ url('/blog3') }}">
                                     <img src="assets/images/blog/blog-card-03.jpg" alt="Image de la carte"> </a>
                             </div>
                             <div class="rbt-card-body">
-                                <p class="rbt-card-text">Guide Complet du Visa Schengen pour les Citoyens Marocains se Rendant en Allemagne</p>
+                                <h5 class="rbt-card-text">Étudier en Allemagne</h5>
                                 <div class="rbt-card-bottom">
-                                    <a class="transparent-button" href="blog-details.html">Lire l'article<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
+                                    <a class="transparent-button" href="{{ url('/blog3') }}">Lire l'article<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1098,13 +1094,13 @@
                         <!-- Start Single Card  -->
                         <div class="rbt-card card-list variation-02 rbt-hover mt--30">
                             <div class="rbt-card-img">
-                                <a href="blog-details.html">
+                                <a href=""{{ url('/blog4') }}">
                                     <img src="assets/images/blog/blog-card-04.jpg" alt="Image de la carte"> </a>
                             </div>
                             <div class="rbt-card-body">
-                                <p class="rbt-card-text">L'éducation est si célèbre, mais pourquoi ?</p>
+                                <h5 class="rbt-card-text">Guide Complet du Visa Schengen</h5>
                                 <div class="rbt-card-bottom">
-                                    <a class="transparent-button" href="blog-details.html">Lire l'article<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
+                                    <a class="transparent-button" href="{{ url('/blog4') }}">Lire l'article<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1122,9 +1118,9 @@
                     <div class="col-lg-12">
                         <div class="inner text-center">
                             <div class="section-title text-center">
-                                <span class="subtitle bg-white-opacity">Recevez Les Dernières Mises À Jour De L'Institut Munich</span>
-                                <h2 class="title color-white"><strong>Abonnez-Vous</strong> À Notre Newsletter</h2>
-                                <p class="description color-white mt--20">Recevoir des informations sur nos cours, nos événements spéciaux et nos offres exclusives.</p>
+                                <span class="subtitle bg-white-opacity">Abonnez-Vous</span>
+                                <h3 class="title color-white">Abonnez-Vous À Notre Newsletter</h3>
+                                <p class="description color-white mt--20">Recevoir Des Informations Sur Nos Cours, Nos Événements Spéciaux Et Nos Offres Exclusives.</p>
                             </div>
                             <form action="{{ url('/Subscribe')}}" method="post" class="newsletter-form-1 mt--40">
                                     @csrf

@@ -54,7 +54,7 @@
                                 <a href="become-a-teacher.html">Devenir Enseignant</a>
                             </li>
                             <li>
-                                <a href="blog.html">Blog</a>
+                                <a href="blog.html">Articles</a>
                             </li>
                             <li>
                                 <a href="contact.html">Contact</a>
