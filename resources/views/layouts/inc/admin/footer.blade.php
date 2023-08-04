@@ -1,4 +1,4 @@
-<footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
+<footer class="rbt-footer footer-style-1 bg-color-extra2 overflow-hidden">
     <div class="footer-top">
         <div class="container">
             <div class="row g-5">
