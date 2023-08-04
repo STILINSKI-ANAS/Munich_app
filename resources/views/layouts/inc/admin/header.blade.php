@@ -64,7 +64,7 @@
                     <div class="rbt-header-content">
                         <div class="header-info">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="{{url('/')}}">
                                     <img src="{{ asset('assets/images/logo/logo-full-white.png') }}" alt="Institut Munich Logo">
                                 </a>
                             </div>

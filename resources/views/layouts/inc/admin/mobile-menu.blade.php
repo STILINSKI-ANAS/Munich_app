@@ -3,7 +3,7 @@
         <div class="inner-top">
             <div class="content">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="{{url('/')}}">
                         <img src="{{ asset('assets/images/logo/logo-full-white.png') }}" alt="Institut Munich Logo">
                     </a>
                 </div>
@@ -24,8 +24,8 @@
         @if (isset($languages))
         <nav class="mainmenu-nav">
             <ul class="mainmenu">
-                <li class="with-megamenu position-static">
-                    <a href="#">Accueil</a>
+                <li class="">
+                    <a href="{{url('/')}}">Accueil</a>
 
                 </li>
 
@@ -56,7 +56,7 @@
                     <!-- End Mega Menu  -->
                 </li>
 
-                <li class="with-megamenu position-static">
+                <li class="">
                     <a href="#">Orientation</a>
 
                 </li>
