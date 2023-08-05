@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/plyr.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
 </head>
-<body>
+<body class="rbt-header-sticky">
 @include('layouts.inc.admin.header')
 @include('layouts.inc.admin.mobile-menu')
 

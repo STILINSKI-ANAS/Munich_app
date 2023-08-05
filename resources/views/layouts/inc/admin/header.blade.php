@@ -1,11 +1,11 @@
-<header class="rbt-header rbt-header-1 rbt-header-wrapper  @sticky">
+<header class="rbt-header rbt-header-10">
     <div class="rbt-sticky-placeholder"></div>
     <!-- Start Header Top -->
-    <div class="rbt-header-top rbt-header-top-1 header-space-betwween bg-color-darker rbt-border-bottom top-expended-activation">
+    <div class="rbt-header-top rbt-header-top-1 header-space-betwween bg-not-transparent bg-color-darker top-expended-activation">
         <div class="container-fluid">
             <div class="top-expended-wrapper">
                 <div class="top-expended-inner rbt-header-sec align-items-center ">
-                    <div class="rbt-header-sec-col rbt-header-left">
+                    <div class="rbt-header-sec-col rbt-header-left d-none d-xl-block">
                         <div class="rbt-header-content">
                             <div class="header-info">
                                 <ul class="rbt-information-list">
@@ -22,9 +22,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="rbt-header-sec-col rbt-header-right d-none d-lg-block">
+                    <div class="rbt-header-sec-col rbt-header-right mt_md--10 mt_sm--10">
                         <div class="rbt-header-content justify-content-start justify-content-lg-end">
-                            <div class="header-info">
+                            <div class="header-info d-none d-xl-block">
                                 <ul class="social-share-transparent">
                                     <li>
                                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -37,7 +37,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="rbt-separator"></div>
+                            <div class="rbt-separator d-none d-xl-block"></div>
                             <div class="header-info">
                                 <ul class="rbt-information-list">
                                     <li>
@@ -57,11 +57,11 @@
         </div>
     </div>
     <!-- End Header Top -->
-    <div class="rbt-header-wrapper header-space-betwween bg-color-white header-not-transparent header-sticky">
+    <div class="rbt-header-wrapper header-space-betwween header-sticky">
         <div class="container-fluid">
             <div class="mainbar-row rbt-navigation-start align-items-center">
-                <div class="header-left">
-                    <div class="rbt-header-content">
+
+                    <div class="header-left rbt-header-content">
                         <div class="header-info">
                             <div class="logo">
                                 <a href="{{url('/')}}">
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+
 
                 @if (isset($languages))
 
@@ -180,6 +180,8 @@
 
 
 
+
+
                     <!-- Start Mobile-Menu-Bar -->
                     <div class="mobile-menu-bar d-block d-xl-none">
                         <div class="hamberger">
@@ -189,9 +191,9 @@
                         </div>
                     </div>
                     <!-- Start Mobile-Menu-Bar -->
-
                 </div>
-            </div>
+
+
         </div>
         <!-- Start Search Dropdown  -->
         <div class="rbt-search-dropdown">

@@ -3,7 +3,7 @@
 @section('content')
     <!-- Content Section -->
 
-    <main class="rbt-main-wrapper">
+    <main class="rbt-main-wrapper ">
         <!-- Start Banner Area -->
         <div class="rbt-banner-area rbt-banner-1">
             <div class="container-fluid">
@@ -398,7 +398,7 @@
                 </div>
             </div>
             <div class="scroll-animation-wrapper no-overlay mt--50">
-                <div class="scroll-animation scroll-right-left">
+                <div class="scroll-animation scroll-left-right">
 
                     <!-- Start Single pertner  -->
                     <div class="single-column-20 ">

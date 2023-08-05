@@ -2,7 +2,7 @@
     <div class="footer-top">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12"data-sal-delay="150" data-sal="slide-right" data-sal-duration="800">
                     <div class="footer-widget">
                         <div class="logo">
                             <a href="index.html">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12"data-sal-delay="150" data-sal="slide-down" data-sal-duration="800">
                     <div class="footer-widget">
                         <h5 class="ft-title">Notre Institut</h5>
                         <ul class="ft-link">
@@ -64,7 +64,7 @@
 
                 </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12"data-sal-delay="150" data-sal="slide-left" data-sal-duration="800">
                     <div class="footer-widget">
                         <h5 class="ft-title">Nous Contacter</h5>
                         <ul class="ft-link">
