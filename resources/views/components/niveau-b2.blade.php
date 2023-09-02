@@ -1194,7 +1194,7 @@
                                             <span class="off-price">{{ $price * 1.4 }} MAD</span>
                                         </div>
                                     </div>
-    
+
                                     <div class="rbt-widget-details ">
                                         <ul class=" rbt-course-details-list-wrapper">
                                             <div class="row">
@@ -1220,7 +1220,7 @@
                                                 <span class="btn-text">S'inscrire</span>
                                             </button>
                                         </div>
-    
+
                                     </div>
                                 </div>
                             </form>
@@ -1346,7 +1346,7 @@
                         <div class="rbt-card variation-01 rbt-hover">
                             <div class="rbt-card-img">
                                 <a href="course-details.html">
-                                    <img src="{{ asset('assets/images/course/widaf.jpg') }}" alt="Card image">
+                                    <img src="{{ asset('assets/images/course/WIDAF.jpg') }}" alt="Card image">
 
                                 </a>
                             </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Livewire\Admin\Inscriptions\TestsInscriptions\Index;
 use App\Mail\EmailService;
 use App\Mail\GreetingEmail;
@@ -29,45 +30,11 @@ Route::get('/user', function () {
     return view('layouts.user');
 });
 
-Auth::routes();
-
-Route::prefix('/')->group(function () {
-    Route::controller(\App\Http\Controllers\HomeController::class)->group(function () {
-        Route::get('/', 'index');
-        Route::get('/privacy-policy', 'privacyPolicy');
-        Route::get('/blog', 'blog');
-        Route::get('/blog1', 'blog1');
-        Route::get('/blog2', 'blog2');
-        Route::get('/blog3', 'blog3');
-        Route::get('/blog4', 'blog4');
-        Route::get('/blog5', 'blog5');
-
-        Route::post('/Subscribe', 'subscribe');
-
-        Route::get('/aboutUs', 'aboutUs');
-
-        Route::get('/{Language}/Courses', 'getLanguageCourses');
-        Route::get('/Language/Course/{Course}', 'getCourse');
-        Route::get('/{Language}/Tests', 'getLanguageTests');
-        Route::get('/Language/Test/{Test}', 'getTest');
-        Route::get('/Language/Course/{courseId}', 'HomeController@getCourse')->name('getCourse');
-    });
-    Route::controller(\App\Http\Controllers\InstructorController::class)->group(function () {
-        Route::get('/Instructor/register', 'index');
-        Route::post('/Instructor/Register', 'store');
-    });
-    Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
-        Route::post('/EtudiantTest', 'store');
-    });
-    Route::controller(\App\Http\Controllers\EtudiantCourseController::class)->group(function () {
-        Route::post('/EtudiantCourse', 'store');
-    });
-    Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
-        Route::get('/EtudiantTests', 'showTests');
-    });
+Route::get('/home', function () {
+    return redirect()->route('root');
 });
 
-
+Auth::routes();
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('Dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index']);
@@ -126,6 +93,69 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('Clients', [\App\Http\Controllers\Admin\ClientsController::class, 'index']);
     Route::get('CoursInscriptions', [\App\Http\Controllers\Admin\CoursInscriptionsController::class, 'index']);
     Route::get('TestsInscriptions', [\App\Http\Controllers\Admin\TestsInscriptionsController::class, 'index']);
+});
+
+Route::prefix('/')->group(function () {
+
+//    Route::controller(\App\Http\Controllers\HomeController::class)->group(function () {
+//        Route::get('/', 'index')->name('root');
+//        Route::get('/privacy-policy', 'privacyPolicy');
+//        Route::get('/blog', 'blog');
+//        Route::get('/blog1', 'blog1');
+//        Route::get('/blog2', 'blog2');
+//        Route::get('/blog3', 'blog3');
+//        Route::get('/blog4', 'blog4');
+//        Route::get('/blog5', 'blog5');
+//
+//        Route::post('/Subscribe', 'subscribe');
+//
+//        Route::get('/aboutUs', 'aboutUs');
+//
+//        Route::get('/{Language}/Courses', 'getLanguageCourses');
+//        Route::get('/Language/Course/{Course}', 'getCourse');
+//        Route::get('/{Language}/Tests', 'getLanguageTests');
+//        Route::get('/Language/Test/create', 'createDummyTests');
+//        Route::get('/Language/Test/{Test}', 'getTest');
+//
+//        Route::get('/Language/Course/{courseId}', 'HomeController@getCourse')->name('getCourse');
+//    });
+
+    Route::middleware(['web'])->group(function () {
+        Route::get('/', [HomeController::class, 'index'])->name('root');
+        Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy']);
+        Route::get('/blog', [HomeController::class, 'blog']);
+        Route::get('/blog1', [HomeController::class, 'blog1']);
+        Route::get('/blog2', [HomeController::class, 'blog2']);
+        Route::get('/blog3', [HomeController::class, 'blog3']);
+        Route::get('/blog4', [HomeController::class, 'blog4']);
+        Route::get('/blog5', [HomeController::class, 'blog5']);
+
+        Route::post('/Subscribe', [HomeController::class, 'subscribe']);
+
+        Route::get('/aboutUs', [HomeController::class, 'aboutUs']);
+
+        Route::get('/{Language}/Courses', [HomeController::class, 'getLanguageCourses']);
+        Route::get('/Language/Course/{Course}', [HomeController::class, 'getCourse']);
+        Route::get('/{Language}/Tests', [HomeController::class, 'getLanguageTests']);
+        Route::get('/Language/Test/create', [HomeController::class, 'createDummyTests']);
+        Route::get('/Language/Test/{Test}', [HomeController::class, 'getTest']);
+
+        Route::get('/Language/Course/{courseId}', [HomeController::class, 'getCourse'])->name('getCourse');
+    });
+
+    Route::controller(\App\Http\Controllers\InstructorController::class)->group(function () {
+        Route::get('/Instructor/register', 'index');
+        Route::post('/Instructor/Register', 'store');
+    });
+    Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
+        Route::post('/EtudiantTest', 'store');
+    });
+    Route::controller(\App\Http\Controllers\EtudiantCourseController::class)->group(function () {
+        Route::post('/EtudiantCourse', 'store');
+    });
+    Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
+        Route::get('/EtudiantTests', 'showTests');
+    });
 });
 
 Route::get('/send-greeting-email', function () {

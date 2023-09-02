@@ -16,8 +16,13 @@ class Test extends Model
         'time',
         'name',
         'price',
-        'image',
+        'Image',
         'short_description',
+        'features',
+        'course_id',
+    ];
+    protected $casts = [
+        'features' => 'array',
     ];
 
 
@@ -29,5 +34,9 @@ class Test extends Model
     public function etudiants()
     {
         return $this->belongsToMany(Etudiant::class, 'etudiant_tests', 'test_id', 'etudiant_id')->withTimestamps();
+    }
+    public function course()
+    {
+        return $this->belongsTo(Course::class, 'course_id');
     }
 }

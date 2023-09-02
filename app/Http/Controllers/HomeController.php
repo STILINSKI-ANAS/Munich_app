@@ -27,12 +27,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
         $languages = Language::all();
         $tests = Test::all();
         $categories = Category::all();
         $annocements = Announcement::all();
+//        $this->addurltosession($request);
         return view('user.home')->with([
             'languages' => $languages,
             'tests' => $tests,
@@ -165,24 +166,77 @@ class HomeController extends Controller
         ]);
     }
 
-    public function getLanguageTests($languageName)
+    public function getLanguageTests($languageName, Request $request)
     {
         $languages = Language::all();
         $tests = Language::Where('name',$languageName)->first()->tests;
 //        dd($tests);
+//        $this->addurltosession($request);
         return view('user.Test.tests')->with([
             'tests' => $tests,
-            'languages' => $languages
+            'languages' => $languages,
+            'language' => $languageName,
         ]);
     }
 
-    public function getTest($testLevel)
+    public function addurltosession(Request $request)
+    {
+        $previousUrls = $request->session()->get('previous_urls', []);
+        $previousUrls[] = url()->previous();
+        $request->session()->put('previous_urls', $previousUrls);
+        dump($previousUrls);
+        // Rest of your logic
+    }
+
+    public function getTest($testLevel, Request $request)
     {
         $languages = Language::all();
-        $test = Test::Where('level',$testLevel)->first();
+        $test = Test::where('level', $testLevel)
+            ->with('course') // Eager load the course relationship
+            ->first();
+//        dd($test->course);
+//        $this->addurltosession($request);
         return view('user.Test.test-details')->with([
             'test' => $test,
             'languages' => $languages
+        ]);
+    }
+    public function createDummyTests()
+    {
+
+//        $test = Test::findOrFail(51);
+
+        // Convert the JSON column back to an array
+//        $features = json_decode($test->features, true);
+
+        // Create the first dummy test
+        $test1 = Test::create([
+            'level' => 'Intermediate',
+            'name' => 'Dummy Test 1',
+            'overview' => 'This is the overview for dummy test 1.',
+            'content' => 'This is the content for dummy test 1.',
+            'time' => '60 minutes',
+            'price' => '$10',
+            'language_id '=> '2',
+            'features' => '["Évaluation axée sur le monde des affaires","Reconnaissance par les entreprises et les institutions","Évaluation normalisée","Comparabilité internationale","Développement personnel et professionnel"]',
+
+        ]);
+
+        // Create the second dummy test
+//        $test2 = Test::create([
+//            'level' => 'Advanced',
+//            'name' => 'Dummy Test 2',
+//            'overview' => 'This is the overview for dummy test 2.',
+//            'content' => 'This is the content for dummy test 2.',
+//            'time' => '90 minutes',
+//            'price' => '$15',
+//            'language_id '=> '2',
+//            'features' => json_encode(['0' => 'Feature 1', '1' => 'Feature 2', '2' => 'Feature 3']),
+//        ]);
+
+        return response()->json([
+            'message' => 'Dummy tests created successfully.',
+            'features' => [$test1->features],
         ]);
     }
 

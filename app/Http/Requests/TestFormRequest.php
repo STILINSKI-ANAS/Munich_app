@@ -25,10 +25,13 @@ class TestFormRequest extends FormRequest
             'level'=>['required'],
             'overview'=>['required'],
             'content'=>['required'],
+            'features'=>['required'],
             'time'=>['required'],
             'price'=>['required'],
             'name'=>['required'],
-            'language_id'=>['required']
+            'language_id'=>['required'],
+            'course_id'=>['required'],
+            'Image'=>['nullable','mimes:jpg,jpeg,png']
         ];
     }
 }

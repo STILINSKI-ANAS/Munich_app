@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('price');
             $table->timestamps();
+
+            $table->unsignedBigInteger('language_id');
+            $table->foreign('language_id')->references('id')->on('languages');
         });
     }
 
@@ -29,5 +32,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('courses');
+
     }
 };

@@ -9,6 +9,8 @@ use App\Models\Test;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -30,9 +32,10 @@ class LoginController extends Controller
      *
      * @var string
      */
-//    protected $redirectTo = RouteServiceProvider::HOME;
 
-    protected function authenticated(){
+//    protected $redirectTo = '/';
+
+    protected function authenticated(Request $request){
         $languages = Language::all();
         $tests = Test::all();
         $categories = Category::all();
@@ -43,9 +46,41 @@ class LoginController extends Controller
                 'categories' => $categories,
             ])->with('message', 'welcome to dashboard');
         }else{
-            return redirect('/')->with('status','logged in successfully');
+//            return back();
+//            $url = url();
+//            dd($url);
+//            $this->getbefprevurl($request);
+//            $this->addurltosession($request);
+            $previousUrls = Session::get('previous_urls', []);
+            $lastElement = end($previousUrls);
+            return redirect($lastElement);
+//            return redirect()->route('root')->with('status','logged in successfully');
         }
     }
+
+    public function showLoginForm(Request $request)
+    {
+        $this->addurltosession($request);
+        return view('auth.login'); // This returns the login view
+    }
+    public function addurltosession(Request $request)
+    {
+        $previousUrls = Session::get('previous_urls', []);
+        $previousUrls[] = url()->previous();
+        Session::put('previous_urls', $previousUrls);
+        dump($previousUrls);
+        // Rest of your logic
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+
+        // Customize the redirect or response after logout
+        return back();
+    }
+
     /**
      * Create a new controller instance.
      *

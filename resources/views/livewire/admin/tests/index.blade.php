@@ -17,7 +17,7 @@
                     </span>
                 </a>
             </h4>
-    
+
             <div class="rbt-dashboard-table table-responsive mobile-table-750 mt--30">
                 <table class="rbt-table table table-borderless">
                     <thead>
@@ -45,10 +45,10 @@
                                 <p class="">{{ $test->name }}</p>
                             </td>
                             <td>
-                                <p class="">{{ $test->overview }}</p>
+                                <p class="">{{ strlen($test->overview) > 100 ? substr($test->overview, 0, 100) . '...' : $test->overview }}</p>
                             </td>
                             <td>
-                                <span class="b3">{{ $test->content }}</span>
+                                <span class="b3">{{ strlen($test->content) > 100 ? substr($test->content, 0, 100) . '...' : $test->content }}</span>
                             </td>
                             <td>
                                 <p class="">{{ $test->time }}</p>
@@ -93,7 +93,7 @@
             });
         });
     </script>
-    
+
 
     @stack('scripts')
     @livewireScripts
@@ -105,4 +105,4 @@
 <!-- End Enrole Course  -->
 
     {{-- Sweet alert delete Script--}}
-    
+

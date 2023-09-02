@@ -65,7 +65,7 @@
                         <div class="header-info">
                             <div class="logo">
                                 <a href="{{url('/')}}">
-                                    <img src="{{ asset('assets/images/logo/logo-full-white.png') }}" alt="Institut Munich Logo">
+                                    <img src="{{ asset('assets/images/logo/logo-white.png') }}" alt="Institut Munich Logo">
                                 </a>
                             </div>
                         </div>
@@ -147,7 +147,7 @@
                                         </div>
                                         <ul class="user-list-wrapper">
                                             <li>
-                                                <a href="instructor-dashboard.html">
+                                                <a href="{{ url('/admin/Dashboard') }}">
                                                     <i class="feather-home"></i>
                                                     <span>My Dashboard</span>
                                                 </a>
@@ -157,7 +157,7 @@
                                         <hr class="mt--10 mb--10">
                                         <ul class="user-list-wrapper">
                                             <li>
-                                                <a href="instructor-settings.html">
+                                                <a href="{{ url('/') }}">
                                                     <i class="feather-settings"></i>
                                                     <span>Settings</span>
                                                 </a>

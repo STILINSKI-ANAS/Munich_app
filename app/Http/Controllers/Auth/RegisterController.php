@@ -7,7 +7,10 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+
 
 class RegisterController extends Controller
 {
@@ -29,8 +32,19 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
+//    protected $redirectTo = '/';
+    protected function redirectTo()
+    {
+        $previousUrls = Session::get('previous_urls', []);
+        $lastElement = end($previousUrls);
+        if (str_contains($lastElement, 'Test') || str_contains($lastElement, 'Courses')) {
+            // $lastElement contains either "Test" or "Courses"
+            return $lastElement;
+        } else {
+            return '/';
+            // $lastElement does not contain "Test" or "Courses"
+        }
+    }
     /**
      * Create a new controller instance.
      *
@@ -39,6 +53,11 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+//        $this->middleware(['web', 'guest']);
+//        $previousUrls = Session::get('previous_urls', []);
+//        $lastElement = end($previousUrls);
+//        dump($lastElement);
+//        $this->redirectTo = $lastElement;
     }
 
     /**
@@ -69,5 +88,20 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    public function showRegistrationForm(Request $request)
+    {
+        $this->redirectTo = '/12';
+        $this->addurltosession();
+        return view('auth.register'); // This returns the registration form view
+    }
+
+    public function addurltosession()
+    {
+        $previousUrls = Session::get('previous_urls', []);
+        $previousUrls[] = url()->previous();
+        Session::put('previous_urls', $previousUrls);
+        dump($previousUrls);
+        // Rest of your logic
     }
 }

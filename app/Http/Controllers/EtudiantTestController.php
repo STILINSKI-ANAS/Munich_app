@@ -40,6 +40,6 @@ class EtudiantTestController extends Controller
 
     public function sendEmail($name, $level, $email)
     {
-        dd(Mail::to($email)->send(new EmailService($name, $level, 'test')));
+        Mail::to($email)->send(new EmailService($name, $level, 'test'));
     }
 }

@@ -23,7 +23,7 @@
                             </div>
 
                             <div class="course-field mb--20">
-                                <h6>Vignette de la langue</h6>
+                                <h6>Vignette de L'examen</h6>
 
                                 <div class="rbt-create-course-thumbnail upload-area">
                                     <div class="upload-area">

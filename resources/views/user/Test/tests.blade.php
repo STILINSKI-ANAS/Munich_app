@@ -26,11 +26,11 @@
                                 <div class=" title-wrapper">
                                     <h1 class="title mb--0">Les Tests</h1>
                                     <a href="#" class="rbt-badge-2">
-                                        <div class="image">🎉</div> 3 Tests
+                                        <div class="image">🎉</div> {{count($tests)}} Tests
                                     </a>
                                 </div>
 
-                                <p class="description">Des tests pour évaluer vos compétences en allemand !</p>
+                                <p class="description">Des tests pour évaluer vos compétences en {{ $language }} !</p>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                                 <div class="rbt-card variation-01 rbt-hover">
                                     <div class="rbt-card-img">
                                         <a href="{{url('/Language/Test/'.$test->level)}}">
-                                            <img src="{{asset('./uploads/Course/'.$test->image)}}" alt="Card image">
+                                            <img src="{{asset('/uploads/Test/'.$test->image)}}" alt="Card image">
                                             <div class="rbt-badge-3 bg-white">
                                                 <span>-40%</span>
                                                 <span>Off</span>
@@ -102,7 +102,7 @@
                                                     <i class="fas fa-star"></i>
                                                     <i class="fas fa-star"></i>
                                                 </div>
-                                                <span class="rating-count"> (15 Reviews)</span>
+                                                <span class="rating-count"> 4.9</span>
                                             </div>
                                             <div class="rbt-bookmark-btn">
                                                 <a class="rbt-round-btn" title="Bookmark" href="#"><i
@@ -126,7 +126,8 @@
                                                 </a>
                                             </div>
                                             <div class="rbt-author-info">
-                                                By <a href="profile.html">Professor</a> In <a href="#">{{$test->language->name}}</a>
+                                                {{$test->language->name}}
+{{--                                                By <a href="profile.html">Professor</a> In <a href="#">{{$test->language->name}}</a>--}}
                                             </div>
                                         </div>
                                         <div class="rbt-card-bottom">

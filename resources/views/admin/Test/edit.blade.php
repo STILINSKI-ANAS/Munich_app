@@ -64,6 +64,52 @@
                         <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
                     </div>
                 </div>
+                <div class="col-lg-12">
+                    <div class="course-field mb--15">
+                        <label for="description">Features (separated by commas):</label>
+                        @php
+                            $featuresArray = json_decode($test->features, true);
+                            $featuresString = implode(', ', $featuresArray);
+                            dump($test->features);
+                        @endphp
+                        <textarea required id="description" rows="5" placeholder="Add The test Features here" name="features">{{$featuresString}}</textarea>
+                        <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
+                    </div>
+                </div>
+                <div class="course-field mb--20">
+                    <h6>Vignette de la langue</h6>
+
+                    <div class="rbt-create-course-thumbnail upload-area">
+                        <div class="upload-area">
+                            <div class="brows-file-wrapper" data-black-overlay="9">
+                                <!-- actual upload which is hidden -->
+                                <input id="createinputfile" type="file" class="inputfile" name="Image">
+                                <img id="createfileImage" src="{{ asset("uploads/Test/$test->image") }}" alt="file image">
+                                <!-- our custom upload button -->
+                                <label class="d-flex" for="createinputfile" title="No File Choosen">
+                                    <i class="feather-upload"></i>
+                                    <span class="text-center">Choisissez un fichier</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <small><i class="feather-info"></i> <b>Size:</b> 700x430 pixels, <b>Type de Fichiers Supporté:</b> JPG, JPEG, PNG</small>
+                </div>
+                <div class="col-lg-6">
+                    <div class="course-field mb--15">
+                        <label for="language">Cours inclus</label>
+                        <div class="rbt-modern-select bg-transparent height-50 mb--10">
+                            <select required name="course_id" class="w-100" data-live-search="true" title="{{$test->name}}" multiple data-size="7" data-actions-box="true" data-selected-text-format="count > 2" id="course_id" tabindex="null">
+                                @foreach($courses as $course)
+                                    <option name="course_id" value="{{ $course->id }}" {{ $test->course_id == $course->id ? 'selected' : '' }}>
+                                        {{ $course->level }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="form-group mb--0">

@@ -75,7 +75,7 @@
                 <div class="col-lg-8">
                     <div class="course-details-content">
                         <div class="rbt-course-feature-box rbt-border-with-box thuumbnail">
-                            <img class="w-100" src="{{ asset('assets/images/course/widaf.jpg') }}" alt="Card image">
+                            <img class="w-100" src="{{ asset('assets/images/course/WIDAF.jpg') }}" alt="Card image">
                         </div>
 
                         <div class="rbt-inner-onepage-navigation sticky-top mt--30">
@@ -110,6 +110,23 @@
                                 <p>
 
                                 <div class="row g-5 mb--30">
+                                    @php
+                                        $totalItems = 9; // Total number of items
+                                    @endphp
+
+                                    @for ($i = 0; $i < $totalItems; $i++)
+                                        @if ($i % 3 === 0)
+                                            <div class="outer-div">
+                                                @endif
+
+                                                <div class="inner-div">
+                                                    <!-- Content of inner div -->
+                                                </div>
+
+                                                @if ($i % 3 === 2 || $i === $totalItems - 1)
+                                            </div>
+                                        @endif
+                                    @endfor
                                     <!-- Start Feture Box  -->
                                     <div class="col-lg-6">
                                         <ul class="rbt-list-style-1">
@@ -428,7 +445,7 @@
                                             <span class="off-price">{{ $price * 1.4 }} MAD</span>
                                         </div>
                                     </div>
-    
+
                                     <div class="rbt-widget-details ">
                                         <ul class=" rbt-course-details-list-wrapper">
                                             <div class="row">
@@ -454,7 +471,7 @@
                                                 <span class="btn-text">S'inscrire</span>
                                             </button>
                                         </div>
-    
+
                                     </div>
                                 </div>
                             </form>

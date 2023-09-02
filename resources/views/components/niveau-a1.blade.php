@@ -934,7 +934,7 @@
                                             <span class="off-price">{{ $price * 1.4 }} MAD</span>
                                         </div>
                                     </div>
-    
+
                                     <div class="rbt-widget-details ">
                                         <ul class=" rbt-course-details-list-wrapper">
                                             <div class="row">
@@ -960,7 +960,7 @@
                                                 <span class="btn-text">S'inscrire</span>
                                             </button>
                                         </div>
-    
+
                                     </div>
                                 </div>
                             </form>
@@ -1033,7 +1033,10 @@
                                                 </a>
                                             </div>
                                             <div class="rbt-author-info">
-                                                By <a href="profile.html">Professor</a> In <a href="#">{{$test->language->name}}</a>
+                                                @php
+                                                    $languages_name = $test->language ? $test->language->name : '' ;
+                                                @endphp
+                                                    By <a href="profile.html">Professor</a> In <a href="#"> {{$languages_name}}</a>
                                             </div>
                                         </div>
                                         <div class="rbt-card-bottom">
