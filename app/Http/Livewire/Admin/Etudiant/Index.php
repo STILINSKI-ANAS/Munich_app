@@ -5,9 +5,12 @@ namespace App\Http\Livewire\Admin\Etudiant;
 use App\Models\Etudiant;
 use Illuminate\Database\QueryException;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
     public $name;
     public $showSubmitButton = 'hidden';
     public $etudiants = [];
@@ -42,7 +45,7 @@ class Index extends Component
             $errorCode = $exception->getCode();
 
             if ($errorCode == 23000) {
-                $this->errorMessage = "Cannot delete the student record due to a foreign key constraint.";
+                $this->errorMessage = "enable to delete (L'etudiant a acheter un cours ou un test)";
             } else {
                 $this->errorMessage = "An error occurred while deleting the student record.";
             }

@@ -30,12 +30,10 @@ class EtudiantRequest extends FormRequest
             'addresse'=>['required','string'],
             'dateNaissance'=>['required','string'],
             'email'=>['required','string'],
+            'Image' => ['nullable'],
             'status' => ['nullable', 'string'],
+
             'status_pro' => ['nullable', 'string'],
-            'Cours_options' => ['nullable', 'string'],
-            'Cours' => ['nullable', 'string'],
-            'langue_options' => ['nullable', 'string'],
-            'langue' => ['nullable', 'string'],
             'referral_options' => ['nullable', 'string'],
             'referral' => ['nullable', 'string'],
             'background' => ['nullable', 'string'],
@@ -43,7 +41,11 @@ class EtudiantRequest extends FormRequest
             'where_learning' => ['nullable', 'string'],
             'period_learning' => ['nullable', 'string'],
             'commentaire' => ['nullable', 'string'],
-            'Image' => ['nullable'],
+
+            'langue' => ['nullable', 'string'],
+            'Cours_options' => ['nullable', 'string'],
+            'Cours' => ['nullable', 'string'],
+            'langue_options' => ['nullable', 'string'],
         ];
     }
 }

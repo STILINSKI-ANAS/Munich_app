@@ -568,9 +568,22 @@
 
 {{--                                    </div>--}}
                                     @if(auth()->check())
-                                        <div>logged in</div>
-                                        <input type="text" name="ecole" placeholder="question supplémentaire" required>
-                                        <button class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" type="submit">
+{{--                                        <div>logged in</div>--}}
+                                        <div>
+                                            <labela>question supplémentaire 1</labela>
+                                            <input type="text" name="ecole" placeholder="question supplémentaire 1" required>
+                                        </div>
+                                        <div>
+                                            <labela>question supplémentaire 1</labela>
+                                            <input type="text" name="ecole" placeholder="question supplémentaire 1" required>
+
+                                        </div>
+                                        <div>
+                                            <labela>question supplémentaire 1</labela>
+
+                                        </div>
+                                       <input type="text" name="ecole" placeholder="question supplémentaire 1" required>
+                                        <button class="rbt-btn btn-gradient icon-hover w-100 d-block text-center mt--15" type="submit">
                                             <span class="btn-text">S'inscrire</span>
                                         </button>
                                     @else

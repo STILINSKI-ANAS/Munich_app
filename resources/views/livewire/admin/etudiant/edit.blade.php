@@ -199,7 +199,6 @@
                         <label for="field-1">Avez-vous deja suivi des cours de cette langue?</label>
                         <select id="options" name="background" wire:model="background"
                                 wire:change.prevent="handlebackgroundChange">
-                            {{--                            <option value="{{ $Etudiant->background }}">{{ $Etudiant->background }}</option>--}}
                             <option value="oui">Oui</option>
                             <option value="non">Non</option>
                         </select>

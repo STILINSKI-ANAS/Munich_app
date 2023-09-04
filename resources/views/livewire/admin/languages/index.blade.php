@@ -8,9 +8,6 @@
                 </span>
         </a>
     </h4>
-
-
-
     <!-- Start Modal Area  -->
     <div class="rbt-default-modal" style="padding: 0px !important;" {{$showSubmitButton}} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -39,8 +36,6 @@
         </div>
     </div>
     <!-- End Modal Area  -->
-
-
     <table class="rbt-table table table-borderless">
         <thead>
         <tr>

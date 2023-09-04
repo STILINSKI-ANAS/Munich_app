@@ -12,6 +12,7 @@ class Index extends Component
 
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
+    public $name;
     public $showSubmitButton = 'hidden';
     public $courses = [];
     public $courseId;
@@ -33,7 +34,7 @@ class Index extends Component
 
     public function destroyCourse()
     {
-        $course = Course::find($this->idLang);
+        $course = Course::find($this->courseId);
         if ($course->Image) {
             $path = 'uploads/Course/' . $course->Image;
             File::delete($path);

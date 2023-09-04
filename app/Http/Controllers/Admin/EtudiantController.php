@@ -19,13 +19,7 @@ class EtudiantController extends Controller
     }
     public function create()
     {
-        $languages = Language::all();
-        $courses = Course::all();
-        $tests = Test::all();
-
-        return view('admin.Etudiant.create')->with([
-            'languages' => $languages,'courses'=>$courses,"tests"=>$tests
-        ]);
+        return view('admin.Etudiant.create');
     }
     public function store(EtudiantRequest $request)
     {

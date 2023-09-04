@@ -14,10 +14,8 @@
         </div>
     @endif
     <div class="card rbt-shadow-box p-3 m-2" {{$showSubmitButton}}>
-        {{--        <input type="text" wire:model="idLang" {{$showSubmitButton}}>--}}
         <button type="submit" {{$showSubmitButton}} wire:click.prevent="destroyEtudiant" class="rbt-btn btn-xs bg-color-danger-opacity radius-round color-danger m-1">Oui</button>
         <button type="submit" {{$showSubmitButton}} wire:click.prevent="hide_validation" class="rbt-btn btn-xs bg-color-success-opacity radius-round color-success m-1">Non</button>
-
     </div>
     <table class="rbt-table table table-borderless">
         <thead>

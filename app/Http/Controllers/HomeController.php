@@ -56,6 +56,7 @@ class HomeController extends Controller
     }
 
 
+
     public function aboutUs()
     {
         $languages = Language::all();
@@ -170,6 +171,7 @@ class HomeController extends Controller
     {
         $languages = Language::all();
         $tests = Language::Where('name',$languageName)->first()->tests;
+//        dump($tests);
 //        dd($tests);
 //        $this->addurltosession($request);
         return view('user.Test.tests')->with([

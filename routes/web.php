@@ -37,7 +37,7 @@ Route::get('/home', function () {
 Auth::routes();
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('Dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index']);
+    Route::get('Dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('Dashboard');
 
     Route::controller(\App\Http\Controllers\Admin\LanguaguesController::class)->group(function () {
         Route::get('/Languages', 'index');

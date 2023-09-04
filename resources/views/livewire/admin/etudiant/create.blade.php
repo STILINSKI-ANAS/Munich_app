@@ -1,286 +1,316 @@
 <div>
-    <div>
-        <h1>Ajouter Etudiant</h1>
+    <div class="section-title">
+        <h4 class="rbt-title-style-3">Informations sur l'etudiant :</h4>
     </div>
-    <div class="card-body" wire:init="firstrender">
-        <div class="background-loading" style="display: {{$loading}};">
-            <div class="loading-box">
-                <div class="inter-load">
-                    <div class="rect rect1"></div>
-                    <div class="rect rect2"></div>
-                    <div class="rect rect3"></div>
-                    <div class="rect rect4"></div>
-                    <div class="rect rect5"></div>
-                </div>
-            </div>
+
+    @if ($successMessage)
+        <div class="alert-success p-2 rbt-radius">
+            {{ $successMessage }}
         </div>
-        <style>
-            .background-loading{
-                background: #FFFFFF;
-                position: absolute;
-                width: 80%;
-                height: 75%;
-                z-index: 6999;
-                border-radius: 8px;
-                border: 2px solid #E6E3F1;
-            }
-            .loading-box {
-                width: 200px;
-                height: 200px;
-                border: 5px solid #000000;
-                margin: 200px auto;
-                position: relative;
-                z-index: 7000;
-            }
+    @endif
 
-            .inter-load {
-                width: 100px;
-                height: 50px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                text-align: center;
-            }
+    <div class="advance-tab-button mb--30">
+        <ul class="nav nav-tabs tab-button-style-2 justify-content-start" id="settinsTab-4" role="tablist">
+            <li role="presentation">
+                <a href="#" wire:click.prevent="tabchange('personnel')" class="tab-button {{$personnelBtn}}">
+                    <span class="title">Personnel</span>
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="#" wire:click.prevent="tabchange('motifsNiveau')" class="tab-button {{$motifsNiveauBtn}}">
+                    <span class="title">Motifs et Niveau</span>
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="#" wire:click.prevent="tabchange('inscription')" class="tab-button {{$inscriptionBtn}}">
+                    <span class="title">Inscription</span>
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="#" wire:click.prevent="tabchange('paiement')" class="tab-button {{$paiementBtn}}">
+                    <span class="title">Paiement</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
-            .rect {
-                background: #000000;
-                display: inline-block;
-                height: 60px;
-                width: 7px;
-                margin: 0 1px;
-                animation: load 1.3s infinite ease-in-out;
-            }
 
-            @keyframes load {
-                0% {
-                    transform: scaleY(0.4);
-                }
-                20% {
-                    transform: scaleY(1);
-                }
-                40% {
-                    transform: scaleY(0.4);
-                }
-                100% {
-                    transform: scaleY(0.4);
-                }
-            }
-
-            .rect2 {
-                animation-delay: -1.2s;
-            }
-            .rect3 {
-                animation-delay: -1.1s;
-            }
-            .rect4 {
-                animation-delay: -1s;
-            }
-            .rect5 {
-                animation-delay: -0.9s;
-            }
-        </style>
-        <!-- Start Course Field Wrapper  -->
-        <form action="{{ url('admin/Etudiant')}}" method="POST">
-            @csrf
-            <div class="rbt-course-field-wrapper rbt-default-form card p-2 mb-3 rounded-3">
-                <h4 class="card-title" >
-                    <i class="feather-message-square"></i>
-                    Informations sur la Person :
-                </h4>
-                <div class="row">
-                    <div class="course-field mb--15 col-4">
-                        <label for="field-1">Nom :</label>
-                        <input id="field-1" type="text" placeholder="Entrez le Nom" name="nom">
+    <div class="tab-content">
+        <div class="tab-pane fade {{$personnel}}" id="personnel" role="tabpanel" aria-labelledby="personnel-tab">
+            <!-- Start Personnel info   -->
+            <form class="rbt-profile-row rbt-default-form row row--15" wire:submit.prevent="save">
+                <!-- Start Photo  -->
+                <div class="rbt-tutor-information-left">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input type="file" id="image" wire:model="image" class="form-control @error('image') is-invalid @enderror">
+                        @error('image')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
-                    <div class="course-field mb--15 col-4">
-                        <label for="field-1">Prenom :</label>
-                        <input id="field-1" type="text" placeholder="Entrez le Prenom" name="prenom">
-                    </div>
-                    <div class="course-field mb--15 col-4">
-                        <label for="field-1">CIN :</label>
-                        <input id="field-1" type="text" placeholder="Entrez la CIN" name="cin">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="course-field mb--15 col-6">
-                        <label for="field-1">GSM :</label>
-                        <input id="field-1" type="text" placeholder="Entrez le numero de telephone" name="tel">
-                    </div>
-                    <div class="course-field mb--15 col-6">
-                        <label for="field-1">Date de Naissance :</label>
-                        <input id="field-1" type="date" placeholder="Entrez la date de Naissance" name="dateNaissance">
-                    </div>
-                </div>
-
-                <div class="course-field mb--15">
-                    <label for="aboutCourse">Addresse</label>
-                    <textarea id="aboutCourse" rows="5" name="addresse" placeholder="Entrez l'addresse"></textarea>
-                </div>
-
-            </div>
-
-            <div class="rbt-course-field-wrapper rbt-default-form card p-2 mb-3 rounded-3">
-                <h4 class="card-title" >
-                    <i class="feather-message-square"></i>
-                    Plus de details sur la Person :
-                </h4>
-                <div class="row">
-                    <div class="course-field mb--15 col-6">
-                        <label for="field-1">Statut Professionnel :</label>
-                        <input id="field-1" type="text" placeholder="Entrez votre Statut Professionnel" name="status_pro">
-                    </div>
-                    <div class="course-field mb--15 col-6">
-                        <label for="field-1">Cours demande :</label>
-                        <select id="Cours_options" name="Cours_options" onchange="handleCoursChange(this.value)">
-                            <option value="">-- Select --</option>
-                            <option value="Preparation aux examens">Preparation aux examens</option>
-                            <option value="Cours de communication">Cours de communication</option>
-                            <option value="Cours particuliers">Cours particuliers</option>
-                            <option value="autre">autre</option>
-                        </select>
-                        <div id="otherCours" style="display: none;">
-                            <label for="Cours_customOption">Enter your option:</label>
-                            <input type="text" name="Cours" id="customCours" placeholder="Autre">
+                    @if ($image)
+                        <div class="thumbnail rbt-avatars size-lg position-relative">
+                            <img src="{{ $image->temporaryUrl() }}" alt="etudiant" height="300" width="300">
+                            <div class="rbt-edit-photo-inner">
+                                <button class="rbt-edit-photo" title="Upload Photo">
+                                    <i class="feather-camera"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <script>
-                        function handleCoursChange(value) {
-                            var otherCours = document.getElementById('otherCours');
-                            var customCours = document.getElementById('customCours');
-
-                            if (value === 'autre') {
-                                otherCours.style.display = 'block';
-                                customCours.required = true;
-                            } else {
-                                otherCours.style.display = 'none';
-                                customCours.required = false;
-                            }
-                        }
-                    </script>
+                    @else
+                        <div class="thumbnail rbt-avatars size-lg position-relative">
+                            <img src="{{asset('assets/images/team/avatar.jpg')}}" alt="Instructor">
+                            <div class="rbt-edit-photo-inner">
+                                <button class="rbt-edit-photo" title="Upload Photo">
+                                    <i class="feather-camera"></i>
+                                </button>
+                            </div>
+                        </div>
+                    @endif
                 </div>
-                <div class="row">
-                    <div class="course-field mb--15 col-6">
-                        <label for="field-1">Langues :</label>
-                        <select id="langue_options" name="langue_options" onchange="handlelangueChange(this.value)">
-                            <option value="">-- Select --</option>
-                            <option value="Allemand">Allemand</option>
-                            <option value="Anglais">Anglais</option>
-                            <option value="Francais">Francais</option>
-                            <option value="Espagnole">Espagnole</option>
-                            <option value="autre">Autre</option>
-                        </select>
-                        <div id="otherlangue" style="display: none;">
-                            <label for="customlangue">Enter your option:</label>
-                            <input type="text" name="langue" id="customlangue" placeholder="Autre">
-                        </div>
+                <!-- Photo    -->
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="rbt-form-group">
+                        <label for="nom">Nom :</label>
+                        <input wire:model="nom" type="text" id="nom" placeholder="Entrez le Nom" class="@error('nom') border-danger @enderror">
+                        @error('nom') <span class="alert-danger">{{ $message }}</span> @enderror
                     </div>
-                    <script>
-                        function handlelangueChange(value) {
-                            var otherlangue = document.getElementById('otherlangue');
-                            var customlangue = document.getElementById('customlangue');
-
-                            if (value === 'autre') {
-                                otherlangue.style.display = 'block';
-                                customlangue.required = true;
-                            } else {
-                                otherlangue.style.display = 'none';
-                                customlangue.required = false;
-                            }
-                        }
-                    </script>
-                    <div class="course-field mb--15 col-6">
-                        <label for="field-1">Comment avez-vous connu Institut Munich?</label>
-                        <select id="referral_options" name="referral_options" onchange="handlereferralChange(this.value)">
-                            <option value="">-- Select --</option>
-                            <option value="Site Internet">Site Internet</option>
-                            <option value="Facebook">Facebook</option>
-                            <option value="Panneau publicitaire, Poster ou Flayer">Panneau publicitaire, Poster ou Flayer</option>
-                            <option value="ouche a Oreille">Bouche a Oreille</option>
-                            <option value="autre">Autre</option>
-                        </select>
-                        <div id="otherreferral" style="display: none;">
-                            <label for="customreferral">Enter your option:</label>
-                            <input type="text" name="referral" id="customreferral" placeholder="Autre">
-                        </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="rbt-form-group">
+                        <label for="prenom">Prénom :</label>
+                        <input wire:model="prenom" type="text" id="prenom" placeholder="Entrez le Prénom" class="@error('prenom') border-danger @enderror">
+                        @error('prenom') <span class="alert-danger">{{ $message }}</span> @enderror
                     </div>
-                    <script>
-                        function handlereferralChange(value) {
-                            var otherreferral = document.getElementById('otherreferral');
-                            var customreferral = document.getElementById('customreferral');
+                </div>
 
-                            if (value === 'autre') {
-                                otherreferral.style.display = 'block';
-                                customreferral.required = true;
-                            } else {
-                                otherreferral.style.display = 'none';
-                                customreferral.required = false;
-                            }
-                        }
-                    </script>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="rbt-form-group">
+                        <label for="cin">CIN :</label>
+                        <input wire:model="cin" type="text" id="cin" placeholder="Entrez la CIN" class="@error('cin') border-danger @enderror">
+                        @error('cin') <span class="alert-danger">{{ $message }}</span> @enderror
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="rbt-form-group">
+                        <label for="phonenumber">Numéro de Téléphone :</label>
+                        <input wire:model="tel" type="tel" id="phonenumber" placeholder="Entrez le numéro de téléphone" class="@error('tel') border-danger @enderror">
+                        @error('tel') <span class="alert-danger">{{ $message }}</span> @enderror
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="rbt-form-group">
+                        <label for="dateNaissance">Date de Naissance :</label>
+                        <input wire:model="dateNaissance" type="date" id="dateNaissance" placeholder="Entrez la date de naissance" class="@error('dateNaissance') border-danger @enderror">
+                        @error('dateNaissance') <span class="alert-danger">{{ $message }}</span> @enderror
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="rbt-form-group">
+                        <label for="email">Email :</label>
+                        <input wire:model="email" type="text" id="email" placeholder="Entrez l'adresse email" class="@error('email') border-danger @enderror">
+                        @error('email') <span class="alert-danger">{{ $message }}</span> @enderror
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="rbt-form-group">
+                        <label for="adresse">Adresse :</label>
+                        <textarea class="@error('addresse') border-danger @enderror" wire:model="addresse" rows="5" id="addresse" placeholder="Entrez l'adresse"></textarea>
+                        @error('addresse') <span class="alert-danger">{{ $message }}</span> @enderror
+                    </div>
+                </div>
+            </form>
+            <!-- End Personnel info  -->
+        </div>
+
+
+
+        <!-- Motifs et niveua info  -->
+        <div class="tab-pane fade {{$motifsNiveau}}" id="motifsNiveau" role="tabpanel" aria-labelledby="motifsNiveau-tab">
+            <form action="#" class="rbt-profile-row rbt-default-form row row--15">
+                <div class="col-12">
+                    <div class="rbt-form-group">
+                        <label for="statutProfessionnel">Statut Professionnel :</label>
+                        <input wire:model="status_pro" id="statutProfessionnel" type="text" placeholder="Entrez le Statut Professionnel" name="status_pro">
+                    </div>
+                </div>
+                <div class="course-field mb--15 col-6">
+                    <label for="field-1">Comment avez-vous connu Institut Munich?</label>
+                    <select id="referral_options" name="referral_options" wire:model="referral_options"
+                            wire:change.prevent="handlereferralChange">
+                        <option value="Site Internet">Site Internet</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="Panneau publicitaire, Poster ou Flayer">Panneau publicitaire, Poster ou
+                            Flayer
+                        </option>
+                        <option value="ouche a Oreille">Bouche a Oreille</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <div id="otherreferral" style="display: {{ $otherreferral }};">
+                        <label for="customreferral">Enter your option:</label>
+                        <input {{ $customreferral }} wire:model="cusreferral" type="text" name="referral" id="customreferral"
+                               placeholder="Autre" value="">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="course-field mb--15 col-12">
                         <label for="field-1">Avez-vous deja suivi des cours de cette langue?</label>
-                        <select id="options" name="background" onchange="handlebackgroundChange(this.value)">
-                            <option value="">-- Select --</option>
+                        <select id="options" name="background" wire:model="background"
+                                wire:change.prevent="handlebackgroundChange">
+                            <option value="non">Non</option>
                             <option value="oui">Oui</option>
-                            <option value="option2">Non</option>
                         </select>
-                        <div id="otherbackground" style="display: none;">
+                        <div id="otherbackground" style="display: {{ $otherbackground }};">
                             <label for="custombackground">Si oui, pendant combien de temps?</label>
-                            <input id="custombackground" type="text" placeholder="Pendant combien de temps?" name="time_learning">
+                            <input id="custombackground" wire:model="time_learning" type="text" placeholder="Pendant combien de temps?"
+                                   name="time_learning" value="">
                             <div class="row">
-                                <label for="field-1">Ou? (Veuillez indiquer l'institution et la periode d'etude): </label>
+                                <label for="field-1">Ou? (Veuillez indiquer l'institution et la periode
+                                    d'etude): </label>
                                 <div class="course-field mb--15 col-6">
                                     <label for="where_learning">Institution: </label>
-                                    <input id="where_learning" type="text" placeholder="Entrez l'Institution" name="where_learning">
+                                    <input id="where_learning" wire:model="where_learning" type="text" placeholder="Entrez l'Institution"
+                                           name="where_learning" value="">
                                 </div>
                                 <div class="course-field mb--15 col-6">
                                     <label for="period_learning">Periode: </label>
-                                    <input id="period_learning" type="text" placeholder="Entrez la Periode" name="period_learning">
+                                    <input id="period_learning" wire:model="period_learning" type="text" placeholder="Entrez la Periode"
+                                           name="period_learning" value="">
                                 </div>
                             </div>
                         </div>
 
                     </div>
-                    <script>
-                        function handlebackgroundChange(value) {
-                            var otherbackground = document.getElementById('otherbackground');
-                            var custombackground = document.getElementById('custombackground');
-                            var where_learning = document.getElementById('where_learning');
-                            var period_learning = document.getElementById('period_learning');
-
-                            if (value === 'oui') {
-                                otherbackground.style.display = 'block';
-                                custombackground.required = true;
-                                where_learning.required = true;
-                                period_learning.required = true;
-                            } else {
-                                otherbackground.style.display = 'none';
-                                custombackground.required = false;
-                                where_learning.required = false;
-                                period_learning.required = false;
-                            }
-                        }
-                    </script>
                 </div>
+            </form>
+        </div>
 
-                <div class="course-field mb--15">
-                    <label for="commentaire">Commentaire: </label>
-                    <textarea id="commentaire" rows="5" name="commentaire" placeholder="commentaire ..."></textarea>
+        <!-- Motifs et niveua info end  -->
+
+        <!-- Inscription  -->
+        <div class="tab-pane fade {{$inscription}}" id="inscription" role="tabpanel" aria-labelledby="inscription-tab">
+            <form action="#" class="rbt-profile-row rbt-default-form row row--15">
+                <div class="col-lg-6">
+                    <div class="course-field mb--15">
+                        <label for="language">Language</label>
+                        <div class="rbt-modern-select bg-transparent height-50 mb--10">
+                            <select class="w-100" id="language" name="language_id">
+                                <option value="" selected>Sélectionnez une langue</option>
+                                @foreach($languages as $language)
+                                    <option value="{{ $language->id }}">{{ $language->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-lg-6">
+                    <div class="course-field mb--15">
+                        <label for="course">Cours</label>
+                        <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                            <select class="w-100" id="course" name="course_id">
+                                <option value="" selected>Sélectionnez un cours</option>
+                                @foreach($courses as $course)
+                                    <option value="{{ $course->id }}">{{ $course->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="course-field mb--15">
+                        <label for="test">Test</label>
+                        <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                            <select class="w-100" id="test" name="test_id">
+                                <option value="" selected>Sélectionnez un test</option>
+                                @foreach($tests as $test)
+                                    <option value="{{ $test->id }}">{{ $test->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="course-field mb--15">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" name="startDate">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="course-field mb--15">
+                        <label for="calenderie">Calendrier</label>
+                        <div class="rbt-modern-select bg-transparent height-50 mb--10">
+                            <select required name="calenderie" class="w-100" data-live-search="true" title="Sélectionnez ici" multiple="" data-size="7" data-actions-box="true" data-selected-text-format="count > 2" id="calenderie" tabindex="null">
+                                @foreach($tests as $test)
+                                    <option value="{{ $test->id }}">{{ $test->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Inscription  end -->
 
 
+        <!-- paiement  -->
+
+        <div class="tab-pane fade {{$paiement}}" id="paiement" role="tabpanel" aria-labelledby="paiement-tab">
+            <form action="#" class="rbt-profile-row rbt-default-form row row--15">
+                <!-- Total du panier -->
+                <div class="col-12 mb--60">
+                    <h4 class="checkout-title">Total du panier</h4>
+                    <div class="checkout-cart-total">
+                        <h4>Cours de langue <span>Total</span></h4>
+                        <ul>
+                            <li>Cours de français X 01 <span>295,00 $</span></li>
+                        </ul>
+                        <p>Sous-total <span>295,00 $</span></p>
+                        <p>Frais de livraison <span>0,00 $</span></p>
+                        <h4 class="mt--30">Total final <span>295,00 $</span></h4>
+                    </div>
+                </div>
+                <!-- Méthode de paiement -->
+                <div class="col-12 mb--60">
+                    <h4 class="checkout-title">Méthode de paiement</h4>
+                    <div class="checkout-payment-method">
+                        <div class="single-method">
+                            <input type="radio" id="payment_cash" name="payment-method" value="cash">
+                            <label for="payment_cash">Paiement à la livraison</label>
+                        </div>
+                        <div class="single-method">
+                            <input type="radio" id="payment_bank" name="payment-method" value="bank">
+                            <label for="payment_bank">Virement bancaire direct</label>
+                            <p data-method="bank">
+                                <label for="field-1">Entrez la référence :</label>
+                                <input id="field-1" type="text" placeholder="Entrez la référence de versement" name="reference_versement">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="plceholder-button mt--50">
+                        <button class="rbt-btn btn-gradient hover-icon-reverse">
+                    <span class="icon-reverse-wrapper">
+                        <span class="btn-text">Passer la commande</span>
+                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                    </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- paiement  end-->
+
+        <div class="col-12 mt--20">
+            <div class="rbt-form-group">
+                <button wire:click.prevent="save" class="rbt-btn btn-gradient" type="submit">Ajouter</button>
             </div>
+        </div>
 
-            <div class="form-group mb--0">
-                <button class="rbt-btn rbt-switch-btn btn-gradient radius-round btn-sm" type="submit">
-                    <span data-text="Ajouter">Ajouter</span>
-                </button>
-            </div>
-        </form>
 
-        <!-- End Course Field Wrapper  -->
     </div>
 </div>
