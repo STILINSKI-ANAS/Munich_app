@@ -9,6 +9,7 @@ use App\Models\Etudiant;
 use App\Models\Language;
 use App\Models\paiement;
 use App\Models\Test;
+use App\Models\User;
 
 class EtudiantController extends Controller
 {
@@ -75,4 +76,41 @@ class EtudiantController extends Controller
         return redirect('/admin/Etudiant')->with('message','Etudiant added');
 //        return dd($request->all());
     }
+
+    public function createAndAttachUser($etudiantId)
+    {
+        // Create a new user
+        $user = new User();
+        $user->name = 'New User'; // Set the user's name as needed
+        $user->email = 'user@example.com'; // Set the user's email as needed
+        $user->password = bcrypt('password'); // Set the user's password as needed
+        $user->save();
+
+        // Attach the user to the etudiant with ID 4
+        $etudiant = Etudiant::find($etudiantId);
+        if ($etudiant) {
+            $etudiant->user_id = $user->id;
+            $etudiant->save();
+        }
+
+        return response()->json(['message' => 'User created and attached successfully']);
+    }
+    public function getUserAndAttachedEtudiant($userId)
+    {
+        // Find the user by ID
+        $user = User::find($userId);
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        // Get the attached etudiant data
+        $etudiant = $user->etudiant;
+
+        return response()->json([
+            'user' => $user,
+            'etudiant' => $etudiant->nom,
+        ]);
+    }
+
 }

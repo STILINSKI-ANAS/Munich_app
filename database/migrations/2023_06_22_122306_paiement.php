@@ -18,12 +18,9 @@ return new class extends Migration
             $table->string('status');
             $table->decimal('amount');
             $table->string('reference');
-            $table->unsignedBigInteger('etudiant_id');
-            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('etudTest_id');
 
-            $table->foreign('etudiant_id')->references('id')->on('etudiants')->onDelete('restrict');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('restrict');
-
+            $table->foreign('etudTest_id')->references('id')->on('etudiant_tests')->onDelete('restrict');
             $table->timestamps();
         });
     }

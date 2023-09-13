@@ -3,12 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class EtudiantTest extends Pivot
 {
     use HasFactory;
+    public $incrementing = true;
+
+    protected $fillable = [
+        'etudiant_id',
+        'test_id',
+        'id'
+    ];
 
     protected $table = 'etudiant_tests';
 
@@ -20,5 +26,9 @@ class EtudiantTest extends Pivot
     public function test()
     {
         return $this->belongsTo(Test::class,'test_id');
+    }
+    public function paiement()
+    {
+        return $this->hasOne(paiement::class);
     }
 }

@@ -115,7 +115,7 @@
                 <div class="col-lg-6 order-1 order-lg-2">
                     <div class="video-popup-wrapper">
                         <img class="w-100 rbt-radius" src="assets/images/others/video-01.jpg" alt="Video Images">
-                        <a class="popup-video position-to-top" href="https://www.youtube.com/watch?v=Arz7mKqYaOE&feature=youtu.be">
+                        <a class="popup-video position-to-top" href="https://www.youtube.com/watch?v=Arz7mKqYaOE">
                             <span><img src="assets/images/icons/youtube.png" alt=""></span>
                         </a>
                     </div>
@@ -125,556 +125,205 @@
     </div>
     <!-- End Button Area  -->
 
-    <div class="rbt-testimonial-area bg-color-white pb--80 overflow-hidden">
-        <div class="container-fluid">
-            <div class="row g-5 align-items-center">
-                <div class="col-xl-4">
-                    <div class="section-title pl--70 pl_sm--50">
-                        <span class="subtitle bg-pink-opacity">Paroles d'apprenants</span>
-                        <h2 class="title">Paroles de nos apprenants</h2>
-                        <p class="description mt--20">Communiquez avec le monde global et construisez un avenir prometteur avec notre Institut Munich.</p>
-                        <div class="veiw-more-btn mt--20">
-                            <a class="rbt-btn btn-gradient rbt-marquee-btn marquee-text-y" href="contact.html">
-                                <span data-text="Contact Us">Contactez-nous</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-8">
-                    <div class="overflow-hidden">
-                        <div class="scroll-animation-wrapper pt--50 pb--30">
-                            <div class="scroll-animation scroll-right-left">
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-01.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Martha Maldonado</h5>
-                                                    <span>Executive Chairman <i>@ Google</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">After the launch, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-02.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Michael D. Lovelady</h5>
-                                                    <span>CEO <i>@ Google</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Histudy education, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-03.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Valerie J. Creasman</h5>
-                                                    <span>Executive Designer <i>@ Google</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Our educational, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-04.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Hannah R. Sutton</h5>
-                                                    <span>Executive Chairman <i>@ Facebook</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">People says about, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-05.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Pearl B. Hill</h5>
-                                                    <span>Chairman SR <i>@ Facebook</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Like this histudy, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-06.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Mandy F. Wood</h5>
-                                                    <span>SR Designer <i>@ Google</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Educational template, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-07.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Mildred W. Diaz</h5>
-                                                    <span>Executive Officer <i>@ Yelp</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Online leaning, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-08.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Christopher H. Win</h5>
-                                                    <span>Product Designer <i>@ Google</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Remote learning, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-01.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Martha Maldonado</h5>
-                                                    <span>Executive Chairman <i>@ Google</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">University managemnet, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-                            </div>
-                        </div>
-                        <div class="scroll-animation-wrapper pb--50">
-                            <div class="scroll-animation scroll-left-right">
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-01.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Martha Maldonado</h5>
-                                                    <span>Executive Chairman <i>@ Google</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">University managemnet, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-08.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Christopher H. Win</h5>
-                                                    <span>Product Designer <i>@ Google</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Remote learning, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-07.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Mildred W. Diaz</h5>
-                                                    <span>Executive Officer <i>@ Yelp</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Online leaning, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-06.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Mandy F. Wood</h5>
-                                                    <span>SR Designer <i>@ Google</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Educational template, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-05.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Pearl B. Hill</h5>
-                                                    <span>Chairman SR <i>@ Facebook</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Like this histudy, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-06.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Mandy F. Wood</h5>
-                                                    <span>SR Designer <i>@ Google</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Educational template, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-07.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Mildred W. Diaz</h5>
-                                                    <span>Executive Officer <i>@ Yelp</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Online leaning, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-08.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Christopher H. Win</h5>
-                                                    <span>Product Designer <i>@ Google</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">Remote learning, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-
-                                <!-- Start Single Testimonial  -->
-                                <div class="single-column-20">
-                                    <div class="rbt-testimonial-box">
-                                        <div class="inner">
-                                            <div class="clint-info-wrapper">
-                                                <div class="thumb">
-                                                    <img src="assets/images/testimonial/client-01.png" alt="Clint Images">
-                                                </div>
-                                                <div class="client-info">
-                                                    <h5 class="title">Martha Maldonado</h5>
-                                                    <span>Executive Chairman <i>@ Google</i></span>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p class="subtitle-3">University managemnet, vulputate at sapien sit amet, auctor iaculis lorem. In vel hend rerit nisi. Vestibulum eget risus velit.
-                                                </p>
-                                                <div class="rating mt--20">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial  -->
-                            </div>
+    <div class="rbt-testimonial-area bg-color-white rbt-section-gap overflow-hidden">
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title text-center mb--10">
+                            <span class="subtitle bg-primary-opacity">Avis</span>
+                            <h3 class="title">
+                                Voix De Nos Étudiants</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="scroll-animation-wrapper no-overlay mt--50">
+            <div class="scroll-animation scroll-right-left">
+
+                <!-- Start Single Testimonial  -->
+                <div class="single-column-20 bg-theme-gradient-odd">
+                    <div class="rbt-testimonial-box style-2">
+                        <div class="inner">
+                            <div class="description">
+                                <p class="subtitle-3">Institut Munich is the best language institute I have ever known in Agadir Morocco.
+                                    In my opinion they have the highest quality in german language learning around.</p>
+                                <div class="clint-info-wrapper">
+                                    <div class="client-info">
+                                        <h5 class="title">Sami Adili</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Testimonial  -->
+
+                <!-- Start Single Testimonial  -->
+                <div class="single-column-20 bg-theme-gradient-odd">
+                    <div class="rbt-testimonial-box style-2">
+                        <div class="inner">
+                            <div class="description">
+                                <p class="subtitle-3">Great institute with a great teachers and skilled management stuff.
+                                    this institute takes the language learning in Agadir and Morocco to another level.</p>
+                                <div class="clint-info-wrapper">
+                                    <div class="client-info">
+                                        <h5 class="title">Mustapha</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Testimonial  -->
+
+                <!-- Start Single Testimonial  -->
+                <div class="single-column-20 bg-theme-gradient-odd">
+                    <div class="rbt-testimonial-box style-2">
+                        <div class="inner">
+                            <div class="description">
+                                <p class="subtitle-3">Im learning deutsch in it. And i can say that, Its one of the greatest school in agadir..
+                                    it makes you love the languge that you learn😍😍 …</p>
+                                <div class="clint-info-wrapper">
+                                    <div class="client-info">
+                                        <h5 class="title"><span>Morad Benhakou</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Testimonial  -->
+
+                <!-- Start Single Testimonial  -->
+                <div class="single-column-20 bg-theme-gradient-odd">
+                    <div class="rbt-testimonial-box style-2">
+                        <div class="inner">
+                            <div class="description">
+                                <p class="subtitle-3">Institut Munich is the best language institute I have ever known in Agadir Morocco. In my opinion they have the highest quality in german language learning around.
+                                </p>
+                                <div class="clint-info-wrapper">
+                                    <div class="client-info">
+                                        <h5 class="title">Sami Adili</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Testimonial  -->
+
+                <!-- Start Single Testimonial  -->
+                <div class="single-column-20 bg-theme-gradient-odd">
+                    <div class="rbt-testimonial-box style-2">
+                        <div class="inner">
+                            <div class="description">
+                                <p class="subtitle-3">Great institute with a great teachers and skilled management stuff. this institute takes the language learning in Agadir and Morocco to another level.
+                                </p>
+                                <div class="clint-info-wrapper">
+                                    <div class="client-info">
+                                        <h5 class="title">Mustapha</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Testimonial  -->
+                <!-- Start Single Testimonial  -->
+                <div class="single-column-20 bg-theme-gradient-odd">
+                    <div class="rbt-testimonial-box style-2">
+                        <div class="inner">
+                            <div class="description">
+                                <p class="subtitle-3">Institut Munich is the best language institute I have ever known in Agadir Morocco.
+                                    In my opinion they have the highest quality in german language learning around.</p>
+                                <div class="clint-info-wrapper">
+                                    <div class="client-info">
+                                        <h5 class="title">Sami Adili</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Testimonial  -->
+
+                <!-- Start Single Testimonial  -->
+                <div class="single-column-20 bg-theme-gradient-odd">
+                    <div class="rbt-testimonial-box style-2">
+                        <div class="inner">
+                            <div class="description">
+                                <p class="subtitle-3">Great institute with a great teachers and skilled management stuff.
+                                    this institute takes the language learning in Agadir and Morocco to another level.</p>
+                                <div class="clint-info-wrapper">
+                                    <div class="client-info">
+                                        <h5 class="title">Mustapha</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Testimonial  -->
+
+                <!-- Start Single Testimonial  -->
+                <div class="single-column-20 bg-theme-gradient-odd">
+                    <div class="rbt-testimonial-box style-2">
+                        <div class="inner">
+                            <div class="description">
+                                <p class="subtitle-3">Im learning deutsch in it. And i can say that, Its one of the greatest school in agadir..
+                                    it makes you love the languge that you learn😍😍 …</p>
+                                <div class="clint-info-wrapper">
+                                    <div class="client-info">
+                                        <h5 class="title"><span>Morad Benhakou</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Testimonial  -->
+
+                <!-- Start Single Testimonial  -->
+                <div class="single-column-20 bg-theme-gradient-odd">
+                    <div class="rbt-testimonial-box style-2">
+                        <div class="inner">
+                            <div class="description">
+                                <p class="subtitle-3">Institut Munich is the best language institute I have ever known in Agadir Morocco. In my opinion they have the highest quality in german language learning around.
+                                </p>
+                                <div class="clint-info-wrapper">
+                                    <div class="client-info">
+                                        <h5 class="title">Sami Adili</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Testimonial  -->
+
+                <!-- Start Single Testimonial  -->
+                <div class="single-column-20 bg-theme-gradient-odd">
+                    <div class="rbt-testimonial-box style-2">
+                        <div class="inner">
+                            <div class="description">
+                                <p class="subtitle-3">Great institute with a great teachers and skilled management stuff. this institute takes the language learning in Agadir and Morocco to another level.
+                                </p>
+                                <div class="clint-info-wrapper">
+                                    <div class="client-info">
+                                        <h5 class="title">Mustapha</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Testimonial  -->
+
+            </div>
+        </div>
+
     </div>
 
     <div class="rbt-team-area bg-color-white rbt-section-gapBottom">
@@ -682,8 +331,10 @@
             <div class="row g-5">
                 <div class="col-lg-12 mb--60">
                     <div class="section-title text-center">
-                        <span class="subtitle bg-pink-opacity">Formateur expérimenté</span>
-                        <h2 class="title">Rencontrez Notre Équipe Inspirante </h2>
+                        <span class="subtitle bg-pink-opacity">NOTRE PERSONNEL
+                        </span>
+                        <h2 class="title">Une Équipe Exceptionnelle
+                        </h2>
                         <p class="description mt--20">Notre équipe de formateurs expérimentés vous guide vers l'excellence. Développez vos compétences et atteignez de nouveaux sommets avec nous. Ouvrez les portes d'un avenir prometteur..</p>
                     </div>
                 </div>
@@ -814,9 +465,11 @@
                 <div class="col-lg-12">
                     <div class="inner text-center">
                         <div class="section-title text-center">
-                            <span class="subtitle bg-white-opacity">Actualités de l'Institut Munich</span>
-                            <h2 class="title color-white">Inscrivez-vous</h2>
-                            <p class="description color-white mt--20">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam explicabo sit est eos earum reprehenderit inventore nam autem corrupti rerum!</p>
+                            <span class="subtitle bg-white-opacity">ABONNEZ-VOUS
+                            </span>
+                            <h2 class="title color-white">Abonnez-Vous À Notre Newsletter
+                            </h2>
+                            <p class="description color-white mt--20">Recevoir Des Informations Sur Nos Cours, Nos Événements Spéciaux Et Nos Offres Exclusives.</p>
                         </div>
                         <form action="{{ url('/Subscribe')}}" method="post" class="newsletter-form-1 mt--40">
                             @csrf
@@ -829,7 +482,8 @@
                                 </span>
                             </button>
                         </form>
-                        <span class="note-text color-white mt--20">Sans publicités, sans essai, sans engagement</span>
+                        <span class="note-text color-white mt--20">Pas de publicité, pas d'essai, pas d'engagement
+                        </span>
 
                         <div class="row row--15 mt--50">
                             <!-- Start Single Counter -->

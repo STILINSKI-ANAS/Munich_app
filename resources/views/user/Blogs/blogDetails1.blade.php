@@ -9,10 +9,10 @@
                 <ul class="meta-list justify-content-center mb--10">
                     <li class="list-item">
                         <div class="author-thumbnail">
-                            <img src="assets/images/testimonial/client-06.png" alt="blog-image">
+                            <img src="/assets/images/client/avatar-02.png" alt="blog-image">
                         </div>
                         <div class="author-info">
-                            <a href="#"><strong>Asmaa Lakbiri &emsp;</strong></a> à &emsp;<a href="#"><strong>Articles</strong></a>
+                            <a href="#"><strong>INSTITUT MUNICH &emsp;</strong></a> à &emsp;<a href="#"><strong>Articles</strong></a>
                         </div>
                     </li>
                     <li class="list-item">

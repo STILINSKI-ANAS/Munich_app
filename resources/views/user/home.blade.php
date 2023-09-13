@@ -49,7 +49,7 @@
                                             <div class="rbt-card variation-01 rbt-hover">
                                                 <div class="rbt-card-img">
                                                     <a href="{{url('/Language/Test/'.$test->level)}}">
-                                                        <img src="{{ asset('assets/images/course/' . $test['image']) }}" alt="{{ $test['name'] }} Images">
+                                                        <img src="{{ asset('uploads/Test/' . $test['image']) }}" alt="{{ $test['name'] }} Images">
                                                     </a>
                                                 </div>
                                                 <div class="rbt-card-body">
@@ -1196,14 +1196,29 @@
 
                             <div class="row row--15 mt--50">
                                 <!-- Start Single Counter -->
-                                <div class="col-lg-6 offset-lg-3 col-md-6 col-sm-6 single-counter">
+                                <div class="col-lg-3 offset-lg-3 col-md-6 col-sm-6 single-counter">
                                     <div class="rbt-counterup rbt-hover-03 style-2 text-color-white">
                                         <div class="inner">
                                             <div class="content">
-                                                <h3 class="counter color-white"><span class="odometer" data-count="1500">00</span>
+                                                <h3 class="counter color-white"><span class="odometer" data-count="500">00</span>
                                                 </h3>
-                                                <h5 class="title color-white">Abonnés</h5>
-                                                <span class="subtitle color-white">N'attendez plus et rejoignez-nous dès maintenant !</span>
+                                                <h5 class="title color-white">Formation réussie</h5>
+                                                <span class="subtitle color-white">Apprenants en comptage</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Counter -->
+
+                                <!-- Start Single Counter -->
+                                <div class="col-lg-3 col-md-6 col-sm-6 single-counter mt_mobile--30">
+                                    <div class="rbt-counterup rbt-hover-03 style-2 text-color-white">
+                                        <div class="inner">
+                                            <div class="content">
+                                                <h3 class="counter color-white"><span class="odometer" data-count="100">00</span>
+                                                </h3>
+                                                <h5 class="title color-white">Étudiants certifiés</h5>
+                                                <span class="subtitle color-white">Programmes de formation</span>
                                             </div>
                                         </div>
                                     </div>

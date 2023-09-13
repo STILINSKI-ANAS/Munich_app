@@ -9,10 +9,10 @@
                 <ul class="meta-list justify-content-center mb--10">
                     <li class="list-item">
                         <div class="author-thumbnail">
-                            <img src="assets/images/testimonial/client-06.png" alt="blog-image">
+                            <img src="/assets/images/client/avatar-02.png" alt="blog-image">
                         </div>
                         <div class="author-info">
-                            <a href="#"><strong>Asmaa Lakbiri &emsp;</strong></a> à &emsp;<a href="#"><strong>Blog3</strong></a>
+                            <a href="#"><strong>INSTITUT MUNICH &emsp;</strong></a> à &emsp;<a href="#"><strong>Blog3</strong></a>
                         </div>
                     </li>
                     <li class="list-item">
@@ -29,7 +29,7 @@
                 <div class="content">
                     <div class="post-thumbnail mb--30 position-relative wp-block-image alignwide">
                         <figure>
-                            <img src="{{asset('assets/images/blog/blog-card-01.jpg')}}" alt="Education Images">
+                            <img src="{{asset('assets/images/blog/blog-card-03.jpg')}}" alt="Education Images">
 
                         </figure>
                     </div>

@@ -170,47 +170,47 @@
                                 <div class="row g-5 align-items-center">
                                     <div class="col-6">
                                         <div class="rbt-card variation-01 rbt-hover">
-                                        <div class="rbt-card-img">
-                                            <a href="{{url('/Language/Course/'.$course->level)}}">
-                                                <img src="{{ asset('assets/images/course/'. $course->image) }}" alt="Card image">
+                                            <div class="rbt-card-img">
+                                                <a href="{{url('/Language/Course/'.$course->level)}}">
+                                                    <img src="{{ asset('assets/images/course/'. $course->image) }}" alt="Card image">
 
-                                            </a>
-                                        </div>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="rbt-card variation-01 rbt-hover">
-                                        <div class="rbt-card-body">
-                                            <div class="rbt-card-top">
-                                                <div class="rbt-review">
-                                                    <div class="rating">
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
+                                            <div class="rbt-card-body">
+                                                <div class="rbt-card-top">
+                                                    <div class="rbt-review">
+                                                        <div class="rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                        </div>
+                                                        <span class="rating-count">4.9</span>
                                                     </div>
-                                                    <span class="rating-count">4.9</span>
+
                                                 </div>
 
-                                            </div>
-
-                                            <h4 class="rbt-card-title"><a href="{{url('/Language/Course/'.$course->level)}}">{{ $course->level }}
-                                                </a>
-                                            </h4>
+                                                <h4 class="rbt-card-title"><a href="{{url('/Language/Course/'.$course->level)}}">{{ $course->level }}
+                                                    </a>
+                                                </h4>
 
 
 
-                                            <p class="rbt-card-text">{{ $course->overview }}</p>
+                                                <p class="rbt-card-text">{{ $course->overview }}</p>
 
-                                            <div class="rbt-card-bottom">
-                                                <div class="rbt-price">
-                                                    <span class="current-price">{{ $course->price }} MAD</span>
-                                                    <span class="off-price">{{ $course->price * 1.4 }} MAD</span>
+                                                <div class="rbt-card-bottom">
+                                                    <div class="rbt-price">
+                                                        <span class="current-price">{{ $course->price }} MAD</span>
+                                                        <span class="off-price">{{ $course->price * 1.4 }} MAD</span>
+                                                    </div>
+                                                    <a class="rbt-btn-link" href="{{url('/Language/Course/'.$course->level)}}">En Savoir plus <i class="feather-arrow-right"></i></a>
                                                 </div>
-                                                <a class="rbt-btn-link" href="{{url('/Language/Course/'.$course->level)}}">En Savoir plus <i class="feather-arrow-right"></i></a>
                                             </div>
-                                        </div>
                                         </div>
                                     </div>
                                 </div>
@@ -530,76 +530,77 @@
                         <div class="inner">
 
                             <!-- Start Formulaire Wrapper  -->
-                            <form method="POST" action="{{ url('/EtudiantTest')}}" enctype="multipart/form-data">
-                                @csrf
-                                <div class="content-item-content">
-{{--                                    <div class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">--}}
-{{--                                        <div class="rbt-price">--}}
-{{--                                            <span class="current-price">{{ $price }} MAD</span>--}}
-{{--                                            <span class="off-price">{{ $price * 1.4 }} MAD</span>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
+                            <div class="content-item-content">
+                                {{--                                    <div class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">--}}
+                                {{--                                        <div class="rbt-price">--}}
+                                {{--                                            <span class="current-price">{{ $price }} MAD</span>--}}
+                                {{--                                            <span class="off-price">{{ $price * 1.4 }} MAD</span>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div>--}}
 
-{{--                                    <div class="rbt-widget-details ">--}}
-{{--                                        <ul class=" rbt-course-details-list-wrapper">--}}
-{{--                                            <div class="row">--}}
-{{--                                                <div class="col-6">--}}
-{{--                                                    <li><input type="text" name="nom" placeholder="Nom" required></li>--}}
-{{--                                                    <li><input type="text" name="prenom" placeholder="Prénom" required></li>--}}
-{{--                                                    <li><input type="text" name="sexe" placeholder="Sexe" required></li>--}}
-{{--                                                    <li><input type="date" name="dateNaissance" placeholder="Date de naissance" required></li>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="col-6">--}}
-{{--                                                    <li><input type="tel" name="tel" placeholder="Numéro de téléphone" required></li>--}}
-{{--                                                    <li><input type="text" name="email" placeholder="Adresse e-mail" required></li>--}}
-{{--                                                    <li><input type="text" name="placeOfBirth" placeholder="Lieu de naissance" required></li>--}}
-{{--                                                    <li><input type="text" name="countryOfBirth" placeholder="Pays de naissance" required></li>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            <li><input type="text" name="cin" placeholder="Numéro de passeport ou CIN" required></li>--}}
-{{--                                            <li><input type="text" name="addresse" placeholder="Adresse actuelle" required></li>--}}
-{{--                                        </ul>--}}
-{{--                                        <input type="hidden" id="testId" name="testId" value="{{$testId}}">--}}
-{{--                                        <div class="add-to-card-button">--}}
-{{--                                            <button class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" type="submit">--}}
-{{--                                                <span class="btn-text">S'inscrire</span>--}}
-{{--                                            </button>--}}
-{{--                                        </div>--}}
+                                {{--                                    <div class="rbt-widget-details ">--}}
+                                {{--                                        <ul class=" rbt-course-details-list-wrapper">--}}
+                                {{--                                            <div class="row">--}}
+                                {{--                                                <div class="col-6">--}}
+                                {{--                                                    <li><input type="text" name="nom" placeholder="Nom" required></li>--}}
+                                {{--                                                    <li><input type="text" name="prenom" placeholder="Prénom" required></li>--}}
+                                {{--                                                    <li><input type="text" name="sexe" placeholder="Sexe" required></li>--}}
+                                {{--                                                    <li><input type="date" name="dateNaissance" placeholder="Date de naissance" required></li>--}}
+                                {{--                                                </div>--}}
+                                {{--                                                <div class="col-6">--}}
+                                {{--                                                    <li><input type="tel" name="tel" placeholder="Numéro de téléphone" required></li>--}}
+                                {{--                                                    <li><input type="text" name="email" placeholder="Adresse e-mail" required></li>--}}
+                                {{--                                                    <li><input type="text" name="placeOfBirth" placeholder="Lieu de naissance" required></li>--}}
+                                {{--                                                    <li><input type="text" name="countryOfBirth" placeholder="Pays de naissance" required></li>--}}
+                                {{--                                                </div>--}}
+                                {{--                                            </div>--}}
+                                {{--                                            <li><input type="text" name="cin" placeholder="Numéro de passeport ou CIN" required></li>--}}
+                                {{--                                            <li><input type="text" name="addresse" placeholder="Adresse actuelle" required></li>--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <input type="hidden" id="testId" name="testId" value="{{$testId}}">--}}
+                                {{--                                        <div class="add-to-card-button">--}}
+                                {{--                                            <button class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" type="submit">--}}
+                                {{--                                                <span class="btn-text">S'inscrire</span>--}}
+                                {{--                                            </button>--}}
+                                {{--                                        </div>--}}
 
-{{--                                    </div>--}}
-                                    @if(auth()->check())
-{{--                                        <div>logged in</div>--}}
+                                {{--                                    </div>--}}
+                                @if(auth()->check())
+                                    {{--                                        <div>logged in</div>--}}
+                                    <form method="POST" action="{{ url('/EtudiantTest')}}" enctype="multipart/form-data">
+                                        @csrf
                                         <div>
-                                            <labela>question supplémentaire 1</labela>
-                                            <input type="text" name="ecole" placeholder="question supplémentaire 1" required>
+                                            <labela>nom</labela>
+                                            <input type="text" name="nom" placeholder="question supplémentaire 1" required>
                                         </div>
                                         <div>
-                                            <labela>question supplémentaire 1</labela>
-                                            <input type="text" name="ecole" placeholder="question supplémentaire 1" required>
+                                            <labela>prenom</labela>
+                                            <input type="text" name="prenom" placeholder="question supplémentaire 1" required>
 
                                         </div>
                                         <div>
-                                            <labela>question supplémentaire 1</labela>
-
+                                            <labela>supp1</labela>
                                         </div>
-                                       <input type="text" name="ecole" placeholder="question supplémentaire 1" required>
+                                        <input type="text" name="supp1" placeholder="question supplémentaire 1" required>
+                                        <input type="text" name="testId" required value="{{$testId}}" hidden>
                                         <button class="rbt-btn btn-gradient icon-hover w-100 d-block text-center mt--15" type="submit">
                                             <span class="btn-text">S'inscrire</span>
                                         </button>
-                                    @else
-{{--                                        <div>logged out</div>--}}
-                                        <div class="rbt-price">
-                                            <span class="current-price">Crer un compte pour s'inscrire</span>
-                                        </div>
-                                        <a class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" href="{{ url('/register') }}">
-                                            Cree compte
-                                        </a>
-                                        <a class="icon-hover" href="{{ url('/login') }}">
-                                            s'authentifier
-                                        </a>
-                                    @endif
-                                </div>
-                            </form>
+                                    </form>
+                                @else
+                                    {{--                                        <div>logged out</div>--}}
+                                    <div class="rbt-price">
+                                        <span class="current-price">Crer un compte pour s'inscrire</span>
+                                    </div>
+                                    <a class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" href="{{ url('/register') }}">
+                                        Cree compte
+                                    </a>
+                                    <a class="icon-hover" href="{{ url('/login') }}">
+                                        s'authentifier
+                                    </a>
+                                @endif
+                            </div>
+
 
                             <!-- End Formulaire Wrapper  -->
                         </div>

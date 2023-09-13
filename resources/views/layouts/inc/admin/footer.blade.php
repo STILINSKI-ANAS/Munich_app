@@ -103,7 +103,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12">
-                    <p class="rbt-link-hover text-center text-lg-start">Copyright © 2023 <a href="#">CtrlA.</a> All Rights Reserved</p>
+                    <p class="rbt-link-hover text-center text-lg-start">Droits d'auteur © 2023 <a href="#">INSTITUT MUNICH</a>. Tous droits réservés.</p>
                 </div>
             </div>
         </div>

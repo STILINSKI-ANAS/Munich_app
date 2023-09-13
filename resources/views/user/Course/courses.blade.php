@@ -26,11 +26,21 @@
                                 <div class=" title-wrapper">
                                     <h1 class="title mb--0">Tous les cours</h1>
                                     <a href="#" class="rbt-badge-2">
-                                        <div class="image">🎉</div> 4 cours
+                                        <div class="image">🎉</div>
+                                        4 cours
                                     </a>
                                 </div>
 
-                                <p class="description">Nos cours sont spécialement conçus pour accompagner les débutants en langues sur leur chemin vers l'expertise linguistique. Nous fournissons un environnement d'apprentissage stimulant et interactif, où vous pourrez acquérir les bases essentielles et progresser de manière efficace. Nos instructeurs chevronnés vous guideront à chaque étape, en vous offrant des outils pratiques, des exercices pertinents et des ressources complémentaires pour renforcer vos compétences. Qu'il s'agisse d'apprendre une nouvelle langue pour voyager, étudier ou communiquer avec des locuteurs natifs, notre programme vous aidera à atteindre votre objectif et à devenir un expert linguistique. Rejoignez-nous dès aujourd'hui et découvrez une expérience d'apprentissage enrichissante et gratifiante.
+                                <p class="description">Nos cours sont spécialement conçus pour accompagner les débutants
+                                    en langues sur leur chemin vers l'expertise linguistique. Nous fournissons un
+                                    environnement d'apprentissage stimulant et interactif, où vous pourrez acquérir les
+                                    bases essentielles et progresser de manière efficace. Nos instructeurs chevronnés
+                                    vous guideront à chaque étape, en vous offrant des outils pratiques, des exercices
+                                    pertinents et des ressources complémentaires pour renforcer vos compétences. Qu'il
+                                    s'agisse d'apprendre une nouvelle langue pour voyager, étudier ou communiquer avec
+                                    des locuteurs natifs, notre programme vous aidera à atteindre votre objectif et à
+                                    devenir un expert linguistique. Rejoignez-nous dès aujourd'hui et découvrez une
+                                    expérience d'apprentissage enrichissante et gratifiante.
                                 </p>
                             </div>
                         </div>
@@ -46,8 +56,16 @@
                                 <div class="rbt-sorting-list d-flex flex-wrap align-items-center">
                                     <div class="rbt-short-item switch-layout-container">
                                         <ul class="course-switch-layout">
-                                            <li class="course-switch-item"><button class="rbt-grid-view active" title="Grid Layout"><i class="feather-grid"></i> <span class="text">Grid</span></button></li>
-                                            <li class="course-switch-item"><button class="rbt-list-view" title="List Layout"><i class="feather-list"></i> <span class="text">List</span></button></li>
+                                            <li class="course-switch-item">
+                                                <button class="rbt-grid-view active" title="Grid Layout"><i
+                                                            class="feather-grid"></i> <span class="text">Grid</span>
+                                                </button>
+                                            </li>
+                                            <li class="course-switch-item">
+                                                <button class="rbt-list-view" title="List Layout"><i
+                                                            class="feather-list"></i> <span class="text">List</span>
+                                                </button>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -86,7 +104,7 @@
                                         <a href="{{url('/Language/Course/'.$course->level)}}">
                                             <img src="{{asset('./uploads/Course/'.$course->image)}}" alt="Card image">
                                             <div class="rbt-badge-3 bg-white">
-                                                <span>-40%</span>
+                                                <span>-20%</span>
                                                 <span>Off</span>
                                             </div>
                                         </a>
@@ -101,35 +119,33 @@
                                                     <i class="fas fa-star"></i>
                                                     <i class="fas fa-star"></i>
                                                 </div>
-                                                <span class="rating-count"> (15 Reviews)</span>
                                             </div>
 
                                         </div>
 
-                                        <h4 class="rbt-card-title"><a href="{{url('/Language/Course/'.$course->level)}}">{{$course->level}}</a>
+                                        <h4 class="rbt-card-title"><a
+                                                    href="{{url('/Language/Course/'.$course->level)}}">{{$course->level}}</a>
                                         </h4>
 
-                                        <ul class="rbt-meta">
-                                            <li><i class="feather-book"></i>6 Modules</li>
-                                            <li><i class="feather-users"></i>50 Etudiants</li>
-                                        </ul>
 
                                         <p class="rbt-card-text">{{ substr($course->overview, 0, 85) }}...</p>
                                         <div class="rbt-author-meta mb--10">
                                             <div class="rbt-avater">
                                                 <a href="#">
-                                                    <img src="{{ asset('assets/images/client/avatar-02.png') }}" alt="Sophia Jaymes">
+                                                    <img src="{{ asset('assets/images/client/avatar-02.png') }}"
+                                                         alt="Sophia Jaymes">
                                                 </a>
                                             </div>
                                             <div class="rbt-author-info">
-                                                By <a href="profile.html">Professor</a> In <a href="#">{{$course->language->overview}}</a>
+                                                Par <a href="profile.html">INSTITUT MUNICH</a> <a
+                                                        href="#">{{$course->language->overview}}</a>
                                             </div>
                                         </div>
                                         <div class="rbt-card-bottom">
-                                                <?php
-                                                $price = $course->price;
-                                                $totalPrice = $price + ($price * 0.4); // Price + 40% of the price
-                                                ?>
+                                            <?php
+                                            $price = $course->price;
+                                            $totalPrice = $price + ($price * 0.2); // Price + 20% of the price
+                                            ?>
 
                                             <div class="rbt-price">
                                                 <span class="current-price">{{$price}} MAD</span>

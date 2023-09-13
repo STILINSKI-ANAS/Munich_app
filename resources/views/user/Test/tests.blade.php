@@ -45,8 +45,16 @@
                                 <div class="rbt-sorting-list d-flex flex-wrap align-items-center">
                                     <div class="rbt-short-item switch-layout-container">
                                         <ul class="course-switch-layout">
-                                            <li class="course-switch-item"><button class="rbt-grid-view active" title="Grid Layout"><i class="feather-grid"></i> <span class="text">Grid</span></button></li>
-                                            <li class="course-switch-item"><button class="rbt-list-view" title="List Layout"><i class="feather-list"></i> <span class="text">List</span></button></li>
+                                            <li class="course-switch-item">
+                                                <button class="rbt-grid-view active" title="Grid Layout"><i
+                                                        class="feather-grid"></i> <span class="text">Grid</span>
+                                                </button>
+                                            </li>
+                                            <li class="course-switch-item">
+                                                <button class="rbt-list-view" title="List Layout"><i
+                                                        class="feather-list"></i> <span class="text">List</span>
+                                                </button>
+                                            </li>
                                         </ul>
                                     </div>
 
@@ -54,7 +62,8 @@
                             </div>
 
                             <div class="col-lg-7 col-md-12">
-                                <div class="rbt-sorting-list d-flex flex-wrap align-items-center justify-content-start justify-content-lg-end">
+                                <div
+                                    class="rbt-sorting-list d-flex flex-wrap align-items-center justify-content-start justify-content-lg-end">
                                     <div class="rbt-short-item">
                                         <form action="#" class="rbt-search-style me-0">
                                             <input type="text" placeholder="Cherche Votre Test..">
@@ -87,7 +96,7 @@
                                         <a href="{{url('/Language/Test/'.$test->level)}}">
                                             <img src="{{asset('/uploads/Test/'.$test->image)}}" alt="Card image">
                                             <div class="rbt-badge-3 bg-white">
-                                                <span>-40%</span>
+                                                <span>-20%</span>
                                                 <span>Off</span>
                                             </div>
                                         </a>
@@ -102,7 +111,6 @@
                                                     <i class="fas fa-star"></i>
                                                     <i class="fas fa-star"></i>
                                                 </div>
-                                                <span class="rating-count"> 4.9</span>
                                             </div>
                                             <div class="rbt-bookmark-btn">
                                                 <a class="rbt-round-btn" title="Bookmark" href="#"><i
@@ -110,37 +118,36 @@
                                             </div>
                                         </div>
 
-                                        <h4 class="rbt-card-title"><a href="{{url('/Language/Test/'.$test->level)}}">{{$test->level}}</a>
+                                        <h4 class="rbt-card-title"><a
+                                                href="{{url('/Language/Test/'.$test->level)}}">{{$test->level}}</a>
                                         </h4>
 
-                                        <ul class="rbt-meta">
-                                            <li><i class="feather-book"></i>12 Lessons</li>
-                                            <li><i class="feather-users"></i>50 Students</li>
-                                        </ul>
 
                                         <p class="rbt-card-text">{{ substr($test->overview, 0, 85) }}...</p>
                                         <div class="rbt-author-meta mb--10">
                                             <div class="rbt-avater">
                                                 <a href="#">
-                                                    <img src="{{ asset('assets/images/client/avatar-02.png') }}" alt="Sophia Jaymes">
+                                                    <img src="{{ asset('assets/images/client/avatar-02.png') }}"
+                                                         alt="Sophia Jaymes">
                                                 </a>
                                             </div>
                                             <div class="rbt-author-info">
                                                 {{$test->language->name}}
-{{--                                                By <a href="profile.html">Professor</a> In <a href="#">{{$test->language->name}}</a>--}}
+                                                {{--                                                By <a href="profile.html">Professor</a> In <a href="#">{{$test->language->name}}</a>--}}
                                             </div>
                                         </div>
                                         <div class="rbt-card-bottom">
-                                                <?php
-                                                $price = $test->price;
-                                                $totalPrice = $price + ($price * 0.4); // Price + 40% of the price
-                                                ?>
+                                            <?php
+                                            $price = $test->price;
+                                            $totalPrice = $price + ($price * 0.4); // Price + 40% of the price
+                                            ?>
 
                                             <div class="rbt-price">
                                                 <span class="current-price">{{$price}} MAD</span>
                                                 <span class="off-price">{{$totalPrice}} MAD</span>
                                             </div>
-                                            <a class="rbt-btn-link" href="{{url('/Language/Test/'.$test->level)}}">S'avoir Plus<i class="feather-arrow-right"></i></a>
+                                            <a class="rbt-btn-link" href="{{url('/Language/Test/'.$test->level)}}">S'avoir
+                                                Plus<i class="feather-arrow-right"></i></a>
                                         </div>
                                     </div>
                                 </div>

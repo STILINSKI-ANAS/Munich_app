@@ -10,10 +10,11 @@
                 <ul class="meta-list justify-content-center mb--10">
                     <li class="list-item">
                         <div class="author-thumbnail">
-                            <img src="assets/images/testimonial/client-06.png" alt="blog-image">
+                            <img src="/assets/images/client/avatar-02.png" alt="blog-image">
                         </div>
                         <div class="author-info">
-                            <a href="#"><strong>Asmaa Lakbiri</strong></a> à <a href="#"><strong>Blog</strong></a>
+                            <a href="#"><strong>INSTITUT MUNICH &emsp;</strong></a> à &emsp;<a
+                                    href="#"><strong>Blog</strong></a>
                         </div>
                     </li>
                     <li class="list-item">
@@ -30,15 +31,22 @@
                 <div class="content">
                     <div class="post-thumbnail mb--30 position-relative wp-block-image alignwide">
                         <figure>
-                            <img src="assets/images/blog/visa.jpg" alt="Blog Images">
+                            <img src="assets/images/blog/blog-card-04.png" alt="Blog Images">
                         </figure>
                     </div>
-                    <p>Pour les citoyens marocains désireux de découvrir l'Allemagne, l'obtention d'un visa Schengen est une étape essentielle. Ce guide exhaustif vise à offrir des informations détaillées sur les documents nécessaires, le processus de demande,
-                        et les points cruciaux à prendre en compte lors de la demande d'un visa Schengen pour se rendre en Allemagne. En suivant ces conseils avisés, les voyageurs marocains pourront s'assurer une expérience sereine et réussie lors de
+                    <p>Pour les citoyens marocains désireux de découvrir l'Allemagne, l'obtention d'un visa Schengen est
+                        une étape essentielle. Ce guide exhaustif vise à offrir des informations détaillées sur les
+                        documents nécessaires, le processus de demande,
+                        et les points cruciaux à prendre en compte lors de la demande d'un visa Schengen pour se rendre
+                        en Allemagne. En suivant ces conseils avisés, les voyageurs marocains pourront s'assurer une
+                        expérience sereine et réussie lors de
                         leur séjour en Allemagne.</p>
 
                     <blockquote class="wp-block-quote">
-                        <p>Ton rêve est une réalité qui attend que tu le matérialises. Aujourd'hui est un nouveau jour ! Ne laisse pas ton passé interférer avec ton destin ! </p><cite><a href="https://themeforest.net/user/rainbow-themes/portfolio">Steve Maraboli</a></cite>
+                        <p>Ton rêve est une réalité qui attend que tu le matérialises. Aujourd'hui est un nouveau jour !
+                            Ne laisse pas ton passé interférer avec ton destin ! </p><cite><a
+                                    href="https://themeforest.net/user/rainbow-themes/portfolio">Steve
+                                Maraboli</a></cite>
                     </blockquote>
 
 
@@ -66,11 +74,26 @@
 
                     <h5>Visa Schengen de courte durée (Type C):</h5>
                     <ul>
-                        <li><strong>Un passeport valide :</strong> Pour entamer ce voyage d'études, assurez-vous que votre passeport est valide pour une période d'au moins six mois.</li>
-                        <li><strong>Un certificat de fin d'études secondaires :</strong> Pour franchir le seuil des universités allemandes, vous devez fournir un certificat de fin d'études secondaires générales. N'oubliez pas de le faire authentifier par l'ambassade allemande au Maroc.</li>
-                        <li><strong>Maîtrise de la langue allemande :</strong> Une compétence en allemand est indispensable pour suivre des cours dans cette langue. Si vous avez besoin d'améliorer votre niveau linguistique, des cours préparatoires sont disponibles pour vous aider à vous préparer.</li>
-                        <li><strong>Une lettre de motivation :</strong> Démontrez votre passion et votre engagement en écrivant une lettre de motivation en allemand, adressée à l'université allemande de votre choix. Cette lettre joue un rôle crucial dans votre demande d'admission.</li>
-                        <li><strong>Preuve financière :</strong> Pour assurer votre séjour en Allemagne, vous devrez fournir un relevé bancaire indiquant un montant d'au moins 10 236 EUR, couvrant vos frais de subsistance pendant vos études.</li>
+                        <li><strong>Un passeport valide :</strong> Pour entamer ce voyage d'études, assurez-vous que
+                            votre passeport est valide pour une période d'au moins six mois.
+                        </li>
+                        <li><strong>Un certificat de fin d'études secondaires :</strong> Pour franchir le seuil des
+                            universités allemandes, vous devez fournir un certificat de fin d'études secondaires
+                            générales. N'oubliez pas de le faire authentifier par l'ambassade allemande au Maroc.
+                        </li>
+                        <li><strong>Maîtrise de la langue allemande :</strong> Une compétence en allemand est
+                            indispensable pour suivre des cours dans cette langue. Si vous avez besoin d'améliorer votre
+                            niveau linguistique, des cours préparatoires sont disponibles pour vous aider à vous
+                            préparer.
+                        </li>
+                        <li><strong>Une lettre de motivation :</strong> Démontrez votre passion et votre engagement en
+                            écrivant une lettre de motivation en allemand, adressée à l'université allemande de votre
+                            choix. Cette lettre joue un rôle crucial dans votre demande d'admission.
+                        </li>
+                        <li><strong>Preuve financière :</strong> Pour assurer votre séjour en Allemagne, vous devrez
+                            fournir un relevé bancaire indiquant un montant d'au moins 10 236 EUR, couvrant vos frais de
+                            subsistance pendant vos études.
+                        </li>
                     </ul>
 
                     <div class="post-thumbnail mb--30 position-relative wp-block-image alignwide">
@@ -83,28 +106,62 @@
 
                     <h4>Processus de demande de visa Schengen pour l'Allemagne depuis le Maroc</h4>
                     <ul>
-                        <li><strong>Rassembler les documents :</strong> Rassemblez tous les documents nécessaires pour la demande de visa Schengen pour l'Allemagne.</li>
-                        <li><strong>Vérifier la validité du passeport :</strong> Assurez-vous que votre passeport marocain est valide pendant au moins 6 mois à compter de la date d'arrivée en Allemagne.</li>
-                        <li><strong>Remplir le formulaire de demande :</strong> Complétez avec précision le formulaire de demande de visa Schengen pour l'Allemagne.</li>
-                        <li><strong>Prendre rendez-vous :</strong> Prenez rendez-vous auprès de l'ambassade ou du consulat allemand où vous soumettrez votre demande.</li>
-                        <li><strong>Soumettre les documents :</strong> Fournissez tous les documents requis et payez les frais de visa à l'ambassade ou au consulat.</li>
-                        <li><strong>Traitement du visa :</strong> Votre demande, votre passeport et les documents à l'appui seront examinés par les responsables de l'immigration.</li>
-                        <li><strong>Approbation du visa :</strong> Si votre demande est approuvée, votre visa sera apposé sur votre passeport et vous pourrez le récupérer à l'ambassade ou au consulat.</li>
+                        <li><strong>Rassembler les documents :</strong> Rassemblez tous les documents nécessaires pour
+                            la demande de visa Schengen pour l'Allemagne.
+                        </li>
+                        <li><strong>Vérifier la validité du passeport :</strong> Assurez-vous que votre passeport
+                            marocain est valide pendant au moins 6 mois à compter de la date d'arrivée en Allemagne.
+                        </li>
+                        <li><strong>Remplir le formulaire de demande :</strong> Complétez avec précision le formulaire
+                            de demande de visa Schengen pour l'Allemagne.
+                        </li>
+                        <li><strong>Prendre rendez-vous :</strong> Prenez rendez-vous auprès de l'ambassade ou du
+                            consulat allemand où vous soumettrez votre demande.
+                        </li>
+                        <li><strong>Soumettre les documents :</strong> Fournissez tous les documents requis et payez les
+                            frais de visa à l'ambassade ou au consulat.
+                        </li>
+                        <li><strong>Traitement du visa :</strong> Votre demande, votre passeport et les documents à
+                            l'appui seront examinés par les responsables de l'immigration.
+                        </li>
+                        <li><strong>Approbation du visa :</strong> Si votre demande est approuvée, votre visa sera
+                            apposé sur votre passeport et vous pourrez le récupérer à l'ambassade ou au consulat.
+                        </li>
                     </ul>
                     <h4>Considérations importantes :</h4>
                     <ul>
-                        <li>Toujours avoir sur vous votre passeport, votre visa et les documents de voyage importants en Allemagne.</li>
-                        <li>Se familiariser avec les conditions d'entrée et de sortie, y compris les restrictions liées au COVID-19 et les règles de quarantaine en Allemagne.</li>
-                        <li>Veiller à disposer de fonds suffisants pour le voyage et fournir une preuve de capacité financière si nécessaire.</li>
-                        <li>Souscrire une assurance voyage couvrant les frais médicaux, les accidents et l'annulation ou l'interruption du voyage en Allemagne.</li>
+                        <li>Toujours avoir sur vous votre passeport, votre visa et les documents de voyage importants en
+                            Allemagne.
+                        </li>
+                        <li>Se familiariser avec les conditions d'entrée et de sortie, y compris les restrictions liées
+                            au COVID-19 et les règles de quarantaine en Allemagne.
+                        </li>
+                        <li>Veiller à disposer de fonds suffisants pour le voyage et fournir une preuve de capacité
+                            financière si nécessaire.
+                        </li>
+                        <li>Souscrire une assurance voyage couvrant les frais médicaux, les accidents et l'annulation ou
+                            l'interruption du voyage en Allemagne.
+                        </li>
                         <li>Réserver l'hébergement à l'avance pour éviter les tracas de dernière minute.</li>
-                        <li>Respecter la culture et les traditions locales, et s'habiller de manière appropriée lors des visites de sites religieux en Allemagne.</li>
-                        <li>Être attentif à sa santé et à l'hygiène, surtout lors de la dégustation de plats de rue ou de la visite de zones bondées en Allemagne.</li>
+                        <li>Respecter la culture et les traditions locales, et s'habiller de manière appropriée lors des
+                            visites de sites religieux en Allemagne.
+                        </li>
+                        <li>Être attentif à sa santé et à l'hygiène, surtout lors de la dégustation de plats de rue ou
+                            de la visite de zones bondées en Allemagne.
+                        </li>
                     </ul>
-                    <p> En conclusion, le visa Schengen représente une opportunité précieuse pour les citoyens marocains désirant voyager en Allemagne. Ce visa de courte durée offre la possibilité de séjourner jusqu'à 90 jours sur une période de 180 jours,
-                        ce qui convient parfaitement pour des voyages touristiques, d'affaires, des visites familiales ou la participation à des événements au sein de l'espace Schengen. Cependant, il est essentiel de se préparer soigneusement en rassemblant
-                        tous les documents requis, en vérifiant la validité du passeport, en remplissant correctement le formulaire de demande et en respectant les exigences financières. En faisant preuve de diligence dans le processus de demande de visa
-                        et en se conformant aux règles d'entrée et de sortie en Allemagne, les voyageurs marocains peuvent vivre une expérience fluide et réussie dans ce magnifique pays européen. N'oubliez pas que votre rêve de découvrir l'Allemagne vous
+                    <p> En conclusion, le visa Schengen représente une opportunité précieuse pour les citoyens marocains
+                        désirant voyager en Allemagne. Ce visa de courte durée offre la possibilité de séjourner jusqu'à
+                        90 jours sur une période de 180 jours,
+                        ce qui convient parfaitement pour des voyages touristiques, d'affaires, des visites familiales
+                        ou la participation à des événements au sein de l'espace Schengen. Cependant, il est essentiel
+                        de se préparer soigneusement en rassemblant
+                        tous les documents requis, en vérifiant la validité du passeport, en remplissant correctement le
+                        formulaire de demande et en respectant les exigences financières. En faisant preuve de diligence
+                        dans le processus de demande de visa
+                        et en se conformant aux règles d'entrée et de sortie en Allemagne, les voyageurs marocains
+                        peuvent vivre une expérience fluide et réussie dans ce magnifique pays européen. N'oubliez pas
+                        que votre rêve de découvrir l'Allemagne vous
                         attend et aujourd'hui est le jour idéal pour commencer à le réaliser !</p>
                     <!-- BLog Tag Clound  -->
                     <div class="tagcloud">
@@ -163,7 +220,9 @@
                                     </h5>
                                 </div>
                                 <div class="content">
-                                    <p class="description">Je ne peux qu'approuver la citation de Steve Maraboli. Cet article non seulement donne des conseils pratiques, mais nous motive également à poursuivre nos rêves sans crainte. </p>
+                                    <p class="description">Je ne peux qu'approuver la citation de Steve Maraboli. Cet
+                                        article non seulement donne des conseils pratiques, mais nous motive également à
+                                        poursuivre nos rêves sans crainte. </p>
                                     <ul class="social-icon social-default icon-naked justify-content-start">
                                         <li>
                                             <a href="https://www.facebook.com/">
@@ -209,7 +268,8 @@
                             <h4 class="title">Ajoutez votre commentaire</h4>
                             <form action="#">
                                 <p class="comment-notes"><span id="email-notes">Votre adresse e-mail ne sera pas
-                                    publié.</span> Required fields are marked les champs requis sont indiqués<span class="required">*</span></p>
+                                    publié.</span> Required fields are marked les champs requis sont indiqués<span
+                                            class="required">*</span></p>
                                 <div class="row row--10">
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
@@ -232,8 +292,10 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <p class="comment-form-cookies-consent">
-                                            <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">
-                                            <label for="wp-comment-cookies-consent">Enregistrez mon nom et mon e-mail dans ce navigateur pour la prochaine fois que je commenterai.</label>
+                                            <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
+                                                   type="checkbox" value="yes">
+                                            <label for="wp-comment-cookies-consent">Enregistrez mon nom et mon e-mail
+                                                dans ce navigateur pour la prochaine fois que je commenterai.</label>
                                         </p>
                                     </div>
                                     <div class="col-lg-12">
@@ -270,8 +332,12 @@
                                                 </div>
                                             </div>
                                             <div class="comment-text">
-                                                <p class="b2">Les conseils concernant les réservations d'hébergement et la souscription d'une assurance voyage sont très pertinents. Ces détails peuvent facilement être négligés, mais ils sont cruciaux pour un voyage
-                                                    en toute tranquillité d'esprit. Merci pour ces rappels importants ! </p>
+                                                <p class="b2">Les conseils concernant les réservations d'hébergement et
+                                                    la souscription d'une assurance voyage sont très pertinents. Ces
+                                                    détails peuvent facilement être négligés, mais ils sont cruciaux
+                                                    pour un voyage
+                                                    en toute tranquillité d'esprit. Merci pour ces rappels importants
+                                                    ! </p>
                                             </div>
                                         </div>
                                     </div>
@@ -300,7 +366,9 @@
                                                 </div>
                                             </div>
                                             <div class="comment-text">
-                                                <p class="b2">L'Allemagne a toujours été sur ma liste des destinations à visiter. Ce guide m'a donné une vision claire de ce à quoi je dois m'attendre lors du processus de demande de visa</p>
+                                                <p class="b2">L'Allemagne a toujours été sur ma liste des destinations à
+                                                    visiter. Ce guide m'a donné une vision claire de ce à quoi je dois
+                                                    m'attendre lors du processus de demande de visa</p>
                                             </div>
                                         </div>
                                     </div>
@@ -324,11 +392,19 @@
                                 <img src="assets/images/blog/blogwork.jpg" alt="Card image"> </a>
                         </div>
                         <div class="rbt-card-body">
-                            <h5 class="rbt-card-title"><a href="blog-details.html">Étudier et Travailler en Allemagne en tant qu'étudiant marocain</a>
+                            <h5 class="rbt-card-title"><a href="blog-details.html">Étudier et Travailler en Allemagne en
+                                    tant qu'étudiant marocain</a>
                             </h5>
                             <div class="rbt-card-bottom">
                                 <a class="transparent-button" href="blog-details.html">Lire
-                                    Article<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
+                                    Article<i>
+                                        <svg width="17" height="12" xmlns="http://www.w3.org/2000/svg">
+                                            <g stroke="#27374D" fill="none" fill-rule="evenodd">
+                                                <path d="M10.614 0l5.629 5.629-5.63 5.629"/>
+                                                <path stroke-linecap="square" d="M.663 5.572h14.594"/>
+                                            </g>
+                                        </svg>
+                                    </i></a>
                             </div>
                         </div>
                     </div>
@@ -341,11 +417,19 @@
                                 <img src="assets/images/blog/test.jpg" alt="Card image"> </a>
                         </div>
                         <div class="rbt-card-body">
-                            <h5 class="rbt-card-title"><a href="blog-details.html">Les Tests d'Allemand Importants pour les Marocains souhaitant Visiter l'Allemagne ou Obtenir un Visa
+                            <h5 class="rbt-card-title"><a href="blog-details.html">Les Tests d'Allemand Importants pour
+                                    les Marocains souhaitant Visiter l'Allemagne ou Obtenir un Visa
                                 </a></h5>
                             <div class="rbt-card-bottom">
                                 <a class="transparent-button" href="blog-details.html">Read
-                                    Article<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
+                                    Article<i>
+                                        <svg width="17" height="12" xmlns="http://www.w3.org/2000/svg">
+                                            <g stroke="#27374D" fill="none" fill-rule="evenodd">
+                                                <path d="M10.614 0l5.629 5.629-5.63 5.629"/>
+                                                <path stroke-linecap="square" d="M.663 5.572h14.594"/>
+                                            </g>
+                                        </svg>
+                                    </i></a>
                             </div>
                         </div>
                     </div>
@@ -362,7 +446,14 @@
                                     Why?</a></h5>
                             <div class="rbt-card-bottom">
                                 <a class="transparent-button" href="blog-details.html">Lire
-                                    Article<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
+                                    Article<i>
+                                        <svg width="17" height="12" xmlns="http://www.w3.org/2000/svg">
+                                            <g stroke="#27374D" fill="none" fill-rule="evenodd">
+                                                <path d="M10.614 0l5.629 5.629-5.63 5.629"/>
+                                                <path stroke-linecap="square" d="M.663 5.572h14.594"/>
+                                            </g>
+                                        </svg>
+                                    </i></a>
                             </div>
                         </div>
                     </div>

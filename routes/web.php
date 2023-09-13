@@ -148,13 +148,17 @@ Route::prefix('/')->group(function () {
         Route::post('/Instructor/Register', 'store');
     });
     Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
+        Route::get('/EtudiantTests', 'showTests');
         Route::post('/EtudiantTest', 'store');
+        Route::post('/inscriptionstep2', 'step2')->name('inscriptionstep2');
+    });
+    Route::controller(\App\Http\Controllers\PaiementController::class)->group(function () {
+        Route::get('/inscriptionstep3', 'index');
+        Route::post('/payementProcess', 'store')->name('payementProcess');
+//        Route::post('/inscriptionstep2', 'step2')->name('inscriptionstep2');
     });
     Route::controller(\App\Http\Controllers\EtudiantCourseController::class)->group(function () {
         Route::post('/EtudiantCourse', 'store');
-    });
-    Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
-        Route::get('/EtudiantTests', 'showTests');
     });
 });
 
@@ -165,3 +169,12 @@ Route::get('/send-greeting-email', function () {
 
     return "Greeting email sent successfully!";
 });
+
+Route::controller(\App\Http\Controllers\Admin\EtudiantController::class)->group(function () {
+    Route::get('/create-user/{etudiant_id}', 'createAndAttachUser');
+    Route::get('/get-user/{user_id}', 'getUserAndAttachedEtudiant');
+});
+
+
+
+
