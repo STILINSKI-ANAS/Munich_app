@@ -14,9 +14,9 @@ return new class extends Migration {
             $table->id();
             $table->string('level');
             $table->string('name');
-            $table->text('overview')->nullable();
-            $table->text('content')->nullable();
-            $table->string('time')->nullable();
+            $table->text('overview');
+            $table->text('content');
+            $table->string('time');
             $table->string('price');
             $table->timestamps();
         });
