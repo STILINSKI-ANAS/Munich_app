@@ -8,12 +8,9 @@
             <div class="col-lg-12">
             <div class="rbt-contact-form contact-form-style-1 max-width-auto ">
                 <h4 class="title">{{ __('Register') }}</h4>
-
-              
                 <form class="max-width-auto" method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="form-group">
-
                         <input  id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus/>
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -22,7 +19,6 @@
                         @enderror
                         <label>Nom Complet *</label>
                         <span class="focus-border"></span>
-
                     </div>
                     <div class="form-group">
                         <input  id="email" type="email" class=" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
@@ -83,7 +79,6 @@
                     </div>
                 </form>
                 </div>
-           
         </div>
         </div>
     </div>
