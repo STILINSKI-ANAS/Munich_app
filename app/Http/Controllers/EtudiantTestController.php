@@ -7,8 +7,8 @@ use App\Mail\EmailService;
 use App\Models\Etudiant;
 use App\Models\EtudiantTest;
 use App\Models\Test;
-use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
