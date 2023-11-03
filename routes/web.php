@@ -30,11 +30,14 @@ Route::get('/user', function () {
     return view('layouts.user');
 });
 
+// Email Verification
+Route::get('/email/verify', 'VerificationController@show')->name('verification.notice');
+
 Route::get('/home', function () {
     return redirect()->route('root');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('Dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('Dashboard');

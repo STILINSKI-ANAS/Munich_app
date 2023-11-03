@@ -35,17 +35,18 @@ class LoginController extends Controller
 
 //    protected $redirectTo = '/';
 
-    protected function authenticated(Request $request){
+    protected function authenticated(Request $request)
+    {
         $languages = Language::all();
         $tests = Test::all();
         $categories = Category::all();
-        if(Auth::user()->role_as == '1'){
+        if (Auth::user()->role_as == '1') {
             return redirect()->route('Dashboard', [
                 'languages' => $languages,
                 'tests' => $tests,
                 'categories' => $categories,
             ])->with('message', 'welcome to dashboard');
-        }else{
+        } else {
 //            return back();
 //            $url = url();
 //            dd($url);
@@ -63,12 +64,13 @@ class LoginController extends Controller
         $this->addurltosession($request);
         return view('auth.login'); // This returns the login view
     }
+
     public function addurltosession(Request $request)
     {
         $previousUrls = Session::get('previous_urls', []);
         $previousUrls[] = url()->previous();
         Session::put('previous_urls', $previousUrls);
-        dump($previousUrls);
+        // dump($previousUrls);
         // Rest of your logic
     }
 
