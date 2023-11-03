@@ -18,6 +18,16 @@ class CourseSeeder extends Seeder
         // Get a language for the course (assuming you have at least one language seeded)
         $language = Language::first();
 
+        // Check if a language was found
+        if (!$language) {
+            // If no language was found, create a new language
+            $language = Language::create([
+                'name' => 'French',
+                'image' => null,
+                'description' => 'French language description',
+            ]);
+        }
+
         Course::create([
             'level' => 'Niveau A1',
             'overview' => 'Introduction to the course',
