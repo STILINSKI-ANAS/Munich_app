@@ -10,6 +10,14 @@ class PaiementController extends Controller
     //
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'email' => 'required|unique:etudiants',
+            'amount' => 'required',
+        ]);
+
+        dump($validatedData);
         try {
             $client = new CmiClient([
                 'storekey' => 'asdsasada21', // STOREKEY
@@ -18,10 +26,10 @@ class PaiementController extends Controller
                 'shopurl' => 'http://127.0.0.1:8000/', // SHOP URL FOR REDIRECTION
                 'okUrl' => 'http://127.0.0.1:8000/payementProcess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
                 'failUrl' => 'http://127.0.0.1:8000/payementProcess', // REDIRECTION AFTER FAILED PAYMENT
-                'email' => 'mehdi.rochdi@gmail.com', // YOUR EMAIL APPEAR IN CMI PLATEFORM
-                'BillToName' => 'mehdi rochdi', // YOUR NAME APPEAR IN CMI PLATEFORM
-                'BillToCompany' => 'company name', // YOUR COMPANY NAME APPEAR IN CMI PLATEFORM
-                'amount' => "1900", // RETRIEVE AMOUNT WITH METHOD POST
+                'email' => $validatedData['email'], // EMAIL OF CLIENT
+                'BillToName' => $validatedData['nom'] . ' ' . $validatedData['prenom'], // NAME OF CLIENT
+                'BillToCompany' => 'CMI', // COMPANY OF CLIENT
+                'amount' => $validatedData['amount'], // AMOUNT OF PAYMENT
                 'CallbackURL' => 'http://127.0.0.1:8000/payementProcess', // CALLBACK
             ]);
         } catch (\Exception $e) {
