@@ -37,8 +37,8 @@ class HomeController extends Controller
         return view('user.home')->with([
             'languages' => $languages,
             'tests' => $tests,
-            'categories'=>$categories,
-            'annocements'=>$annocements
+            'categories' => $categories,
+            'annocements' => $annocements
         ]);
     }
 
@@ -51,10 +51,9 @@ class HomeController extends Controller
         return view('user.politiques')->with([
             'languages' => $languages,
             'tests' => $tests,
-            'categories'=>$categories
+            'categories' => $categories
         ]);
     }
-
 
 
     public function aboutUs()
@@ -65,7 +64,7 @@ class HomeController extends Controller
         return view('user.aboutus')->with([
             'languages' => $languages,
             'tests' => $tests,
-            'categories'=>$categories
+            'categories' => $categories
         ]);
 
     }
@@ -79,7 +78,7 @@ class HomeController extends Controller
         return view('user.blog')->with([
             'languages' => $languages,
             'tests' => $tests,
-            'categories'=>$categories
+            'categories' => $categories
         ]);
     }
 
@@ -91,7 +90,7 @@ class HomeController extends Controller
         return view('user.Blogs.blogDetails1')->with([
             'languages' => $languages,
             'tests' => $tests,
-            'categories'=>$categories
+            'categories' => $categories
         ]);
     }
 
@@ -103,7 +102,7 @@ class HomeController extends Controller
         return view('user.Blogs.blogDetails2')->with([
             'languages' => $languages,
             'tests' => $tests,
-            'categories'=>$categories
+            'categories' => $categories
         ]);
     }
 
@@ -115,7 +114,7 @@ class HomeController extends Controller
         return view('user.Blogs.blogDetails3')->with([
             'languages' => $languages,
             'tests' => $tests,
-            'categories'=>$categories
+            'categories' => $categories
         ]);
     }
 
@@ -127,9 +126,10 @@ class HomeController extends Controller
         return view('user.Blogs.blogDetails4')->with([
             'languages' => $languages,
             'tests' => $tests,
-            'categories'=>$categories
+            'categories' => $categories
         ]);
     }
+
     public function blog5()
     {
         $languages = Language::all();
@@ -138,17 +138,15 @@ class HomeController extends Controller
         return view('user.Blogs.blogDetails5')->with([
             'languages' => $languages,
             'tests' => $tests,
-            'categories'=>$categories
+            'categories' => $categories
         ]);
     }
-
-
 
 
     public function getLanguageCourses($languageName)
     {
         $languages = Language::all();
-        $courses = Language::Where('name',$languageName)->first()->courses;
+        $courses = Language::Where('name', $languageName)->first()->courses;
         return view('user.Course.courses')->with([
             'courses' => $courses,
             'languages' => $languages
@@ -158,7 +156,7 @@ class HomeController extends Controller
     public function getCourse($courseLevel)
     {
         $languages = Language::all();
-        $course = Course::Where('level',$courseLevel)->first();
+        $course = Course::Where('level', $courseLevel)->first();
 //        $course = $course->toarray();
 //        dd($course->level);
         return view('user.Course.course-details')->with([
@@ -170,7 +168,8 @@ class HomeController extends Controller
     public function getLanguageTests($languageName, Request $request)
     {
         $languages = Language::all();
-        $tests = Language::Where('name',$languageName)->first()->tests;
+        $lang = Language::Where('name', $languageName)->first();
+        $tests = $lang ? $lang->tests : [];
 //        dump($tests);
 //        dd($tests);
 //        $this->addurltosession($request);
@@ -203,6 +202,7 @@ class HomeController extends Controller
             'languages' => $languages
         ]);
     }
+
     public function createDummyTests()
     {
 
@@ -219,7 +219,7 @@ class HomeController extends Controller
             'content' => 'This is the content for dummy test 1.',
             'time' => '60 minutes',
             'price' => '$10',
-            'language_id '=> '2',
+            'language_id ' => '2',
             'features' => '["Évaluation axée sur le monde des affaires","Reconnaissance par les entreprises et les institutions","Évaluation normalisée","Comparabilité internationale","Développement personnel et professionnel"]',
 
         ]);
