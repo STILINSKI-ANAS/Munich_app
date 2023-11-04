@@ -51,9 +51,8 @@
                             </div>
 
 
-
                             <ul class="rbt-meta">
-                                <li><i class="feather-calendar"></i>Dernière mise à jour </li>
+                                <li><i class="feather-calendar"></i>Dernière mise à jour</li>
                                 <li><i class="feather-globe"></i>{{ $langue }}</li>
                                 <li><i class="feather-award"></i>Examen certifié</li>
                             </ul>
@@ -97,7 +96,8 @@
                         <!-- srart tag Area -->
 
                         <!-- Start DAF Feature Box  -->
-                        <div class="rbt-course-feature-box overview-wrapper rbt-border-with-box mt--30 has-show-more" id="Objectifs">
+                        <div class="rbt-course-feature-box overview-wrapper rbt-border-with-box mt--30 has-show-more"
+                             id="Objectifs">
                             <div class="rbt-course-feature-inner has-show-more-inner-content">
                                 <div class="section-title">
                                     <h4 class="rbt-title-style-3">Qu'est-ce que le test {{ $title }} ?
@@ -146,9 +146,15 @@
                                         <h4 class="rbt-title-style-3 mb--20">Ces cours sont disponibles :</h4>
                                     </div>
                                     <ul class="rbt-list-style-1">
-                                        <li><i class="feather-calendar"></i><span>Le matin de</span> <strong class="text-primary"> &nbsp; 9h00 </strong  > &nbsp; à <strong  class="text-primary"> &nbsp; 12h00</strong></li>
-                                        <li><i class="feather-calendar"></i><span>L’après-midi de</span> &nbsp;<strong class="text-primary">  </strong> à <strong class="text-primary">  &nbsp;18h00</strong></li>
-                                        <li><i class="feather-calendar"></i><span>Le soir de</span> <strong class="text-primary">  &nbsp;19h00 </strong> &nbsp; à <strong class="text-primary"> &nbsp; 22h00</strong></li>
+                                        <li><i class="feather-calendar"></i><span>Le matin de</span> <strong
+                                                class="text-primary"> &nbsp; 9h00 </strong> &nbsp; à <strong
+                                                class="text-primary"> &nbsp; 12h00</strong></li>
+                                        <li><i class="feather-calendar"></i><span>L’après-midi de</span> &nbsp;<strong
+                                                class="text-primary"> </strong> à <strong class="text-primary"> &nbsp;18h00</strong>
+                                        </li>
+                                        <li><i class="feather-calendar"></i><span>Le soir de</span> <strong
+                                                class="text-primary"> &nbsp;19h00 </strong> &nbsp; à <strong
+                                                class="text-primary"> &nbsp; 22h00</strong></li>
                                     </ul>
                                 </div>
                                 <!-- End Feture Box  -->
@@ -157,63 +163,65 @@
                         <!-- END Horaire Box  -->
 
 
-
-
-
-
                         <!-- Start Edu Review List  -->
                         <div class="rbt-review-wrapper rbt-border-with-box review-wrapper mt--30" id="Avis">
                             <div class="course-content">
                                 <div class="section-title">
                                     <h4 class="rbt-title-style-3">Cours Inclue</h4>
                                 </div>
-                                <div class="row g-5 align-items-center">
-                                    <div class="col-6">
-                                        <div class="rbt-card variation-01 rbt-hover">
-                                            <div class="rbt-card-img">
-                                                <a href="{{url('/Language/Course/'.$course->level)}}">
-                                                    <img src="{{ asset('assets/images/course/'. $course->image) }}" alt="Card image">
-
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="rbt-card variation-01 rbt-hover">
-                                            <div class="rbt-card-body">
-                                                <div class="rbt-card-top">
-                                                    <div class="rbt-review">
-                                                        <div class="rating">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                        </div>
-                                                        <span class="rating-count">4.9</span>
-                                                    </div>
-
-                                                </div>
-
-                                                <h4 class="rbt-card-title"><a href="{{url('/Language/Course/'.$course->level)}}">{{ $course->level }}
+                                @if($course)
+                                    <div class="row g-5 align-items-center">
+                                        <div class="col-6">
+                                            <div class="rbt-card variation-01 rbt-hover">
+                                                <div class="rbt-card-img">
+                                                    <a href="{{url('/Language/Course/'.$course->level)}}">
+                                                        <img src="{{ asset('assets/images/course/'. $course->image) }}"
+                                                             alt="Card image">
                                                     </a>
-                                                </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="rbt-card variation-01 rbt-hover">
+                                                <div class="rbt-card-body">
+                                                    <div class="rbt-card-top">
+                                                        <div class="rbt-review">
+                                                            <div class="rating">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                            <span class="rating-count">4.9</span>
+                                                        </div>
 
-
-
-                                                <p class="rbt-card-text">{{ $course->overview }}</p>
-
-                                                <div class="rbt-card-bottom">
-                                                    <div class="rbt-price">
-                                                        <span class="current-price">{{ $course->price }} MAD</span>
-                                                        <span class="off-price">{{ $course->price * 1.4 }} MAD</span>
                                                     </div>
-                                                    <a class="rbt-btn-link" href="{{url('/Language/Course/'.$course->level)}}">En Savoir plus <i class="feather-arrow-right"></i></a>
+
+                                                    <h4 class="rbt-card-title"><a
+                                                            href="{{url('/Language/Course/'.$course->level)}}">{{ $course->level }}
+                                                        </a>
+                                                    </h4>
+
+
+                                                    <p class="rbt-card-text">{{ $course->overview }}</p>
+
+                                                    <div class="rbt-card-bottom">
+                                                        <div class="rbt-price">
+                                                            <span class="current-price">{{ $course->price }} MAD</span>
+                                                            <span class="off-price">{{ $course->price * 1.4 }} MAD</span>
+                                                        </div>
+                                                        <a class="rbt-btn-link"
+                                                           href="{{url('/Language/Course/'.$course->level)}}">En Savoir plus
+                                                            <i class="feather-arrow-right"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                @else
+                                    <p>Aucun cours inclue pour le moment</p>
+                                @endif
                             </div>
                         </div>
                         <!-- End Edu Review List  -->
@@ -228,7 +236,8 @@
                                     <div class="media">
                                         <div class="thumbnail">
                                             <a href="#">
-                                                <img src="assets/images/testimonial/testimonial-3.jpg" alt="Author Images">
+                                                <img src="assets/images/testimonial/testimonial-3.jpg"
+                                                     alt="Author Images">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -247,7 +256,9 @@
                                                 </div>
                                             </div>
                                             <div class="content">
-                                                <p class="description">At 29 years old, my favorite compliment is being told that I look like my mom. Seeing myself in her image, like this daughter up top.</p>
+                                                <p class="description">At 29 years old, my favorite compliment is being
+                                                    told that I look like my mom. Seeing myself in her image, like this
+                                                    daughter up top.</p>
                                                 <ul class="social-icon social-default transparent-with-border justify-content-start">
                                                     <li>
                                                         <a href="#">
@@ -268,7 +279,8 @@
                                     <div class="media">
                                         <div class="thumbnail">
                                             <a href="#">
-                                                <img src="assets/images/testimonial/testimonial-4.jpg" alt="Author Images">
+                                                <img src="assets/images/testimonial/testimonial-4.jpg"
+                                                     alt="Author Images">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -285,7 +297,9 @@
                                                 </div>
                                             </div>
                                             <div class="content">
-                                                <p class="description">My favorite compliment is being told that I look like my mom. Seeing myself in her image, like this daughter up top.</p>
+                                                <p class="description">My favorite compliment is being told that I look
+                                                    like my mom. Seeing myself in her image, like this daughter up
+                                                    top.</p>
                                                 <ul class="social-icon social-default transparent-with-border justify-content-start">
                                                     <li>
                                                         <a href="#">
@@ -306,7 +320,8 @@
                                     <div class="media">
                                         <div class="thumbnail">
                                             <a href="#">
-                                                <img src="assets/images/testimonial/testimonial-1.jpg" alt="Author Images">
+                                                <img src="assets/images/testimonial/testimonial-1.jpg"
+                                                     alt="Author Images">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -323,7 +338,9 @@
                                                 </div>
                                             </div>
                                             <div class="content">
-                                                <p class="description">My favorite compliment is being told that I look like my mom. Seeing myself in her image, like this daughter up top.</p>
+                                                <p class="description">My favorite compliment is being told that I look
+                                                    like my mom. Seeing myself in her image, like this daughter up
+                                                    top.</p>
                                                 <ul class="social-icon social-default transparent-with-border justify-content-start">
                                                     <li>
                                                         <a href="#">
@@ -344,7 +361,8 @@
                                     <div class="media">
                                         <div class="thumbnail">
                                             <a href="#">
-                                                <img src="assets/images/testimonial/testimonial-6.jpg" alt="Author Images">
+                                                <img src="assets/images/testimonial/testimonial-6.jpg"
+                                                     alt="Author Images">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -361,7 +379,9 @@
                                                 </div>
                                             </div>
                                             <div class="content">
-                                                <p class="description">My favorite compliment is being told that I look like my mom. Seeing myself in her image, like this daughter up top.</p>
+                                                <p class="description">My favorite compliment is being told that I look
+                                                    like my mom. Seeing myself in her image, like this daughter up
+                                                    top.</p>
                                                 <ul class="social-icon social-default transparent-with-border justify-content-start">
                                                     <li>
                                                         <a href="#">
@@ -382,7 +402,8 @@
                                     <div class="media">
                                         <div class="thumbnail">
                                             <a href="#">
-                                                <img src="assets/images/testimonial/testimonial-8.jpg" alt="Author Images">
+                                                <img src="assets/images/testimonial/testimonial-8.jpg"
+                                                     alt="Author Images">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -399,7 +420,9 @@
                                                 </div>
                                             </div>
                                             <div class="content">
-                                                <p class="description">My favorite compliment is being told that I look like my mom. Seeing myself in her image, like this daughter up top.</p>
+                                                <p class="description">My favorite compliment is being told that I look
+                                                    like my mom. Seeing myself in her image, like this daughter up
+                                                    top.</p>
                                                 <ul class="social-icon social-default transparent-with-border justify-content-start">
                                                     <li>
                                                         <a href="#">
@@ -434,7 +457,8 @@
                         </div>
                         <div class="row g-5">
                             <!-- Start Single Card  -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
+                                 data-sal-duration="800">
                                 <div class="rbt-card variation-01 rbt-hover">
                                     <div class="rbt-card-img">
                                         <a href="course-details.html">
@@ -462,15 +486,16 @@
                                         </h4>
 
 
-
-                                        <p class="rbt-card-text">Le test DSH (Deutsche Sprachprüfung für den Hochschulzugang) est un examen de...</p>
+                                        <p class="rbt-card-text">Le test DSH (Deutsche Sprachprüfung für den
+                                            Hochschulzugang) est un examen de...</p>
 
                                         <div class="rbt-card-bottom">
                                             <div class="rbt-price">
                                                 <span class="current-price">{{ $price }} MAD</span>
                                                 <span class="off-price">{{ $price * 1.4 }} MAD</span>
                                             </div>
-                                            <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i class="feather-arrow-right"></i></a>
+                                            <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i
+                                                    class="feather-arrow-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -478,7 +503,8 @@
                             <!-- End Single Card  -->
 
                             <!-- Start Single Card  -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
+                                 data-sal-duration="800">
                                 <div class="rbt-card variation-01 rbt-hover">
                                     <div class="rbt-card-img">
                                         <a href="course-details.html">
@@ -506,15 +532,16 @@
                                         </h4>
 
 
-
-                                        <p class="rbt-card-text">Le WiDaF (Deutsch als Fremdsprache in der Wirtschaft) est un diplôme d’allemand qui...</p>
+                                        <p class="rbt-card-text">Le WiDaF (Deutsch als Fremdsprache in der Wirtschaft)
+                                            est un diplôme d’allemand qui...</p>
 
                                         <div class="rbt-card-bottom">
                                             <div class="rbt-price">
                                                 <span class="current-price">$60</span>
                                                 <span class="off-price">$120</span>
                                             </div>
-                                            <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i class="feather-arrow-right"></i></a>
+                                            <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i
+                                                    class="feather-arrow-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -526,7 +553,8 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="course-sidebar sticky-top rbt-border-with-box course-sidebar-top rbt-gradient-border" style="top: 80px">
+                    <div class="course-sidebar sticky-top rbt-border-with-box course-sidebar-top rbt-gradient-border"
+                         style="top: 80px">
                         <div class="inner">
 
                             <!-- Start Formulaire Wrapper  -->
@@ -567,23 +595,28 @@
                                 {{--                                    </div>--}}
                                 @if(auth()->check())
                                     {{--                                        <div>logged in</div>--}}
-                                    <form method="POST" action="{{ url('/EtudiantTest')}}" enctype="multipart/form-data">
+                                    <form method="POST" action="{{ url('/EtudiantTest')}}"
+                                          enctype="multipart/form-data">
                                         @csrf
                                         <div>
                                             <labela>nom</labela>
-                                            <input type="text" name="nom" placeholder="question supplémentaire 1" required>
+                                            <input type="text" name="nom" placeholder="question supplémentaire 1"
+                                                   required>
                                         </div>
                                         <div>
                                             <labela>prenom</labela>
-                                            <input type="text" name="prenom" placeholder="question supplémentaire 1" required>
+                                            <input type="text" name="prenom" placeholder="question supplémentaire 1"
+                                                   required>
 
                                         </div>
                                         <div>
                                             <labela>supp1</labela>
                                         </div>
-                                        <input type="text" name="supp1" placeholder="question supplémentaire 1" required>
+                                        <input type="text" name="supp1" placeholder="question supplémentaire 1"
+                                               required>
                                         <input type="text" name="testId" required value="{{$testId}}" hidden>
-                                        <button class="rbt-btn btn-gradient icon-hover w-100 d-block text-center mt--15" type="submit">
+                                        <button class="rbt-btn btn-gradient icon-hover w-100 d-block text-center mt--15"
+                                                type="submit">
                                             <span class="btn-text">S'inscrire</span>
                                         </button>
                                     </form>
@@ -592,7 +625,8 @@
                                     <div class="rbt-price">
                                         <span class="current-price">Crer un compte pour s'inscrire</span>
                                     </div>
-                                    <a class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" href="{{ url('/register') }}">
+                                    <a class="rbt-btn btn-gradient icon-hover w-100 d-block text-center"
+                                       href="{{ url('/register') }}">
                                         Cree compte
                                     </a>
                                     <a class="icon-hover" href="{{ url('/login') }}">
@@ -626,7 +660,8 @@
                 <div class="row g-5">
 
                     <!-- Start Single Card  -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
+                         data-sal-duration="800">
                         <div class="rbt-card variation-01 rbt-hover">
                             <div class="rbt-card-img">
                                 <a href="course-details.html">
@@ -654,8 +689,9 @@
                                 </h4>
 
 
-
-                                <p class="rbt-card-text">Au niveau A1 en allemand, je peux comprendre et utiliser des expressions simples de la vie quotidienne, comme saluer, me présenter et poser des questions basiques sur des sujets familiers..
+                                <p class="rbt-card-text">Au niveau A1 en allemand, je peux comprendre et utiliser des
+                                    expressions simples de la vie quotidienne, comme saluer, me présenter et poser des
+                                    questions basiques sur des sujets familiers..
                                 </p>
 
                                 <div class="rbt-card-bottom">
@@ -663,7 +699,8 @@
                                         <span class="current-price">$60</span>
                                         <span class="off-price">$120</span>
                                     </div>
-                                    <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i class="feather-arrow-right"></i></a>
+                                    <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i
+                                            class="feather-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -671,9 +708,9 @@
                     <!-- End Single Card  -->
 
 
-
                     <!-- Start Single Card  -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
+                         data-sal-duration="800">
                         <div class="rbt-card variation-01 rbt-hover">
                             <div class="rbt-card-img">
                                 <a href="course-details.html">
@@ -701,22 +738,24 @@
                                 </h4>
 
 
-
-                                <p class="rbt-card-text">Au niveau B1 en allemand, je peux interagir dans des situations courantes, exprimer mes opinions et idées sur des sujets familiers.. </p>
+                                <p class="rbt-card-text">Au niveau B1 en allemand, je peux interagir dans des situations
+                                    courantes, exprimer mes opinions et idées sur des sujets familiers.. </p>
 
                                 <div class="rbt-card-bottom">
                                     <div class="rbt-price">
                                         <span class="current-price">$60</span>
                                         <span class="off-price">$120</span>
                                     </div>
-                                    <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i class="feather-arrow-right"></i></a>
+                                    <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i
+                                            class="feather-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- End Single Card  -->
                     <!-- Start Single Card  -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
+                         data-sal-duration="800">
                         <div class="rbt-card variation-01 rbt-hover">
                             <div class="rbt-card-img">
                                 <a href="course-details.html">
@@ -744,8 +783,9 @@
                                 </h4>
 
 
-
-                                <p class="rbt-card-text">Au niveau B2 en allemand, je suis capable de communiquer de manière plus avancée et précise. Je peux exprimer mes idées clairement et argumenter sur des sujets variés...
+                                <p class="rbt-card-text">Au niveau B2 en allemand, je suis capable de communiquer de
+                                    manière plus avancée et précise. Je peux exprimer mes idées clairement et argumenter
+                                    sur des sujets variés...
                                 </p>
 
                                 <div class="rbt-card-bottom">
@@ -753,14 +793,16 @@
                                         <span class="current-price">$60</span>
                                         <span class="off-price">$120</span>
                                     </div>
-                                    <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i class="feather-arrow-right"></i></a>
+                                    <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i
+                                            class="feather-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- End Single Card  -->
                     <!-- Start Single Card  -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
+                         data-sal-duration="800">
                         <div class="rbt-card variation-01 rbt-hover">
                             <div class="rbt-card-img">
                                 <a href="course-details.html">
@@ -788,15 +830,17 @@
                                 </h4>
 
 
-
-                                <p class="rbt-card-text">Au niveau C1 en allemand, je maîtrise la langue de manière avancée et je peux communiquer avec aisance et spontanéité dans des situations variées. ... </p>
+                                <p class="rbt-card-text">Au niveau C1 en allemand, je maîtrise la langue de manière
+                                    avancée et je peux communiquer avec aisance et spontanéité dans des situations
+                                    variées. ... </p>
 
                                 <div class="rbt-card-bottom">
                                     <div class="rbt-price">
                                         <span class="current-price">$60</span>
                                         <span class="off-price">$120</span>
                                     </div>
-                                    <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i class="feather-arrow-right"></i></a>
+                                    <a class="rbt-btn-link" href="course-details.html">En Savoir plus <i
+                                            class="feather-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -856,7 +900,8 @@
                                     </a>
                                 </div>
 
-                                <p class="description mt--20">We’re always in search for talented and motivated people. Don’t be shy introduce yourself!
+                                <p class="description mt--20">We’re always in search for talented and motivated people.
+                                    Don’t be shy introduce yourself!
                                 </p>
 
                                 <ul class="social-icon social-default justify-content-start">
@@ -962,7 +1007,8 @@
 
                                 <form class="newsletter-form mt--20" action="#">
                                     <h6 class="w-600">Newsletter</h6>
-                                    <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be shy introduce yourself!</p>
+                                    <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t
+                                        be shy introduce yourself!</p>
 
                                     <div class="form-group right-icon icon-email mb--20">
                                         <label for="email">Enter Your Email Here</label>
@@ -970,7 +1016,8 @@
                                     </div>
 
                                     <div class="form-group mb--0">
-                                        <button class="rbt-btn rbt-switch-btn btn-gradient radius-round btn-sm" type="submit">
+                                        <button class="rbt-btn rbt-switch-btn btn-gradient radius-round btn-sm"
+                                                type="submit">
                                             <span data-text="Submit Now">Submit Now</span>
                                         </button>
                                     </div>
@@ -990,7 +1037,9 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12">
-                            <p class="rbt-link-hover text-center text-lg-start">Copyright © 2023 <a href="https://themeforest.net/user/rbt-themes">Rainbow-Themes.</a> All Rights Reserved</p>
+                            <p class="rbt-link-hover text-center text-lg-start">Copyright © 2023 <a
+                                    href="https://themeforest.net/user/rbt-themes">Rainbow-Themes.</a> All Rights
+                                Reserved</p>
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12">
                             <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
@@ -1008,7 +1057,7 @@
         <!-- End Footer aera -->
         <div class="rbt-progress-parent">
             <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
-                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
             </svg>
         </div>
     </div>

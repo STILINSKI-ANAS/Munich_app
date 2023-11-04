@@ -177,7 +177,3 @@ Route::controller(\App\Http\Controllers\Admin\EtudiantController::class)->group(
     Route::get('/create-user/{etudiant_id}', 'createAndAttachUser');
     Route::get('/get-user/{user_id}', 'getUserAndAttachedEtudiant');
 });
-
-
-
-

@@ -191,16 +191,20 @@ class HomeController extends Controller
 
     public function getTest($testLevel, Request $request)
     {
-        $languages = Language::all();
-        $test = Test::where('level', $testLevel)
-            ->with('course') // Eager load the course relationship
-            ->first();
-//        dd($test->course);
-//        $this->addurltosession($request);
-        return view('user.Test.test-details')->with([
-            'test' => $test,
-            'languages' => $languages
-        ]);
+        try {
+            $test = Test::where('level', $testLevel)
+                ->with('course')
+                ->firstOrFail();
+
+            $languages = Language::all();
+
+            return view('user.Test.test-details')->with([
+                'test' => $test,
+                'languages' => $languages
+            ]);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Test not found.');
+        }
     }
 
     public function createDummyTests()

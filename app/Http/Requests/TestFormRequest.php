@@ -22,16 +22,16 @@ class TestFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'level'=>['required'],
-            'overview'=>['required'],
-            'content'=>['required'],
-            'features'=>['required'],
-            'time'=>['required'],
-            'price'=>['required'],
-            'name'=>['required'],
-            'language_id'=>['required'],
-            'course_id'=>['required'],
-            'Image'=>['nullable','mimes:jpg,jpeg,png']
+            'level' => ['required'],
+            'overview' => ['required'],
+            'content' => ['required'],
+            'features' => ['required'],
+            'time' => ['required'],
+            'price' => ['required'],
+            'name' => ['required'],
+            'language_id' => ['required'],
+            'course_id' => ['nullable'],
+            'Image' => ['nullable', 'mimes:jpg,jpeg,png']
         ];
     }
 }
