@@ -44,7 +44,7 @@
                     <div class="col-lg-7">
                         <div class="checkout-content-wrapper">
                             <div class="alert alert-warning" role="alert">
-                               S'il vous assurez-vous que votre Prénom, Nom et Email sont corrects.
+                                S'il vous assurez-vous que votre Prénom, Nom et Email sont corrects.
                             </div>
                             <!-- Billing Address -->
                             <div id="billing-form">
@@ -52,19 +52,25 @@
                                 <div class="row">
                                     <div class="col-md-6 col-12 mb--20">
                                         <label>First Name*</label>
-                                        <input type="text" placeholder="Prénom" value="{{ $etudiant->prenom }}">
+                                        <input type="text" placeholder="Prénom" name="prenom"
+                                               value="{{ $etudiant->prenom }}">
                                     </div>
 
                                     <div class="col-md-6 col-12 mb--20">
                                         <label>Last Name*</label>
-                                        <input type="text" placeholder="Nom" value="{{ $etudiant->nom }}">
+                                        <input type="text" placeholder="Nom" name="nom" value="{{ $etudiant->nom }}">
                                     </div>
 
                                     <div class="col-12 mb--20">
                                         <label>Email Address*</label>
-                                        <input type="email" placeholder="Email Address"
+                                        <input type="email" placeholder="Email Address" name="email"
                                                value="{{ $etudiant->user->email }}">
                                     </div>
+
+                                    <!-- Hidden inputs for: EtudId, EtudTestId, amount -->
+                                    <input type="text" name="EtudId" required value="{{ $etudiant->id }}" hidden>
+                                    <input type="text" name="EtudTestId" required value="{{ $etudTestId }}" hidden>
+                                    <input type="text" name="amount" required value="{{ $total }}" hidden>
                                 </div>
                             </div>
                         </div>
