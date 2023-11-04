@@ -47,15 +47,15 @@ class TestsController extends Controller
         $featuresJson = json_encode($featuresArray);
         $test->features = $featuresJson;
 
-        if ($request->hasFile('Image')){
+        if ($request->hasFile('Image')) {
             $file = $request->file('Image');
             $ext = $file->getClientOriginalName();
-            $filename = time().'-'.$ext;
+            $filename = time() . '-' . $ext;
             $file->move('uploads/Test/', $filename);
             $test->Image = $filename;
         }
         $test->save();
-        return redirect('/admin/Test')->with('message','Test added successfully');
+        return redirect('/admin/Test')->with('message', 'Test added successfully');
     }
 
 
@@ -63,7 +63,7 @@ class TestsController extends Controller
     {
         $languages = Language::all();
         $courses = Course::all();
-        return view('admin.Test.edit',compact('test'))->with([
+        return view('admin.Test.edit', compact('test'))->with([
             'languages' => $languages,
             'test' => Test::find($test),
             'courses' => $courses,
@@ -89,19 +89,19 @@ class TestsController extends Controller
         $featuresJson = json_encode($featuresArray);
         $test->features = $featuresJson;
 
-        if ($request->hasFile('Image')){
-            $path = 'uploads/Test/'.$test->image;
-            if (File::exists($path)){
+        if ($request->hasFile('Image')) {
+            $path = 'uploads/Test/' . $test->image;
+            if (File::exists($path)) {
                 File::delete($path);
             }
             $file = $request->Image;
             $ext = $file->getClientOriginalName();
-            $filename = time().'-'.$ext;
+            $filename = time() . '-' . $ext;
             $file->move('uploads/Test/', $filename);
             $test->image = $filename;
         }
 
         $test->update();
-        return redirect('/admin/Test')->with('message','Test added successfully');
+        return redirect('/admin/Test')->with('message', 'Test added successfully');
     }
 }
