@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Etudiant extends Model
 {
     use HasFactory;
+
     protected $table = 'etudiants';
 
     protected $fillable = [
@@ -52,6 +53,11 @@ class Etudiant extends Model
     public function courses()
     {
         return $this->belongsToMany(Course::class, 'etudiant_courses', 'etudiant_id', 'course_id')->withTimestamps();
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function scopeStatusFilter($query, $status)
