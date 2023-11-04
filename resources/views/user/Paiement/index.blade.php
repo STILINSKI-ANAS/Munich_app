@@ -43,12 +43,13 @@
                 <div class="row g-5 checkout-form">
                     <div class="col-lg-7">
                         <div class="checkout-content-wrapper">
+                            <div class="alert alert-warning" role="alert">
+                               S'il vous assurez-vous que votre Prénom, Nom et Email sont corrects.
+                            </div>
                             <!-- Billing Address -->
                             <div id="billing-form">
-                                <h4 class="checkout-title">Billing Address</h4>
-
+                                <h4 class="checkout-title mt--5">Billing Address</h4>
                                 <div class="row">
-
                                     <div class="col-md-6 col-12 mb--20">
                                         <label>First Name*</label>
                                         <input type="text" placeholder="Prénom" value="{{ $etudiant->prenom }}">
@@ -63,12 +64,6 @@
                                         <label>Email Address*</label>
                                         <input type="email" placeholder="Email Address"
                                                value="{{ $etudiant->user->email }}">
-                                    </div>
-
-                                    <div class="col-12 mb--20">
-                                        <label>Address*</label>
-                                        <input type="text" placeholder="Address line 1">
-                                        <input type="text" placeholder="Address line 2">
                                     </div>
                                 </div>
                             </div>
