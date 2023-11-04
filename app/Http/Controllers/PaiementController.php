@@ -38,8 +38,6 @@ class PaiementController extends Controller
 
         $client->redirect_post(); // CREATE INPUTS
 
-        return view('user.payement')->with([
-            'client' => $client
-        ]);
+        return true;
     }
 }
