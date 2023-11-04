@@ -58,8 +58,6 @@ class EtudiantTestController extends Controller
 //        dd($etudiant->nom);
 
 //        return redirect('/');
-        dump($test);
-        dump($etudiant);
 
         $sub_total = $amount;
         $tax = 0;
