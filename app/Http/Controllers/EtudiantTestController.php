@@ -58,7 +58,25 @@ class EtudiantTestController extends Controller
 //        dd($etudiant->nom);
 
 //        return redirect('/');
-        return view('user.Paiement.index',['EtudId' => $etudiant->id,'etudTestId' => $etudiantTest->id, 'amount' => $amount, 'nom' => $name,'prenom' => $etudiant->prenom]);
+        dump($test);
+        dump($etudiant);
+
+        $sub_total = $amount;
+        $tax = 0;
+        $total = $sub_total + $tax;
+        return view('user.Paiement.index', [
+            //'EtudId' => $etudiant->id,
+            //'nom' => $name,
+            //'prenom' => $etudiant->prenom,
+            //'email' => $etudiant->email,
+            //'tel' => $etudiant->tel,
+            'etudTestId' => $etudiantTest->id,
+            'etudiant' => $etudiant,
+            'sub_total' => $sub_total,
+            'tax' => $tax,
+            'total' => $total,
+            'test' => $test,
+        ]);
     }
 
     public function step2(Request $request)
@@ -86,7 +104,7 @@ class EtudiantTestController extends Controller
             // Update the attributes of the Etudiant model
             $etudiant->update($validatedData);
 
-            return view('user.Paiement.index',['EtudId' => $etudiant->id]);
+            return view('user.Paiement.index', ['EtudId' => $etudiant->id]);
 //            return redirect(url('/inscriptionstep3'));
 //            return dump($etudiant);
         } catch (\Exception $e) {
