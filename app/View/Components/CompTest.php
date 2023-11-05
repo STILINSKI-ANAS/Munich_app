@@ -11,7 +11,19 @@ class CompTest extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public $title, public $description,public $content, public $features,public $course, public $langue, public $image, public $price, public $testId)
+    public function __construct(
+        public $title,
+        public $testId,
+        public $description,
+        public $content,
+        public $features,
+        public $course,
+        public $maxPlacements,
+        public $totalEtudiantsInscrits,
+        public $image,
+        public $price,
+        public $langue,
+    )
     {
         //
     }

@@ -198,9 +198,13 @@ class HomeController extends Controller
 
             $languages = Language::all();
 
+            // Le nombres des etudiants inscrits dans le test
+            $totalEtudiantsInscrits = $test->etudiants()->count();
+
             return view('user.Test.test-details')->with([
                 'test' => $test,
-                'languages' => $languages
+                'languages' => $languages,
+                'totalEtudiantsInscrits' => $totalEtudiantsInscrits,
             ]);
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Test not found.');
