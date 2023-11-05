@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\paiement;
 use CMI\CmiClient;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,10 @@ class PaiementController extends Controller
             'prenom' => 'required',
             'email' => 'required|unique:etudiants',
             'amount' => 'required',
+            'EtudId' => 'required',
+            'EtudTestId' => 'required',
         ]);
 
-        dump($validatedData);
         try {
             $client = new CmiClient([
                 'storekey' => '902742', // STOREKEY
@@ -37,6 +39,15 @@ class PaiementController extends Controller
         }
 
         $client->redirect_post(); // CREATE INPUTS
+
+        // save the payment in database
+        $payment = paiement::create([
+            'status' => 'confirmé',
+            'amount' => $validatedData['amount'],
+            'date' => now(),
+            'etudiant_id' => $validatedData['EtudId'],
+            'test_id' => $validatedData['EtudTestId'],
+        ]);
 
         return true;
     }
