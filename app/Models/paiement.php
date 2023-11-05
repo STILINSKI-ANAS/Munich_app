@@ -11,20 +11,21 @@ class paiement extends Pivot
     use HasFactory;
 
     protected $table = 'paiements';
-    protected $fillable=[
-        'methode',
+    protected $fillable = [
         'status',
         'amount',
-        'reference',
+        'date',
+        'etudiant_id',
+        'test_id',
     ];
 
     public function etudiant()
     {
-        return $this->belongsTo(Etudiant::class,'etudiant_id');
-    }
-    public function product()
-    {
-        return $this->belongsTo(Product::class,'product_id');
+        return $this->belongsTo(Etudiant::class, 'etudiant_id');
     }
 
+    public function test()
+    {
+        return $this->belongsTo(Test::class, 'test_id');
+    }
 }
