@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Etudiant;
 use App\Models\paiement;
 use CMI\CmiClient;
 use Illuminate\Http\Request;
@@ -48,6 +49,12 @@ class PaiementController extends Controller
             'date' => now(),
             'etudiant_id' => $validatedData['EtudId'],
             'test_id' => $validatedData['EtudTestId'],
+        ]);
+
+        // TODO: update etudiant status to 'confirmé' if the payment is successful
+        $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
+        $etudiant->update([
+            'status' => 'confirmé',
         ]);
         return true;
     }
