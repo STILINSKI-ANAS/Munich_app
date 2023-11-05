@@ -14,10 +14,12 @@ return new class extends Migration {
             $table->id();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('cin');
-            $table->string('tel');
-            $table->text('addresse');
-            $table->date('dateNaissance');
+            $table->string('cin')->nullable();
+            $table->string('tel')->nullable();
+            $table->string('email')->nullable();
+            $table->text('addresse')->nullable();
+            $table->date('dateNaissance')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('status')->default('en attente');
             $table->string('status_pro');
             $table->string('Cours');
@@ -29,6 +31,7 @@ return new class extends Migration {
             $table->string('period_learning');
             $table->text('commentaire');
             $table->string('Image')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

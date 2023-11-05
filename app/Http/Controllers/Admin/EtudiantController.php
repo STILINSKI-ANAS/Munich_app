@@ -10,6 +10,7 @@ use App\Models\Language;
 use App\Models\paiement;
 use App\Models\Test;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class EtudiantController extends Controller
 {
@@ -36,6 +37,10 @@ class EtudiantController extends Controller
         if ($validatedData['referral_options'] != "autre") {
             $validatedData['referral'] = $validatedData['referral_options'];
         }
+
+        // $email = Auth::user()->email;
+
+        // $validatedData['email'] = $email;
 
         $Etudiant = Etudiant::create($validatedData);
 
