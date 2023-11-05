@@ -24,21 +24,21 @@
                             </div>
                             <!-- Billing Address -->
                             <div id="billing-form">
-                                <h4 class="checkout-title mt--5">Billing Address</h4>
+                                <h4 class="checkout-title mt--5">Votre Information</h4>
                                 <div class="row">
                                     <div class="col-md-6 col-12 mb--20">
-                                        <label>First Name*</label>
+                                        <label>Prénom*</label>
                                         <input type="text" placeholder="Prénom" name="prenom"
                                                value="{{ $etudiant->prenom }}">
                                     </div>
 
                                     <div class="col-md-6 col-12 mb--20">
-                                        <label>Last Name*</label>
+                                        <label>Nom*</label>
                                         <input type="text" placeholder="Nom" name="nom" value="{{ $etudiant->nom }}">
                                     </div>
 
                                     <div class="col-12 mb--20">
-                                        <label>Email Address*</label>
+                                        <label>Email*</label>
                                         <input type="email" placeholder="Email Address" name="email"
                                                value="{{ $etudiant->user->email }}">
                                     </div>
@@ -81,7 +81,8 @@
                                     </div>
 
                                     @if($test->course_id)
-                                        <p>Cours Inclue: {{ $test->course->level }} <span>{{ $course_inclue_price }}DH</span></p>
+                                        <p>Cours Inclue: {{ $test->course->level }}
+                                            <span>{{ $course_inclue_price }}DH</span></p>
                                     @endif
                                     <p>Sub Total <span>{{ $sub_total }}DH</span></p>
                                     <p>Tax <span>{{ $tax }}DH</span></p>
@@ -117,7 +118,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Êtes-vous sûr de vouloir passer cette commande ?
+                    Est que le <b>Nom</b>, <b>Prénom</b> et <b>Email</b> sont corrects? Si non, veuillez les corriger
+                    avant de confirmer
+                    votre commande.
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
