@@ -38,9 +38,10 @@ class PaiementController extends Controller
             return $e->getMessage();
         }
 
-        $client->redirect_post(); // CREATE INPUTS
+        // CREATE INPUTS
+        $client->redirect_post();
 
-        // save the payment in database
+        // TODO: save the payment in database if the payment is successful
         $payment = paiement::create([
             'status' => 'confirmé',
             'amount' => $validatedData['amount'],
@@ -48,7 +49,6 @@ class PaiementController extends Controller
             'etudiant_id' => $validatedData['EtudId'],
             'test_id' => $validatedData['EtudTestId'],
         ]);
-
         return true;
     }
 }
