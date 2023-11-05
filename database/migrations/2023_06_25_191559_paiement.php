@@ -13,12 +13,13 @@ return new class extends Migration {
         //
         Schema::create('paiements', function (Blueprint $table) {
             $table->id();
-            $table->string('methode');
             $table->string('status');
             $table->decimal('amount');
-            $table->string('reference');
-            $table->unsignedBigInteger('etudTest_id');
-            $table->foreign('etudTest_id')->references('id')->on('etudiant_tests')->onDelete('restrict');
+            $table->date('date');
+            $table->unsignedBigInteger('etudiant_id');
+            $table->unsignedBigInteger('test_id');
+            $table->foreign('etudiant_id')->references('id')->on('etudiants')->onDelete('cascade');
+            $table->foreign('test_id')->references('id')->on('tests')->onDelete('cascade');
             $table->timestamps();
         });
     }

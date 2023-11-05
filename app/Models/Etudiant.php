@@ -33,6 +33,7 @@ class Etudiant extends Model
         'period_learning',
         'commentaire',
         'Image',
+        'user_id',
     ];
 
     public function paiements()

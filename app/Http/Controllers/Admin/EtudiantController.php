@@ -10,6 +10,7 @@ use App\Models\Language;
 use App\Models\paiement;
 use App\Models\Test;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class EtudiantController extends Controller
 {
@@ -18,47 +19,48 @@ class EtudiantController extends Controller
     {
         return view('admin.Etudiant.index');
     }
+
     public function create()
     {
         return view('admin.Etudiant.create');
     }
+
     public function store(EtudiantRequest $request)
     {
-//        dd($request);
         $validatedData = $request->validated();
-//        dd($validatedData);
-        if ($validatedData['Cours_options'] != "autre"){
+        if ($validatedData['Cours_options'] != "autre") {
             $validatedData['Cours'] = $validatedData['Cours_options'];
         }
-        if ($validatedData['langue_options'] != "autre"){
+        if ($validatedData['langue_options'] != "autre") {
             $validatedData['langue'] = $validatedData['langue_options'];
         }
-        if ($validatedData['referral_options'] != "autre"){
+        if ($validatedData['referral_options'] != "autre") {
             $validatedData['referral'] = $validatedData['referral_options'];
         }
 
-//        dd($validatedData);
-        $Etudiant = Etudiant::create($validatedData);
-//        dd($Etudiant);
+        // $email = Auth::user()->email;
 
-//        $Paiement = paiement::create(array_merge(
-//            ['methode' => 'none'],
-//            ['status' => 'en attente'],
-//            ['amount' => 0],
-//            ['reference' => 'none'],
-//            ['inscription_id' => $Etudiant->id],
-//        ));
-//        dd($Paiement);
-        return redirect('/admin/Etudiant')->with('message','Etudiant added');
+        // $validatedData['email'] = $email;
+
+        $Etudiant = Etudiant::create($validatedData);
+
+//        $Paiement = paiement::create([
+//            'status' => 'en attente',
+//            'amount' => 0,
+//            'date' => date('Y-m-d'),
+//            'etudiant_id' => $Etudiant->id,
+//            'test_id' => 1,
+//        ]);
+        return redirect('/admin/Etudiant')->with('message', 'Etudiant added');
     }
 
     public function edit()
     {
         return view('admin.Etudiant.edit');
     }
+
     public function update(EtudiantRequest $request, $etudiant)
     {
-//        dd($request);
         $Etudiant = Etudiant::findOrFail($etudiant);
         $validatedData = $request->validated();
         $validatedData['Cours'] = $validatedData['Cours_options'];
@@ -73,7 +75,7 @@ class EtudiantController extends Controller
 //        $Etudiant->dateNaissance = $validatedData['dateNaissance'];
         $Etudiant->update($validatedData);
 //        dd($Etudiant);
-        return redirect('/admin/Etudiant')->with('message','Etudiant added');
+        return redirect('/admin/Etudiant')->with('message', 'Etudiant added');
 //        return dd($request->all());
     }
 
@@ -95,6 +97,7 @@ class EtudiantController extends Controller
 
         return response()->json(['message' => 'User created and attached successfully']);
     }
+
     public function getUserAndAttachedEtudiant($userId)
     {
         // Find the user by ID

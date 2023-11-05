@@ -22,17 +22,15 @@ class EtudiantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
-            'nom'=>['required','string'],
-            'prenom'=>['required','string'],
-            'cin'=>['required','string'],
-            'tel'=>['required','string'],
-            'addresse'=>['required','string'],
-            'dateNaissance'=>['required','string'],
-            'email'=>['required','string'],
+            'nom' => ['required', 'string'],
+            'prenom' => ['required', 'string'],
+            'cin' => ['nullable', 'string'],
+            'tel' => ['nullable', 'string'],
+            'addresse' => ['required', 'string'],
+            'dateNaissance' => ['required', 'string'],
+            'email' => ['nullable'],
             'Image' => ['nullable'],
             'status' => ['nullable', 'string'],
-
             'status_pro' => ['nullable', 'string'],
             'referral_options' => ['nullable', 'string'],
             'referral' => ['nullable', 'string'],
@@ -41,7 +39,6 @@ class EtudiantRequest extends FormRequest
             'where_learning' => ['nullable', 'string'],
             'period_learning' => ['nullable', 'string'],
             'commentaire' => ['nullable', 'string'],
-
             'langue' => ['nullable', 'string'],
             'Cours_options' => ['nullable', 'string'],
             'Cours' => ['nullable', 'string'],

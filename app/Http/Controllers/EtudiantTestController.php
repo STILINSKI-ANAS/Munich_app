@@ -43,31 +43,17 @@ class EtudiantTestController extends Controller
 
         $test = Test::findOrFail($request->testId);
         $amount = $test->price;
-        $name = $etudiant->nom;
-//        dd($etudiantTest->etudiant->tests);
 
-
-//        $user = Auth::user();
-//        $etud = $user->etudiant;
-//        dump($etud);
-//        return response()->json([
-//            'user' => $user,
-//            'etudiant' => $etud,
-//        ]);
-//        $this->sendEmail($etudiant->nom, Test::find($request->testId)->level, $etudiant->email);
-//        dd($etudiant->nom);
-
-//        return redirect('/');
+        // check if test has course_id
+        if ($test->course_id) {
+            $course = $test->course;
+            $amount += $course->price;
+        }
 
         $sub_total = $amount;
         $tax = 0;
         $total = $sub_total + $tax;
         return view('user.Paiement.index', [
-            //'EtudId' => $etudiant->id,
-            //'nom' => $name,
-            //'prenom' => $etudiant->prenom,
-            //'email' => $etudiant->email,
-            //'tel' => $etudiant->tel,
             'etudTestId' => $etudiantTest->id,
             'etudiant' => $etudiant,
             'sub_total' => $sub_total,
