@@ -46,6 +46,7 @@
                                     <!-- Hidden inputs for: EtudId, EtudTestId, amount -->
                                     <input type="text" name="EtudId" required value="{{ $etudiant->id }}" hidden>
                                     <input type="text" name="EtudTestId" required value="{{ $etudTestId }}" hidden>
+                                    <input type="text" name="test_id" required value="{{ $test->id }}" hidden>
                                     <input type="text" name="amount" required value="{{ $total }}" hidden>
                                 </div>
                             </div>
