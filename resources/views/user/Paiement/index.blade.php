@@ -60,11 +60,29 @@
                                 <h4 class="checkout-title">Cart Total</h4>
 
                                 <div class="checkout-cart-total">
-                                    <h4>Test <span>Total</span></h4>
-                                    <ul>
-                                        <li>{{ $test->name }} <span>{{ $test->price }}DH</span></li>
-                                    </ul>
+                                    <!-- Test card: image, name and price -->
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="gap-2 d-flex align-items-start justify-content-start">
+                                            <!-- Image -->
+                                            <div class="product-image w-25">
+                                                <img src="{{ asset('uploads/Test/'. $test->image) }}" alt="Card image">
+                                            </div>
 
+                                            <!-- Name -->
+                                            <div class="product-content">
+                                                <h4 class="product-title">{{ $test->name }}</h4>
+                                            </div>
+                                        </div>
+
+                                        <!-- Price -->
+                                        <div class="product-price">
+                                            <span class="price">{{ $test->price }}DH</span>
+                                        </div>
+                                    </div>
+
+                                    @if($test->course_id)
+                                        <p>Cours Inclue: {{ $test->course->level }} <span>{{ $course_inclue_price }}DH</span></p>
+                                    @endif
                                     <p>Sub Total <span>{{ $sub_total }}DH</span></p>
                                     <p>Tax <span>{{ $tax }}DH</span></p>
 

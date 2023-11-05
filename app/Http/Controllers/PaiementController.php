@@ -20,8 +20,8 @@ class PaiementController extends Controller
         dump($validatedData);
         try {
             $client = new CmiClient([
-                'storekey' => 'asdsasada21', // STOREKEY
-                'clientid' => 'asdsad12321', // CLIENTID
+                'storekey' => '902742', // STOREKEY
+                'clientid' => '600001579', // CLIENTID
                 'oid' => '135ABC', // COMMAND ID IT MUST BE UNIQUE
                 'shopurl' => 'http://127.0.0.1:8000/', // SHOP URL FOR REDIRECTION
                 'okUrl' => 'http://127.0.0.1:8000/payementProcess', // REDIRECTION AFTER SUCCEFFUL PAYMENT

@@ -209,10 +209,12 @@
                                                     <div class="rbt-card-bottom">
                                                         <div class="rbt-price">
                                                             <span class="current-price">{{ $course->price }} MAD</span>
-                                                            <span class="off-price">{{ $course->price * 1.4 }} MAD</span>
+                                                            <span
+                                                                class="off-price">{{ $course->price * 1.4 }} MAD</span>
                                                         </div>
                                                         <a class="rbt-btn-link"
-                                                           href="{{url('/Language/Course/'.$course->level)}}">En Savoir plus
+                                                           href="{{url('/Language/Course/'.$course->level)}}">En Savoir
+                                                            plus
                                                             <i class="feather-arrow-right"></i></a>
                                                     </div>
                                                 </div>
@@ -463,7 +465,6 @@
                                     <div class="rbt-card-img">
                                         <a href="course-details.html">
                                             <img src="{{ asset('assets/images/course/'. $image) }}" alt="Card image">
-
                                         </a>
                                     </div>
                                     <div class="rbt-card-body">
