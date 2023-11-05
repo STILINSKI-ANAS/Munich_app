@@ -28,6 +28,7 @@ class TestFormRequest extends FormRequest
             'features' => ['required'],
             'time' => ['required'],
             'price' => ['required'],
+            'max_placements' => ['nullable'],
             'name' => ['required'],
             'language_id' => ['required'],
             'course_id' => ['nullable'],

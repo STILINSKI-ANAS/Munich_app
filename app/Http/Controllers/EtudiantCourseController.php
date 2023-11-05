@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 
 class EtudiantCourseController extends Controller
 {
-    
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -32,7 +32,7 @@ class EtudiantCourseController extends Controller
         $etudiant->courses()->attach($request->courseId);
 
         $this->sendEmail($etudiant->nom, Course::find($request->courseId)->level, $etudiant->email);
-        
+
         return redirect('/');
     }
 
