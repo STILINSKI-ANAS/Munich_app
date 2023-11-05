@@ -35,6 +35,7 @@ class Test extends Model
     {
         return $this->belongsToMany(Etudiant::class, 'etudiant_tests', 'test_id', 'etudiant_id')->withTimestamps();
     }
+
     public function course()
     {
         return $this->belongsTo(Course::class, 'course_id');

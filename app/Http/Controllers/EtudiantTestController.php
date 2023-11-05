@@ -43,20 +43,23 @@ class EtudiantTestController extends Controller
 
         $test = Test::findOrFail($request->testId);
         $amount = $test->price;
+        $course_inclue_price = 0;
 
         // check if test has course_id
         if ($test->course_id) {
             $course = $test->course;
+            $course_inclue_price = $course->price;
             $amount += $course->price;
         }
 
         $sub_total = $amount;
         $tax = 0;
-        $total = $sub_total + $tax;
+        $total = $amount + $tax;
         return view('user.Paiement.index', [
             'etudTestId' => $etudiantTest->id,
             'etudiant' => $etudiant,
             'sub_total' => $sub_total,
+            'course_inclue_price' => $course_inclue_price,
             'tax' => $tax,
             'total' => $total,
             'test' => $test,
