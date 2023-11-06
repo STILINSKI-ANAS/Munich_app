@@ -6,12 +6,14 @@ use App\Models\Etudiant;
 use App\Models\paiement;
 use App\Models\Test;
 use App\Notifications\ExamInvoiceNotification;
-use CMI\CmiClient;
+use Combindma\Cmi\Cmi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 
 class PaiementController extends Controller
 {
+    use \Combindma\Cmi\Traits\CmiGateway;
+
     //
     public function store(Request $request)
     {
@@ -37,53 +39,74 @@ class PaiementController extends Controller
         $oid = 'FC-' . $etudiant->id . '-' . date('Y') . '-' . $test->id . '-' . $last_paiement_id;
 
         try {
-            $client = new CmiClient([
-                'storekey' => '902742', // STOREKEY
-                'clientid' => '600001579', // CLIENTID
-                'oid' => $oid, // COMMAND ID IT MUST BE UNIQUE
-                'shopurl' => 'http://127.0.0.1:8000/', // SHOP URL FOR REDIRECTION
-                'okUrl' => 'http://127.0.0.1:8000/payementProcess', // REDIRECTION AFTER SUCCEFFUL PAYMENT
-                'failUrl' => 'http://127.0.0.1:8000/payementProcess', // REDIRECTION AFTER FAILED PAYMENT
-                'email' => $validatedData['email'], // EMAIL OF CLIENT
-                'BillToName' => $validatedData['nom'] . ' ' . $validatedData['prenom'], // NAME OF CLIENT
-                'BillToCompany' => 'CMI', // COMPANY OF CLIENT
-                'amount' => $validatedData['amount'], // AMOUNT OF PAYMENT
-                'CallbackURL' => 'http://127.0.0.1:8000/payementProcess', // CALLBACK
+            $cmiClient = new Cmi();
+            $cmiClient->setOid($oid);
+            $cmiClient->setAmount($validatedData['amount']);
+            $cmiClient->setBillToName($validatedData['nom'] . ' ' . $validatedData['prenom']);
+            $cmiClient->setEmail($validatedData['email']);
+            $cmiClient->setTel('212600000000');
+            $cmiClient->setCurrency('504');
+            $cmiClient->setDescription('ceci est un exemple à utiliser');
+
+            // TODO: save the payment in database if the payment is successful
+            paiement::create([
+                'status' => 'confirmé',
+                'amount' => $validatedData['amount'],
+                'date' => $date,
+                'etudiant_id' => $validatedData['EtudId'],
+                'test_id' => $validatedData['test_id'],
             ]);
+
+            // TODO: update etudiant status to 'confirmé' if the payment is successful
+            $etudiant->update([
+                'status' => 'confirmé',
+            ]);
+
+            // TODO: send invoice to etudiant if the payment is successful in email
+            $data = [
+                'to_name' => $validatedData['nom'] . ' ' . $validatedData['prenom'],
+                'to_email' => $validatedData['email'],
+                'subject' => 'Inscription au test',
+                'body' => 'Vous avez effectué une inscription au test avec succès',
+                'amount' => $validatedData['amount'],
+                'date' => $date,
+                'test' => $test,
+                'oid' => $oid,
+            ];
+
+            Notification::route('mail', $data['to_email'])->notify(new ExamInvoiceNotification($data));
+
+            return $this->requestPayment($cmiClient);
         } catch (\Exception $e) {
             return $e->getMessage();
         }
+    }
 
-        // CREATE INPUTS
-        $client->redirect_post();
+    /**
+     * Ok response from cmi
+     */
+    public function okUrl(Request $request)
+    {
+        dump($request->all());
 
-        // TODO: save the payment in database if the payment is successful
-        paiement::create([
-            'status' => 'confirmé',
-            'amount' => $validatedData['amount'],
-            'date' => $date,
-            'etudiant_id' => $validatedData['EtudId'],
-            'test_id' => $validatedData['test_id'],
-        ]);
+        return view('user.Paiement.ok');
+    }
 
-        // TODO: update etudiant status to 'confirmé' if the payment is successful
-        $etudiant->update([
-            'status' => 'confirmé',
-        ]);
+    /**
+     * Fail response from cmi
+     */
+    public function failUrl(Request $request)
+    {
+        dump($request->all());
 
-        // TODO: send invoice to etudiant if the payment is successful in email
-        $data = [
-            'to_name' => $validatedData['nom'] . ' ' . $validatedData['prenom'],
-            'to_email' => $validatedData['email'],
-            'subject' => 'Inscription au test',
-            'body' => 'Vous avez effectué une inscription au test avec succès',
-            'amount' => $validatedData['amount'],
-            'date' => $date,
-            'test' => $test,
-            'oid' => $oid,
-        ];
+        return view('user.Paiement.fail');
+    }
 
-        Notification::route('mail', $data['to_email'])->notify(new ExamInvoiceNotification($data));
-        return true;
+    /**
+     * Callback response from cmi
+     */
+    public function callback(Request $request)
+    {
+        dump($request->all());
     }
 }

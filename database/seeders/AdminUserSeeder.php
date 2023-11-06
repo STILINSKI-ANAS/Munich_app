@@ -16,15 +16,15 @@ class AdminUserSeeder extends Seeder
         // Create Admin User
         User::create([
             'name' => 'Admin',
-            'email' => 'admin@munich.ma',
+            'email' => 'admin@gmail.com',
             'password' => bcrypt('12345678'),
             'role_as' => 1,
         ]);
 
         // Create Normal User
         User::create([
-            'name' => 'User',
-            'email' => 'user@gmail.com',
+            'name' => 'ABDELLATIF',
+            'email' => 'abdelatiflaghjaj@gmail.com',
             'password' => bcrypt('12345678'),
             'role_as' => 0,
         ]);
