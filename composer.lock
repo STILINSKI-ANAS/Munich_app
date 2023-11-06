@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4cb4222c6aa528ef0bbb5a65d159748e",
+    "content-hash": "36003c175a6395f6448725d908331186",
     "packages": [
         {
             "name": "brick/math",
@@ -60,6 +60,77 @@
                 }
             ],
             "time": "2023-01-15T23:15:59+00:00"
+        },
+        {
+            "name": "combindma/cmi-payment",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/combindma/cmi-payment.git",
+                "reference": "13b022b5c8464f8f8b090422c2de9184ade235aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/combindma/cmi-payment/zipball/13b022b5c8464f8f8b090422c2de9184ade235aa",
+                "reference": "13b022b5c8464f8f8b090422c2de9184ade235aa",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0|^10.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^6.0",
+                "nunomaduro/larastan": "^2.0",
+                "orchestra/testbench": "^7.0|^8.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Combindma\\Cmi\\CmiServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cmi": "Combindma\\Cmi\\Facades\\Cmi"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Combindma\\Cmi\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Combind",
+                    "email": "webmaster@combind.ma",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel package to communicate with the CMI payment plateform",
+            "homepage": "https://github.com/combindma/cmi-payment",
+            "keywords": [
+                "cmi-payment",
+                "combindma",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/combindma/cmi-payment/issues",
+                "source": "https://github.com/combindma/cmi-payment/tree/1.0.0"
+            },
+            "time": "2023-03-18T17:11:14+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -1896,63 +1967,6 @@
             "time": "2023-03-03T20:12:38+00:00"
         },
         {
-            "name": "mehdirochdi/cmi-payment-php",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mehdirochdi/cmi-payment-php.git",
-                "reference": "f6690081721a8a1320ae710880e48e61543f241c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mehdirochdi/cmi-payment-php/zipball/f6690081721a8a1320ae710880e48e61543f241c",
-                "reference": "f6690081721a8a1320ae710880e48e61543f241c",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "2.17.1",
-                "phpunit/phpunit": "^9.3.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "CMI\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "mehdi rochdi",
-                    "email": "mehdi.rochdi@gmail.com",
-                    "homepage": "https://github.com/mehdirochdi/cmi-php/graphs/contributors"
-                }
-            ],
-            "description": "PHP package to communicate with the CMI payment plateform in Morocco",
-            "keywords": [
-                "cmi",
-                "cmi payment",
-                "morocco payment",
-                "paiement au maroc",
-                "paiement en ligne cmi",
-                "payment in morocco",
-                "payment processing"
-            ],
-            "support": {
-                "issues": "https://github.com/mehdirochdi/cmi-payment-php/issues",
-                "source": "https://github.com/mehdirochdi/cmi-payment-php/tree/1.0.0"
-            },
-            "time": "2021-06-14T12:32:50+00:00"
-        },
-        {
             "name": "monolog/monolog",
             "version": "3.3.1",
             "source": {
@@ -3185,6 +3199,66 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
+        },
+        {
+            "name": "spatie/laravel-package-tools",
+            "version": "1.16.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-package-tools.git",
+                "reference": "cc7c991555a37f9fa6b814aa03af73f88026a83d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/cc7c991555a37f9fa6b814aa03af73f88026a83d",
+                "reference": "cc7c991555a37f9fa6b814aa03af73f88026a83d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.28|^10.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5",
+                "orchestra/testbench": "^7.7|^8.0",
+                "pestphp/pest": "^1.22",
+                "phpunit/phpunit": "^9.5.24",
+                "spatie/pest-plugin-test-time": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelPackageTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools for creating Laravel packages",
+            "homepage": "https://github.com/spatie/laravel-package-tools",
+            "keywords": [
+                "laravel-package-tools",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-package-tools/issues",
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-08-23T09:04:39+00:00"
         },
         {
             "name": "symfony/console",
