@@ -158,7 +158,13 @@ Route::prefix('/')->group(function () {
     Route::controller(\App\Http\Controllers\PaiementController::class)->group(function () {
         Route::get('/inscriptionstep3', 'index');
         Route::post('/payementProcess', 'store')->name('payementProcess');
-//        Route::post('/inscriptionstep2', 'step2')->name('inscriptionstep2');
+        Route::get('/payment/success', function () {
+            return view('user.Paiement.success');
+        })->name('payment.success');
+        Route::get('/payment/failed', function () {
+            return view('user.Paiement.failed');
+        })->name('payment.failed');
+        //Route::post('/inscriptionstep2', 'step2')->name('inscriptionstep2');
     });
     Route::controller(\App\Http\Controllers\EtudiantCourseController::class)->group(function () {
         Route::post('/EtudiantCourse', 'store');
