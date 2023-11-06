@@ -81,4 +81,32 @@ class PaiementController extends Controller
             return $e->getMessage();
         }
     }
+
+    /**
+     * Ok response from cmi
+     */
+    public function okUrl(Request $request)
+    {
+        dump($request->all());
+
+        return view('user.Paiement.ok');
+    }
+
+    /**
+     * Fail response from cmi
+     */
+    public function failUrl(Request $request)
+    {
+        dump($request->all());
+
+        return view('user.Paiement.fail');
+    }
+
+    /**
+     * Callback response from cmi
+     */
+    public function callback(Request $request)
+    {
+        dump($request->all());
+    }
 }

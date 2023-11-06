@@ -158,12 +158,15 @@ Route::prefix('/')->group(function () {
     Route::controller(\App\Http\Controllers\PaiementController::class)->group(function () {
         Route::get('/inscriptionstep3', 'index');
         Route::post('/payementProcess', 'store')->name('payementProcess');
-        Route::get('/payment/ok', function () {
-            return view('user.Paiement.success');
-        })->name('payment.success');
-        Route::get('/payment/fail', function () {
-            return view('user.Paiement.failed');
-        })->name('payment.failed');
+
+        //notez que vous pouvez utiliser le chemin que vous voulez, mais vous devez utiliser la méthode de rappel (callback) implémentée dans la trait CmiGateway
+        Route::post('/cmi/callback', [\App\Http\Controllers\PaiementController::class, 'callback'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
+
+        // dans la trait CmiGateway, cette méthode est vide pour que vous puissiez implémenter votre propre processus après un paiement réussi
+        Route::post('/cmi/ok', [\App\Http\Controllers\PaiementController::class, 'okUrl'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
+
+        // la fail url redirigera l'utilisateur vers shopUrl avec une erreur pour que l'utilisateur puisse essayer de payer à nouveau
+        Route::post('/cmi/fail', [\App\Http\Controllers\PaiementController::class, 'failUrl'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
         //Route::post('/inscriptionstep2', 'step2')->name('inscriptionstep2');
     });
     Route::controller(\App\Http\Controllers\EtudiantCourseController::class)->group(function () {
