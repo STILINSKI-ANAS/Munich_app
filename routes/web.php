@@ -158,10 +158,10 @@ Route::prefix('/')->group(function () {
     Route::controller(\App\Http\Controllers\PaiementController::class)->group(function () {
         Route::get('/inscriptionstep3', 'index');
         Route::post('/payementProcess', 'store')->name('payementProcess');
-        Route::get('/payment/success', function () {
+        Route::get('/payment/ok', function () {
             return view('user.Paiement.success');
         })->name('payment.success');
-        Route::get('/payment/failed', function () {
+        Route::get('/payment/fail', function () {
             return view('user.Paiement.failed');
         })->name('payment.failed');
         //Route::post('/inscriptionstep2', 'step2')->name('inscriptionstep2');
