@@ -595,7 +595,6 @@
 
                                 {{--                                    </div>--}}
                                 @if(auth()->check())
-                                    {{--                                        <div>logged in</div>--}}
                                     <form method="POST" action="{{ url('/EtudiantTest')}}"
                                           enctype="multipart/form-data">
                                         @csrf
