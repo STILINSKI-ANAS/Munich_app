@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Mail\EmailService;
 use App\Models\Course;
 use App\Models\Etudiant;
+use App\Models\EtudiantCourse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
@@ -33,7 +35,26 @@ class EtudiantCourseController extends Controller
 
         $this->sendEmail($etudiant->nom, Course::find($request->courseId)->level, $etudiant->email);
 
-        return redirect('/');
+        $etudiant->user_id = Auth::user()->id;
+        $etudiant->save();
+        $etudiantCourse = EtudiantCourse::create([
+            'etudiant_id' => $etudiant->id,
+            'course_id' => $request->courseId,
+        ]);
+
+        $courses = Course::findOrFail($request->courseId);
+        $amount = $courses->price;
+        $sub_total = $amount;
+        $tax = 0;
+        $total = $amount + $tax;
+        return view('user.Paiement.index', [
+            'etudCourseId' => $etudiantCourse->id,
+            'etudiant' => $etudiant,
+            'sub_total' => $sub_total,
+            'tax' => $tax,
+            'total' => $total,
+            'test' => $courses,
+        ]);
     }
 
     public function sendEmail($name, $level, $email)
