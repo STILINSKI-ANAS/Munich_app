@@ -28,7 +28,6 @@ class EtudiantTestController extends Controller
 //            'cin' => 'required',
 //            'addresse' => 'required',
             'testId' => 'required',
-            // Add more rules for other attributes as needed
         ];
         $validatedData = $request->validate($rules);
 
