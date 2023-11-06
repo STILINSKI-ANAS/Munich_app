@@ -930,7 +930,8 @@
                         <div class="inner">
 
                             <!-- Start formulaire  -->
-                            <form method="POST" action="{{ url('/EtudiantCourse')}}" enctype="multipart/form-data">
+                            @if(auth()->check())
+                                <form method="POST" action="{{ url('/EtudiantCourse')}}" enctype="multipart/form-data">
                                 @csrf
 
                                 @if($totalEtudiantsInscrits < $maxPlacements)
@@ -991,6 +992,17 @@
                                     </div>
                                 @endif
                             </form>
+                            @else
+                                <div class="alert alert-danger" role="alert">
+                                    Vous devez vous connecter pour pouvoir s'inscrire !
+                                </div>
+                                <div class="add-to-card-button">
+                                    <a href="{{ url('/login') }}"
+                                       class="rbt-btn btn-gradient icon-hover w-100 d-block text-center">
+                                        <span class="btn-text">Se connecter</span>
+                                    </a>
+                                </div>
+                            @endif
                             <!-- end formulaire  -->
                         </div>
                     </div>
