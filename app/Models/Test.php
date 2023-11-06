@@ -16,6 +16,7 @@ class Test extends Model
         'time',
         'name',
         'price',
+        'max_placements',
         'Image',
         'short_description',
         'features',

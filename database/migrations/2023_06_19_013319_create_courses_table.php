@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('time');
             $table->string('image')->nullable();
             $table->string('price');
+            $table->integer('max_placements')->nullable();
             $table->unsignedBigInteger('language_id');
             $table->foreign('language_id')->references('id')->on('languages');
             $table->timestamps();

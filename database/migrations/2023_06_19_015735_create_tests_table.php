@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->text('content');
             $table->string('time');
             $table->string('price');
+            $table->integer('max_placements')->nullable();
             $table->unsignedBigInteger('course_id')->nullable();
             $table->foreign('course_id')->references('id')->on('courses')->cascadeOnDelete();
             $table->timestamps();

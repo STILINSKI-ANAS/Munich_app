@@ -38,6 +38,7 @@ class TestsController extends Controller
         $test->level = $validatedData['level'];
         $test->overview = $validatedData['overview'];
         $test->price = $validatedData['price'];
+        $test->max_placements = $validatedData['max_placements'];
         $test->time = $validatedData['time'];
         $test->content = $validatedData['content'];
         $test->language_id = $validatedData['language_id'];

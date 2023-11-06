@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\File;
 
 class CoursController extends Controller
 {
-    
+
     public function index()
     {
         return view('admin.Course.index');
@@ -35,18 +35,19 @@ class CoursController extends Controller
         $course->level = $validatedData['level'];
         $course->overview = $validatedData['overview'];
         $course->price = $validatedData['price'];
+        $course->max_placements = $validatedData['max_placements'];
         $course->time = $validatedData['time'];
         $course->language_id = $validatedData['language_id'];
 
-        if ($request->hasFile('Image')){
+        if ($request->hasFile('Image')) {
             $file = $request->file('Image');
             $ext = $file->getClientOriginalName();
-            $filename = time().'-'.$ext;
+            $filename = time() . '-' . $ext;
             $file->move('uploads/Course/', $filename);
             $course->image = $filename;
         }
         $course->save();
-        return redirect('/admin/Course')->with('success','Course added successfully');
+        return redirect('/admin/Course')->with('success', 'Course added successfully');
     }
 
 
@@ -70,19 +71,19 @@ class CoursController extends Controller
         $course->price = $validatedData['price'];
         $course->time = $validatedData['time'];
         $course->language_id = $validatedData['language_id'];
-        if ($request->hasFile('Image')){
-            $path = 'uploads/Course/'.$course->image;
-            if (File::exists($path)){
+        if ($request->hasFile('Image')) {
+            $path = 'uploads/Course/' . $course->image;
+            if (File::exists($path)) {
                 File::delete($path);
             }
 
             $file = $request->file('Image');
             $ext = $file->getClientOriginalName();
-            $filename = time().'-'.$ext;
+            $filename = time() . '-' . $ext;
             $file->move('uploads/course/', $filename);
             $course->image = $filename;
         }
         $course->update();
-        return redirect('/admin/Course')->with('success','Course updated successfully');
+        return redirect('/admin/Course')->with('success', 'Course updated successfully');
     }
 }

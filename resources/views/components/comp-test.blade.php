@@ -599,27 +599,37 @@
                                     <form method="POST" action="{{ url('/EtudiantTest')}}"
                                           enctype="multipart/form-data">
                                         @csrf
-                                        <div>
-                                            <labela>nom</labela>
-                                            <input type="text" name="nom" placeholder="question supplémentaire 1"
-                                                   required>
-                                        </div>
-                                        <div>
-                                            <labela>prenom</labela>
-                                            <input type="text" name="prenom" placeholder="question supplémentaire 1"
-                                                   required>
 
-                                        </div>
-                                        <div>
-                                            <labela>supp1</labela>
-                                        </div>
-                                        <input type="text" name="supp1" placeholder="question supplémentaire 1"
-                                               required>
-                                        <input type="text" name="testId" required value="{{$testId}}" hidden>
-                                        <button class="rbt-btn btn-gradient icon-hover w-100 d-block text-center mt--15"
+                                        @if($totalEtudiantsInscrits < $maxPlacements)
+                                            <div>
+                                                <labela>nom</labela>
+                                                <input type="text" name="nom" placeholder="question supplémentaire 1"
+                                                       required>
+                                            </div>
+
+                                            <div>
+                                                <labela>prenom</labela>
+                                                <input type="text" name="prenom" placeholder="question supplémentaire 1"
+                                                       required>
+                                            </div>
+
+                                            <div>
+                                                <labela>supp1</labela>
+                                                <input type="text" name="supp1" placeholder="question supplémentaire 1"
+                                                       required>
+                                            </div>
+
+                                            <input type="text" name="testId" required value="{{$testId}}" hidden>
+                                            <button
+                                                class="rbt-btn btn-gradient icon-hover w-100 d-block text-center mt--15"
                                                 type="submit">
-                                            <span class="btn-text">S'inscrire</span>
-                                        </button>
+                                                <span class="btn-text">S'inscrire</span>
+                                            </button>
+                                        @else
+                                            <div class="alert alert-danger" role="alert">
+                                                L'examen a atteint le maximum de places disponibles !
+                                            </div>
+                                        @endif
                                     </form>
                                 @else
                                     {{--                                        <div>logged out</div>--}}

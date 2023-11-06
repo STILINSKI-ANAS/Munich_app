@@ -30,6 +30,13 @@
                     <small><i class="feather-info"></i> <b>Par exemple:</b> cours business,cours privé,juniors/A1,B1,B2</small>
                 </div>
 
+                <!-- Max Placements -->
+                <div class="course-field mb--15">
+                    <label for="field-1">Nombre maximum de places: </label>
+                    <input id="field-1" type="number" placeholder="Entrez le nombre maximum de places disponibles" name="max_placements" required>
+                    <small><i class="feather-info"></i> <b>Par exemple:</b> 100</small>
+                </div>
+
                 <div class="col-lg-6">
                     <div class="course-field mb--15">
                         <label for="language">Language</label>
