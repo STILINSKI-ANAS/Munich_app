@@ -17,6 +17,7 @@ class paiement extends Pivot
         'date',
         'etudiant_id',
         'test_id',
+        'course_id',
     ];
 
     public function etudiant()
@@ -27,5 +28,10 @@ class paiement extends Pivot
     public function test()
     {
         return $this->belongsTo(Test::class, 'test_id');
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class, 'course_id');
     }
 }

@@ -17,9 +17,11 @@ return new class extends Migration {
             $table->decimal('amount');
             $table->date('date');
             $table->unsignedBigInteger('etudiant_id');
-            $table->unsignedBigInteger('test_id');
+            $table->unsignedBigInteger('test_id')->nullable();
+            $table->unsignedBigInteger('course_id')->nullable();
             $table->foreign('etudiant_id')->references('id')->on('etudiants')->onDelete('cascade');
             $table->foreign('test_id')->references('id')->on('tests')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->timestamps();
         });
     }

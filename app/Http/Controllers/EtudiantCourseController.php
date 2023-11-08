@@ -42,18 +42,18 @@ class EtudiantCourseController extends Controller
             'course_id' => $request->courseId,
         ]);
 
-        $courses = Course::findOrFail($request->courseId);
-        $amount = $courses->price;
+        $course = Course::findOrFail($request->courseId);
+        $amount = $course->price;
         $sub_total = $amount;
         $tax = 0;
         $total = $amount + $tax;
-        return view('user.Paiement.index', [
+        return view('user.Paiement.course.index', [
             'etudCourseId' => $etudiantCourse->id,
             'etudiant' => $etudiant,
             'sub_total' => $sub_total,
             'tax' => $tax,
             'total' => $total,
-            'test' => $courses,
+            'course' => $course,
         ]);
     }
 
