@@ -14,7 +14,7 @@
     <div class="checkout_area bg-color-white rbt-section-gap">
         <div class="container">
             <h1>Paiement</h1>
-            <form id="paymentForm" method="POST" action="{{ route('coursePayementProcess') }}" enctype="multipart/form-data">
+            <form id="paymentForm2" action="{{ url('/coursePaymentProcess') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row g-5 checkout-form">
                     <div class="col-lg-7">
@@ -141,7 +141,7 @@
         // Handle the "Confirm Order" button in the confirmation modal
         $('#confirmOrderButton').click(function () {
             // Submit the form when the confirmation is confirmed
-            $('#paymentForm').submit();
+            $('#paymentForm2').submit();
         });
     });
 </script>

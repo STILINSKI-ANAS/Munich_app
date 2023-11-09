@@ -157,8 +157,8 @@ Route::prefix('/')->group(function () {
     });
     Route::controller(\App\Http\Controllers\PaiementController::class)->group(function () {
         Route::get('/inscriptionstep3', 'index');
-        Route::post('/testPayementProcess', 'testPayement')->name('testPayementProcess');
-        Route::post('/coursePayementProcess', 'coursePayement')->name('coursePayementProcess');
+        Route::post('/testPaymentProcess', 'testPayment')->name('testPaymentProcess');
+        Route::post('/coursePaymentProcess', 'coursePayment')->name('coursePaymentProcess');
 
         //notez que vous pouvez utiliser le chemin que vous voulez, mais vous devez utiliser la méthode de rappel (callback) implémentée dans la trait CmiGateway
         Route::post('/cmi/callback', [\App\Http\Controllers\PaiementController::class, 'callback'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
@@ -171,7 +171,7 @@ Route::prefix('/')->group(function () {
         //Route::post('/inscriptionstep2', 'step2')->name('inscriptionstep2');
     });
     Route::controller(\App\Http\Controllers\EtudiantCourseController::class)->group(function () {
-        Route::post('/EtudiantCourse', 'store');
+        Route::post('/EtudiantCourse', 'store')->name('EtudiantCourse');
     });
 });
 

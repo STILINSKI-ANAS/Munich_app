@@ -55,8 +55,6 @@ class EtudiantTestController extends Controller
         $tax = 0;
         $total = $amount + $tax;
 
-        $this->sendEmail($etudiant->nom, Test::find($request->testId)->level, $etudiant->email);
-
         return view('user.Paiement.test.index', [
             'etudTestId' => $etudiantTest->id,
             'etudiant' => $etudiant,

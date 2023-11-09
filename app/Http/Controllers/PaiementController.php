@@ -16,9 +16,9 @@ class PaiementController extends Controller
     use \Combindma\Cmi\Traits\CmiGateway;
 
     /**
-     * Store Test Paiement
+     * Store Test Payment
      */
-    public function testPayement(Request $request)
+    public function testPayment(Request $request)
     {
         $validatedData = $request->validate([
             'nom' => 'required',
@@ -87,9 +87,9 @@ class PaiementController extends Controller
     }
 
     /**
-     * Store Course Paiement
+     * Store Course Payment
      */
-    public function coursePayement(Request $request)
+    public function coursePayment(Request $request)
     {
         $validatedData = $request->validate([
             'nom' => 'required',
@@ -97,7 +97,6 @@ class PaiementController extends Controller
             'email' => 'required|unique:etudiants',
             'amount' => 'required',
             'EtudId' => 'required',
-            'EtudCourseId' => 'required',
             'course_id' => 'required',
         ]);
 
@@ -141,7 +140,7 @@ class PaiementController extends Controller
             $data = [
                 'to_name' => $validatedData['nom'] . ' ' . $validatedData['prenom'],
                 'to_email' => $validatedData['email'],
-                'subject' => 'Inscription au test',
+                'subject' => 'Inscription au cours',
                 'body' => 'Vous avez effectué une inscription au test avec succès',
                 'amount' => $validatedData['amount'],
                 'date' => $date,

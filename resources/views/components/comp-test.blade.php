@@ -599,7 +599,7 @@
                                           enctype="multipart/form-data">
                                         @csrf
 
-                                        @if($totalEtudiantsInscrits < $maxPlacements)
+                                        @if(($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null))
                                             <div>
                                                 <labela>nom</labela>
                                                 <input type="text" name="nom" placeholder="question supplémentaire 1"

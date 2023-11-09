@@ -934,7 +934,7 @@
                                 <form method="POST" action="{{ url('/EtudiantCourse')}}" enctype="multipart/form-data">
                                     @csrf
 
-                                    @if($totalEtudiantsInscrits < $maxPlacements)
+                                    @if(($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null))
                                         <div class="content-item-content">
                                             <div
                                                 class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">
