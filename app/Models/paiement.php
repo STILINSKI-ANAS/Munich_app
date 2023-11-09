@@ -12,6 +12,7 @@ class paiement extends Pivot
 
     protected $table = 'paiements';
     protected $fillable = [
+        'oid',
         'status',
         'amount',
         'date',
