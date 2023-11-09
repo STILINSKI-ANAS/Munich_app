@@ -35,8 +35,12 @@ class PaiementController extends Controller
         $test = Test::findOrFail($validatedData['test_id']);
 
         // Get last paiement id
-        $last_paiement = paiement::latest()->first();
-        $last_paiement_id = $last_paiement ? $last_paiement->id : 1;
+        $last_paiement = paiement::latest('id')->firstOr(function () {
+            // Return a default paiement model with id 1
+            return new paiement(['id' => 1]);
+        });
+
+        $last_paiement_id = $last_paiement->id;
 
         // Generate unique oid (FC-ID-YEAR-TEST_ID-PAIEMENT_ID)
         $oid = 'FC-' . $etudiant->id . '-' . date('Y') . '-' . $test->id . '-' . $last_paiement_id;
@@ -80,7 +84,7 @@ class PaiementController extends Controller
 
             Notification::route('mail', $data['to_email'])->notify(new ExamInvoiceNotification($data));
 
-            return $this->requestPayment($cmiClient);
+            return $this->requestPayment($cmiClient, $data);
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -151,7 +155,7 @@ class PaiementController extends Controller
 
             Notification::route('mail', $data['to_email'])->notify(new ExamInvoiceNotification($data));
 
-            return $this->requestPayment($cmiClient);
+            return $this->requestPayment($cmiClient, $data);
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -184,4 +188,8 @@ class PaiementController extends Controller
     {
         dump($request->all());
     }
+
+    /**
+     * Save New Paiement Method (can be test or course) so dynamic
+     */
 }
