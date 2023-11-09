@@ -28,7 +28,6 @@ class EtudiantTestController extends Controller
 //            'cin' => 'required',
 //            'addresse' => 'required',
             'testId' => 'required',
-            // Add more rules for other attributes as needed
         ];
         $validatedData = $request->validate($rules);
 
@@ -55,7 +54,8 @@ class EtudiantTestController extends Controller
         $sub_total = $amount;
         $tax = 0;
         $total = $amount + $tax;
-        return view('user.Paiement.index', [
+
+        return view('user.Paiement.test.index', [
             'etudTestId' => $etudiantTest->id,
             'etudiant' => $etudiant,
             'sub_total' => $sub_total,

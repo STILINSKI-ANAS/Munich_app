@@ -156,15 +156,24 @@
             <td>Prix</td>
         </tr>
 
-        <tr class="item">
-            <td>{{ $data['test']->name }}</td>
-            <td>{{ $data['test']->price }} DH</td>
-        </tr>
-
-        @if($data['test']->course_id)
+        @if($data['test'] !== null)
             <tr class="item">
-                <td>{{ $data['test']->course->level }}</td>
-                <td>{{ $data['test']->course->price }} DH</td>
+                <td>{{ $data['test']->name }}</td>
+                <td>{{ $data['test']->price }} DH</td>
+            </tr>
+
+            @if($data['test']->course_id)
+                <tr class="item">
+                    <td>{{ $data['test']->course->level }}</td>
+                    <td>{{ $data['test']->course->price }} DH</td>
+                </tr>
+            @endif
+        @endif
+
+        @if($data['course'] !== null)
+            <tr class="item">
+                <td>{{ $data['course']->level }}</td>
+                <td>{{ $data['course']->price }} DH</td>
             </tr>
         @endif
 

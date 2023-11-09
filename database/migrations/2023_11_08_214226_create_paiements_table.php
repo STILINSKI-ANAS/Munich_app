@@ -17,11 +17,11 @@ return new class extends Migration
             $table->decimal('amount', 8, 2);
             $table->date('date');
             $table->unsignedBigInteger('etudiant_id');
-            $table->unsignedBigInteger('test_id');
-            $table->timestamps();
-
-            $table->foreign('etudiant_id')->references('id')->on('etudiants');
-            $table->foreign('test_id')->references('id')->on('tests');
+            $table->unsignedBigInteger('test_id')->nullable();
+            $table->unsignedBigInteger('course_id')->nullable();
+            $table->foreign('etudiant_id')->references('id')->on('etudiants')->onDelete('cascade');
+            $table->foreign('test_id')->references('id')->on('tests')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });
     }
 

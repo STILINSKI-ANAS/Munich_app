@@ -595,12 +595,11 @@
 
                                 {{--                                    </div>--}}
                                 @if(auth()->check())
-                                    {{--                                        <div>logged in</div>--}}
                                     <form method="POST" action="{{ url('/EtudiantTest')}}"
                                           enctype="multipart/form-data">
                                         @csrf
 
-                                        @if($totalEtudiantsInscrits < $maxPlacements)
+                                        @if(($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null))
                                             <div>
                                                 <labela>nom</labela>
                                                 <input type="text" name="nom" placeholder="question supplémentaire 1"

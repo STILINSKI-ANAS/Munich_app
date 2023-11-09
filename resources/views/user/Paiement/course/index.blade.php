@@ -14,7 +14,7 @@
     <div class="checkout_area bg-color-white rbt-section-gap">
         <div class="container">
             <h1>Paiement</h1>
-            <form id="paymentForm" method="POST" action="{{ route('payementProcess') }}" enctype="multipart/form-data">
+            <form id="paymentForm2" action="{{ url('/coursePaymentProcess') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row g-5 checkout-form">
                     <div class="col-lg-7">
@@ -45,8 +45,8 @@
 
                                     <!-- Hidden inputs for: EtudId, EtudTestId, amount -->
                                     <input type="text" name="EtudId" required value="{{ $etudiant->id }}" hidden>
-                                    <input type="text" name="EtudTestId" required value="{{ $etudTestId }}" hidden>
-                                    <input type="text" name="test_id" required value="{{ $test->id }}" hidden>
+                                    <input type="text" name="EtudCourseId" required value="{{ $etudCourseId }}" hidden>
+                                    <input type="text" name="course_id" required value="{{ $course->id }}" hidden>
                                     <input type="text" name="amount" required value="{{ $total }}" hidden>
                                 </div>
                             </div>
@@ -66,25 +66,22 @@
                                         <div class="gap-2 d-flex align-items-start justify-content-start">
                                             <!-- Image -->
                                             <div class="product-image w-25">
-                                                <img src="{{ asset('uploads/Test/'. $test->image) }}" alt="Card image">
+                                                <img src="{{ asset('uploads/Course/'. $course->image) }}"
+                                                     alt="Card image">
                                             </div>
 
                                             <!-- Name -->
                                             <div class="product-content">
-                                                <h4 class="product-title">{{ $test->name }}</h4>
+                                                <h4 class="product-title">{{ $course->level }}</h4>
                                             </div>
                                         </div>
 
                                         <!-- Price -->
                                         <div class="product-price">
-                                            <span class="price">{{ $test->price }}DH</span>
+                                            <span class="price">{{ $course->price }}DH</span>
                                         </div>
                                     </div>
 
-                                    @if($test->course_id)
-                                        <p>Cours Inclue: {{ $test->course->level }}
-                                            <span>{{ $course_inclue_price }}DH</span></p>
-                                    @endif
                                     <p>Sub Total <span>{{ $sub_total }}DH</span></p>
                                     <p>Tax <span>{{ $tax }}DH</span></p>
 
@@ -98,7 +95,6 @@
                                             <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         </span>
                                     </button>
-
                                 </div>
                             </div>
                         </div>
@@ -145,7 +141,7 @@
         // Handle the "Confirm Order" button in the confirmation modal
         $('#confirmOrderButton').click(function () {
             // Submit the form when the confirmation is confirmed
-            $('#paymentForm').submit();
+            $('#paymentForm2').submit();
         });
     });
 </script>

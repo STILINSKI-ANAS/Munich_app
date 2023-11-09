@@ -155,14 +155,23 @@ class HomeController extends Controller
 
     public function getCourse($courseLevel)
     {
-        $languages = Language::all();
-        $course = Course::Where('level', $courseLevel)->first();
-//        $course = $course->toarray();
-//        dd($course->level);
-        return view('user.Course.course-details')->with([
-            'course' => $course,
-            'languages' => $languages
-        ]);
+        try {
+            $languages = Language::all();
+            $course = Course::Where('level', $courseLevel)->firstOrFail();
+
+            // Le nombres des etudiants inscrits dans le test
+            $totalEtudiantsInscrits = $course->etudiants()->count();
+
+            // Add language property to the course object
+            $course->language = $course->language()->first()->name;
+            return view('user.Course.course-details')->with([
+                'course' => $course,
+                'languages' => $languages,
+                'totalEtudiantsInscrits' => $totalEtudiantsInscrits,
+            ]);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Course not found.');
+        }
     }
 
     public function getLanguageTests($languageName, Request $request)
