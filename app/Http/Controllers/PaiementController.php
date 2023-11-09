@@ -30,64 +30,10 @@ class PaiementController extends Controller
             'test_id' => 'required',
         ]);
 
-        $date = now();
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
         $test = Test::findOrFail($validatedData['test_id']);
 
-        // Get last paiement id
-        $last_paiement = paiement::latest('id')->firstOr(function () {
-            // Return a default paiement model with id 1
-            return new paiement(['id' => 1]);
-        });
-
-        $last_paiement_id = $last_paiement->id;
-
-        // Generate unique oid (FC-ID-YEAR-TEST_ID-PAIEMENT_ID)
-        $oid = 'FC-' . $etudiant->id . '-' . date('Y') . '-' . $test->id . '-' . $last_paiement_id;
-
-        try {
-            $cmiClient = new Cmi();
-            $cmiClient->setOid($oid);
-            $cmiClient->setAmount($validatedData['amount']);
-            $cmiClient->setBillToName($validatedData['nom'] . ' ' . $validatedData['prenom']);
-            $cmiClient->setEmail($validatedData['email']);
-            $cmiClient->setTel('212600000000');
-            $cmiClient->setCurrency('504');
-            $cmiClient->setDescription('ceci est un exemple à utiliser');
-
-            // TODO: save the payment in database if the payment is successful
-            paiement::create([
-                'status' => 'confirmé',
-                'amount' => $validatedData['amount'],
-                'date' => $date,
-                'etudiant_id' => $validatedData['EtudId'],
-                'test_id' => $validatedData['test_id'],
-            ]);
-
-            // TODO: update etudiant status to 'confirmé' if the payment is successful
-            $etudiant->update([
-                'status' => 'confirmé',
-            ]);
-
-            // TODO: send invoice to etudiant if the payment is successful in email
-            $data = [
-                'to_name' => $validatedData['nom'] . ' ' . $validatedData['prenom'],
-                'to_email' => $validatedData['email'],
-                'subject' => 'Inscription au test',
-                'body' => 'Vous avez effectué une inscription au test avec succès',
-                'amount' => $validatedData['amount'],
-                'date' => $date,
-                'test' => $test,
-                'course' => null,
-                'oid' => $oid,
-            ];
-
-            Notification::route('mail', $data['to_email'])->notify(new ExamInvoiceNotification($data));
-
-            return $this->requestPayment($cmiClient, $data);
-        } catch (\Exception $e) {
-            return $e->getMessage();
-        }
+        return $this->savePayment($validatedData, $etudiant, $test, null);
     }
 
     /**
@@ -104,16 +50,39 @@ class PaiementController extends Controller
             'course_id' => 'required',
         ]);
 
-        $date = now();
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
         $course = Course::findOrFail($validatedData['course_id']);
 
-        // Get last paiement id
-        $last_paiement = paiement::latest()->first();
-        $last_paiement_id = $last_paiement ? $last_paiement->id : 1;
+        return $this->savePayment($validatedData, $etudiant, null, $course);
+    }
 
-        // Generate unique oid (FC-ID-YEAR-TEST_ID-PAIEMENT_ID)
-        $oid = 'FC-' . $etudiant->id . '-' . date('Y') . '-' . $course->id . '-' . $last_paiement_id;
+    /**
+     * Save New Paiement Method (can be test or course) so dynamic
+     */
+    protected function savePayment(array $validatedData, $etudiant, $test, $course)
+    {
+        $date = now();
+
+        // Get last paiement id
+        $last_paiement = paiement::latest('id')->firstOr(function () {
+            return new paiement(['id' => 1]);
+        });
+
+        $last_paiement_id = $last_paiement->id;
+
+        // Determine the oid based on whether it's a test or course payment
+        $oid = 'FC-' . $etudiant->id . '-' . date('Y') . '-';
+        $description = '';
+
+        if ($test) {
+            $oid .= $test->id . '-';
+            $description = 'Inscription au test avec succès';
+        } elseif ($course) {
+            $oid .= $course->id . '-';
+            $description = 'Inscription au cours avec succès';
+        }
+
+        $oid .= $last_paiement_id;
 
         try {
             $cmiClient = new Cmi();
@@ -125,14 +94,15 @@ class PaiementController extends Controller
             $cmiClient->setCurrency('504');
             $cmiClient->setDescription('ceci est un exemple à utiliser');
 
-            // TODO: save the payment in database if the payment is successful
-            paiement::create([
+            // TODO: save the payment in the database if the payment is successful
+            $paiement = paiement::create([
+                'oid' => $oid,
                 'status' => 'confirmé',
                 'amount' => $validatedData['amount'],
                 'date' => $date,
-                'etudiant_id' => $validatedData['EtudId'],
-                'test_id' => null,
-                'course_id' => $validatedData['course_id'],
+                'etudiant_id' => $etudiant->id,
+                'test_id' => $test ? $test->id : null,
+                'course_id' => $course ? $course->id : null,
             ]);
 
             // TODO: update etudiant status to 'confirmé' if the payment is successful
@@ -140,20 +110,18 @@ class PaiementController extends Controller
                 'status' => 'confirmé',
             ]);
 
-            // TODO: send invoice to etudiant if the payment is successful in email
+            // TODO: send an invoice to the etudiant if the payment is successful via email
             $data = [
                 'to_name' => $validatedData['nom'] . ' ' . $validatedData['prenom'],
                 'to_email' => $validatedData['email'],
-                'subject' => 'Inscription au cours',
-                'body' => 'Vous avez effectué une inscription au test avec succès',
+                'subject' => $test ? 'Inscription au test' : 'Inscription au cours',
+                'body' => $description,
                 'amount' => $validatedData['amount'],
                 'date' => $date,
-                'test' => null,
+                'test' => $test,
                 'course' => $course,
                 'oid' => $oid,
             ];
-
-            Notification::route('mail', $data['to_email'])->notify(new ExamInvoiceNotification($data));
 
             return $this->requestPayment($cmiClient, $data);
         } catch (\Exception $e) {
@@ -166,8 +134,34 @@ class PaiementController extends Controller
      */
     public function okUrl(Request $request)
     {
-        dump($request->all());
+        // Retrieve the oid from the request (you need to adapt this part based on your request structure)
+        $oid = $request->input('oid');
 
+        // Find the corresponding paiement
+        $paiement = paiement::where('oid', $oid)->first();
+
+        if ($paiement) {
+            // Payment is successful, update the student's status to 'confirmé'
+            $paiement->etudiant->update(['status' => 'confirmé']);
+
+            // You can add any additional logic or views here as needed
+            dump($request->all());
+
+            // Send the email notification
+            $data = [
+                'to_name' => $paiement->etudiant->nom . ' ' . $paiement->etudiant->prenom,
+                'to_email' => $paiement->etudiant->email,
+                'subject' => $paiement->test ? 'Inscription au test' : 'Inscription au cours',
+                'body' => $paiement->test ? 'Inscription au test avec succès' : 'Inscription au cours avec succès',
+                'amount' => $paiement->amount,
+                'date' => $paiement->date,
+                'test' => $paiement->test,
+                'course' => $paiement->course,
+                'oid' => $oid,
+            ];
+        };
+
+        Notification::route('mail', $data['to_email'])->notify(new ExamInvoiceNotification($data));
         return view('user.Paiement.ok');
     }
 
@@ -176,6 +170,21 @@ class PaiementController extends Controller
      */
     public function failUrl(Request $request)
     {
+        // Retrieve the oid from the request (you need to adapt this part based on your request structure)
+        $oid = $request->input('oid');
+
+        // Find the corresponding paiement
+        $paiement = paiement::where('oid', $oid)->first();
+
+        if ($paiement) {
+            // Update the paiement status to 'échoué'
+            $paiement->update(['status' => 'échoué']);
+
+            // Update the student's status to 'échoué'
+            $paiement->etudiant->update(['status' => 'échoué']);
+        }
+
+        // You can add any additional logic or views here as needed
         dump($request->all());
 
         return view('user.Paiement.fail');
@@ -188,8 +197,4 @@ class PaiementController extends Controller
     {
         dump($request->all());
     }
-
-    /**
-     * Save New Paiement Method (can be test or course) so dynamic
-     */
 }
