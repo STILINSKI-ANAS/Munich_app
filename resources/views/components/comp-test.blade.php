@@ -600,6 +600,13 @@
                                         @csrf
 
                                         @if(($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null))
+                                            <div
+                                                class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">
+                                                <div class="rbt-price">
+                                                    <span class="current-price">{{ $price }} MAD</span>
+                                                    <span class="off-price">{{ $price * 1.4 }} MAD</span>
+                                                </div>
+                                            </div>
                                             <div>
                                                 <labela>nom</labela>
                                                 <input type="text" name="nom" placeholder="question supplémentaire 1"

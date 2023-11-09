@@ -210,6 +210,8 @@ class HomeController extends Controller
             // Le nombres des etudiants inscrits dans le test
             $totalEtudiantsInscrits = $test->etudiants()->count();
 
+            $test->language = $test->language()->first()->name;
+
             return view('user.Test.test-details')->with([
                 'test' => $test,
                 'languages' => $languages,

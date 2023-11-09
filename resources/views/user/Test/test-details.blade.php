@@ -12,7 +12,7 @@
             :maxPlacements="$test->max_placements"
             :totalEtudiantsInscrits="$totalEtudiantsInscrits"
             :image="$test->image"
-            langue="allemend"
-            price="100"/>
+            :langue="$test->language"
+            :price="$test->price"/>
     </main>
 @endsection
