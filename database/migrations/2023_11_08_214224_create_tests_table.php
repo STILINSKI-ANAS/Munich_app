@@ -25,10 +25,9 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->text('short_description')->nullable();
             $table->unsignedBigInteger('course_id')->default(1);
-            $table->timestamps();
-
             $table->foreign('language_id')->references('id')->on('languages');
             $table->foreign('course_id')->references('id')->on('courses');
+            $table->timestamps();
         });
     }
 
