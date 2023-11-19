@@ -133,7 +133,7 @@
                             </div>
                         @endif
                     @else
-                        <ul class="quick-access pr--200">
+                        <ul class="quick-access">
 
                             <li class="account-access rbt-user-wrapper d-none d-xl-block">
                                 <a href="#"><i class="feather-user"></i>{{ Auth::user()->name }}</a>

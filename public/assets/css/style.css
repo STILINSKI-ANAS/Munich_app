@@ -119,8 +119,10 @@
 /*-- Variables --*/
 @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap");
 :root {
-  --color-primary: #2f57ef;
-  --color-secondary: #b966e7;
+  /*--color-primary: #2f57ef;*/
+  --color-primary: #de1b1d;
+  /*--color-secondary: #b966e7;*/
+  --color-secondary: #fbcd00;
   --color-coral: #E9967A;
   --color-violet: #800080;
   --color-pink: #DB7093;
@@ -234,7 +236,7 @@
   --gradient-5: linear-gradient(rgb(239, 241, 255) 0%, rgb(239, 241, 255) 100%);
   --gradient-6: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(251, 199, 226, 0.15), rgba(220, 217, 254, 0.15));
   --gradient-7: linear-gradient(218.15deg, var(--color-secondary) 0%, var(--color-primary) 100%);
-  --gradient-8: linear-gradient(270deg, #9e77ff 0%, #4460ff 100%);
+  --gradient-8: linear-gradient(270deg, var(--color-secondary) 0%, var(--color-primary) 100%);
   --gradient-9: linear-gradient(180deg, #6827FF 0%, #E3F0FF 100%);
 }
 
@@ -2155,7 +2157,7 @@ textarea:-ms-input-placeholder {
 }
 
 [data-gradient-overlay]:before {
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(90deg, var(--color-primary), #fbcd0059);
 }
 
 [data-overlay="1"]:before,
@@ -8986,7 +8988,7 @@ input[type=date].p-holder__active,
 input[type=date].input-active,
 textarea.p-holder__active,
 textarea.input-active {
-  border-color: var(--color-primary);
+  border-color: var(--color-secondary);
   /* -- Placeholder -- */
 }
 input[type=text].p-holder__active::placeholder, .input-active input[type=text]::placeholder, input[type=text].input-active::placeholder,
@@ -9165,7 +9167,7 @@ input[type=number]:focus,
 input[type=tel]:focus,
 input[type=date]:focus,
 textarea:focus {
-  border-color: var(--color-primary);
+  border-color: var(--color-secondary);
 }
 
 input[type=checkbox],
@@ -9274,7 +9276,7 @@ input[type=radio] ~ label::after {
   width: 100%;
 }
 .form-group input:focus {
-  border-color: var(--color-primary);
+  border-color: var(--color-secondary);
 }
 .form-group textarea {
   height: auto;
@@ -24534,6 +24536,17 @@ blockquote.has-text-align-right cite,
   .height-650 {
     height: auto;
   }
+}
+
+.height-550 {
+    height: 550px;
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 1199px) {
+    .height-550 {
+        height: auto;
+    }
 }
 
 .height-750 {
