@@ -41,11 +41,6 @@ class Etudiant extends Model
         return $this->belongsToMany(paiement::class, 'paiements', 'etudiant_id', 'product_id');
     }
 
-    public function vipData()
-    {
-        return $this->hasOne(VIPCustomerData::class, 'customer_id', 'id');
-    }
-
     public function tests()
     {
         return $this->belongsToMany(Test::class, 'etudiant_tests', 'etudiant_id', 'test_id')->withTimestamps();
