@@ -1,108 +1,110 @@
 <div class="daf">
     <!-- Start breadcrumb Area -->
-<!--    <div class="rbt-breadcrumb-default rbt-breadcrumb-style-3">-->
-<!--        <div class="breadcrumb-inner">-->
-<!--            <img src="{{ asset('assets/images/bg/bg-image-10.jpg') }}" alt="Education Images">-->
-<!--        </div>-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-lg-8">-->
-<!--                    <div class="content">-->
-<!--                        <div class="content text-start">-->
-<!--                            <ul class="page-list">-->
-<!--                                <li class="rbt-breadcrumb-item"><a href="index.html">Langue {{ $langue }}-->
-<!--                                    </a></li>-->
-<!--                                <li>-->
-<!--                                    <div class="icon-right"><i class="feather-chevron-right"></i></div>-->
-<!--                                </li>-->
-<!--                                <li class="rbt-breadcrumb-item active">{{ $title }}-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                            <h2 class="title">{{ $title }}-->
-<!--                            </h2>-->
-<!--                            <p class="description">{{ $description }}-->
-<!--                            </p>-->
-<!---->
-<!--                            <div class="d-flex align-items-center mb--20 flex-wrap rbt-course-details-feature">-->
-<!---->
-<!--                                <div class="feature-sin best-seller-badge">-->
-<!--                                    <span class="rbt-badge-2">-->
-<!--                                            <span class="image"><img src="{{ asset('assets/images/logo/logo-c.png') }}"-->
-<!--                                                                     alt="Best Seller Icon"></span>meilleur choix</span>-->
-<!--                                </div>-->
-<!---->
-<!--                                <div class="feature-sin rating">-->
-<!--                                    <a href="#">4.8</a>-->
-<!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-<!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-<!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-<!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-<!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-<!--                                </div>-->
-<!---->
-<!--                                <div class="feature-sin total-rating">-->
-<!--                                    <a class="rbt-badge-4" href="#">3,475 Avis</a>-->
-<!--                                </div>-->
-<!---->
-<!--                                <div class="feature-sin total-student">-->
-<!--                                    <span>8,029 Etudiant</span>-->
-<!--                                </div>-->
-<!---->
-<!--                            </div>-->
-<!---->
-<!---->
-<!--                            <ul class="rbt-meta">-->
-<!--                                <li><i class="feather-calendar"></i>Dernière mise à jour</li>-->
-<!--                                <li><i class="feather-globe"></i>{{ $langue }}</li>-->
-<!--                                <li><i class="feather-award"></i>Examen certifié</li>-->
-<!--                            </ul>-->
-<!---->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--    <div class="rbt-breadcrumb-default rbt-breadcrumb-style-3">-->
+    <!--        <div class="breadcrumb-inner">-->
+    <!--            <img src="{{ asset('assets/images/bg/bg-image-10.jpg') }}" alt="Education Images">-->
+    <!--        </div>-->
+    <!--        <div class="container">-->
+    <!--            <div class="row">-->
+    <!--                <div class="col-lg-8">-->
+    <!--                    <div class="content">-->
+    <!--                        <div class="content text-start">-->
+    <!--                            <ul class="page-list">-->
+    <!--                                <li class="rbt-breadcrumb-item"><a href="index.html">Langue {{ $langue }}-->
+    <!--                                    </a></li>-->
+    <!--                                <li>-->
+    <!--                                    <div class="icon-right"><i class="feather-chevron-right"></i></div>-->
+    <!--                                </li>-->
+    <!--                                <li class="rbt-breadcrumb-item active">{{ $title }}-->
+    <!--                                </li>-->
+    <!--                            </ul>-->
+    <!--                            <h2 class="title">{{ $title }}-->
+    <!--                            </h2>-->
+    <!--                            <p class="description">{{ $description }}-->
+    <!--                            </p>-->
+    <!---->
+    <!--                            <div class="d-flex align-items-center mb--20 flex-wrap rbt-course-details-feature">-->
+    <!---->
+    <!--                                <div class="feature-sin best-seller-badge">-->
+    <!--                                    <span class="rbt-badge-2">-->
+    <!--                                            <span class="image"><img src="{{ asset('assets/images/logo/logo-c.png') }}"-->
+    <!--                                                                     alt="Best Seller Icon"></span>meilleur choix</span>-->
+    <!--                                </div>-->
+    <!---->
+    <!--                                <div class="feature-sin rating">-->
+    <!--                                    <a href="#">4.8</a>-->
+    <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
+    <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
+    <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
+    <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
+    <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
+    <!--                                </div>-->
+    <!---->
+    <!--                                <div class="feature-sin total-rating">-->
+    <!--                                    <a class="rbt-badge-4" href="#">3,475 Avis</a>-->
+    <!--                                </div>-->
+    <!---->
+    <!--                                <div class="feature-sin total-student">-->
+    <!--                                    <span>8,029 Etudiant</span>-->
+    <!--                                </div>-->
+    <!---->
+    <!--                            </div>-->
+    <!---->
+    <!---->
+    <!--                            <ul class="rbt-meta">-->
+    <!--                                <li><i class="feather-calendar"></i>Dernière mise à jour</li>-->
+    <!--                                <li><i class="feather-globe"></i>{{ $langue }}</li>-->
+    <!--                                <li><i class="feather-award"></i>Examen certifié</li>-->
+    <!--                            </ul>-->
+    <!---->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
     <!-- End Breadcrumb Area -->
 
-    <div class="slider-area rbt-banner-5 height-550 bg_image" style="background-image: url({{ asset('/uploads/Test/'.$image) }});" data-gradient-overlay="7">
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-lg-12">-->
-<!--                    <div class="inner text-center">-->
-<!--                        <h1 class="title display-one">Start Your-->
-<!--                            <span>Career &amp; </span>-->
-<!--                            <span>Pursue</span> Your Passion.-->
-<!--                        </h1>-->
-<!--                        <p class="description">We help our clients succeed by creating brand identities, digital-->
-<!--                            experiences, and print materials.</p>-->
-<!--                        <div class="rbt-button-group">-->
-<!--                            <a class="rbt-btn btn-white hover-icon-reverse" href="#">-->
-<!--                                <div class="icon-reverse-wrapper">-->
-<!--                                    <span class="btn-text">View Our Program</span>-->
-<!--                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>-->
-<!--                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>-->
-<!--                                </div>-->
-<!--                            </a>-->
-<!--                            <a class="rbt-btn btn-border hover-icon-reverse color-white" href="contact.html">-->
-<!--                                <div class="icon-reverse-wrapper">-->
-<!--                                    <span class="btn-text">Contact Us</span>-->
-<!--                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>-->
-<!--                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>-->
-<!--                                </div>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+    <div class="slider-area rbt-banner-5 height-550 bg_image"
+         style="background-image: url({{ asset('/uploads/Test/'.$image) }});" data-gradient-overlay="7">
+        <!--        <div class="container">-->
+        <!--            <div class="row">-->
+        <!--                <div class="col-lg-12">-->
+        <!--                    <div class="inner text-center">-->
+        <!--                        <h1 class="title display-one">Start Your-->
+        <!--                            <span>Career &amp; </span>-->
+        <!--                            <span>Pursue</span> Your Passion.-->
+        <!--                        </h1>-->
+        <!--                        <p class="description">We help our clients succeed by creating brand identities, digital-->
+        <!--                            experiences, and print materials.</p>-->
+        <!--                        <div class="rbt-button-group">-->
+        <!--                            <a class="rbt-btn btn-white hover-icon-reverse" href="#">-->
+        <!--                                <div class="icon-reverse-wrapper">-->
+        <!--                                    <span class="btn-text">View Our Program</span>-->
+        <!--                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>-->
+        <!--                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>-->
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                            <a class="rbt-btn btn-border hover-icon-reverse color-white" href="contact.html">-->
+        <!--                                <div class="icon-reverse-wrapper">-->
+        <!--                                    <span class="btn-text">Contact Us</span>-->
+        <!--                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>-->
+        <!--                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>-->
+        <!--                                </div>-->
+        <!--                            </a>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="content">
                         <div class="content text-start">
                             <ul class="page-list">
-                                <li class="rbt-breadcrumb-item"><a href="index.html" class="color-white">Langue {{ $langue }}
+                                <li class="rbt-breadcrumb-item"><a href="index.html"
+                                                                   class="color-white">Langue {{ $langue }}
                                     </a></li>
                                 <li>
                                     <div class="icon-right"><i class="feather-chevron-right"></i></div>
@@ -123,28 +125,29 @@
                                                                      alt="Best Seller Icon"></span>meilleur choix</span>
                                 </div>
 
-<!--                                <div class="feature-sin rating">-->
-<!--                                    <a href="#">4.8</a>-->
-<!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-<!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-<!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-<!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-<!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-<!--                                </div>-->
+                                <!--                                <div class="feature-sin rating">-->
+                                <!--                                    <a href="#">4.8</a>-->
+                                <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
+                                <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
+                                <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
+                                <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
+                                <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
+                                <!--                                </div>-->
 
-<!--                                <div class="feature-sin total-rating">-->
-<!--                                    <a class="rbt-badge-4" href="#">3,475 Avis</a>-->
-<!--                                </div>-->
+                                <!--                                <div class="feature-sin total-rating">-->
+                                <!--                                    <a class="rbt-badge-4" href="#">3,475 Avis</a>-->
+                                <!--                                </div>-->
 
-<!--                                <div class="feature-sin total-student">-->
-<!--                                    <span>8,029 Etudiant</span>-->
-<!--                                </div>-->
+                                <!--                                <div class="feature-sin total-student">-->
+                                <!--                                    <span>8,029 Etudiant</span>-->
+                                <!--                                </div>-->
 
                             </div>
 
 
                             <ul class="rbt-meta">
-                                <li class="color-white"><i class="feather-calendar color-white"></i>Dernière mise à jour</li>
+                                <li class="color-white"><i class="feather-calendar color-white"></i>Dernière mise à jour
+                                </li>
                                 <li class="color-white"><i class="feather-globe color-white"></i>{{ $langue }}</li>
                                 <li class="color-white"><i class="feather-award color-white"></i>Examen certifié</li>
                             </ul>
@@ -164,76 +167,79 @@
             <div class="container">
                 <div class="row g-5 align-items-center content-wrapper">
                     @if(auth()->check())
-                    <form method="POST" action="{{ url('/EtudiantTest')}}"
-                          enctype="multipart/form-data">
-                        @csrf
+                        <form method="POST" action="{{ url('/EtudiantTest')}}"
+                              enctype="multipart/form-data">
+                            @csrf
 
-                        @if((($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null)))
-                        <div class="col-xxl-12 col-xl-12 col-lg-12 text-center">
-                            <div class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-around">
-                                <div class="rbt-price">
-                                    <span class="current-price text-white" style="font-size: 32px">{{ $price }} MAD</span>
-                                    <span class="off-price text-white">{{ $price * 1.4 }} MAD</span>
+                            @if((($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null)))
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 text-center">
+                                    <div
+                                        class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-around">
+                                        <div class="rbt-price">
+                                            <span class="current-price text-white" style="font-size: 32px">{{ $price }} MAD</span>
+                                            <span class="off-price text-white">{{ $price * 1.4 }} MAD</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input class="text-white" name="nom" id="nom" type="text" required>
-                            <label class="text-white">Nom de famille</label>
-                            <span class="focus-border"></span>
-                        </div>
-                        <div class="form-group">
-                            <input class="text-white" name="prenom" id="prenom" type="text" required>
-                            <label class="text-white">Prénom</label>
-                            <span class="focus-border"></span>
-                        </div>
-                        <!--                        <div>-->
-                        <!--                            <labela>supp1</labela>-->
-                        <!--                            <input type="text" name="supp1" placeholder="question supplémentaire 1">-->
-                        <!--                        </div>-->
-                        <input type="text" name="testId" required value="{{$testId}}" hidden>
-                        <button
-                            class="rbt-btn btn-white hover-icon-reverse w-100 d-block text-center mt--15"
-                            type="submit">
+                                <div class="form-group">
+                                    <input class="text-white" name="nom" id="nom" type="text" required>
+                                    <label class="text-white">Nom de famille</label>
+                                    <span class="focus-border"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input class="text-white" name="prenom" id="prenom" type="text" required>
+                                    <label class="text-white">Prénom</label>
+                                    <span class="focus-border"></span>
+                                </div>
+                                <!--                        <div>-->
+                                <!--                            <labela>supp1</labela>-->
+                                <!--                            <input type="text" name="supp1" placeholder="question supplémentaire 1">-->
+                                <!--                        </div>-->
+                                <input type="text" name="testId" required value="{{$testId}}" hidden>
+                                <button
+                                    class="rbt-btn btn-white hover-icon-reverse w-100 d-block text-center mt--15"
+                                    type="submit">
                             <span class="icon-reverse-wrapper">
                             <span class="btn-text">S'inscrire</span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                             </span>
-                        </button>
-                        @else
-                        <div class="col-xxl-12 col-xl-12 col-lg-12">
+                                </button>
+                            @else
+                                <div class="col-xxl-12 col-xl-12 col-lg-12">
+                                    <div class="inner">
+                                        <div class="content text-start">
+                                            <h2 class="title color-white mb--0">L'examen a atteint le maximum de places
+                                                disponibles !</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        </form>
+                    @else
+                        {{--<div>logged out</div>--}}
+                        <div class="col-xxl-6 col-xl-6 col-lg-6">
                             <div class="inner">
                                 <div class="content text-start">
-                                    <h2 class="title color-white mb--0">L'examen a atteint le maximum de places disponibles !</h2>
+                                    <h2 class="title color-white mb--0">S'inscrire maintenant</h2>
                                 </div>
                             </div>
                         </div>
-                        @endif
-                    </form>
-                    @else
-                    {{--<div>logged out</div>--}}
-                    <div class="col-xxl-6 col-xl-6 col-lg-6">
-                        <div class="inner">
-                            <div class="content text-start">
-                                <h2 class="title color-white mb--0">S'inscrire maintenant</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 text-center">
-                        <div class="call-to-btn text-start text-center mb--10">
-                            <a class="rbt-btn btn-white hover-icon-reverse" href="{{ url('/register') }}">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 text-center">
+                            <div class="call-to-btn text-start text-center mb--10">
+                                <a class="rbt-btn btn-white hover-icon-reverse" href="{{ url('/register') }}">
                                 <span class="icon-reverse-wrapper">
                             <span class="btn-text">Créer un Compte</span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                 </span>
+                                </a>
+                            </div>
+                            <a class="text-white">Vous avez deja un Compte:</a> <a class="hover-reverse text-white"
+                                                                                   href="{{ url('/login') }}">
+                                <b>S'Authentifier</b>
                             </a>
                         </div>
-                        <a class="text-white">Vous avez deja un Compte:</a> <a class="hover-reverse text-white" href="{{ url('/login') }}">
-                            <b>S'Authentifier</b>
-                        </a>
-                    </div>
                     @endif
 
                 </div>
@@ -241,51 +247,39 @@
         </div>
     </div>
     <div class="rbt-advance-tab-area bg-gradient-2 pt--20">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="advance-tab-button">
-                        <ul class="nav nav-tabs tab-button-style-2" id="myTab-4" role="tablist">
-                            <li role="presentation">
-                                <a href="#" class="tab-button" id="home-tab-4" data-bs-toggle="tab" data-bs-target="#home-4" role="tab" aria-controls="home-4" aria-selected="false">
-                                    <span class="title">University History</span>
-                                </a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#" class="tab-button active" id="profile-tab-4" data-bs-toggle="tab" data-bs-target="#profile-4" role="tab" aria-controls="profile-4" aria-selected="true">
-                                    <span class="title">Mission</span>
-                                </a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#" class="tab-button" id="contact-tab-4" data-bs-toggle="tab" data-bs-target="#contact-4" role="tab" aria-controls="contact-4" aria-selected="false">
-                                    <span class="title">Campus Info</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="row g-5">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="advance-tab-button">
+                    <ul class="nav nav-tabs tab-button-style-2" id="myTab-4" role="tablist">
+                        <li role="presentation">
+                            <a href="#" class="tab-button" id="home-tab-4" data-bs-toggle="tab"
+                               data-bs-target="#home-4" role="tab" aria-controls="home-4" aria-selected="false">
+                                <span class="title">APERÇU</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#" class="tab-button active" id="profile-tab-4" data-bs-toggle="tab"
+                               data-bs-target="#profile-4" role="tab" aria-controls="profile-4"
+                               aria-selected="true">
+                                <span class="title">DÉTAILS</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="tab-content advance-tab-content-style-2">
-                        <div class="tab-pane fade" id="home-4" role="tabpanel" aria-labelledby="home-tab-4">
-                            <div class="content">
-                                <p>University History ipsum dolor sit amet consectetur, adipisicing elit. Tempora sequi
-                                    doloremque dicta quia unde odio nam minus reiciendis ullam aliquam, dolorum ab
-                                    quisquam cum numquam nemo iure cumque iste. Accusamus necessitatibus.</p>
-                            </div>
+            </div>
+            <div class="col-lg-10 offset-lg-1">
+                <div class="tab-content advance-tab-content-style-3">
+                    <div class="tab-pane fade w-100" id="home-4" role="tabpanel" aria-labelledby="home-tab-4">
+                        <div class="content w-100">
+                            <!-- Aperçu contenu ici -->
+                            @include('components.apercu')
                         </div>
-                        <div class="tab-pane fade active show" id="profile-4" role="tabpanel" aria-labelledby="profile-tab-4">
-                            <div class="content">
-                                <p>Mission ipsum dolor sit amet consectetur, adipisicing elit. Tempora sequi doloremque
-                                    dicta quia unde odio nam minus reiciendis ullam aliquam, dolorum ab quisquam cum
-                                    numquam nemo iure cumque iste. Accusamus necessitatibus.</p>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="contact-4" role="tabpanel" aria-labelledby="contact-tab-4">
-                            <div class="content">
-                                <p>Campus Info ipsum dolor sit amet consectetur, adipisicing elit. Tempora sequi
-                                    doloremque dicta quia unde odio nam minus reiciendis ullam aliquam, dolorum ab
-                                    quisquam cum numquam nemo iure cumque iste. Accusamus necessitatibus.</p>
-                            </div>
+                    </div>
+                    <div class="tab-pane fade active show" id="profile-4" role="tabpanel"
+                         aria-labelledby="profile-tab-4">
+                        <div class="content w-100">
+                            <!-- Détails contenu ici -->
+                            @include('components.details')
                         </div>
                     </div>
                 </div>
@@ -298,9 +292,9 @@
             <div class="row g-5">
                 <div class="col-lg-12">
                     <div class="course-details-content">
-<!--                        <div class="rbt-course-feature-box rbt-border-with-box thuumbnail">-->
-<!--                            <img class="w-100" src="{{ asset('/uploads/Test/'.$image) }}" alt="Card image">-->
-<!--                        </div>-->
+                        <!--                        <div class="rbt-course-feature-box rbt-border-with-box thuumbnail">-->
+                        <!--                            <img class="w-100" src="{{ asset('/uploads/Test/'.$image) }}" alt="Card image">-->
+                        <!--                        </div>-->
 
                         <div class="rbt-inner-onepage-navigation sticky-top mt--30" style="top: 80px">
                             <nav class="mainmenu-nav onepagenav">
@@ -779,110 +773,110 @@
                     <!-- end tEST Box  -->
                 </div>
 
-<!--                <div class="col-lg-4">-->
-<!--                    <div class="course-sidebar sticky-top rbt-border-with-box course-sidebar-top rbt-gradient-border"-->
-<!--                         style="top: 80px">-->
-<!--                        <div class="inner">-->
-<!---->
-<!--                             Start Formulaire Wrapper  -->-->
-<!--                            <div class="content-item-content">-->
-<!--                                {{--                                    <div class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">--}}-->
-<!--                                {{--                                        <div class="rbt-price">--}}-->
-<!--                                {{--                                            <span class="current-price">{{ $price }} MAD</span>--}}-->
-<!--                                {{--                                            <span class="off-price">{{ $price * 1.4 }} MAD</span>--}}-->
-<!--                                {{--                                        </div>--}}-->
-<!--                                {{--                                    </div>--}}-->
-<!---->
-<!--                                {{--                                    <div class="rbt-widget-details ">--}}-->
-<!--                                {{--                                        <ul class=" rbt-course-details-list-wrapper">--}}-->
-<!--                                {{--                                            <div class="row">--}}-->
-<!--                                {{--                                                <div class="col-6">--}}-->
-<!--                                {{--                                                    <li><input type="text" name="nom" placeholder="Nom" required></li>--}}-->
-<!--                                {{--                                                    <li><input type="text" name="prenom" placeholder="Prénom" required></li>--}}-->
-<!--                                {{--                                                    <li><input type="text" name="sexe" placeholder="Sexe" required></li>--}}-->
-<!--                                {{--                                                    <li><input type="date" name="dateNaissance" placeholder="Date de naissance" required></li>--}}-->
-<!--                                {{--                                                </div>--}}-->
-<!--                                {{--                                                <div class="col-6">--}}-->
-<!--                                {{--                                                    <li><input type="tel" name="tel" placeholder="Numéro de téléphone" required></li>--}}-->
-<!--                                {{--                                                    <li><input type="text" name="email" placeholder="Adresse e-mail" required></li>--}}-->
-<!--                                {{--                                                    <li><input type="text" name="placeOfBirth" placeholder="Lieu de naissance" required></li>--}}-->
-<!--                                {{--                                                    <li><input type="text" name="countryOfBirth" placeholder="Pays de naissance" required></li>--}}-->
-<!--                                {{--                                                </div>--}}-->
-<!--                                {{--                                            </div>--}}-->
-<!--                                {{--                                            <li><input type="text" name="cin" placeholder="Numéro de passeport ou CIN" required></li>--}}-->
-<!--                                {{--                                            <li><input type="text" name="addresse" placeholder="Adresse actuelle" required></li>--}}-->
-<!--                                {{--                                        </ul>--}}-->
-<!--                                {{--                                        <input type="hidden" id="testId" name="testId" value="{{$testId}}">--}}-->
-<!--                                {{--                                        <div class="add-to-card-button">--}}-->
-<!--                                {{--                                            <button class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" type="submit">--}}-->
-<!--                                {{--                                                <span class="btn-text">S'inscrire</span>--}}-->
-<!--                                {{--                                            </button>--}}-->
-<!--                                {{--                                        </div>--}}-->
-<!---->
-<!--                                {{--                                    </div>--}}-->
-<!--                                @if(auth()->check())-->
-<!--                                    <form method="POST" action="{{ url('/EtudiantTest')}}"-->
-<!--                                          enctype="multipart/form-data">-->
-<!--                                        @csrf-->
-<!---->
-<!--                                        @if(($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null))-->
-<!--                                            <div-->
-<!--                                                class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">-->
-<!--                                                <div class="rbt-price">-->
-<!--                                                    <span class="current-price">{{ $price }} MAD</span>-->
-<!--                                                    <span class="off-price">{{ $price * 1.4 }} MAD</span>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div>-->
-<!--                                                <labela>nom</labela>-->
-<!--                                                <input type="text" name="nom" placeholder="question supplémentaire 1"-->
-<!--                                                       required>-->
-<!--                                            </div>-->
-<!---->
-<!--                                            <div>-->
-<!--                                                <labela>prenom</labela>-->
-<!--                                                <input type="text" name="prenom" placeholder="question supplémentaire 1"-->
-<!--                                                       required>-->
-<!--                                            </div>-->
-<!---->
-<!--                                            <div>-->
-<!--                                                <labela>supp1</labela>-->
-<!--                                                <input type="text" name="supp1" placeholder="question supplémentaire 1"-->
-<!--                                                       required>-->
-<!--                                            </div>-->
-<!---->
-<!--                                            <input type="text" name="testId" required value="{{$testId}}" hidden>-->
-<!--                                            <button-->
-<!--                                                class="rbt-btn btn-gradient icon-hover w-100 d-block text-center mt--15"-->
-<!--                                                type="submit">-->
-<!--                                                <span class="btn-text">S'inscrire</span>-->
-<!--                                            </button>-->
-<!--                                        @else-->
-<!--                                            <div class="alert alert-danger" role="alert">-->
-<!--                                                L'examen a atteint le maximum de places disponibles !-->
-<!--                                            </div>-->
-<!--                                        @endif-->
-<!--                                    </form>-->
-<!--                                @else-->
-<!--                                    {{--<div>logged out</div>--}}-->
-<!--                                    <div class="rbt-price">-->
-<!--                                        <span class="current-price">Crer un compte pour s'inscrire</span>-->
-<!--                                    </div>-->
-<!--                                    <a class="rbt-btn btn-gradient icon-hover w-100 d-block text-center"-->
-<!--                                       href="{{ url('/register') }}">-->
-<!--                                        Cree compte-->
-<!--                                    </a>-->
-<!--                                    <a class="icon-hover" href="{{ url('/login') }}">-->
-<!--                                        s'authentifier-->
-<!--                                    </a>-->
-<!--                                @endif-->
-<!--                            </div>-->
-<!---->
-<!---->
-<!--                             End Formulaire Wrapper  -->-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <!--                <div class="col-lg-4">-->
+                <!--                    <div class="course-sidebar sticky-top rbt-border-with-box course-sidebar-top rbt-gradient-border"-->
+                <!--                         style="top: 80px">-->
+                <!--                        <div class="inner">-->
+                <!---->
+                <!--                             Start Formulaire Wrapper  -->-->
+                <!--                            <div class="content-item-content">-->
+                <!--                                {{--                                    <div class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">--}}-->
+                <!--                                {{--                                        <div class="rbt-price">--}}-->
+                <!--                                {{--                                            <span class="current-price">{{ $price }} MAD</span>--}}-->
+                <!--                                {{--                                            <span class="off-price">{{ $price * 1.4 }} MAD</span>--}}-->
+                <!--                                {{--                                        </div>--}}-->
+                <!--                                {{--                                    </div>--}}-->
+                <!---->
+                <!--                                {{--                                    <div class="rbt-widget-details ">--}}-->
+                <!--                                {{--                                        <ul class=" rbt-course-details-list-wrapper">--}}-->
+                <!--                                {{--                                            <div class="row">--}}-->
+                <!--                                {{--                                                <div class="col-6">--}}-->
+                <!--                                {{--                                                    <li><input type="text" name="nom" placeholder="Nom" required></li>--}}-->
+                <!--                                {{--                                                    <li><input type="text" name="prenom" placeholder="Prénom" required></li>--}}-->
+                <!--                                {{--                                                    <li><input type="text" name="sexe" placeholder="Sexe" required></li>--}}-->
+                <!--                                {{--                                                    <li><input type="date" name="dateNaissance" placeholder="Date de naissance" required></li>--}}-->
+                <!--                                {{--                                                </div>--}}-->
+                <!--                                {{--                                                <div class="col-6">--}}-->
+                <!--                                {{--                                                    <li><input type="tel" name="tel" placeholder="Numéro de téléphone" required></li>--}}-->
+                <!--                                {{--                                                    <li><input type="text" name="email" placeholder="Adresse e-mail" required></li>--}}-->
+                <!--                                {{--                                                    <li><input type="text" name="placeOfBirth" placeholder="Lieu de naissance" required></li>--}}-->
+                <!--                                {{--                                                    <li><input type="text" name="countryOfBirth" placeholder="Pays de naissance" required></li>--}}-->
+                <!--                                {{--                                                </div>--}}-->
+                <!--                                {{--                                            </div>--}}-->
+                <!--                                {{--                                            <li><input type="text" name="cin" placeholder="Numéro de passeport ou CIN" required></li>--}}-->
+                <!--                                {{--                                            <li><input type="text" name="addresse" placeholder="Adresse actuelle" required></li>--}}-->
+                <!--                                {{--                                        </ul>--}}-->
+                <!--                                {{--                                        <input type="hidden" id="testId" name="testId" value="{{$testId}}">--}}-->
+                <!--                                {{--                                        <div class="add-to-card-button">--}}-->
+                <!--                                {{--                                            <button class="rbt-btn btn-gradient icon-hover w-100 d-block text-center" type="submit">--}}-->
+                <!--                                {{--                                                <span class="btn-text">S'inscrire</span>--}}-->
+                <!--                                {{--                                            </button>--}}-->
+                <!--                                {{--                                        </div>--}}-->
+                <!---->
+                <!--                                {{--                                    </div>--}}-->
+                <!--                                @if(auth()->check())-->
+                <!--                                    <form method="POST" action="{{ url('/EtudiantTest')}}"-->
+                <!--                                          enctype="multipart/form-data">-->
+                <!--                                        @csrf-->
+                <!---->
+                <!--                                        @if(($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null))-->
+                <!--                                            <div-->
+                <!--                                                class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">-->
+                <!--                                                <div class="rbt-price">-->
+                <!--                                                    <span class="current-price">{{ $price }} MAD</span>-->
+                <!--                                                    <span class="off-price">{{ $price * 1.4 }} MAD</span>-->
+                <!--                                                </div>-->
+                <!--                                            </div>-->
+                <!--                                            <div>-->
+                <!--                                                <labela>nom</labela>-->
+                <!--                                                <input type="text" name="nom" placeholder="question supplémentaire 1"-->
+                <!--                                                       required>-->
+                <!--                                            </div>-->
+                <!---->
+                <!--                                            <div>-->
+                <!--                                                <labela>prenom</labela>-->
+                <!--                                                <input type="text" name="prenom" placeholder="question supplémentaire 1"-->
+                <!--                                                       required>-->
+                <!--                                            </div>-->
+                <!---->
+                <!--                                            <div>-->
+                <!--                                                <labela>supp1</labela>-->
+                <!--                                                <input type="text" name="supp1" placeholder="question supplémentaire 1"-->
+                <!--                                                       required>-->
+                <!--                                            </div>-->
+                <!---->
+                <!--                                            <input type="text" name="testId" required value="{{$testId}}" hidden>-->
+                <!--                                            <button-->
+                <!--                                                class="rbt-btn btn-gradient icon-hover w-100 d-block text-center mt--15"-->
+                <!--                                                type="submit">-->
+                <!--                                                <span class="btn-text">S'inscrire</span>-->
+                <!--                                            </button>-->
+                <!--                                        @else-->
+                <!--                                            <div class="alert alert-danger" role="alert">-->
+                <!--                                                L'examen a atteint le maximum de places disponibles !-->
+                <!--                                            </div>-->
+                <!--                                        @endif-->
+                <!--                                    </form>-->
+                <!--                                @else-->
+                <!--                                    {{--<div>logged out</div>--}}-->
+                <!--                                    <div class="rbt-price">-->
+                <!--                                        <span class="current-price">Crer un compte pour s'inscrire</span>-->
+                <!--                                    </div>-->
+                <!--                                    <a class="rbt-btn btn-gradient icon-hover w-100 d-block text-center"-->
+                <!--                                       href="{{ url('/register') }}">-->
+                <!--                                        Cree compte-->
+                <!--                                    </a>-->
+                <!--                                    <a class="icon-hover" href="{{ url('/login') }}">-->
+                <!--                                        s'authentifier-->
+                <!--                                    </a>-->
+                <!--                                @endif-->
+                <!--                            </div>-->
+                <!---->
+                <!---->
+                <!--                             End Formulaire Wrapper  -->-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </div>
         </div>
 
