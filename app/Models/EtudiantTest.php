@@ -13,7 +13,8 @@ class EtudiantTest extends Pivot
     protected $fillable = [
         'etudiant_id',
         'test_id',
-        'id'
+        'id',
+        'paiement_id',
     ];
 
     protected $table = 'etudiant_tests';
@@ -29,6 +30,7 @@ class EtudiantTest extends Pivot
     }
     public function paiement()
     {
-        return $this->hasOne(paiement::class);
+        return $this->belongsTo(Paiement::class);
     }
+
 }

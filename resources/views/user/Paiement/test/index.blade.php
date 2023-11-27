@@ -38,10 +38,15 @@
                                         <input type="text" placeholder="Nom" name="nom" value="{{ $etudiant->nom }}">
                                     </div>
 
-                                    <div class="col-12 mb--20">
+                                    <div class="col-6 mb--20">
                                         <label>Email*</label>
                                         <input type="email" placeholder="Email Address" name="email"
                                                value="{{ $etudiant->user->email }}">
+                                    </div>
+                                    <div class="col-6 mb--20">
+                                        <label>CIN*</label>
+                                        <input type="text" placeholder="CIN" name="cin"
+                                               value="{{ $etudiant->cin}}">
                                     </div>
 
                                     <!-- Hidden inputs for: EtudId, EtudTestId, amount -->

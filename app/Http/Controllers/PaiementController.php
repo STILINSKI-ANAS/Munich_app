@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PayementMail;
 use App\Models\Course;
 use App\Models\Etudiant;
+use App\Models\EtudiantCourse;
+use App\Models\EtudiantTest;
 use App\Models\paiement;
 use App\Models\Test;
 use App\Notifications\ExamInvoiceNotification;
 use Combindma\Cmi\Cmi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
 
 class PaiementController extends Controller
@@ -23,6 +27,7 @@ class PaiementController extends Controller
         $validatedData = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
+            'cin' => 'required',
             'email' => 'required|unique:etudiants',
             'amount' => 'required',
             'EtudId' => 'required',
@@ -31,6 +36,12 @@ class PaiementController extends Controller
         ]);
 
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
+
+        $etudiant->update([
+            'nom' => $validatedData['nom'],
+            'prenom' => $validatedData['prenom'],
+            'cin' => $validatedData['cin'],
+        ]);
         $test = Test::findOrFail($validatedData['test_id']);
 
         return $this->savePayment($validatedData, $etudiant, $test, null);
@@ -51,6 +62,12 @@ class PaiementController extends Controller
         ]);
 
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
+
+        $etudiant->update([
+            'nom' => $validatedData['nom'],
+            'prenom' => $validatedData['prenom'],
+            'cin' => $validatedData['cin'],
+        ]);
         $course = Course::findOrFail($validatedData['course_id']);
 
         return $this->savePayment($validatedData, $etudiant, null, $course);
@@ -84,49 +101,98 @@ class PaiementController extends Controller
 
         $oid .= $last_paiement_id;
 
-        try {
-            $cmiClient = new Cmi();
-            $cmiClient->setOid($oid);
-            $cmiClient->setAmount($validatedData['amount']);
-            $cmiClient->setBillToName($validatedData['nom'] . ' ' . $validatedData['prenom']);
-            $cmiClient->setEmail($validatedData['email']);
-            $cmiClient->setTel('212600000000');
-            $cmiClient->setCurrency('504');
-            $cmiClient->setDescription('ceci est un exemple à utiliser');
+//        $paiement = paiement::create([
+//            'oid' => $oid,
+//            'status' => 'en attente',
+//            'amount' => $validatedData['amount'],
+//            'date' => $date,
+//            'etudiant_id' => $etudiant->id,
+//            'test_id' => $test ? $test->id : null,
+//            'course_id' => $course ? $course->id : null,
+//        ]);
 
-            // TODO: save the payment in the database if the payment is successful
-            $paiement = paiement::create([
-                'oid' => $oid,
-                'status' => 'confirmé',
-                'amount' => $validatedData['amount'],
-                'date' => $date,
-                'etudiant_id' => $etudiant->id,
-                'test_id' => $test ? $test->id : null,
-                'course_id' => $course ? $course->id : null,
-            ]);
+        $paiementData = [
+            'oid' => $oid,
+            'status' => 'en attente',
+            'amount' => $validatedData['amount'],
+            'date' => $date,
+            'etudiant_id' => $etudiant->id,
+        ];
 
-            // TODO: update etudiant status to 'confirmé' if the payment is successful
-            $etudiant->update([
-                'status' => 'confirmé',
-            ]);
-
-            // TODO: send an invoice to the etudiant if the payment is successful via email
-            $data = [
-                'to_name' => $validatedData['nom'] . ' ' . $validatedData['prenom'],
-                'to_email' => $validatedData['email'],
-                'subject' => $test ? 'Inscription au test' : 'Inscription au cours',
-                'body' => $description,
-                'amount' => $validatedData['amount'],
-                'date' => $date,
-                'test' => $test,
-                'course' => $course,
-                'oid' => $oid,
-            ];
-
-            return $this->requestPayment($cmiClient, $data);
-        } catch (\Exception $e) {
-            return $e->getMessage();
+        if ($test) {
+            $paiementData['paymentable_id'] = $test->id;
+            $paiementData['paymentable_type'] = EtudiantTest::class;
+        } elseif ($course) {
+            $paiementData['paymentable_id'] = $course->id;
+            $paiementData['paymentable_type'] = EtudiantCourse::class;
         }
+
+        $paiement = Paiement::create($paiementData);
+
+        $etudiantTest = EtudiantTest::find($validatedData['EtudTestId']);
+
+        $etudiantTest->update(['paiement_id' => $paiement->id]);
+
+        $data = [
+            'to_name' => $validatedData['nom'] . ' ' . $validatedData['prenom'],
+            'to_email' => $validatedData['email'],
+            'subject' => $test ? 'Inscription au test' : 'Inscription au cours',
+            'body' => $description,
+            'amount' => $validatedData['amount'],
+            'date' => $date,
+            'test' => $test,
+            'course' => $course,
+            'oid' => $oid,
+        ];
+        Mail::to($validatedData['email'])->send(new PayementMail($data));
+
+        return view('user.Paiement.ok');
+//        dd($paiement);
+//        $this->requestPayment($cmiClient, $data);
+
+//        try {
+//            $cmiClient = new Cmi();
+//            $cmiClient->setOid($oid);
+//            $cmiClient->setAmount($validatedData['amount']);
+//            $cmiClient->setBillToName($validatedData['nom'] . ' ' . $validatedData['prenom']);
+//            $cmiClient->setEmail($validatedData['email']);
+//            $cmiClient->setTel('212600000000');
+//            $cmiClient->setCurrency('504');
+//            $cmiClient->setDescription('ceci est un exemple à utiliser');
+//
+//            // TODO: save the payment in the database if the payment is successful
+//            $paiement = paiement::create([
+//                'oid' => $oid,
+//                'status' => 'confirmé',
+//                'amount' => $validatedData['amount'],
+//                'date' => $date,
+//                'etudiant_id' => $etudiant->id,
+//                'test_id' => $test ? $test->id : null,
+//                'course_id' => $course ? $course->id : null,
+//            ]);
+//
+//            // TODO: update etudiant status to 'confirmé' if the payment is successful
+//            $etudiant->update([
+//                'status' => 'confirmé',
+//            ]);
+//
+//            // TODO: send an invoice to the etudiant if the payment is successful via email
+//            $data = [
+//                'to_name' => $validatedData['nom'] . ' ' . $validatedData['prenom'],
+//                'to_email' => $validatedData['email'],
+//                'subject' => $test ? 'Inscription au test' : 'Inscription au cours',
+//                'body' => $description,
+//                'amount' => $validatedData['amount'],
+//                'date' => $date,
+//                'test' => $test,
+//                'course' => $course,
+//                'oid' => $oid,
+//            ];
+//
+//            return $this->requestPayment($cmiClient, $data);
+//        } catch (\Exception $e) {
+//            return $e->getMessage();
+//        }
     }
 
     /**

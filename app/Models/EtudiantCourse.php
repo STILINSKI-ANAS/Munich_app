@@ -20,4 +20,10 @@ class EtudiantCourse extends Pivot
     {
         return $this->belongsTo(Course::class,'course_id');
     }
+
+    public function paiement()
+    {
+        return $this->belongsTo(Paiement::class);
+    }
+
 }

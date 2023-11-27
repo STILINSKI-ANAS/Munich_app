@@ -9,7 +9,7 @@
 
                     <div class="card-body">
                         <div class="alert alert-success" role="alert">
-                            Votre paiement a réussi. Merci pour votre confiance.
+                            Vérifiez votre boîte e-mail pour les informations de paiement. Merci pour votre confiance.
                         </div>
                     </div>
                 </div>

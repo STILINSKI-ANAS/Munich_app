@@ -19,6 +19,11 @@ return new class extends Migration {
             $table->unsignedBigInteger('etudiant_id')->nullable();
             $table->unsignedBigInteger('test_id')->nullable();
             $table->unsignedBigInteger('course_id')->nullable();
+
+            // Add the following columns for polymorphic relationships
+            $table->unsignedBigInteger('paymentable_id')->nullable();
+            $table->string('paymentable_type')->nullable();
+
             $table->foreign('etudiant_id')->references('id')->on('etudiants')->onDelete('cascade');
             $table->foreign('test_id')->references('id')->on('tests')->onDelete('cascade');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');

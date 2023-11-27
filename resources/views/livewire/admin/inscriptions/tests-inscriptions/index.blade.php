@@ -9,24 +9,24 @@
                         </span>
                 </a>
             </h4>
-        
+
             <!-- Start Filter -->
             <div class="rbt-dashboard-filter-wrapper">
-        
+
                 <div class="row g-5">
-        
+
                     <div class="col-lg-6 ">
                         <div class="filter-select rbt-modern-select">
                             <span class="select-label d-block">Test</span>
                             <select wire:model="language" class="w-100">
                                 <option value="Allemand" data-subtext>Allemand</option>
-                                <option selected value="English" data-subtext>Anglais</option>
+                                <option value="English" data-subtext>Anglais</option>
                                 <option value="Spanish" data-subtext>Espagnol</option>
-        
+
                             </select>
                         </div>
                     </div>
-        
+
                     <div class="col-lg-3">
                         <div class="filter-select rbt-modern-select">
                             <span class="select-label d-block">Ordre Par</span>
@@ -34,7 +34,7 @@
                                 <option value="created_at">Date d'inscription</option>
                                 <option value="nom">Nom Complet</option>
                                 <option value="dateNaissance">Date de Naissance</option>
-        
+
                             </select>
                         </div>
                     </div>
@@ -69,53 +69,91 @@
             <table class="rbt-table table table-borderless">
                 <thead>
                 <tr>
-                    <th>Test</th>
-                    <th>Nom complet</th>
-                    <th>CNIE</th>
-                    <th>Date D'inscription</th>
-                    <th>ville</th>
+                    <th>Level</th>
+                    <th>Nom et Prenom</th>
+                    <th>CIN</th>
+                    <th>Created At</th>
+                    <th>OID</th>
                     <th>Status</th>
+                    <th>Paiement Amount</th>
                     <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                @if ($etudiants && $etudiants->count() > 0)
-                 @foreach($etudiants as $etudiant)
-                    <tr>
-                        <th>
-                            <p class="b3">{{ $etudiant->tests[0]->level }}</p>
-                        </th>
-                        <td>
-                            <p class="">{{ $etudiant->nom.' '.$etudiant->prenom}}</p>
-                        </td>
-                        <td>
-                            <span class="b3">{{ $etudiant->cin }}</span>
-                        </td>
-                        <td>
-                            <span class="">{{ $etudiant->tests[0]->pivot->created_at->format('Y-m-d') }}</span>
-                        </td>
-                        <td>
-                            <span class="b3">{{ $etudiant->addresse }}</span>
-                        </td>
-                        <td>
-                            <span class="">{{ $etudiant->status }}</span>
-                        </td>
-                        <td>
-                            @if ($etudiant->status == "en attente")
-                            <div class="rbt-button-group justify-content-start">
-                                <a class="rbt-btn btn-xs bg-color-primary- color-white radius-round" href="#" title="Valider">
-                                    Valider
-                                </a>
-                            </div>
-                            @endif
-                        </td>
-                    </tr>
-                @endforeach  
-                @else
-                <p class="text-danger"> No etudiants found using this search attributs</p> 
-                @endif
-                
+                @foreach ($this->getEtudiantsWithTests() as $etudiantTest)
+                <tr>
+                    <th>
+                        {{ $etudiantTest->test->level }}
+                    </th>
+                    <td>{{ $etudiantTest->etudiant->nom . ' ' . $etudiantTest->etudiant->prenom }}</td>
+                    <td>{{ $etudiantTest->etudiant->cin }}</td>
+                    <td>
+                        {{ $etudiantTest->created_at->format('Y-m-d') }}
+                    </td>
+                    <td>{{ $etudiantTest->paiement->oid }}</td>
+                    <td>{{ $etudiantTest->paiement->status }}</td>
+                    <td>{{ $etudiantTest->paiement->amount ?? 'N/A' }}</td>
+                    <td>
+                        @if ($etudiantTest->paiement->status == "en attente")
+                        <div class="rbt-button-group justify-content-start">
+                            <button class="rbt-btn btn-xs bg-color-primary- color-white radius-round" wire:click="validerEtudiant({{ $etudiantTest->paiement->id }})" title="Valider">
+                                Valider
+                            </button>
+                        </div>
+                        @endif
+                    </td>
+                </tr>
+                @endforeach
                 </tbody>
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th>Test</th>-->
+<!--                    <th>Nom complet</th>-->
+<!--                    <th>CNIE</th>-->
+<!--                    <th>Date D'inscription</th>-->
+<!--                    <th>ville</th>-->
+<!--                    <th>Status</th>-->
+<!--                    <th>Action</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                @if ($etudiants && $etudiants->count() > 0)-->
+<!--                 @foreach($etudiants as $etudiant)-->
+<!--                    <tr>-->
+<!--                        <th>-->
+<!--                            <p class="b3">{{ $etudiant->tests[0]->level }}</p>-->
+<!--                        </th>-->
+<!--                        <td>-->
+<!--                            <p class="">{{ $etudiant->nom.' '.$etudiant->prenom}}</p>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <span class="b3">{{ $etudiant->cin }}</span>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <span class="">{{ $etudiant->tests[0]->pivot->created_at->format('Y-m-d') }}</span>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <span class="b3">{{ $etudiant->addresse }}</span>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <span class="">{{ $etudiant->status }}</span>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            @if ($etudiant->status == "en attente")-->
+<!--                            <div class="rbt-button-group justify-content-start">-->
+<!--                                <button class="rbt-btn btn-xs bg-color-primary- color-white radius-round" wire:click="validerEtudiant({{ $etudiant->id }})" title="Valider">-->
+<!--                                    Valider-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                            @endif-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                @endforeach-->
+<!--                @else-->
+<!--                <p class="text-danger"> No etudiants found using this search attributs</p>-->
+<!--                @endif-->
+<!---->
+<!--                </tbody>-->
             </table>
         </div>
     </div>
