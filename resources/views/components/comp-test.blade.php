@@ -238,13 +238,13 @@
                 <div class="advance-tab-button">
                     <ul class="nav nav-tabs tab-button-style-2" id="myTab-4" role="tablist">
                         <li role="presentation">
-                            <a href="#" class="tab-button" id="home-tab-4" data-bs-toggle="tab"
+                            <a href="#" class="tab-button active" id="home-tab-4" data-bs-toggle="tab"
                                data-bs-target="#home-4" role="tab" aria-controls="home-4" aria-selected="false">
                                 <span class="title">APERÇU</span>
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href="#" class="tab-button active" id="profile-tab-4" data-bs-toggle="tab"
+                            <a href="#" class="tab-button" id="profile-tab-4" data-bs-toggle="tab"
                                data-bs-target="#profile-4" role="tab" aria-controls="profile-4"
                                aria-selected="true">
                                 <span class="title">DÉTAILS</span>
@@ -255,13 +255,13 @@
             </div>
             <div class="col-lg-10 offset-lg-1">
                 <div class="tab-content advance-tab-content-style-3">
-                    <div class="tab-pane fade w-100" id="home-4" role="tabpanel" aria-labelledby="home-tab-4">
+                    <div class="tab-pane fade  active show w-100" id="home-4" role="tabpanel" aria-labelledby="home-tab-4">
                         <div class="content w-100">
                             <!-- Aperçu contenu ici -->
                             @include('components.apercu')
                         </div>
                     </div>
-                    <div class="tab-pane fade active show" id="profile-4" role="tabpanel"
+                    <div class="tab-pane fade" id="profile-4" role="tabpanel"
                          aria-labelledby="profile-tab-4">
                         <div class="content w-100">
                             <!-- Détails contenu ici -->
@@ -281,159 +281,193 @@
                         <!--                        <div class="rbt-course-feature-box rbt-border-with-box thuumbnail">-->
                         <!--                            <img class="w-100" src="{{ asset('/uploads/Test/'.$image) }}" alt="Card image">-->
                         <!--                        </div>-->
-
-                        <div class="rbt-inner-onepage-navigation sticky-top mt--30" style="top: 80px">
-                            <nav class="mainmenu-nav onepagenav">
-                                <ul class="mainmenu">
-                                    <li class="current">
-                                        <a href="#Objectifs">{{ $title }}</a>
+                        <div class="col-lg-10 offset-lg-1">
+                            <div class="advance-tab-button">
+                                <ul class="nav nav-tabs tab-button-style-2" id="myTab-4" role="tablist">
+                                    <li role="presentation">
+                                        <a href="#" class="tab-button active" id="apercu-tab" data-bs-toggle="tab"
+                                           data-bs-target="#test-content" role="tab" aria-controls="test-content"
+                                           aria-selected="true">
+                                            <span class="title">{{$title}}</span>
+                                        </a>
                                     </li>
-
-                                    <li>
-                                        <a href="#Horaire">Horaire</a>
+                                    <li role="presentation">
+                                        <a href="#" class="tab-button" id="details-tab" data-bs-toggle="tab"
+                                           data-bs-target="#horaire" role="tab" aria-controls="horaire"
+                                           aria-selected="false">
+                                            <span class="title">Horaire</span>
+                                        </a>
                                     </li>
-
-                                    <li>
-                                        <a href="#Avis">Cours inclue</a>
+                                    <li role="presentation">
+                                        <a href="#" class="tab-button" id="cours-inclue-tab" data-bs-toggle="tab"
+                                           data-bs-target="#cours-inclue" role="tab" aria-controls="cours-inclue"
+                                           aria-selected="false">
+                                            <span class="title">Cours inclue</span>
+                                        </a>
                                     </li>
                                 </ul>
-                            </nav>
+                            </div>
                         </div>
                         <!-- srart tag Area -->
 
-                        <!-- Start DAF Feature Box  -->
-                        <div class="rbt-course-feature-box overview-wrapper rbt-border-with-box mt--30 has-show-more"
-                             id="Objectifs">
-                            <div class="rbt-course-feature-inner has-show-more-inner-content">
-                                <div class="section-title">
-                                    <h4 class="rbt-title-style-3">Qu'est-ce que le test {{ $title }} ?
-                                    </h4>
-                                </div>
-                                <p>{{ $content }}
-                                <p>
-
-                                <div class="row g-5 mb--30">
-
-                                    @php
-                                        $featuresArray = json_decode($features, true);
-                                        $totalItems = count($featuresArray);
-                                       // $totalItems = 6; // Total number of items
-                                        $i = 0;
-                                    @endphp
-
-                                    @foreach ($featuresArray as $feature)
-                                        @if ($i % 3 === 0)
-                                            <div class="col-lg-6">
-                                                <ul class="rbt-list-style-1">
-                                                    @endif
-
-                                                    <li><i class="feather-check"></i>{{ $feature }}</li>
-
-                                                    @php $i++; @endphp
-
-                                                    @if ($i % 3 === 0 || $loop->last)
-                                                </ul>
-                                            </div>
-                                        @endif
-                                    @endforeach
-                                </div>
-
-                            </div>
-                            <div class="rbt-show-more-btn">Afficher plus</div>
-                        </div>
-                        <!-- End DAF Feature Box  -->
-
-                        <!-- Start Horaire Box  -->
-                        <div class="rbt-course-feature-box rbt-shadow-box details-wrapper mt--30" id="Horaire">
-                            <div class="row g-5">
-                                <!-- Start Feture Box  -->
-                                <div class="col-lg-6">
-                                    <div class="section-title">
-                                        <h4 class="rbt-title-style-3 mb--20">Ces cours sont disponibles :</h4>
-                                    </div>
-                                    <ul class="rbt-list-style-1">
-                                        <li><i class="feather-calendar"></i><span>Le matin de</span> <strong
-                                                class="text-primary"> &nbsp; 9h00 </strong> &nbsp; à <strong
-                                                class="text-primary"> &nbsp; 12h00</strong></li>
-                                        <li><i class="feather-calendar"></i><span>L’après-midi de</span> &nbsp;<strong
-                                                class="text-primary"> </strong> à <strong class="text-primary"> &nbsp;18h00</strong>
-                                        </li>
-                                        <li><i class="feather-calendar"></i><span>Le soir de</span> <strong
-                                                class="text-primary"> &nbsp;19h00 </strong> &nbsp; à <strong
-                                                class="text-primary"> &nbsp; 22h00</strong></li>
-                                    </ul>
-                                </div>
-                                <!-- End Feture Box  -->
-                            </div>
-                        </div>
-                        <!-- END Horaire Box  -->
-
-
-                        <!-- Start Edu Review List  -->
-                        <div class="rbt-review-wrapper rbt-border-with-box review-wrapper mt--30" id="Avis">
-                            <div class="course-content">
-                                <div class="section-title">
-                                    <h4 class="rbt-title-style-3">Cours Inclue</h4>
-                                </div>
-                                @if($course)
-                                    <div class="row g-5 align-items-center">
-                                        <div class="col-6">
-                                            <div class="rbt-card variation-01 rbt-hover">
-                                                <div class="rbt-card-img">
-                                                    <a href="{{url('/Language/Course/'.$course->level)}}">
-                                                        <img src="{{ asset('assets/images/course/'. $course->image) }}"
-                                                             alt="Card image">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="rbt-card variation-01 rbt-hover">
-                                                <div class="rbt-card-body">
-                                                    <div class="rbt-card-top">
-                                                        <div class="rbt-review">
-                                                            <div class="rating">
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                            </div>
-                                                            <span class="rating-count">4.9</span>
-                                                        </div>
-
-                                                    </div>
-
-                                                    <h4 class="rbt-card-title"><a
-                                                            href="{{url('/Language/Course/'.$course->level)}}">{{ $course->level }}
-                                                        </a>
+                        <div class="col-lg-10 offset-lg-1">
+                            <div class="tab-content advance-tab-content-style-3">
+                                <div class="tab-pane fade active show" id="test-content" role="tabpanel" aria-labelledby="apercu-tab">
+                                    <div class="content w-100">
+                                        <!-- Start DAF Feature Box  -->
+                                        <div
+                                            class="rbt-course-feature-box overview-wrapper rbt-border-with-box mt--30 has-show-more"
+                                            id="Objectifs">
+                                            <div class="rbt-course-feature-inner has-show-more-inner-content">
+                                                <div class="section-title">
+                                                    <h4 class="rbt-title-style-3">Qu'est-ce que le test {{ $title }} ?
                                                     </h4>
-
-
-                                                    <p class="rbt-card-text">{{ $course->overview }}</p>
-
-                                                    <div class="rbt-card-bottom">
-                                                        <div class="rbt-price">
-                                                            <span class="current-price">{{ $course->price }} MAD</span>
-                                                            <span
-                                                                class="off-price">{{ $course->price * 1.4 }} MAD</span>
-                                                        </div>
-                                                        <a class="rbt-btn-link"
-                                                           href="{{url('/Language/Course/'.$course->level)}}">En Savoir
-                                                            plus
-                                                            <i class="feather-arrow-right"></i></a>
-                                                    </div>
                                                 </div>
+                                                <p>{{ $content }}
+                                                <p>
+
+                                                <div class="row g-5 mb--30">
+
+                                                    @php
+                                                        $featuresArray = json_decode($features, true);
+                                                        $totalItems = count($featuresArray);
+                                                       // $totalItems = 6; // Total number of items
+                                                        $i = 0;
+                                                    @endphp
+
+                                                    @foreach ($featuresArray as $feature)
+                                                        @if ($i % 3 === 0)
+                                                            <div class="col-lg-6">
+                                                                <ul class="rbt-list-style-1">
+                                                                    @endif
+
+                                                                    <li><i class="feather-check"></i>{{ $feature }}</li>
+
+                                                                    @php $i++; @endphp
+
+                                                                    @if ($i % 3 === 0 || $loop->last)
+                                                                </ul>
+                                                            </div>
+                                                        @endif
+                                                    @endforeach
+                                                </div>
+
+                                            </div>
+                                            <div class="rbt-show-more-btn">Afficher plus</div>
+                                        </div>
+                                        <!-- End DAF Feature Box  -->
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="horaire" role="tabpanel" aria-labelledby="details-tab">
+                                    <div class="content w-100">
+                                        <!-- Start Horaire Box  -->
+                                        <div class="rbt-course-feature-box rbt-shadow-box details-wrapper mt--30"
+                                             id="Horaire">
+                                            <div class="row g-5">
+                                                <!-- Start Feture Box  -->
+                                                <div class="col-lg-6">
+                                                    <div class="section-title">
+                                                        <h4 class="rbt-title-style-3 mb--20">Ces cours sont disponibles
+                                                            :</h4>
+                                                    </div>
+                                                    <ul class="rbt-list-style-1">
+                                                        <li><i class="feather-calendar"></i><span>Le matin de</span>
+                                                            <strong
+                                                                class="text-primary"> &nbsp; 9h00 </strong> &nbsp; à
+                                                            <strong
+                                                                class="text-primary"> &nbsp; 12h00</strong></li>
+                                                        <li><i class="feather-calendar"></i><span>L’après-midi de</span>
+                                                            &nbsp;<strong
+                                                                class="text-primary"> </strong> à <strong
+                                                                class="text-primary"> &nbsp;18h00</strong>
+                                                        </li>
+                                                        <li><i class="feather-calendar"></i><span>Le soir de</span>
+                                                            <strong
+                                                                class="text-primary"> &nbsp;19h00 </strong> &nbsp; à
+                                                            <strong
+                                                                class="text-primary"> &nbsp; 22h00</strong></li>
+                                                    </ul>
+                                                </div>
+                                                <!-- End Feture Box  -->
                                             </div>
                                         </div>
+                                        <!-- END Horaire Box  -->
                                     </div>
-                                @else
-                                    <p>Aucun cours inclue pour le moment</p>
-                                @endif
+                                </div>
+                                <div class="tab-pane fade" id="cours-inclue" role="tabpanel"
+                                     aria-labelledby="cours-inclue-tab">
+                                    <div class="content w-100">
+                                        <!-- Start Edu Review List  -->
+                                        <div class="rbt-review-wrapper rbt-border-with-box review-wrapper mt--30"
+                                             id="Avis">
+                                            <div class="course-content">
+                                                <div class="section-title">
+                                                    <h4 class="rbt-title-style-3">Cours Inclue</h4>
+                                                </div>
+                                                @if($course)
+                                                    <div class="row g-5 align-items-center">
+                                                        <div class="col-6">
+                                                            <div class="rbt-card variation-01 rbt-hover">
+                                                                <div class="rbt-card-img">
+                                                                    <a href="{{url('/Language/Course/'.$course->level)}}">
+                                                                        <img
+                                                                            src="{{ asset('assets/images/course/'. $course->image) }}"
+                                                                            alt="Card image">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="rbt-card variation-01 rbt-hover">
+                                                                <div class="rbt-card-body">
+                                                                    <div class="rbt-card-top">
+                                                                        <div class="rbt-review">
+                                                                            <div class="rating">
+                                                                                <i class="fas fa-star"></i>
+                                                                                <i class="fas fa-star"></i>
+                                                                                <i class="fas fa-star"></i>
+                                                                                <i class="fas fa-star"></i>
+                                                                                <i class="fas fa-star"></i>
+                                                                            </div>
+                                                                            <span class="rating-count">4.9</span>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <h4 class="rbt-card-title"><a
+                                                                            href="{{url('/Language/Course/'.$course->level)}}">{{ $course->level }}
+                                                                        </a>
+                                                                    </h4>
+
+
+                                                                    <p class="rbt-card-text">{{ $course->overview }}</p>
+
+                                                                    <div class="rbt-card-bottom">
+                                                                        <div class="rbt-price">
+                                                                            <span class="current-price">{{ $course->price }} MAD</span>
+                                                                            <span
+                                                                                class="off-price">{{ $course->price * 1.4 }} MAD</span>
+                                                                        </div>
+                                                                        <a class="rbt-btn-link"
+                                                                           href="{{url('/Language/Course/'.$course->level)}}">En
+                                                                            Savoir
+                                                                            plus
+                                                                            <i class="feather-arrow-right"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <p>Aucun cours inclue pour le moment</p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <!-- End Edu Review List  -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <!-- End Edu Review List  -->
-
 
                         <div class="about-author-list rbt-border-with-box featured-wrapper mt--30 has-show-more">
                             <div class="section-title">
