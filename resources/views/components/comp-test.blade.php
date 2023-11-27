@@ -101,47 +101,33 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="content">
-                        <div class="content text-start">
+                        <div class="content text-start d-flex flex-column">
                             <ul class="page-list">
-                                <li class="rbt-breadcrumb-item"><a href="index.html"
-                                                                   class="color-white">Langue {{ $langue }}
-                                    </a></li>
+                                <li class="rbt-breadcrumb-item">
+                                    <a href="index.html" class="color-white">Langue {{ $langue }}</a></li>
                                 <li>
                                     <div class="icon-right"><i class="feather-chevron-right"></i></div>
                                 </li>
-                                <li class="rbt-breadcrumb-item active color-white">{{ $title }}
+                                <li class="rbt-breadcrumb-item active color-white">
+                                    {{ $title }}
                                 </li>
                             </ul>
-                            <h2 class="title color-white">{{ $title }}
+                            <h2 class="title color-white">
+                                {{ $title }}
                             </h2>
-                            <p class="description color-white">{{ $description }}
+                            <p class="description color-white">
+                                {{ $description }}
                             </p>
 
                             <div class="d-flex align-items-center mb--20 flex-wrap rbt-course-details-feature">
 
                                 <div class="feature-sin best-seller-badge">
                                     <span class="rbt-badge-2">
-                                            <span class="image"><img src="{{ asset('assets/images/logo/logo-c.png') }}"
-                                                                     alt="Best Seller Icon"></span>meilleur choix</span>
+                                            <span class="image">
+                                                <img src="{{ asset('assets/images/logo/logo-c.png') }}"
+                                                     alt="Best Seller Icon">
+                                            </span>meilleur choix</span>
                                 </div>
-
-                                <!--                                <div class="feature-sin rating">-->
-                                <!--                                    <a href="#">4.8</a>-->
-                                <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-                                <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-                                <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-                                <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-                                <!--                                    <a href="#"><i class="fa fa-star"></i></a>-->
-                                <!--                                </div>-->
-
-                                <!--                                <div class="feature-sin total-rating">-->
-                                <!--                                    <a class="rbt-badge-4" href="#">3,475 Avis</a>-->
-                                <!--                                </div>-->
-
-                                <!--                                <div class="feature-sin total-student">-->
-                                <!--                                    <span>8,029 Etudiant</span>-->
-                                <!--                                </div>-->
-
                             </div>
 
 
