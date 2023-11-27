@@ -255,7 +255,7 @@
             </div>
             <div class="col-lg-10 offset-lg-1">
                 <div class="tab-content advance-tab-content-style-3">
-                    <div class="tab-pane fade  active show w-100" id="home-4" role="tabpanel"
+                    <div class="tab-pane fade active show w-100" id="home-4" role="tabpanel"
                          aria-labelledby="home-tab-4">
                         <div class="content w-100">
                             <!-- Aperçu contenu ici -->
@@ -319,7 +319,7 @@
             </div>
             <div class="col-lg-10 offset-lg-1">
                 <div class="tab-content advance-tab-content-style-3">
-                    <div class="tab-pane fade  active show w-100" id="niveau-a1" role="tabpanel"
+                    <div class="tab-pane fade active show w-100" id="niveau-a1" role="tabpanel"
                          aria-labelledby="niveau-a1">
                         <div class="content w-100">
                             <!-- Aperçu contenu ici -->
