@@ -255,7 +255,8 @@
             </div>
             <div class="col-lg-10 offset-lg-1">
                 <div class="tab-content advance-tab-content-style-3">
-                    <div class="tab-pane fade  active show w-100" id="home-4" role="tabpanel" aria-labelledby="home-tab-4">
+                    <div class="tab-pane fade  active show w-100" id="home-4" role="tabpanel"
+                         aria-labelledby="home-tab-4">
                         <div class="content w-100">
                             <!-- Aperçu contenu ici -->
                             @include('components.apercu')
@@ -272,6 +273,92 @@
             </div>
         </div>
     </div>
+
+    <!-- Tabs -->
+    <div class="rbt-advance-tab-area bg-gradient-2 pt--20">
+        <div class="row g-5">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="advance-tab-button">
+                    <ul class="nav nav-tabs tab-button-style-2" id="myTab-4" role="tablist">
+                        <li role="presentation">
+                            <a href="#" class="tab-button active" id="niveau-a1" data-bs-toggle="tab"
+                               data-bs-target="#niveau-a1" role="tab" aria-controls="home-4" aria-selected="false">
+                                <span class="title">Niveau A1</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#" class="tab-button" id="niveau-a2" data-bs-toggle="tab"
+                               data-bs-target="#niveau-a2" role="tab" aria-controls="profile-4"
+                               aria-selected="true">
+                                <span class="title">A2 (En Anglais)</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#" class="tab-button" id="niveau-b1" data-bs-toggle="tab"
+                               data-bs-target="#niveau-b1" role="tab" aria-controls="profile-4"
+                               aria-selected="true">
+                                <span class="title">Catégorie B1</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#" class="tab-button" id="niveau-b2" data-bs-toggle="tab"
+                               data-bs-target="#niveau-b2" role="tab" aria-controls="profile-4"
+                               aria-selected="true">
+                                <span class="title">Réf B2</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#" class="tab-button" id="niveau-c1" data-bs-toggle="tab"
+                               data-bs-target="#niveau-c1" role="tab" aria-controls="profile-4"
+                               aria-selected="true">
+                                <span class="title">C1 Haute école spécialisée</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-10 offset-lg-1">
+                <div class="tab-content advance-tab-content-style-3">
+                    <div class="tab-pane fade  active show w-100" id="niveau-a1" role="tabpanel"
+                         aria-labelledby="niveau-a1">
+                        <div class="content w-100">
+                            <!-- Aperçu contenu ici -->
+                            @include('components.tabs.niveau-a1-tab')
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="niveau-a2" role="tabpanel"
+                         aria-labelledby="niveau-a2">
+                        <div class="content w-100">
+                            <!-- Détails contenu ici -->
+                            @include('components.tabs.niveau-a2-tab')
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="niveau-b1" role="tabpanel"
+                         aria-labelledby="niveau-b1">
+                        <div class="content w-100">
+                            <!-- Détails contenu ici -->
+                            @include('components.tabs.niveau-b1-tab')
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="niveau-b2" role="tabpanel"
+                         aria-labelledby="niveau-b2">
+                        <div class="content w-100">
+                            <!-- Détails contenu ici -->
+                            @include('components.tabs.niveau-b2-tab')
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="niveau-c1" role="tabpanel"
+                         aria-labelledby="niveau-c1">
+                        <div class="content w-100">
+                            <!-- Détails contenu ici -->
+                            @include('components.tabs.niveau-c1-tab')
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- End CallTo Action Area  -->
     <div class="rbt-course-details-area ptb--60">
         <div class="container">
@@ -312,7 +399,8 @@
 
                         <div class="col-lg-10 offset-lg-1">
                             <div class="tab-content advance-tab-content-style-3">
-                                <div class="tab-pane fade active show" id="test-content" role="tabpanel" aria-labelledby="apercu-tab">
+                                <div class="tab-pane fade active show" id="test-content" role="tabpanel"
+                                     aria-labelledby="apercu-tab">
                                     <div class="content w-100">
                                         <!-- Start DAF Feature Box  -->
                                         <div
