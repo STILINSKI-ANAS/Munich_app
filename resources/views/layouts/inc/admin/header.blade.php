@@ -13,10 +13,10 @@
                                         <a href="#"><i class="feather-help-circle"></i>Vous Avez Des Question?</a>
                                     </li>
                                     <li>
-                                        <a href="mailto:hello@example.com"><i class="feather-mail"></i>info@institut-munich.ma</a>
+                                        <a href="mailto:info@institut-munich.ma"><i class="feather-mail"></i>info@institut-munich.ma</a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="feather-phone"></i>+212-615-845-697</a>
+<!--                                        <a href="#"><i class="feather-phone"></i>+212-6</a>-->
                                     </li>
                                 </ul>
                             </div>
@@ -57,6 +57,7 @@
         </div>
     </div>
     <!-- End Header Top -->
+
     <div class="rbt-header-wrapper header-space-betwween header-sticky">
         <div class="container-fluid">
             <div class="mainbar-row rbt-navigation-start align-items-center">

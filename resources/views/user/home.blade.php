@@ -4,74 +4,60 @@
     <!-- Content Section -->
 
     <main class="rbt-main-wrapper ">
-        <!-- Start Banner Area -->
-        <div class="rbt-banner-area rbt-banner-1">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12 pb--120 pt--70" >
-                        <div class="content">
-                            <div class="inner">
-                                <div class="rbt-new-badge rbt-new-badge-one">
-                                    <span class="rbt-new-badge-icon">🏆</span>  Votre porte vers le succès !
-                                </div>
+        <div class="slider-area rbt-banner-6 variation-01 bg_image bg_image--24 header-transperent-spacer" data-black-overlay="7" style="height: 800px; margin-bottom: 25px">
+            <div class="w-100">
+                <div class="container">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-5">
+                            <div class="inner text-center">
 
-                                <h1 class="title">
-                                    Institut Munich
-                                </h1>
-                                <p class="description">
-                                    Installée à agadir depuis 2015, <strong>l'institut Munich</strong> est une entreprise spécialisée dans la préparation aux examens et concours.
-                                </p>
-                                <div class="slider-btn">
-                                    <a class="rbt-btn btn-gradient hover-icon-reverse" href="#">
-                                        <span class="icon-reverse-wrapper">
-                                            <span class="btn-text">S'inscrire</span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                        </span>
+                                <div class="badge-top mb--300">
+                                    <img style= "width: 600px" src="{{ asset('assets/images/logo/logo-white_w.png') }}" alt="Institut Munich Logo">
+                                    <div class="rbt-new-badge rbt-new-badge-one">
+                                        <span class="rbt-new-badge-icon">🏆</span>  Votre porte vers le succès !
+                                    </div>
+                                </div>
+<!--                                <h1 class="title">Hey! Build Your <span class="theme-gradient">Life</span> <strong>With-->
+<!--                                        John Lee</strong></h1>-->
+                                <div class="button-group mt--30">
+                                    <a class="rbt-btn btn-gradient rbt-marquee-btn" href="#">
+                                        <span data-text="Get Started Today">S'inscrire Maintenant</span>
                                     </a>
                                 </div>
                             </div>
-                            <div class="shape-wrapper" id="scene">
-                                <img src="{{ asset('assets/images/banner/banner-01.png') }}" alt="Hero Image">
-                                <div class="hero-bg-shape-1 layer" data-depth="0.4">
-                                    <img src="{{ asset('assets/images/shape/shape-01.png') }}" alt="Hero Image Background Shape">
-                                </div>
-                                <div class="hero-bg-shape-2 layer" data-depth="0.4">
-                                    <img src="{{ asset('assets/images/shape/shape-02.png') }}" alt="Hero Image Background Shape">
-                                </div>
-                            </div>
-
+                        </div>
+                        <div class="col-5">
                             <div class="banner-card pb--60 mb--50 swiper rbt-dot-bottom-center banner-swiper-active">
                                 <div class="swiper-wrapper">
                                     @foreach($tests as $test)
 
-                                        <div class="swiper-slide">
-                                            <div class="rbt-card variation-01 rbt-hover">
-                                                <div class="rbt-card-img">
-                                                    <a href="{{url('/Language/Test/'.$test->level)}}">
-                                                        <img src="{{ asset('uploads/Test/' . $test['image']) }}" alt="{{ $test['name'] }} Images">
-                                                    </a>
-                                                </div>
-                                                <div class="rbt-card-body">
-                                                    <ul class="rbt-meta">
-                                                        <li><i class="feather-users"></i>50 Students</li>|
-                                                        <li><i class="feather-calendar"></i>11/02/2023</li>
+                                    <div class="swiper-slide">
+                                        <div class="rbt-card variation-01 rbt-hover">
+                                            <div class="rbt-card-img">
+                                                <a href="{{url('/Language/Test/'.$test->level)}}">
+                                                    <img src="{{ asset('uploads/Test/' . $test['image']) }}" alt="{{ $test['name'] }} Images">
+                                                </a>
+                                            </div>
+                                            <div class="rbt-card-body">
+                                                <ul class="rbt-meta">
+                                                    <li><i class="feather-users"></i>50 Students</li>|
+                                                    <li><i class="feather-calendar"></i>11/02/2023</li>
 
-                                                    </ul>
-                                                    <h4 class="rbt-card-title"><a href="{{url('/Language/Test/'.$test->level)}}">{{ $test['name'] }}</a>
-                                                    </h4>
-                                                    <p class="rbt-card-text">{{ substr($test['overview'], 0, 80) }}</p>
+                                                </ul>
+                                                <h4 class="rbt-card-title"><a href="{{url('/Language/Test/'.$test->level)}}">{{ $test['name'] }}</a>
+                                                </h4>
+                                                <p class="rbt-card-text">{{ substr($test['overview'], 0, 80) }}</p>
 
-                                                    <div class="rbt-card-bottom">
-                                                        <div class="rbt-price">
-                                                            <span class="current-price">{{ $test['price'] }} MAD</span>
-                                                        </div>
-                                                        <a class="rbt-btn-link" href="{{url('/Language/Test/'.$test->level)}}">S'avoir
-                                                            Plus<i class="feather-arrow-right"></i></a>
+                                                <div class="rbt-card-bottom">
+                                                    <div class="rbt-price">
+                                                        <span class="current-price">{{ $test['price'] }} MAD</span>
                                                     </div>
+                                                    <a class="rbt-btn-link" href="{{url('/Language/Test/'.$test->level)}}">S'avoir
+                                                        Plus<i class="feather-arrow-right"></i></a>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                     @endforeach
 
 
@@ -85,7 +71,6 @@
                 </div>
             </div>
         </div>
-        <!-- End Banner Area -->
 
         <div class="rbt-categories-area bg-color-white ">
             <div class="container">
@@ -120,55 +105,7 @@
             </div>
         </div>
 
-        <!-- Start Course Area -->
-        <div class="rbt-course-card-area rbt-section-gap bg-color-white">
-            <div class="container">
-                <div class="row align-items-center mb--60">
-                    <div class="col-lg-12">
-                        <div class="section-title text-center">
-                            <span class="subtitle bg-pink-opacity">COURS</span>
-                            <h3 class="title">Notre Cours De Langue</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Start Card Area -->
-                <div class="row g-5">
 
-                    <!-- Start Single Card  -->
-                    @foreach($languages as $language)
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                            <div class="rbt-card variation-03 rbt-hover">
-                                <div class="rbt-card-img">
-                                    <a class="thumbnail-link" href="{{url('/'.$language->name.'/Courses/')}}">
-                                        <img src="{{ asset('uploads/Language/' . $language->image) }}" alt="Card image">
-                                        <span class="rbt-btn btn-white icon-hover btn-md">
-                                    <span class="btn-text">Voir Plus</span>
-                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                </span>
-                                    </a>
-                                </div>
-                                <div class="rbt-card-body">
-                                    <h5 class="rbt-card-title"><a href="{{url('/'.$language->name.'/Courses/')}}"> {{ $language['name'] }}</a>
-                                    </h5>
-                                    <div class="rbt-card-bottom">
-                                        <a class="transparent-button" href="{{url('/'.$language->name.'/Courses/')}}"><i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
-                                    </div>
-                                </div>
-                                <div class="card-information">
-                                    <div class="card-flag">
-                                        <img src="assets/images/shape/{{ $language['name'] }}.svg" alt="{{ $language['name'] }}">
-                                    </div>
-                                    <div class="card-count">    {{ $language->name }} - {{ $language->courses->count() }} cours
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Card  -->
-                    @endforeach
-                </div>
-                <!-- End Card Area -->
-            </div>
-        </div>        <!-- End Course Area -->
 
         <!-- Start About Area  -->
         <div class="rbt-about-area bg-color-white rbt-section-gapTop pb_md--80 pb_sm--80 about-style-1">
@@ -665,70 +602,7 @@
         </div>
         <!-- End Testimonial Area   -->
 
-        <!-- Start Event Area  -->
-        <div class="rbt-event-area rbt-section-gap bg-gradient-3">
-            <div class="container">
-                <div class="row mb--55">
-                    <div class="section-title text-center">
-                        <span class="subtitle bg-white-opacity">ANNONCES</span>
-                        <h3 class="title color-white"> Nous Annonces</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="swiper event-activation-1 rbt-arrow-between rbt-dot-bottom-center pb--60 icon-bg-primary">
 
-                            <div class="swiper-wrapper">
-                                <!-- Start Single Slide  -->
-                                @foreach($annocements as $annocement)
-                                    <div class="swiper-slide">
-                                        <div class="single-slide">
-                                            <div class="rbt-card event-grid-card variation-01 rbt-hover">
-                                                <div class="rbt-card-img">
-                                                    <a href="event-details.html">
-                                                        <img src="{{ asset('uploads/Announcements/' . $annocement->image) }}" alt="Card image" style="width: 400px; height: 150px;"> <!-- Replace 'image' with the actual property name for the image URL and set your desired width and height -->
-                                                        <div class="rbt-badge-3 bg-white">
-                                                            <span>{{ date('d M', strtotime($annocement->created_at)) }}</span> <!-- Display the day and month of creation -->
-                                                            <span>{{ date('Y', strtotime($annocement->created_at)) }}</span> <!-- Display the year of creation -->
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="rbt-card-body">
-                                                    <h4 class="rbt-card-title"><a href="event-details.html">{{ $annocement->titre }}</a></h4> <!-- Replace 'titre' with the actual property name for the event title -->
-                                                    <p class="rbt-card-text">{{ $annocement->description }}</p>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-
-                                <!-- End Single Slide  -->
-
-                            </div>
-
-                            <div class="rbt-swiper-arrow rbt-arrow-left">
-                                <div class="custom-overfolow">
-                                    <i class="rbt-icon feather-arrow-left"></i>
-                                    <i class="rbt-icon-top feather-arrow-left"></i>
-                                </div>
-                            </div>
-
-                            <div class="rbt-swiper-arrow rbt-arrow-right">
-                                <div class="custom-overfolow">
-                                    <i class="rbt-icon feather-arrow-right"></i>
-                                    <i class="rbt-icon-top feather-arrow-right"></i>
-                                </div>
-                            </div>
-
-                            <div class="rbt-swiper-pagination"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- End Event Area  -->
         <div class="rbt-team-area bg-color-white rbt-section-gap">
             <div class="container">
                 <div class="row mb--60">
