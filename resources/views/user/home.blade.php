@@ -8,7 +8,7 @@
             <div class="w-100">
                 <div class="container">
                     <div class="row align-items-center justify-content-between">
-                        <div class="col-5">
+                        <div class="col-md-5 col-sm-11">
                             <div class="inner text-center">
 
                                 <div class="badge-top mb--300">
@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-5">
+                        <div class="col-md-5 col-sm-11 px-5 pt--10">
                             <div class="banner-card pb--60 mb--50 swiper rbt-dot-bottom-center banner-swiper-active">
                                 <div class="swiper-wrapper">
                                     @foreach($tests as $test)
