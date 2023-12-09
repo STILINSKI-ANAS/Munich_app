@@ -8,11 +8,11 @@
                     <div class="content">
                         <div class="content text-start">
                             <ul class="page-list">
-                                <li class="rbt-breadcrumb-item color-white"><a href="index.html">
+                                <li class="rbt-breadcrumb-item color-white"><a class="color-white" href="index.html">
                                         {{ $language }}
                                     </a></li>
                                 <li>
-                                    <div class="icon-right"><i class="feather-chevron-right"></i></div>
+                                    <div class="icon-right"><i class="feather-chevron-right color-white"></i></div>
                                 </li>
                                 <li class="rbt-breadcrumb-item active color-white">
                                     {{ $level }}
@@ -29,7 +29,9 @@
                                     <span class="rbt-badge-2">
                                             <span class="image"><img
                                                     src="{{ asset('assets/images/icons/card-icon-1.png') }}"
-                                                    alt="Best Seller Icon"></span class="color-white">Tendance</span>
+                                                    alt="Best Seller Icon"></span><span
+                                            class="color-white">Tendance</span>
+                                    </span>
                                 </div>
 
                                 <div class="feature-sin rating">
@@ -53,7 +55,8 @@
 
 
                             <ul class="rbt-meta">
-                                <li class="color-white"><i class="feather-calendar color-white"></i>Dernière mise à jour {{ $updatedAt }}</li>
+                                <li class="color-white"><i class="feather-calendar color-white"></i>Dernière mise à
+                                    jour {{ $updatedAt }}</li>
                                 <li class="color-white"><i class="feather-globe color-white"></i>{{ $language }}</li>
                                 <li class="color-white"><i class="feather-award color-white"></i>Cours certifié</li>
                             </ul>
@@ -77,177 +80,236 @@
                         </div>
                         <!-- start tag Area -->
 
-                        <div class="rbt-inner-onepage-navigation sticky-top mt--30">
-                            <nav class="mainmenu-nav onepagenav">
-                                <ul class="mainmenu">
-                                    <li class="current">
-                                        <a href="#Objectifs">Objectifs</a>
+                        <div class="col-lg-10 offset-lg-1">
+                            <div class="advance-tab-button">
+                                <ul class="nav nav-tabs tab-button-style-2" id="myTab" role="tablist">
+                                    <li role="presentation" class="current">
+                                        <a href="#Objectifs" class="tab-button active" data-bs-toggle="tab" role="tab"
+                                           aria-selected="true">
+                                            Objectifs
+                                        </a>
                                     </li>
-                                    <li>
-                                        <a href="#Cours"> Contenu</a>
+                                    <li role="presentation">
+                                        <a href="#Cours" class="tab-button" data-bs-toggle="tab" role="tab"
+                                           aria-selected="false">
+                                            Contenu
+                                        </a>
                                     </li>
-                                    <li>
-                                        <a href="#Horaire">Horaire</a>
+                                    <li role="presentation">
+                                        <a href="#Horaire" class="tab-button" data-bs-toggle="tab" role="tab"
+                                           aria-selected="false">
+                                            Horaire
+                                        </a>
                                     </li>
-                                    <li>
-                                        <a href="#professeur">professeur</a>
-                                    </li>
-                                    <li>
-                                        <a href="#Avis">Avis</a>
+                                    <li role="presentation">
+                                        <a href="#professeur" class="tab-button" data-bs-toggle="tab" role="tab"
+                                           aria-selected="false">
+                                            Professeur
+                                        </a>
                                     </li>
                                 </ul>
-                            </nav>
+                            </div>
                         </div>
+
+                        <div class="tab-content advance-tab-content-style-3">
+                            <!-- Start Objectifs Feature Box -->
+                            <div class="tab-pane fade active show" id="Objectifs" role="tabpanel">
+                                <!-- Objectifs Content Goes Here -->
+                                <div
+                                    class="rbt-course-feature-box overview-wrapper rbt-border-with-box mt--30 has-show-more"
+                                    id="Objectifs">
+                                    <div class="rbt-course-feature-inner has-show-more-inner-content">
+                                        <div class="section-title">
+                                            <h4 class="rbt-title-style-3">Quels que soient vos projets d’avenir ?
+                                            </h4>
+                                        </div>
+                                        <p>Comprendre les textes longs et complexes, ainsi que les significations
+                                            implicites.
+                                            Pouvoir s’exprimer de façon courante, efficace et souple dans la vie de
+                                            tous les
+                                            jours comme dans la vie professionnelle. Reconnaître les
+                                            expressions idiomatiques et les nuances de sens dans un texte ou une
+                                            conversation.
+
+
+                                        </p>
+
+                                        <div class="row g-5 mb--30">
+                                            <!-- Start Feture Box  -->
+                                            <div class="col-lg-6">
+                                                <ul class="rbt-list-style-1">
+                                                    <li><i class="feather-check"></i>Compléments grammaticaux.</li>
+                                                    <li><i class="feather-check"></i>Champs lexicaux inhérents à une
+                                                        thématique.
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- End Feture Box  -->
+
+                                            <!-- Start Feture Box  -->
+                                            <div class="col-lg-6">
+
+                                                <ul class="rbt-list-style-1">
+                                                    <li><i class="feather-check"></i>Expression orale adaptée à
+                                                        toute situation.
+                                                    </li>
+                                                    <li><i class="feather-check"></i>Synthèse de documents</li>
+
+                                                </ul>
+
+                                            </div>
+                                            <!-- End Feture Box  -->
+                                            <p>Stagiaires ayant suivi le module 2 ou personnes ayant déjà une bonne
+                                                maîtrise de
+                                                la langue. Une évaluation initiale vous est proposée afin d’adapter
+                                                le contenu
+                                                du stage à vos besoins réels
+
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    <div class="rbt-show-more-btn">Afficher plus</div>
+                                </div>
+                            </div>
+                            <!-- End Objectifs Feature Box -->
+
+                            <!-- Start Course Content -->
+                            <div class="tab-pane fade" id="Cours" role="tabpanel">
+                                <!-- Course Content Goes Here -->
+                                <div class="course-content rbt-border-with-box coursecontent-wrapper mt--30"
+                                     id="Cours">
+                                    <div class="rbt-course-feature-inner">
+                                        <div class="section-title">
+                                            <h4 class="rbt-title-style-3">Contenu</h4>
+                                        </div>
+                                        <p>
+                                            {{ $content }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Course Content -->
+
+                            <!-- Start Course Horaire -->
+                            <div class="tab-pane fade" id="Horaire" role="tabpanel">
+                                <!-- Course Horaire Goes Here -->
+                                <div class="rbt-course-feature-box rbt-shadow-box details-wrapper mt--30"
+                                     id="Horaire">
+                                    <div class="row g-5">
+                                        <!-- Start Feture Box  -->
+                                        <div class="col-lg-6">
+                                            <div class="section-title">
+                                                <h4 class="rbt-title-style-3 mb--20">Ces cours sont disponibles
+                                                    :</h4>
+                                            </div>
+                                            <ul class="rbt-list-style-1">
+                                                <li><i class="feather-calendar"></i><span>Le matin de &nbsp; </span>
+                                                    <strong
+                                                        class="text-primary"> 9h00 </strong>&nbsp; à <strong
+                                                        class="text-primary">&nbsp; 12h00</strong></li>
+                                                <li>
+                                                    <i class="feather-calendar"></i><span>L’après-midi de &nbsp;</span>
+                                                    <strong
+                                                        class="text-primary"> 15h00 </strong>&nbsp; à <strong
+                                                        class="text-primary">&nbsp; 18h00</strong></li>
+                                                <li><i class="feather-calendar"></i><span>Le soir de</span> <strong
+                                                        class="text-primary">&nbsp; 19h00 </strong>&nbsp; à <strong
+                                                        class="text-primary">&nbsp; 22h00</strong></li>
+                                            </ul>
+                                        </div>
+                                        <!-- End Feture Box  -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Course Horaire -->
+
+                            <!-- Start professeur Area -->
+                            <div class="tab-pane fade" id="professeur" role="tabpanel">
+                                <!-- Professeur Content Goes Here -->
+                                <div class="rbt-instructor rbt-border-with-box intructor-wrapper mt--30"
+                                     id="professeur">
+                                    <div class="about-author border-0 pb--0 pt--0">
+                                        <div class="section-title mb--30">
+                                            <h4 class="rbt-title-style-3">professeur</h4>
+                                        </div>
+                                        <div class="media align-items-center">
+                                            <div class="thumbnail">
+                                                <a href="#">
+                                                    <img
+                                                        src="{{ asset('assets/images/testimonial/testimonial-7.jpg') }}"
+                                                        alt="Author Images">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="author-info">
+                                                    <h5 class="title">
+                                                        <a class="hover-flip-item-wrapper" href="author.html">B.M.
+                                                            Rafekul
+                                                            Islam</a>
+                                                    </h5>
+                                                    <span class="b3 subtitle">Professeur allemand</span>
+                                                    <ul class="rbt-meta mb--20 mt--10">
+                                                        <li><i class="fa fa-star color-warning"></i>75,237 Reviews
+                                                            <span
+                                                                class="rbt-badge-5 ml--5">4.9 Avis</span></li>
+                                                        <li><i class="feather-users"></i>501 Students</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="content">
+                                                    <p class="description">Les enseignants de langue inspirent les
+                                                        étudiants à
+                                                        trouver leur voix dans une nouvelle langue et à découvrir la
+                                                        beauté de
+                                                        l'échange culturel.</p>
+
+                                                    <ul class="social-icon social-default icon-naked justify-content-start">
+                                                        <li>
+                                                            <a href="https://www.facebook.com/">
+                                                                <i class="feather-facebook"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="https://www.instagram.com/">
+                                                                <i class="feather-instagram"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.linkdin.com/">
+                                                                <i class="feather-linkedin"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End professeur Area -->
+                        </div>
+
 
                         <!-- end tag Area -->
 
                         <!-- Start Objectifs Feature Box  -->
-                        <div class="rbt-course-feature-box overview-wrapper rbt-border-with-box mt--30 has-show-more"
-                             id="Objectifs">
-                            <div class="rbt-course-feature-inner has-show-more-inner-content">
-                                <div class="section-title">
-                                    <h4 class="rbt-title-style-3">Quels que soient vos projets d’avenir ?
-                                    </h4>
-                                </div>
-                                <p>Comprendre les textes longs et complexes, ainsi que les significations implicites.
-                                    Pouvoir s’exprimer de façon courante, efficace et souple dans la vie de tous les
-                                    jours comme dans la vie professionnelle. Reconnaître les
-                                    expressions idiomatiques et les nuances de sens dans un texte ou une conversation.
 
-
-                                </p>
-
-                                <div class="row g-5 mb--30">
-                                    <!-- Start Feture Box  -->
-                                    <div class="col-lg-6">
-                                        <ul class="rbt-list-style-1">
-                                            <li><i class="feather-check"></i>Compléments grammaticaux.</li>
-                                            <li><i class="feather-check"></i>Champs lexicaux inhérents à une thématique.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- End Feture Box  -->
-
-                                    <!-- Start Feture Box  -->
-                                    <div class="col-lg-6">
-
-                                        <ul class="rbt-list-style-1">
-                                            <li><i class="feather-check"></i>Expression orale adaptée à toute situation.
-                                            </li>
-                                            <li><i class="feather-check"></i>Synthèse de documents</li>
-
-                                        </ul>
-
-                                    </div>
-                                    <!-- End Feture Box  -->
-                                    <p>Stagiaires ayant suivi le module 2 ou personnes ayant déjà une bonne maîtrise de
-                                        la langue. Une évaluation initiale vous est proposée afin d’adapter le contenu
-                                        du stage à vos besoins réels
-
-                                    </p>
-                                </div>
-
-                            </div>
-                            <div class="rbt-show-more-btn">Afficher plus</div>
-                        </div>
                         <!-- End Objectifs Feature Box  -->
 
                         <!-- Start Course Content  -->
-                        <div class="course-content rbt-border-with-box coursecontent-wrapper mt--30" id="Cours">
-                            <div class="rbt-course-feature-inner">
-                                <div class="section-title">
-                                    <h4 class="rbt-title-style-3">Contenu</h4>
-                                </div>
-                                <p>
-                                    {{ $content }}
-                                </p>
-                            </div>
-                        </div>
+
                         <!-- End Course Content  -->
 
                         <!-- Start Course Horaire  -->
 
-                        <div class="rbt-course-feature-box rbt-shadow-box details-wrapper mt--30" id="Horaire">
-                            <div class="row g-5">
-                                <!-- Start Feture Box  -->
-                                <div class="col-lg-6">
-                                    <div class="section-title">
-                                        <h4 class="rbt-title-style-3 mb--20">Ces cours sont disponibles :</h4>
-                                    </div>
-                                    <ul class="rbt-list-style-1">
-                                        <li><i class="feather-calendar"></i><span>Le matin de &nbsp; </span> <strong
-                                                class="text-primary"> 9h00 </strong>&nbsp; à <strong
-                                                class="text-primary">&nbsp; 12h00</strong></li>
-                                        <li><i class="feather-calendar"></i><span>L’après-midi de &nbsp;</span> <strong
-                                                class="text-primary"> 15h00 </strong>&nbsp; à <strong
-                                                class="text-primary">&nbsp; 18h00</strong></li>
-                                        <li><i class="feather-calendar"></i><span>Le soir de</span> <strong
-                                                class="text-primary">&nbsp; 19h00 </strong>&nbsp; à <strong
-                                                class="text-primary">&nbsp; 22h00</strong></li>
-                                    </ul>
-                                </div>
-                                <!-- End Feture Box  -->
-                            </div>
-                        </div>
 
                         <!-- end Course Horaire  -->
 
                         <!-- Start professeur Area  -->
-                        <div class="rbt-instructor rbt-border-with-box intructor-wrapper mt--30" id="professeur">
-                            <div class="about-author border-0 pb--0 pt--0">
-                                <div class="section-title mb--30">
-                                    <h4 class="rbt-title-style-3">professeur</h4>
-                                </div>
-                                <div class="media align-items-center">
-                                    <div class="thumbnail">
-                                        <a href="#">
-                                            <img src="{{ asset('assets/images/testimonial/testimonial-7.jpg') }}"
-                                                 alt="Author Images">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="author-info">
-                                            <h5 class="title">
-                                                <a class="hover-flip-item-wrapper" href="author.html">B.M. Rafekul
-                                                    Islam</a>
-                                            </h5>
-                                            <span class="b3 subtitle">Professeur allemand</span>
-                                            <ul class="rbt-meta mb--20 mt--10">
-                                                <li><i class="fa fa-star color-warning"></i>75,237 Reviews <span
-                                                        class="rbt-badge-5 ml--5">4.9 Avis</span></li>
-                                                <li><i class="feather-users"></i>501 Students</li>
-                                            </ul>
-                                        </div>
-                                        <div class="content">
-                                            <p class="description">Les enseignants de langue inspirent les étudiants à
-                                                trouver leur voix dans une nouvelle langue et à découvrir la beauté de
-                                                l'échange culturel.</p>
 
-                                            <ul class="social-icon social-default icon-naked justify-content-start">
-                                                <li>
-                                                    <a href="https://www.facebook.com/">
-                                                        <i class="feather-facebook"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="https://www.instagram.com/">
-                                                        <i class="feather-instagram"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://www.linkdin.com/">
-                                                        <i class="feather-linkedin"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <!-- End professeur Area  -->
 
                         <!-- Start Edu Review List  -->
