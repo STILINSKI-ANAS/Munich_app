@@ -1,27 +1,25 @@
 <div class="niveau-b2">
     <!-- Start breadcrumb Area -->
-    <div class="rbt-breadcrumb-default rbt-breadcrumb-style-3">
-        <div class="breadcrumb-inner">
-            <img src="{{ asset('assets/images/bg/bg-image-10.jpg') }}" alt="Education Images">
-        </div>
+    <div class="slider-area rbt-banner-5 height-550 bg_image"
+         style="background-image: url({{ asset('/uploads/Test/'.$image) }});" data-gradient-overlay="7">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="content">
                         <div class="content text-start">
                             <ul class="page-list">
-                                <li class="rbt-breadcrumb-item"><a href="index.html">
+                                <li class="rbt-breadcrumb-item color-white"><a href="index.html">
                                         {{ $language }}
                                     </a></li>
                                 <li>
                                     <div class="icon-right"><i class="feather-chevron-right"></i></div>
                                 </li>
-                                <li class="rbt-breadcrumb-item active">
+                                <li class="rbt-breadcrumb-item active color-white">
                                     {{ $level }}
                                 </li>
                             </ul>
-                            <h2 class="title"> {{ $level }}</h2>
-                            <p class="description">
+                            <h2 class="title color-white"> {{ $level }}</h2>
+                            <p class="description color-white">
                                 {{ $overview }}
                             </p>
 
@@ -31,11 +29,11 @@
                                     <span class="rbt-badge-2">
                                             <span class="image"><img
                                                     src="{{ asset('assets/images/icons/card-icon-1.png') }}"
-                                                    alt="Best Seller Icon"></span>Tendance</span>
+                                                    alt="Best Seller Icon"></span class="color-white">Tendance</span>
                                 </div>
 
                                 <div class="feature-sin rating">
-                                    <a href="#">4.8</a>
+                                    <a href="#" class="color-white">4.8</a>
                                     <a href="#"><i class="fa fa-star"></i></a>
                                     <a href="#"><i class="fa fa-star"></i></a>
                                     <a href="#"><i class="fa fa-star"></i></a>
@@ -44,20 +42,20 @@
                                 </div>
 
                                 <div class="feature-sin total-rating">
-                                    <a class="rbt-badge-4" href="#">215,475 Avis</a>
+                                    <a class="rbt-badge-4 color-white" href="#">215,475 Avis</a>
                                 </div>
 
                                 <div class="feature-sin total-student">
-                                    <span>616,029 Etudiant</span>
+                                    <span class="color-white">616,029 Etudiant</span>
                                 </div>
 
                             </div>
 
 
                             <ul class="rbt-meta">
-                                <li><i class="feather-calendar"></i>Dernière mise à jour {{ $updatedAt }}</li>
-                                <li><i class="feather-globe"></i>{{ $language }}</li>
-                                <li><i class="feather-award"></i>Cours certifié</li>
+                                <li class="color-white"><i class="feather-calendar color-white"></i>Dernière mise à jour {{ $updatedAt }}</li>
+                                <li class="color-white"><i class="feather-globe color-white"></i>{{ $language }}</li>
+                                <li class="color-white"><i class="feather-award color-white"></i>Cours certifié</li>
                             </ul>
 
                         </div>
