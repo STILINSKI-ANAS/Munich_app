@@ -107,6 +107,12 @@
                                             Professeur
                                         </a>
                                     </li>
+                                    <li role="presentation">
+                                        <a href="#why-learning" class="tab-button" data-bs-toggle="tab" role="tab"
+                                           aria-selected="false">
+                                            Pourquoi apprendre {{ $language }} ?
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -290,27 +296,37 @@
                                 </div>
                             </div>
                             <!-- End professeur Area -->
+
+                            <!-- Start Why Learning Area -->
+                            <div class="tab-pane fade" id="why-learning" role="tabpanel">
+                                <!-- Course Content Goes Here -->
+                                <div class="course-content rbt-border-with-box coursecontent-wrapper mt--30"
+                                     id="why-learning">
+                                    <div class="rbt-course-feature-inner">
+                                        <div class="section-title">
+                                            <h4 class="rbt-title-style-3">Pourquoi devriez-vous
+                                                apprendre {{ $language }} ? </h4>
+                                        </div>
+                                        <p>
+                                            Avec plus de 30 ans d'expérience et d'excellence dans l'enseignement des
+                                            langues, Go Academy! International House Düsseldorf est l'une des
+                                            principales écoles de langues d'Europe depuis 1990. Nous sommes un centre de
+                                            test et d'examen agréé pour les certificats de langue internationalement
+                                            reconnus et les examens d'allemand tels que telc, TestDaF, TestAS, DMat et
+                                            WiDaF. <br>
+
+                                            Académie Goa! offre un large éventail de cours d'allemand, tels que des
+                                            cours intensifs d'allemand avec 4 ou 6 leçons par semaine, des cours
+                                            d'allemand le soir, de l'allemand pour les professionnels de la santé, de
+                                            l'allemand pour les soins infirmiers, des cours de préparation à l'admission
+                                            à l'université en Allemagne, ainsi que des cours privés d'allemand, qui
+                                            peuvent être adaptés individuellement aux besoins de l'étudiant.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Why Learning Area -->
                         </div>
-
-
-                        <!-- end tag Area -->
-
-                        <!-- Start Objectifs Feature Box  -->
-
-                        <!-- End Objectifs Feature Box  -->
-
-                        <!-- Start Course Content  -->
-
-                        <!-- End Course Content  -->
-
-                        <!-- Start Course Horaire  -->
-
-
-                        <!-- end Course Horaire  -->
-
-                        <!-- Start professeur Area  -->
-
-                        <!-- End professeur Area  -->
 
                         <!-- Start Edu Review List  -->
                         <div class="rbt-review-wrapper rbt-border-with-box review-wrapper mt--30" id="Avis">
