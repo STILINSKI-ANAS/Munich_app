@@ -281,35 +281,31 @@
                 <div class="advance-tab-button">
                     <ul class="nav nav-tabs tab-button-style-2" id="myTab-4" role="tablist">
                         <li role="presentation">
-                            <a href="#" class="tab-button active" id="niveau-a1" data-bs-toggle="tab"
-                               data-bs-target="#niveau-a1" role="tab" aria-controls="home-4" aria-selected="false">
+                            <a href="#niveau-a1" class="tab-button active" data-bs-toggle="tab" role="tab"
+                               aria-selected="true">
                                 <span class="title">Niveau A1</span>
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href="#" class="tab-button" id="niveau-a2" data-bs-toggle="tab"
-                               data-bs-target="#niveau-a2" role="tab" aria-controls="profile-4"
+                            <a href="#niveau-a2" class="tab-button" data-bs-toggle="tab" role="tab"
                                aria-selected="true">
                                 <span class="title">A2 (En Anglais)</span>
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href="#" class="tab-button" id="niveau-b1" data-bs-toggle="tab"
-                               data-bs-target="#niveau-b1" role="tab" aria-controls="profile-4"
+                            <a href="#niveau-b1" class="tab-button" data-bs-toggle="tab" role="tab"
                                aria-selected="true">
                                 <span class="title">Catégorie B1</span>
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href="#" class="tab-button" id="niveau-b2" data-bs-toggle="tab"
-                               data-bs-target="#niveau-b2" role="tab" aria-controls="profile-4"
+                            <a href="#niveau-b2" class="tab-button" data-bs-toggle="tab" role="tab"
                                aria-selected="true">
                                 <span class="title">Réf B2</span>
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href="#" class="tab-button" id="niveau-c1" data-bs-toggle="tab"
-                               data-bs-target="#niveau-c1" role="tab" aria-controls="profile-4"
+                            <a href="#niveau-c1" class="tab-button" data-bs-toggle="tab" role="tab"
                                aria-selected="true">
                                 <span class="title">C1 Haute école spécialisée</span>
                             </a>
