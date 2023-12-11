@@ -124,7 +124,7 @@
                                 <div class="feature-sin best-seller-badge">
                                     <span class="rbt-badge-2">
                                             <span class="image">
-                                                <img src="{{ asset('assets/images/logo/logo-c.png') }}"
+                                                <img src="{{ asset('assets/images/icons/card-icon-1.png') }}"
                                                      alt="Best Seller Icon">
                                             </span>meilleur choix</span>
                                 </div>
