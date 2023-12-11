@@ -27,40 +27,20 @@
 
                                 <div class="feature-sin best-seller-badge">
                                     <span class="rbt-badge-2">
-                                            <span class="image"><img
-                                                    src="{{ asset('assets/images/icons/card-icon-1.png') }}"
-                                                    alt="Best Seller Icon"></span><span
-                                            class="color-white">Tendance</span>
-                                    </span>
+                                            <span class="image">
+                                                <img src="{{ asset('assets/images/icons/card-icon-1.png') }}"
+                                                     alt="Best Seller Icon">
+                                            </span>meilleur choix</span>
                                 </div>
-
-                                <div class="feature-sin rating">
-                                    <a href="#" class="color-white">4.8</a>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </div>
-
-                                <div class="feature-sin total-rating">
-                                    <a class="rbt-badge-4 color-white" href="#">215,475 Avis</a>
-                                </div>
-
-                                <div class="feature-sin total-student">
-                                    <span class="color-white">616,029 Etudiant</span>
-                                </div>
-
                             </div>
 
 
                             <ul class="rbt-meta">
-                                <li class="color-white"><i class="feather-calendar color-white"></i>Dernière mise à
-                                    jour {{ $updatedAt }}</li>
+                                <li class="color-white"><i class="feather-calendar color-white"></i>Dernière mise à jour
+                                </li>
                                 <li class="color-white"><i class="feather-globe color-white"></i>{{ $language }}</li>
-                                <li class="color-white"><i class="feather-award color-white"></i>Cours certifié</li>
+                                <li class="color-white"><i class="feather-award color-white"></i>Cour certifié</li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
