@@ -323,15 +323,13 @@
                             <!-- Start Course Content -->
                             <div class="tab-pane fade" id="Cours" role="tabpanel">
                                 <!-- Course Content Goes Here -->
-                                <div class="course-content rbt-border-with-box coursecontent-wrapper mt--30"
+                                <div class="rbt-course-feature-box overview-wrapper rbt-border-with-box mt--30 has-show-more active"
                                      id="Cours">
-                                    <div class="rbt-course-feature-inner">
+                                    <div class="rbt-course-feature-inner has-show-more-inner-content">
                                         <div class="section-title">
-                                            <h4 class="rbt-title-style-3">Contenu</h4>
+                                                <h4 class="rbt-title-style-3">Nos Cours d'Allemand</h4>
                                         </div>
-                                        <p>
-                                            {{ $content }}
-                                        </p>
+                                            {!! $content !!}
                                     </div>
                                 </div>
                             </div>
