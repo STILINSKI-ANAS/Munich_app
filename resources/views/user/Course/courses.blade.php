@@ -102,11 +102,11 @@
                                 <div class="rbt-card variation-01 rbt-hover">
                                     <div class="rbt-card-img">
                                         <a href="{{url('/Language/Course/'.$course->level)}}">
-                                            <img src="{{asset('./uploads/Course/'.$course->image)}}" alt="Card image">
-                                            <div class="rbt-badge-3 bg-white">
-                                                <span>-20%</span>
-                                                <span>Off</span>
-                                            </div>
+                                            <img src="{{asset('./uploads/course/'.$course->image)}}" alt="Card image">
+<!--                                            <div class="rbt-badge-3 bg-white">-->
+<!--                                                <span>-20%</span>-->
+<!--                                                <span>Off</span>-->
+<!--                                            </div>-->
                                         </a>
                                     </div>
                                     <div class="rbt-card-body">

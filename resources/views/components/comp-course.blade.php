@@ -1,7 +1,7 @@
 <div class="niveau-b2">
     <!-- Start breadcrumb Area -->
     <div class="slider-area rbt-banner-5 height-550 bg_image"
-         style="background-image: url({{ asset('/uploads/Course/'.$image) }});" data-gradient-overlay="7">
+         style="background-image: url({{ asset('/uploads/course/'.$image) }});" data-gradient-overlay="7">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
