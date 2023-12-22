@@ -28,8 +28,9 @@ class EtudiantCourseController extends Controller
             'countryOfBirth' => 'required',
             'cin' => 'required',
             'addresse' => 'required',
-            'testId' => 'required',
+            'courseId' => 'required',
         ]);
+
         $etudiant = Etudiant::create($validator->validated());
         $etudiant->courses()->attach($request->courseId);
 

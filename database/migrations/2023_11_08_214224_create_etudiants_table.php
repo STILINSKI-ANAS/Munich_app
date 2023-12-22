@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -20,6 +19,12 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->text('addresse')->nullable();
             $table->date('dateNaissance')->nullable();
+            $table->string('lieuNaissance')->nullable();
+            $table->string('langueMaternelle')->nullable();
+            $table->string('sexe')->nullable();
+            $table->string('paysNaissance')->nullable();
+            $table->string('villeResidence')->nullable();
+            $table->string('paysResidence')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('status')->default('en attente');
             $table->string('status_pro')->nullable();

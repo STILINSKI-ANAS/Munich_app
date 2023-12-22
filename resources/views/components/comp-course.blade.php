@@ -158,7 +158,7 @@
                                     </div>
                                 </div>
 
-                                <input type="text" name="testId" required value="{{$courseId}}" hidden>
+                                <input type="text" name="courseId" required value="{{$courseId}}" hidden>
                                 <button
                                     class="rbt-btn btn-white hover-icon-reverse w-100 d-block text-center mt--15"
                                     type="submit">

@@ -29,6 +29,13 @@ class PaiementController extends Controller
             'prenom' => 'required',
             'cin' => 'required',
             'email' => 'required|unique:etudiants',
+            'date_naissance' => 'required',
+            'lieu_naissance' => 'required',
+            'langue_maternelle' => 'required',
+            'sexe' => 'required',
+            'pays_naissance' => 'required',
+            'ville_residence' => 'required',
+            'pays_residence' => 'required',
             'amount' => 'required',
             'EtudId' => 'required',
             'EtudTestId' => 'required',
@@ -41,6 +48,13 @@ class PaiementController extends Controller
             'nom' => $validatedData['nom'],
             'prenom' => $validatedData['prenom'],
             'cin' => $validatedData['cin'],
+            'dateNaissance' => $validatedData['date_naissance'],
+            'lieuNaissance' => $validatedData['lieu_naissance'],
+            'langueMaternelle' => $validatedData['langue_maternelle'],
+            'sexe' => $validatedData['sexe'],
+            'paysNaissance' => $validatedData['pays_naissance'],
+            'villeResidence' => $validatedData['ville_residence'],
+            'paysResidence' => $validatedData['pays_residence'],
         ]);
         $test = Test::findOrFail($validatedData['test_id']);
 
@@ -56,8 +70,17 @@ class PaiementController extends Controller
             'nom' => 'required',
             'prenom' => 'required',
             'email' => 'required|unique:etudiants',
+            'cin' => 'required',
+            'date_naissance' => 'required',
+            'lieu_naissance' => 'required',
+            'langue_maternelle' => 'required',
+            'sexe' => 'required',
+            'pays_naissance' => 'required',
+            'ville_residence' => 'required',
+            'pays_residence' => 'required',
             'amount' => 'required',
             'EtudId' => 'required',
+            'EtudCourseId' => 'required',
             'course_id' => 'required',
         ]);
 
@@ -67,7 +90,15 @@ class PaiementController extends Controller
             'nom' => $validatedData['nom'],
             'prenom' => $validatedData['prenom'],
             'cin' => $validatedData['cin'],
+            'dateNaissance' => $validatedData['date_naissance'],
+            'lieuNaissance' => $validatedData['lieu_naissance'],
+            'langueMaternelle' => $validatedData['langue_maternelle'],
+            'sexe' => $validatedData['sexe'],
+            'paysNaissance' => $validatedData['pays_naissance'],
+            'villeResidence' => $validatedData['ville_residence'],
+            'paysResidence' => $validatedData['pays_residence'],
         ]);
+
         $course = Course::findOrFail($validatedData['course_id']);
 
         return $this->savePayment($validatedData, $etudiant, null, $course);

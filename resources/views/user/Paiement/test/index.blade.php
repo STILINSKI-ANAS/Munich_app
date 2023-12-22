@@ -27,26 +27,60 @@
                             <div id="billing-form">
                                 <h4 class="checkout-title mt--5">Votre Information</h4>
                                 <div class="row">
-                                    <div class="col-md-6 col-12 mb--20">
+                                    <div class="col-md-4 col-12 mb--20">
                                         <label>Prénom*</label>
                                         <input type="text" placeholder="Prénom" name="prenom"
                                                value="{{ $etudiant->prenom }}">
                                     </div>
 
-                                    <div class="col-md-6 col-12 mb--20">
+                                    <div class="col-md-4 col-12 mb--20">
                                         <label>Nom*</label>
                                         <input type="text" placeholder="Nom" name="nom" value="{{ $etudiant->nom }}">
                                     </div>
-
+                                    <div class="col-4 mb--20">
+                                        <label>CIN*</label>
+                                        <input type="text" placeholder="CIN" name="cin"
+                                               value="{{ $etudiant->cin}}">
+                                    </div>
                                     <div class="col-6 mb--20">
                                         <label>Email*</label>
                                         <input type="email" placeholder="Email Address" name="email"
                                                value="{{ $etudiant->user->email }}">
                                     </div>
+
                                     <div class="col-6 mb--20">
-                                        <label>CIN*</label>
-                                        <input type="text" placeholder="CIN" name="cin"
-                                               value="{{ $etudiant->cin}}">
+                                        <label>Date de naissance*</label>
+                                        <input type="date" placeholder="Date de naissance" name="date_naissance"/>
+                                    </div>
+                                    <div class="col-6 mb--20">
+                                        <label>Lieu de naissance*</label>
+                                        <input type="text" placeholder="Lieu de naissance" name="lieu_naissance"/>
+                                    </div>
+
+                                    <div class="col-6 mb--20">
+                                        <label>Langue maternelle*</label>
+                                        <input type="text" placeholder="Langue maternelle" name="langue_maternelle"/>
+                                    </div>
+                                    <div class="col-6 mb--20">
+                                        <label>Sexe*</label>
+                                        <select name="sexe" id="sexe">
+                                            <option value="Homme">Homme</option>
+                                            <option value="Femme">Femme</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-6 mb--20">
+                                        <label>Pays de naissance*</label>
+                                        <input type="text" placeholder="Pays de naissance" name="pays_naissance"/>
+                                    </div>
+                                    <div class="col-6 mb--20">
+                                        <label>Ville de résidence*</label>
+                                        <input type="text" placeholder="Ville de résidence" name="ville_residence"/>
+                                    </div>
+
+                                    <div class="col-6 mb--20">
+                                        <label>Pays de résidence*</label>
+                                        <input type="text" placeholder="Pays de résidence" name="pays_residence"/>
                                     </div>
 
                                     <!-- Hidden inputs for: EtudId, EtudTestId, amount -->
