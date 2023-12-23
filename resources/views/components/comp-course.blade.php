@@ -68,94 +68,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="form-group">
-                                                <input class="text-white" name="nom" id="nom" type="text" required>
-                                                <label class="text-white">Nom de famille</label>
-                                                <span class="focus-border"></span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="form-group">
-                                                <input class="text-white" name="prenom" id="prenom" type="text"
-                                                       required>
-                                                <label class="text-white">Prénom</label>
-                                                <span class="focus-border"></span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="form-group">
-                                                <input class="text-white" name="sexe" id="sexe" type="text" required>
-                                                <label class="text-white">Sexe</label>
-                                                <span class="focus-border"></span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="form-group">
-                                                <input class="text-white" name="dateNaissance" id="dateNaissance"
-                                                       type="date" required>
-                                                <label class="text-white">Date de naissance</label>
-                                                <span class="focus-border"></span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <input class="text-white" name="nom" id="nom" type="text" required>
+                                    <label class="text-white">Nom de famille</label>
+                                    <span class="focus-border"></span>
                                 </div>
-
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="form-group">
-                                                <input class="text-white" name="tel" id="tel" type="tel" required>
-                                                <label class="text-white">Téléphone</label>
-                                                <span class="focus-border"></span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="form-group">
-                                                <input class="text-white" name="email" id="email" type="email" required>
-                                                <label class="text-white">Email</label>
-                                                <span class="focus-border"></span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="form-group">
-                                                <input class="text-white" name="placeOfBirth" id="placeOfBirth"
-                                                       type="text" required>
-                                                <label class="text-white">Lieu de naissance</label>
-                                                <span class="focus-border"></span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="form-group">
-                                                <input class="text-white" name="countryOfBirth" id="countryOfBirth"
-                                                       type="text" required>
-                                                <label class="text-white">Pays de naissance</label>
-                                                <span class="focus-border"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="form-group">
-                                                <input class="text-white" name="cin" id="cin" type="text" required>
-                                                <label class="text-white">CIN ou Passport</label>
-                                                <span class="focus-border"></span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="form-group">
-                                                <input class="text-white" name="addresse" id="addresse" type="text"
-                                                       required>
-                                                <label class="text-white">Adresse</label>
-                                                <span class="focus-border"></span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <input class="text-white" name="prenom" id="prenom" type="text" required>
+                                    <label class="text-white">Prénom</label>
+                                    <span class="focus-border"></span>
                                 </div>
 
                                 <input type="text" name="courseId" required value="{{$courseId}}" hidden>
@@ -323,13 +244,14 @@
                             <!-- Start Course Content -->
                             <div class="tab-pane fade" id="Cours" role="tabpanel">
                                 <!-- Course Content Goes Here -->
-                                <div class="rbt-course-feature-box overview-wrapper rbt-border-with-box mt--30 has-show-more active"
-                                     id="Cours">
+                                <div
+                                    class="rbt-course-feature-box overview-wrapper rbt-border-with-box mt--30 has-show-more active"
+                                    id="Cours">
                                     <div class="rbt-course-feature-inner has-show-more-inner-content">
                                         <div class="section-title">
-                                                <h4 class="rbt-title-style-3">Nos Cours d'Allemand</h4>
+                                            <h4 class="rbt-title-style-3">Nos Cours d'Allemand</h4>
                                         </div>
-                                            {!! $content !!}
+                                        {!! $content !!}
                                     </div>
                                 </div>
                             </div>
