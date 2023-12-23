@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\PayementMail;
+use App\Mail\PayementValidation;
 use App\Models\Course;
 use App\Models\Etudiant;
 use App\Models\EtudiantCourse;
@@ -108,6 +109,55 @@ class PaiementController extends Controller
     }
 
     /**
+     * Valier Course Payment
+     */
+    public function validerCoursePayment(Request $request)
+    {
+        $etudiant = Etudiant::findOrFail($request->idEtudiant);
+        $user = $etudiant->user;
+
+        $data = [
+            'to_name' => $etudiant->nom . ' ' . $etudiant->prenom,
+            'to_email' => $request->email,
+            'subject' => 'Confirmation de paiement et validation de votre inscription aux cours',
+            'body' => 'Inscription au cours avec succès',
+            'oid' => $request->oid,
+        ];
+
+        // change status of etudiant to 'confirmé'
+        $etudiant->update(['status' => 'confirmé']);
+
+        Mail::to($user->email)->send(new PayementValidation($data, 'emails.email_3_course'));
+
+        return view('admin.inscriptions.cours-inscriptions.index');
+    }
+
+    /**
+     * Valider Test Payment
+     */
+    public function validerTestPayment(Request $request)
+    {
+        $etudiant = Etudiant::findOrFail($request->idEtudiant);
+        $user = $etudiant->user;
+        $data = [
+            'to_name' => $etudiant->nom . ' ' . $etudiant->prenom,
+            'to_email' => $request->email,
+            'subject' => 'Confirmation de paiement et validation de votre inscription aux tests',
+            'body' => 'Inscription au test avec succès',
+            'oid' => $request->oid,
+        ];
+
+        // change status of payment of etudiantTest to 'confirmé'
+        $etudiantTest = EtudiantTest::findOrFail($request->etudiantTest);
+        $payment = paiement::findOrFail($etudiantTest->paiement_id);
+        $payment->update(['status' => 'confirmé']);
+
+        Mail::to($user->email)->send(new PayementValidation($data, 'emails.email_3_test'));
+
+        return view('admin.inscriptions.tests-inscriptions.index');
+    }
+
+    /**
      * Save New Paiement Method (can be test or course) so dynamic
      */
     protected function savePayment(array $validatedData, $etudiant, $test, $course)
@@ -169,10 +219,10 @@ class PaiementController extends Controller
 
         $etudiantTest = null;
         $etudiantCourse = null;
-        if($test){
+        if ($test) {
             $etudiantTest = EtudiantTest::find($validatedData['EtudTestId']);
             $etudiantTest->update(['paiement_id' => $paiement->id]);
-        }elseif($course){
+        } elseif ($course) {
             $etudiantCourse = EtudiantCourse::find($validatedData['EtudCourseId']);
             $etudiantCourse->update(['paiement_id' => $paiement->id]);
         }
