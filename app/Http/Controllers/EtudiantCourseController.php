@@ -17,21 +17,16 @@ class EtudiantCourseController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validated = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'sexe' => 'required',
-            'dateNaissance' => 'required',
-            'tel' => 'required',
-            'email' => 'required|unique:etudiants',
-            'placeOfBirth' => 'required',
-            'countryOfBirth' => 'required',
-            'cin' => 'required',
-            'addresse' => 'required',
-            'courseId' => 'required',
         ]);
 
-        $etudiant = Etudiant::create($validator->validated());
+        $etudiant = Etudiant::create([
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+        ]);
+
         $etudiant->courses()->attach($request->courseId);
 
         $etudiant->user_id = Auth::user()->id;
