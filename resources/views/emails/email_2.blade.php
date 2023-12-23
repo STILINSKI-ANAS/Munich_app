@@ -28,7 +28,7 @@
     <li>RIB: 007010000798200000010641</li>
     <li>CODE SWIFT: BCMAMAMC</li>
     @if($data['course'] !== null)
-        <li>Montant total à payer: {{ $data['amount'] }}Dh ({{  $data['test']->price }}Dh + {{ $data['course']->price }}Dh)
+        <li>Montant total à payer: {{ $data['amount'] }}Dh
         </li>
     @else
         <li>Montant total à payer: ${{ $data['amount'] }}Dh</li>

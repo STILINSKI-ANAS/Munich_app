@@ -1,4 +1,4 @@
-    <div>
+        <div>
         <div>
             <h4 class="rbt-title-style-1 align-items-center d-flex justify-content-between">Tests Inscriptions
                 <a class="rbt-btn hover-icon-reverse" href="#">
@@ -95,11 +95,14 @@
                     <td>{{ $etudiantTest->paiement->amount ?? 'N/A' }}</td>
                     <td>
                         @if ($etudiantTest->paiement->status == "en attente")
-                        <div class="rbt-button-group justify-content-start">
-                            <button class="rbt-btn btn-xs bg-color-primary- color-white radius-round" wire:click="validerEtudiant({{ $etudiantTest->paiement->id }})" title="Valider">
-                                Valider
-                            </button>
-                        </div>
+                            <form method="POST" action="{{ route('validerTestPayment') }}">
+                                @csrf
+                                <input type="hidden" name="idEtudiant" value="{{ $etudiantTest->etudiant->id }}">
+                                <input type="hidden" name="etudiantTest" value="{{ $etudiantTest->id }}">
+                                <button type="submit" class="rbt-btn btn-xs bg-color-primary color-white radius-round" title="Valider">
+                                    Valider
+                                </button>
+                            </form>
                         @endif
                     </td>
                 </tr>

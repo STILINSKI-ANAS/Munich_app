@@ -30,7 +30,7 @@ class EtudiantTest extends Pivot
     }
     public function paiement()
     {
-        return $this->belongsTo(Paiement::class);
+        return $this->belongsTo(paiement::class);
     }
 
 }

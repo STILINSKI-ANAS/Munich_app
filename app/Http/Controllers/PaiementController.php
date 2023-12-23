@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\PayementMail;
+use App\Mail\PayementValidation;
 use App\Models\Course;
 use App\Models\Etudiant;
 use App\Models\EtudiantCourse;
@@ -86,7 +87,7 @@ class PaiementController extends Controller
             'EtudCourseId' => '',
             'course_id' => 'required',
         ]);
-//        dd($request);
+
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
 
         $etudiant->update([
@@ -105,6 +106,55 @@ class PaiementController extends Controller
         $course = Course::findOrFail($validatedData['course_id']);
 
         return $this->savePayment($validatedData, $etudiant, null, $course);
+    }
+
+    /**
+     * Valier Course Payment
+     */
+    public function validerCoursePayment(Request $request)
+    {
+        $etudiant = Etudiant::findOrFail($request->idEtudiant);
+        $user = $etudiant->user;
+
+        $data = [
+            'to_name' => $etudiant->nom . ' ' . $etudiant->prenom,
+            'to_email' => $request->email,
+            'subject' => 'Confirmation de paiement et validation de votre inscription aux cours',
+            'body' => 'Inscription au cours avec succès',
+            'oid' => $request->oid,
+        ];
+
+        // change status of etudiant to 'confirmé'
+        $etudiant->update(['status' => 'confirmé']);
+
+        Mail::to($user->email)->send(new PayementValidation($data, 'emails.email_3_course'));
+
+        return view('admin.inscriptions.cours-inscriptions.index');
+    }
+
+    /**
+     * Valider Test Payment
+     */
+    public function validerTestPayment(Request $request)
+    {
+        $etudiant = Etudiant::findOrFail($request->idEtudiant);
+        $user = $etudiant->user;
+        $data = [
+            'to_name' => $etudiant->nom . ' ' . $etudiant->prenom,
+            'to_email' => $request->email,
+            'subject' => 'Confirmation de paiement et validation de votre inscription aux tests',
+            'body' => 'Inscription au test avec succès',
+            'oid' => $request->oid,
+        ];
+
+        // change status of payment of etudiantTest to 'confirmé'
+        $etudiantTest = EtudiantTest::findOrFail($request->etudiantTest);
+        $payment = paiement::findOrFail($etudiantTest->paiement_id);
+        $payment->update(['status' => 'confirmé']);
+
+        Mail::to($user->email)->send(new PayementValidation($data, 'emails.email_3_test'));
+
+        return view('admin.inscriptions.tests-inscriptions.index');
     }
 
     /**
@@ -163,9 +213,19 @@ class PaiementController extends Controller
 
         $paiement = Paiement::create($paiementData);
 
-        $etudiantTest = EtudiantTest::find($validatedData['EtudTestId']);
+//        $etudiantTest = EtudiantTest::find($validatedData['EtudTestId']);
+//
+//        $etudiantTest->update(['paiement_id' => $paiement->id]);
 
-        $etudiantTest->update(['paiement_id' => $paiement->id]);
+        $etudiantTest = null;
+        $etudiantCourse = null;
+        if ($test) {
+            $etudiantTest = EtudiantTest::find($validatedData['EtudTestId']);
+            $etudiantTest->update(['paiement_id' => $paiement->id]);
+        } elseif ($course) {
+            $etudiantCourse = EtudiantCourse::find($validatedData['EtudCourseId']);
+            $etudiantCourse->update(['paiement_id' => $paiement->id]);
+        }
 
         $data = [
             'to_name' => $validatedData['nom'] . ' ' . $validatedData['prenom'],
