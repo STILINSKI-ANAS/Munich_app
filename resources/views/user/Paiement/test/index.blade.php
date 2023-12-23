@@ -14,7 +14,7 @@
     <div class="checkout_area bg-color-white rbt-section-gap">
         <div class="container">
             <h1>Paiement</h1>
-            <form id="paymentForm" method="POST" action="{{ route('testPaymentProcess') }}"
+            <form method="post" id="paymentForm" action="{{ route('testPaymentProcess') }}"
                   enctype="multipart/form-data">
                 @csrf
                 <div class="row g-5 checkout-form">

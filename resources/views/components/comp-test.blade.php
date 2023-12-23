@@ -88,7 +88,7 @@
             <div class="container">
                 <div class="row g-5 align-items-center content-wrapper">
                     @if(auth()->check())
-                        <form method="POST" action="{{ url('/EtudiantTest')}}"
+                        <form method="POST" action="{{ route('EtudiantTest') }}"
                               enctype="multipart/form-data">
                             @csrf
 

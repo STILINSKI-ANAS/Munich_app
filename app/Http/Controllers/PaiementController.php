@@ -24,11 +24,13 @@ class PaiementController extends Controller
      */
     public function testPayment(Request $request)
     {
+
+//        dd($request);
         $validatedData = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
             'cin' => 'required',
-            'email' => 'required|unique:etudiants',
+            'email' => 'required',
             'date_naissance' => 'required',
             'lieu_naissance' => 'required',
             'langue_maternelle' => 'required',
@@ -41,7 +43,7 @@ class PaiementController extends Controller
             'EtudTestId' => 'required',
             'test_id' => 'required',
         ]);
-
+//        return view('user.Paiement.ok');
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
 
         $etudiant->update([

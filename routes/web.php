@@ -152,7 +152,8 @@ Route::prefix('/')->group(function () {
     });
     Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
         Route::get('/EtudiantTests', 'showTests');
-        Route::post('/EtudiantTest', 'store');
+//        Route::post('/EtudiantTest', 'store')->name('EtudiantTest');
+        Route::match(['get', 'post'], '/EtudiantTest', 'store')->name('EtudiantTest');
         Route::post('/inscriptionstep2', 'step2')->name('inscriptionstep2');
     });
     Route::controller(\App\Http\Controllers\PaiementController::class)->group(function () {
