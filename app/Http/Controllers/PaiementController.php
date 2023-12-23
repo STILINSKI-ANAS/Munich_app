@@ -68,10 +68,11 @@ class PaiementController extends Controller
      */
     public function coursePayment(Request $request)
     {
+
         $validatedData = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'email' => 'required|unique:etudiants',
+            'email' => 'required',
             'cin' => 'required',
             'date_naissance' => 'required',
             'lieu_naissance' => 'required',
@@ -82,10 +83,10 @@ class PaiementController extends Controller
             'pays_residence' => 'required',
             'amount' => 'required',
             'EtudId' => 'required',
-            'EtudCourseId' => 'required',
+            'EtudCourseId' => '',
             'course_id' => 'required',
         ]);
-
+        dd($request);
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
 
         $etudiant->update([
