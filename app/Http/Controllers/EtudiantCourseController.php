@@ -34,8 +34,6 @@ class EtudiantCourseController extends Controller
         $etudiant = Etudiant::create($validator->validated());
         $etudiant->courses()->attach($request->courseId);
 
-        $this->sendEmail($etudiant->nom, Course::find($request->courseId)->level, $etudiant->email);
-
         $etudiant->user_id = Auth::user()->id;
         $etudiant->save();
         $etudiantCourse = EtudiantCourse::create([

@@ -20,17 +20,18 @@ class PayementMail extends Mailable
      * @var array
      */
     public $data;
+    public $view;
 
     /**
      * Create a new message instance.
      *
      * @param array $data
      */
-    public function __construct(array $data)
+    public function __construct(array $data, string $view)
     {
         //
         $this->data = $data;
-
+        $this->view = $view;
     }
 
     /**
@@ -50,7 +51,7 @@ class PayementMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.exam_invoice', // Update with your actual view path
+            view: $this->view,
         );
     }
 

@@ -175,9 +175,10 @@ class PaiementController extends Controller
             'date' => $date,
             'test' => $test,
             'course' => $course,
-            'oid' => $oid,
+            'oid' => $oid
         ];
-        Mail::to($validatedData['email'])->send(new PayementMail($data));
+        Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_1'));
+        Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_2'));
 
         return view('user.Paiement.ok');
 //        dd($paiement);
