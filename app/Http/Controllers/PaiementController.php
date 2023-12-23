@@ -86,7 +86,7 @@ class PaiementController extends Controller
             'EtudCourseId' => '',
             'course_id' => 'required',
         ]);
-        dd($request);
+//        dd($request);
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
 
         $etudiant->update([
