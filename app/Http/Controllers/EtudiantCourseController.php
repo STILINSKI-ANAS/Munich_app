@@ -41,8 +41,12 @@ class EtudiantCourseController extends Controller
         $sub_total = $amount;
         $tax = 0;
         $total = $amount + $tax;
+
+        // get latest etudiant course id
+        $etudCourseId = EtudiantCourse::latest()->first()->id;
+
         return view('user.Paiement.course.index', [
-            'etudCourseId' => $etudiantCourse->id,
+            'etudCourseId' => $etudCourseId,
             'etudiant' => $etudiant,
             'sub_total' => $sub_total,
             'tax' => $tax,

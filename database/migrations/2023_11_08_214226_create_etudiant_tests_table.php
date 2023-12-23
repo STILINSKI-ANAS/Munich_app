@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('etudiant_id');
             $table->unsignedBigInteger('test_id');
-            $table->timestamps();
-
+            $table->unsignedBigInteger('paiement_id')->nullable();
             $table->foreign('etudiant_id')->references('id')->on('etudiants');
             $table->foreign('test_id')->references('id')->on('tests');
+            $table->foreign('paiement_id')->references('id')->on('paiements');
+            $table->timestamps();
         });
     }
 

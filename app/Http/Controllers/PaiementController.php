@@ -86,7 +86,7 @@ class PaiementController extends Controller
             'EtudCourseId' => '',
             'course_id' => 'required',
         ]);
-//        dd($request);
+
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
 
         $etudiant->update([
@@ -163,9 +163,19 @@ class PaiementController extends Controller
 
         $paiement = Paiement::create($paiementData);
 
-        $etudiantTest = EtudiantTest::find($validatedData['EtudTestId']);
+//        $etudiantTest = EtudiantTest::find($validatedData['EtudTestId']);
+//
+//        $etudiantTest->update(['paiement_id' => $paiement->id]);
 
-        $etudiantTest->update(['paiement_id' => $paiement->id]);
+        $etudiantTest = null;
+        $etudiantCourse = null;
+        if($test){
+            $etudiantTest = EtudiantTest::find($validatedData['EtudTestId']);
+            $etudiantTest->update(['paiement_id' => $paiement->id]);
+        }elseif($course){
+            $etudiantCourse = EtudiantCourse::find($validatedData['EtudCourseId']);
+            $etudiantCourse->update(['paiement_id' => $paiement->id]);
+        }
 
         $data = [
             'to_name' => $validatedData['nom'] . ' ' . $validatedData['prenom'],
