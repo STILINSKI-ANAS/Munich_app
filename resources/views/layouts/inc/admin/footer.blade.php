@@ -15,16 +15,12 @@
                         </p>
 
                         <ul class="social-icon social-default justify-content-start">
-                            <li><a href="https://www.facebook.com/">
+                            <li><a href="https://www.facebook.com/InstitutMunich" target="_blank">
                                     <i class="feather-facebook"></i>
                                 </a>
                             </li>
-                            <li><a href="https://www.instagram.com/">
+                            <li><a href="https://www.instagram.com/institut_munich_agadir/" target="_blank">
                                     <i class="feather-instagram"></i>
-                                </a>
-                            </li>
-                            <li><a href="https://www.linkdin.com/">
-                                    <i class="feather-linkedin"></i>
                                 </a>
                             </li>
                         </ul>
@@ -68,7 +64,9 @@
                     <div class="footer-widget">
                         <h5 class="ft-title">Nous Contacter</h5>
                         <ul class="ft-link">
-                            <li><span>Téléphone :</span> <a href="#">+212-615-845-697</a></li>
+                            <li><span>Téléphone 1:</span> <a href="#">0667869273</a></li>
+                            <li><span>Téléphone 2:</span> <a href="#">0528215855</a></li>
+                            <li><span>Téléphone 3:</span> <a href="#">0701055500</a></li>
                             <li><span>E-mail :</span> <a href="mailto:hr@example.com">info@institut-munich.ma</a></li>
                         </ul>
 
