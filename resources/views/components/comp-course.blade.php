@@ -156,12 +156,6 @@
                                             Contenu
                                         </a>
                                     </li>
-                                    <li role="presentation">
-                                        <a href="#Horaire" class="tab-button" data-bs-toggle="tab" role="tab"
-                                           aria-selected="false">
-                                            Horaire
-                                        </a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -244,39 +238,6 @@
                                 </div>
                             </div>
                             <!-- End Course Content -->
-
-                            <!-- Start Course Horaire -->
-                            <div class="tab-pane fade" id="Horaire" role="tabpanel">
-                                <!-- Course Horaire Goes Here -->
-                                <div class="rbt-course-feature-box rbt-shadow-box details-wrapper mt--30"
-                                     id="Horaire">
-                                    <div class="row g-5">
-                                        <!-- Start Feture Box  -->
-                                        <div class="col-lg-6">
-                                            <div class="section-title">
-                                                <h4 class="rbt-title-style-3 mb--20">Ces cours sont disponibles
-                                                    :</h4>
-                                            </div>
-                                            <ul class="rbt-list-style-1">
-                                                <li><i class="feather-calendar"></i><span>Le matin de &nbsp; </span>
-                                                    <strong
-                                                        class="text-primary"> 9h00 </strong>&nbsp; à <strong
-                                                        class="text-primary">&nbsp; 12h00</strong></li>
-                                                <li>
-                                                    <i class="feather-calendar"></i><span>L’après-midi de &nbsp;</span>
-                                                    <strong
-                                                        class="text-primary"> 15h00 </strong>&nbsp; à <strong
-                                                        class="text-primary">&nbsp; 18h00</strong></li>
-                                                <li><i class="feather-calendar"></i><span>Le soir de</span> <strong
-                                                        class="text-primary">&nbsp; 19h00 </strong>&nbsp; à <strong
-                                                        class="text-primary">&nbsp; 22h00</strong></li>
-                                            </ul>
-                                        </div>
-                                        <!-- End Feture Box  -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Course Horaire -->
                         </div>
 
                         <!-- Start Edu Review List  -->
