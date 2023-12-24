@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('etudiant_id');
             $table->unsignedBigInteger('test_id');
             $table->unsignedBigInteger('paiement_id')->nullable();
+            $table->string('type')->nullable();
             $table->foreign('etudiant_id')->references('id')->on('etudiants');
             $table->foreign('test_id')->references('id')->on('tests');
             $table->foreign('paiement_id')->references('id')->on('paiements');

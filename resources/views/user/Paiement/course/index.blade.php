@@ -27,17 +27,17 @@
                             <div id="billing-form">
                                 <h4 class="checkout-title mt--5">Votre Information</h4>
                                 <div class="row">
-                                    <div class="col-md-4 col-12 mb--20">
+                                    <div class="col-md-6 col-12 mb--20">
                                         <label>Prénom*</label>
                                         <input type="text" placeholder="Prénom" name="prenom"
                                                value="{{ $etudiant->prenom }}">
                                     </div>
 
-                                    <div class="col-md-4 col-12 mb--20">
+                                    <div class="col-md-6 col-12 mb--20">
                                         <label>Nom*</label>
                                         <input type="text" placeholder="Nom" name="nom" value="{{ $etudiant->nom }}">
                                     </div>
-                                    <div class="col-4 mb--20">
+                                    <div class="col-6 mb--20">
                                         <label>CIN*</label>
                                         <input type="text" placeholder="CIN" name="cin"
                                                value="{{ $etudiant->cin}}">
@@ -62,14 +62,6 @@
                                         <input type="text" placeholder="Langue maternelle" name="langue_maternelle"/>
                                     </div>
                                     <div class="col-6 mb--20">
-                                        <label>Sexe*</label>
-                                        <select name="sexe" id="sexe">
-                                            <option value="Homme">Homme</option>
-                                            <option value="Femme">Femme</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-6 mb--20">
                                         <label>Pays de naissance*</label>
                                         <input type="text" placeholder="Pays de naissance" name="pays_naissance"/>
                                     </div>
@@ -81,6 +73,21 @@
                                     <div class="col-6 mb--20">
                                         <label>Pays de résidence*</label>
                                         <input type="text" placeholder="Pays de résidence" name="pays_residence"/>
+                                    </div>
+                                    <div class="col-6 mb--20">
+                                        <label>Sexe*</label>
+                                        <select name="sexe" id="sexe">
+                                            <option value="Homme">Homme</option>
+                                            <option value="Femme">Femme</option>
+                                        </select>
+                                    </div>
+                                    <!-- Ecrit Ou Oral -->
+                                    <div class="col-6 mb--20">
+                                        <label>Ecrit ou Oral*</label>
+                                        <select name="ecrit_or_oral" id="ecrit_or_oral">
+                                            <option value="Ecrit">Ecrit</option>
+                                            <option value="Oral">Oral</option>
+                                        </select>
                                     </div>
 
                                     <!-- Hidden inputs for: EtudId, EtudTestId, amount -->

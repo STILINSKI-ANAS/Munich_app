@@ -15,6 +15,7 @@ class EtudiantTest extends Pivot
         'test_id',
         'id',
         'paiement_id',
+        'type',
     ];
 
     protected $table = 'etudiant_tests';

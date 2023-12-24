@@ -25,8 +25,6 @@ class PaiementController extends Controller
      */
     public function testPayment(Request $request)
     {
-
-//        dd($request);
         $validatedData = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
@@ -36,6 +34,7 @@ class PaiementController extends Controller
             'lieu_naissance' => 'required',
             'langue_maternelle' => 'required',
             'sexe' => 'required',
+            'ecrit_or_oral' => 'required',
             'pays_naissance' => 'required',
             'ville_residence' => 'required',
             'pays_residence' => 'required',
@@ -46,6 +45,13 @@ class PaiementController extends Controller
         ]);
 //        return view('user.Paiement.ok');
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
+
+        $etudiantTest = EtudiantTest::findOrFail($validatedData['EtudTestId']);
+        if ($etudiantTest){
+            $etudiantTest->update([
+                'type' => $validatedData['ecrit_or_oral'],
+            ]);
+        }
 
         $etudiant->update([
             'nom' => $validatedData['nom'],
@@ -79,6 +85,7 @@ class PaiementController extends Controller
             'lieu_naissance' => 'required',
             'langue_maternelle' => 'required',
             'sexe' => 'required',
+            'ecrit_or_oral' => 'required',
             'pays_naissance' => 'required',
             'ville_residence' => 'required',
             'pays_residence' => 'required',
@@ -89,6 +96,13 @@ class PaiementController extends Controller
         ]);
 
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
+
+        $etudiantCourse = EtudiantCourse::findOrFail($validatedData['EtudCourseId']);
+        if ($etudiantCourse){
+            $etudiantCourse->update([
+                'type' => $validatedData['ecrit_or_oral'],
+            ]);
+        }
 
         $etudiant->update([
             'nom' => $validatedData['nom'],
