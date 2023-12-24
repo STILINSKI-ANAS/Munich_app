@@ -2,7 +2,8 @@
     <div class="footer-top">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12"data-sal-delay="150" data-sal="slide-right" data-sal-duration="800">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-right"
+                     data-sal-duration="800">
                     <div class="footer-widget">
                         <div class="logo">
                             <a href="index.html">
@@ -11,7 +12,8 @@
                         </div>
 
                         <p class="description mt--20">
-                            Institut Munich : Cours de langues, examens et plus pour une expérience immersive d'apprentissage et de développement personnel.
+                            Institut Munich : Cours de langues, examens et plus pour une expérience immersive
+                            d'apprentissage et de développement personnel.
                         </p>
 
                         <ul class="social-icon social-default justify-content-start">
@@ -26,7 +28,8 @@
                         </ul>
 
                         <div class="contact-btn mt--30">
-                            <a class="rbt-btn hover-icon-reverse btn-border-gradient radius-round" href="#">
+                            <a class="rbt-btn hover-icon-reverse btn-border-gradient radius-round"
+                               href="mailto:info@institut-munich.ma">
                                 <div class="icon-reverse-wrapper">
                                     <span class="btn-text">Contactez-nous</span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -36,43 +39,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12"data-sal-delay="150" data-sal="slide-down" data-sal-duration="800">
-                    <div class="footer-widget">
-                        <h5 class="ft-title">Notre Institut</h5>
-                        <ul class="ft-link">
-                            <li>
-                                <a href="contact.html">Contactez-nous</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/privacy-policy') }}">Politique de confidentialité</a>
-                            </li>
-                            <li>
-                                <a href="become-a-teacher.html">Devenir Enseignant</a>
-                            </li>
-                            <li>
-                                <a href="blog.html">Articles</a>
-                            </li>
-                            <li>
-                                <a href="contact.html">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-down"
+                     data-sal-duration="800">
 
                 </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12"data-sal-delay="150" data-sal="slide-left" data-sal-duration="800">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-left"
+                     data-sal-duration="800">
                     <div class="footer-widget">
                         <h5 class="ft-title">Nous Contacter</h5>
                         <ul class="ft-link">
                             <li><span>Téléphone 1:</span> <a href="#">0667869273</a></li>
                             <li><span>Téléphone 2:</span> <a href="#">0528215855</a></li>
                             <li><span>Téléphone 3:</span> <a href="#">0701055500</a></li>
-                            <li><span>E-mail :</span> <a href="mailto:hr@example.com">info@institut-munich.ma</a></li>
+                            <li><span>E-mail :</span> <a
+                                    href="mailto:info@institut-munich.ma">info@institut-munich.ma</a></li>
                         </ul>
 
                         <form class="newsletter-form mt--20" action="#">
                             <h6 class="w-600">Newsletter</h6>
-                            <p class="description">Plus de 2000 de nos étudiants sont inscrits partout dans Agadir.<br> Ne soyez pas timide, présentez-vous !</p>
+                            <p class="description">Plus de 2000 de nos étudiants sont inscrits partout dans Agadir.<br>
+                                Ne soyez pas timide, présentez-vous !</p>
 
                             <div class="form-group right-icon icon-email mb--20">
                                 <label for="email">Entrez votre e-mail ici</label>
@@ -101,7 +88,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12">
-                    <p class="rbt-link-hover text-center text-lg-start">Droits d'auteur © 2023 <a href="#">INSTITUT MUNICH</a>. Tous droits réservés.</p>
+                    <p class="rbt-link-hover text-center text-lg-start">Droits d'auteur © 2023 <a href="#">INSTITUT
+                            MUNICH</a>. Tous droits réservés.</p>
                 </div>
             </div>
         </div>
