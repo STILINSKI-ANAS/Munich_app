@@ -70,6 +70,7 @@ class CoursController extends Controller
         $course->overview = $validatedData['overview'];
         $course->price = $validatedData['price'];
         $course->time = $validatedData['time'];
+        $course->max_placements = $validatedData['max_placements'];
         $course->language_id = $validatedData['language_id'];
         if ($request->hasFile('Image')) {
             $path = 'uploads/Course/' . $course->image;
