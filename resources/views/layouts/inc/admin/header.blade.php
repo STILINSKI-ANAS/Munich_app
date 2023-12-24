@@ -37,15 +37,6 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="rbt-separator d-none d-xl-block"></div>
-                            <div class="header-info">
-                                <ul class="rbt-information-list">
-                                    <li>
-                                        <a href="https://www.facebook.com/InstitutMunich" target="_blank"><i
-                                                class="fab fa-facebook-square"></i>500k Followers</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
