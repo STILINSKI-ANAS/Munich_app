@@ -88,6 +88,7 @@
                                         <select name="ecrit_or_oral" id="ecrit_or_oral">
                                             <option value="Ecrit">Ecrit</option>
                                             <option value="Oral">Oral</option>
+                                            <option value="Ecrit et Oral">Ecrit et Oral</option>
                                         </select>
                                     </div>
 
