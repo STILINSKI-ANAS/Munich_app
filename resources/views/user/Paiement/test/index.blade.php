@@ -163,6 +163,38 @@
                     avant de confirmer
                     votre commande.
                 </div>
+                <h5 class="ms-3">
+                    Terms and conditions
+                </h5>
+                <!-- Conditions and privacy policy -->
+                <div class="modal-body" style="max-height: 200px; overflow-y: auto;">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi blanditiis culpa, debitis
+                    dolor dolore ea eos exercitationem iure laboriosam mollitia officiis porro reprehenderit,
+                    repudiandae sit, velit voluptas! Adipisci, provident?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, blanditiis corporis deleniti eum minus
+                    modi molestiae, nam repellendus tempora ut vel voluptatum? Incidunt mollitia nostrum odio
+                    repellendus vero vitae voluptatum?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad deserunt dignissimos dolore, doloribus
+                    incidunt ipsa minus molestias! Aut autem consectetur exercitationem inventore maxime, provident quia
+                    recusandae rerum sed sit tempore.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quos sit temporibus velit?
+                    Architecto eaque ipsum maxime molestiae. Consequuntur eveniet ipsa labore repellat saepe soluta
+                    voluptates. At ea eos illum!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eos facere iusto minima nisi odio, qui
+                    quo, recusandae veniam voluptas voluptatem voluptatibus? Adipisci doloremque ea facere, inventore
+                    nam nostrum repellat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aspernatur ducimus exercitationem
+                    maiores pariatur quaerat, recusandae temporibus totam! Accusantium alias dolores error illo ipsam
+                    perspiciatis quibusdam quos repellendus sit!
+                </div>
+
+                <!-- Acceptance of Terms and Pricing Policy -->
+                <div class="mt-3 ms-3">
+                    <input type="checkbox" id="terms" name="terms" value="terms">
+                    <label for="terms">I have read and agree to the <a href="#">Terms and Conditions</a> and <a
+                            href="#">Pricing Policy</a></label><br>
+                </div>
+
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     <button class="btn btn-primary" id="confirmOrderButton">
@@ -186,6 +218,23 @@
         $('#confirmOrderButton').click(function () {
             // Submit the form when the confirmation is confirmed
             $('#paymentForm').submit();
+        });
+
+        // Disable the Confirm Order button initially
+        $("#confirmOrderButton").prop("disabled", true);
+
+        // Listen for changes in the checkbox state
+        $("#terms").change(function () {
+            // Enable the Confirm Order button if the checkbox is checked, disable it otherwise
+            $("#confirmOrderButton").prop("disabled", !this.checked);
+        });
+
+        // Add an event listener for the Confirm Order button click (you can replace this with your actual logic)
+        $("#confirmOrderButton").click(function () {
+            // Your logic to handle the confirmation goes here
+            // For example, you can close the modal or submit the form
+            // For now, let's just log a message to the console
+            console.log("Order confirmed!");
         });
     });
 </script>
