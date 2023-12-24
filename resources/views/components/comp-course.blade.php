@@ -162,18 +162,6 @@
                                             Horaire
                                         </a>
                                     </li>
-                                    <li role="presentation">
-                                        <a href="#professeur" class="tab-button" data-bs-toggle="tab" role="tab"
-                                           aria-selected="false">
-                                            Professeur
-                                        </a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a href="#why-learning" class="tab-button" data-bs-toggle="tab" role="tab"
-                                           aria-selected="false">
-                                            Pourquoi apprendre {{ $language }} ?
-                                        </a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -289,104 +277,6 @@
                                 </div>
                             </div>
                             <!-- End Course Horaire -->
-
-                            <!-- Start professeur Area -->
-                            <div class="tab-pane fade" id="professeur" role="tabpanel">
-                                <!-- Professeur Content Goes Here -->
-                                <div class="rbt-instructor rbt-border-with-box intructor-wrapper mt--30"
-                                     id="professeur">
-                                    <div class="about-author border-0 pb--0 pt--0">
-                                        <div class="section-title mb--30">
-                                            <h4 class="rbt-title-style-3">professeur</h4>
-                                        </div>
-                                        <div class="media align-items-center">
-                                            <div class="thumbnail">
-                                                <a href="#">
-                                                    <img
-                                                        src="{{ asset('assets/images/testimonial/testimonial-7.jpg') }}"
-                                                        alt="Author Images">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <div class="author-info">
-                                                    <h5 class="title">
-                                                        <a class="hover-flip-item-wrapper" href="author.html">B.M.
-                                                            Rafekul
-                                                            Islam</a>
-                                                    </h5>
-                                                    <span class="b3 subtitle">Professeur allemand</span>
-                                                    <ul class="rbt-meta mb--20 mt--10">
-                                                        <li><i class="fa fa-star color-warning"></i>75,237 Reviews
-                                                            <span
-                                                                class="rbt-badge-5 ml--5">4.9 Avis</span></li>
-                                                        <li><i class="feather-users"></i>501 Students</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="content">
-                                                    <p class="description">Les enseignants de langue inspirent les
-                                                        étudiants à
-                                                        trouver leur voix dans une nouvelle langue et à découvrir la
-                                                        beauté de
-                                                        l'échange culturel.</p>
-
-                                                    <ul class="social-icon social-default icon-naked justify-content-start">
-                                                        <li>
-                                                            <a href="https://www.facebook.com/">
-                                                                <i class="feather-facebook"></i>
-                                                            </a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a href="https://www.instagram.com/">
-                                                                <i class="feather-instagram"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="https://www.linkdin.com/">
-                                                                <i class="feather-linkedin"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End professeur Area -->
-
-                            <!-- Start Why Learning Area -->
-                            <div class="tab-pane fade" id="why-learning" role="tabpanel">
-                                <!-- Course Content Goes Here -->
-                                <div class="course-content rbt-border-with-box coursecontent-wrapper mt--30"
-                                     id="why-learning">
-                                    <div class="rbt-course-feature-inner">
-                                        <div class="section-title">
-                                            <h4 class="rbt-title-style-3">Pourquoi devriez-vous
-                                                apprendre {{ $language }} ? </h4>
-                                        </div>
-                                        <p>
-                                            Avec plus de 30 ans d'expérience et d'excellence dans l'enseignement des
-                                            langues, Go Academy! International House Düsseldorf est l'une des
-                                            principales écoles de langues d'Europe depuis 1990. Nous sommes un centre de
-                                            test et d'examen agréé pour les certificats de langue internationalement
-                                            reconnus et les examens d'allemand tels que telc, TestDaF, TestAS, DMat et
-                                            WiDaF.
-                                        </p>
-                                        <p>
-                                            Munich! offre un large éventail de cours {{$language}}, tels que des
-                                            cours intensifs d'allemand avec 4 ou 6 leçons par semaine, des cours
-                                            d'allemand le soir, de l'allemand pour les professionnels de la santé, de
-                                            l'allemand pour les soins infirmiers, des cours de préparation à l'admission
-                                            à l'université en Allemagne, ainsi que des cours privés d'allemand, qui
-                                            peuvent être adaptés individuellement aux besoins de l'étudiant.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Why Learning Area -->
                         </div>
 
                         <!-- Start Edu Review List  -->
