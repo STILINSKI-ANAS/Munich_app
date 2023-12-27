@@ -106,7 +106,7 @@
                             <!-- Cart Total -->
                             <div class="col-12 mb--60">
 
-                                <h4 class="checkout-title">Cart Total</h4>
+                                <h4 class="checkout-title">Votre Commande</h4>
 
                                 <div class="checkout-cart-total">
                                     <!-- Test card: image, name and price -->
@@ -130,15 +130,15 @@
                                         </div>
                                     </div>
 
-                                    <p>Sub Total <span>{{ $sub_total }}DH</span></p>
-                                    <p>Tax <span>{{ $tax }}DH</span></p>
+                                    <p>Sous Totale <span>{{ $sub_total }}DH</span></p>
+                                    <p>Taxe <span>{{ $tax }}DH</span></p>
 
-                                    <h4 class="mt--30">Total <span>{{ $total }}DH</span></h4>
+                                    <h4 class="mt--30">Totale <span>{{ $total }}DH</span></h4>
 
                                     <button id="placeOrderButton" class="rbt-btn btn-gradient hover-icon-reverse"
                                             type="button">
                                         <span class="icon-reverse-wrapper">
-                                            <span class="btn-text">Place order</span>
+                                            <span class="btn-text">Lancer la commande</span>
                                             <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                             <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         </span>
@@ -168,7 +168,7 @@
                     votre commande.
                 </div>
                 <h5 class="ms-3">
-                    Terms and conditions
+                    Les conditions et la politique de confidentialité
                 </h5>
                 <!-- Conditions and privacy policy -->
                 <div class="modal-body" style="max-height: 200px; overflow-y: auto;">
@@ -195,14 +195,13 @@
                 <!-- Acceptance of Terms and Pricing Policy -->
                 <div class="mt-3 ms-3">
                     <input type="checkbox" id="terms" name="terms" value="terms">
-                    <label for="terms">I have read and agree to the <a href="#">Terms and Conditions</a> and <a
-                            href="#">Pricing Policy</a></label><br>
+                    <label for="terms">J'accepte les conditions et la politique de confidentialité</label>
                 </div>
 
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
                     <button class="btn btn-primary" id="confirmOrderButton">
-                        Confirm Order
+                        Confirmer la commande
                     </button>
                 </div>
             </div>
