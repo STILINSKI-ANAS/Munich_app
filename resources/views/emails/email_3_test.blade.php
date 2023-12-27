@@ -9,7 +9,10 @@
 
 <body
     style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-
+<img
+    src="http://institut-munich.com/wp-content/uploads/2019/09/cropped-logo.jpg"
+    style="width: 100%; max-width: 300px"
+/>
 <p>Chers candidats,</p>
 
 <p>Nous espérons que ce message vous trouve dans les meilleures conditions.</p>
