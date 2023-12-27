@@ -130,12 +130,20 @@ class PaiementController extends Controller
         $etudiant = Etudiant::findOrFail($request->idEtudiant);
         $user = $etudiant->user;
 
+        // Fetching the payment details
+        $etudiantCourse = EtudiantCourse::where('etudiant_id', $request->idEtudiant)
+            ->where('course_id', $request->idCourse)
+            ->firstOrFail();
+        $payment = paiement::findOrFail($etudiantCourse->paiement_id);
+        $amount = $payment->amount;
+
         $data = [
             'to_name' => $etudiant->nom . ' ' . $etudiant->prenom,
             'to_email' => $request->email,
             'subject' => 'Confirmation de paiement et validation de votre inscription aux cours',
             'body' => 'Inscription au cours avec succès',
             'oid' => $request->oid,
+            'amount' => $amount,
         ];
 
         // change status of etudiant to 'confirmé'
@@ -154,12 +162,20 @@ class PaiementController extends Controller
         $etudiant = Etudiant::findOrFail($request->idEtudiant);
         $user = $etudiant->user;
 
+        // Fetching the payment details
+        $etudiantCourse = EtudiantCourse::where('etudiant_id', $request->idEtudiant)
+            ->where('course_id', $request->idCourse)
+            ->firstOrFail();
+        $payment = paiement::findOrFail($etudiantCourse->paiement_id);
+        $amount = $payment->amount;
+
         $data = [
             'to_name' => $etudiant->nom . ' ' . $etudiant->prenom,
             'to_email' => $request->email,
             'subject' => 'Confirmation de paiement et validation de votre inscription aux cours',
             'body' => 'Inscription au cours avec succès',
             'oid' => $request->oid,
+            'amount' => $amount,
         ];
 
         // change status of etudiant to 'confirmé'
@@ -177,12 +193,19 @@ class PaiementController extends Controller
     {
         $etudiant = Etudiant::findOrFail($request->idEtudiant);
         $user = $etudiant->user;
+
+        // Fetching the payment details
+        $etudiantTest = EtudiantTest::findOrFail($request->etudiantTest);
+        $payment = paiement::findOrFail($etudiantTest->paiement_id);
+        $amount = $payment->amount;
+
         $data = [
             'to_name' => $etudiant->nom . ' ' . $etudiant->prenom,
             'to_email' => $request->email,
             'subject' => 'Confirmation de paiement et validation de votre inscription aux tests',
             'body' => 'Inscription au test avec succès',
             'oid' => $request->oid,
+            'amount' => $amount,
         ];
 
         // change status of payment of etudiantTest to 'confirmé'
@@ -202,12 +225,19 @@ class PaiementController extends Controller
     {
         $etudiant = Etudiant::findOrFail($request->idEtudiant);
         $user = $etudiant->user;
+
+        // Fetching the payment details
+        $etudiantTest = EtudiantTest::findOrFail($request->etudiantTest);
+        $payment = paiement::findOrFail($etudiantTest->paiement_id);
+        $amount = $payment->amount;
+
         $data = [
             'to_name' => $etudiant->nom . ' ' . $etudiant->prenom,
             'to_email' => $request->email,
             'subject' => 'Confirmation de paiement et validation de votre inscription aux tests',
             'body' => 'Inscription au test avec succès',
             'oid' => $request->oid,
+            'amount' => $amount,
         ];
 
         // change status of payment of etudiantTest to 'confirmé'

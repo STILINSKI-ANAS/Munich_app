@@ -106,6 +106,7 @@
                                 <form method="POST" action="{{ route('validerCoursePayment1') }}">
                                     @csrf
                                     <input type="hidden" name="idEtudiant" value="{{ $etudiant->id }}">
+                                    <input type="hidden" name="idCourse" value="{{ $etudiant->courses[0]->id }}">
                                     <button type="submit"
                                             class="rbt-btn btn-xs bg-color-primary color-white radius-round"
                                             title="Valider 1">

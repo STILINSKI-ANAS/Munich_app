@@ -6,7 +6,7 @@
                      data-sal-duration="800">
                     <div class="footer-widget">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="{{ route('root') }}">
                                 <img src="{{ asset('assets/images/logo/logo-full-white.png') }}" alt="Edu-cause">
                             </a>
                         </div>
@@ -87,8 +87,11 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12">
-                    <p class="rbt-link-hover text-center text-lg-start">Droits d'auteur © 2023 <a href="#">INSTITUT
-                            MUNICH</a>. Tous droits réservés.</p>
+                    <p class="rbt-link-hover text-center text-lg-start">
+                        Droits d'auteur © 2023 <a href="{{ route('root') }}">
+                            INSTITUT
+                            MUNICH
+                        </a>. Tous droits réservés.</p>
                 </div>
             </div>
         </div>
