@@ -160,8 +160,10 @@ Route::prefix('/')->group(function () {
         Route::get('/inscriptionstep3', 'index');
         Route::post('/testPaymentProcess', 'testPayment')->name('testPaymentProcess');
         Route::post('/coursePaymentProcess', 'coursePayment')->name('coursePaymentProcess');
-        Route::post('/validerCoursePayment', 'validerCoursePayment')->name('validerCoursePayment');
-        Route::post('/validerTestPayment', 'validerTestPayment')->name('validerTestPayment');
+        Route::post('/validerCoursePayment1', 'validerCoursePayment1')->name('validerCoursePayment1');
+        Route::post('/validerCoursePayment2', 'validerCoursePayment2')->name('validerCoursePayment2');
+        Route::post('/validerTestPayment1', 'validerTestPayment1')->name('validerTestPayment1');
+        Route::post('/validerTestPayment2', 'validerTestPayment2')->name('validerTestPayment2');
 
         //notez que vous pouvez utiliser le chemin que vous voulez, mais vous devez utiliser la méthode de rappel (callback) implémentée dans la trait CmiGateway
         Route::post('/cmi/callback', [\App\Http\Controllers\PaiementController::class, 'callback'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);

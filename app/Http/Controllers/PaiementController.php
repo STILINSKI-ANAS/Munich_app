@@ -21,7 +21,7 @@ class PaiementController extends Controller
     use \Combindma\Cmi\Traits\CmiGateway;
 
     /**
-     * Store Test Payment
+     * Store Test Payment 1
      */
     public function testPayment(Request $request)
     {
@@ -47,7 +47,7 @@ class PaiementController extends Controller
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
 
         $etudiantTest = EtudiantTest::findOrFail($validatedData['EtudTestId']);
-        if ($etudiantTest){
+        if ($etudiantTest) {
             $etudiantTest->update([
                 'type' => $validatedData['ecrit_or_oral'],
             ]);
@@ -98,7 +98,7 @@ class PaiementController extends Controller
         $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
 
         $etudiantCourse = EtudiantCourse::findOrFail($validatedData['EtudCourseId']);
-        if ($etudiantCourse){
+        if ($etudiantCourse) {
             $etudiantCourse->update([
                 'type' => $validatedData['ecrit_or_oral'],
             ]);
@@ -123,9 +123,9 @@ class PaiementController extends Controller
     }
 
     /**
-     * Valier Course Payment
+     * Valier Course Payment 1
      */
-    public function validerCoursePayment(Request $request)
+    public function validerCoursePayment1(Request $request)
     {
         $etudiant = Etudiant::findOrFail($request->idEtudiant);
         $user = $etudiant->user;
@@ -139,7 +139,31 @@ class PaiementController extends Controller
         ];
 
         // change status of etudiant to 'confirmé'
-        $etudiant->update(['status' => 'confirmé']);
+        $etudiant->update(['status_1' => 'confirmé']);
+
+        Mail::to($user->email)->send(new PayementValidation($data, 'emails.email_2'));
+
+        return view('admin.inscriptions.cours-inscriptions.index');
+    }
+
+    /**
+     * Valier Course Payment 2
+     */
+    public function validerCoursePayment2(Request $request)
+    {
+        $etudiant = Etudiant::findOrFail($request->idEtudiant);
+        $user = $etudiant->user;
+
+        $data = [
+            'to_name' => $etudiant->nom . ' ' . $etudiant->prenom,
+            'to_email' => $request->email,
+            'subject' => 'Confirmation de paiement et validation de votre inscription aux cours',
+            'body' => 'Inscription au cours avec succès',
+            'oid' => $request->oid,
+        ];
+
+        // change status of etudiant to 'confirmé'
+        $etudiant->update(['status_2' => 'confirmé']);
 
         Mail::to($user->email)->send(new PayementValidation($data, 'emails.email_3_course'));
 
@@ -147,9 +171,9 @@ class PaiementController extends Controller
     }
 
     /**
-     * Valider Test Payment
+     * Valider Test Payment 1
      */
-    public function validerTestPayment(Request $request)
+    public function validerTestPayment1(Request $request)
     {
         $etudiant = Etudiant::findOrFail($request->idEtudiant);
         $user = $etudiant->user;
@@ -164,7 +188,32 @@ class PaiementController extends Controller
         // change status of payment of etudiantTest to 'confirmé'
         $etudiantTest = EtudiantTest::findOrFail($request->etudiantTest);
         $payment = paiement::findOrFail($etudiantTest->paiement_id);
-        $payment->update(['status' => 'confirmé']);
+        $payment->update(['status_1' => 'confirmé']);
+
+        Mail::to($user->email)->send(new PayementValidation($data, 'emails.email_2'));
+
+        return view('admin.inscriptions.tests-inscriptions.index');
+    }
+
+    /**
+     * Valider Test Payment 2
+     */
+    public function validerTestPayment2(Request $request)
+    {
+        $etudiant = Etudiant::findOrFail($request->idEtudiant);
+        $user = $etudiant->user;
+        $data = [
+            'to_name' => $etudiant->nom . ' ' . $etudiant->prenom,
+            'to_email' => $request->email,
+            'subject' => 'Confirmation de paiement et validation de votre inscription aux tests',
+            'body' => 'Inscription au test avec succès',
+            'oid' => $request->oid,
+        ];
+
+        // change status of payment of etudiantTest to 'confirmé'
+        $etudiantTest = EtudiantTest::findOrFail($request->etudiantTest);
+        $payment = paiement::findOrFail($etudiantTest->paiement_id);
+        $payment->update(['status_2' => 'confirmé']);
 
         Mail::to($user->email)->send(new PayementValidation($data, 'emails.email_3_test'));
 
@@ -253,7 +302,7 @@ class PaiementController extends Controller
             'oid' => $oid
         ];
         Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_1'));
-        Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_2'));
+        // Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_2'));
 
         return view('user.Paiement.ok');
 //        dd($paiement);

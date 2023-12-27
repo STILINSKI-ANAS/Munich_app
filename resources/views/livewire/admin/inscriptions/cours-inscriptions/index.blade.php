@@ -81,41 +81,54 @@
             </thead>
             <tbody>
             @if ($etudiants && $etudiants->count() > 0)
-             @foreach($etudiants as $etudiant)
-                <tr>
-                    <th>
-                        <p class="b3">{{ $etudiant->courses[0]->level }}</p>
-                    </th>
-                    <td>
-                        <p class="">{{ $etudiant->nom.' '.$etudiant->prenom}}</p>
-                    </td>
-                    <td>
-                        <span class="b3">{{ $etudiant->cin }}</span>
-                    </td>
-                    <td>
-                        <span class="">{{ $etudiant->courses[0]->pivot->created_at->format('Y-m-d') }}</span>
-                    </td>
-                    <td>
-                        <span class="b3">{{ $etudiant->addresse }}</span>
-                    </td>
-                    <td>
-                        <span class="">{{ $etudiant->status }}</span>
-                    </td>
-                    <td>
-                        @if ($etudiant->status == "en attente")
-                            <form method="POST" action="{{ route('validerCoursePayment') }}">
-                                @csrf
-                                <input type="hidden" name="idEtudiant" value="{{ $etudiant->id }}">
-                                <button type="submit" class="rbt-btn btn-xs bg-color-primary color-white radius-round" title="Valider">
-                                    Valider
-                                </button>
-                            </form>
-                        @endif
-                    </td>
-                </tr>
-            @endforeach
+                @foreach($etudiants as $etudiant)
+                    <tr>
+                        <th>
+                            <p class="b3">{{ $etudiant->courses[0]->level }}</p>
+                        </th>
+                        <td>
+                            <p class="">{{ $etudiant->nom.' '.$etudiant->prenom}}</p>
+                        </td>
+                        <td>
+                            <span class="b3">{{ $etudiant->cin }}</span>
+                        </td>
+                        <td>
+                            <span class="">{{ $etudiant->courses[0]->pivot->created_at->format('Y-m-d') }}</span>
+                        </td>
+                        <td>
+                            <span class="b3">{{ $etudiant->addresse }}</span>
+                        </td>
+                        <td>
+                            <span class="">{{ $etudiant->status }}</span>
+                        </td>
+                        <td class="d-flex justify-content-around gap-2 flex-column">
+                            @if ($etudiant->status_1 == "en attente")
+                                <form method="POST" action="{{ route('validerCoursePayment1') }}">
+                                    @csrf
+                                    <input type="hidden" name="idEtudiant" value="{{ $etudiant->id }}">
+                                    <button type="submit"
+                                            class="rbt-btn btn-xs bg-color-primary color-white radius-round"
+                                            title="Valider 1">
+                                        Valider 1
+                                    </button>
+                                </form>
+                            @endif
+                            @if ($etudiant->status_2 == "en attente")
+                                <form method="POST" action="{{ route('validerCoursePayment2') }}">
+                                    @csrf
+                                    <input type="hidden" name="idEtudiant" value="{{ $etudiant->id }}">
+                                    <button type="submit"
+                                            class="rbt-btn btn-xs bg-color-secondary color-white radius-round"
+                                            title="Valider 2">
+                                        Valider 2
+                                    </button>
+                                </form>
+                            @endif
+                        </td>
+                    </tr>
+                @endforeach
             @else
-            <p class="text-danger"> No etudiants found using this search attributs</p>
+                <p class="text-danger"> No etudiants found using this search attributs</p>
             @endif
 
             </tbody>

@@ -14,6 +14,8 @@ return new class extends Migration {
             $table->id();
             $table->string('oid')->nullable();
             $table->string('status')->nullable();
+            $table->string('status_1')->default('en attente');
+            $table->string('status_2')->default('en attente');
             $table->decimal('amount', 8, 2)->nullable();
             $table->date('date');
             $table->unsignedBigInteger('etudiant_id')->nullable();

@@ -26,7 +26,8 @@ return new class extends Migration {
             $table->string('villeResidence')->nullable();
             $table->string('paysResidence')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->string('status')->default('en attente');
+            $table->string('status_1')->default('en attente');
+            $table->string('status_2')->default('en attente');
             $table->string('status_pro')->nullable();
             $table->string('Cours')->nullable();
             $table->string('langue')->nullable();

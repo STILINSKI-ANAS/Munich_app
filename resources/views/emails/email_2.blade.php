@@ -27,12 +27,7 @@
     <li>Titulaire du compte: CDLFC Institut-Munich</li>
     <li>RIB: 007010000798200000010641</li>
     <li>CODE SWIFT: BCMAMAMC</li>
-    @if($data['course'] !== null)
-        <li>Montant total à payer: {{ $data['amount'] }}Dh
-        </li>
-    @else
-        <li>Montant total à payer: ${{ $data['amount'] }}Dh</li>
-    @endif
+    <li>Montant total à payer: ${{ $data['amount'] }}Dh</li>
 </ul>
 
 <p>Il est nécessaire et obligatoire d'envoyer le reçu du virement sur lequel le candidat mentionnera son nom et

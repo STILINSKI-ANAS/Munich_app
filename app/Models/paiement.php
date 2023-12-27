@@ -15,6 +15,8 @@ class paiement extends Pivot
         'id',
         'oid',
         'status',
+        'status_1',
+        'status_2',
         'amount',
         'date',
         'etudiant_id',
