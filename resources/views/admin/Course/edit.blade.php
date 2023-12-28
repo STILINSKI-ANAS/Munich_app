@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <h4 class="accordion-header card-header">
         Course Info
 
@@ -70,9 +70,8 @@
                 <div class="col-lg-12">
                     <div class="course-field mb--15">
                         <label for="description">Content</label>
-                        <textarea required id="description" rows="5" placeholder="Add your course benefits here."
-                                  name="content">{{$course->content }}</textarea>
-                        <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
+                        <div id="content" name="content" class="quill-editor">{!! $course->content !!}</div>
+                        <input type="hidden" name="content" id="hiddenContentInput">
                     </div>
                 </div>
                 <div class="course-field mb--20">
@@ -108,5 +107,19 @@
 
         <!-- End Course Field Wrapper  -->
     </div>
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
+    <!-- Initialize Quill editor -->
+    <script>
+        // Content Quill editor
+        var contentQuill = new Quill('#content', {
+            theme: 'snow'
+        });
+
+        contentQuill.on('text-change', function () {
+            var hiddenContentInput = document.getElementById('hiddenContentInput');
+            hiddenContentInput.value = contentQuill.root.innerHTML;
+        });
+    </script>
 @endsection

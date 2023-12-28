@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <h4 class="accordion-header card-header">
         Course Info
 
@@ -80,73 +80,91 @@
                 <div class="col-lg-12">
                     <div class="course-field mb--15">
                         <label for="description">Content</label>
-                        <textarea required id="description" rows="5" placeholder="Add your course benefits here."
-                                  name="content">{{$test->content }}</textarea>
-                        <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
+                        <div id="content" name="content" class="quill-editor">{!! $test->content !!}</div>
+                        <input type="hidden" name="content" id="hiddenContentInput">
                     </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="course-field mb--15">
-                        <label for="description">Features (separated by commas):</label>
-                        @php
-                            $featuresArray = json_decode($test->features, true);
-                            $featuresString = implode(', ', $featuresArray);
-                            //dump($test->features);
-                        @endphp
-                        <textarea required id="description" rows="5" placeholder="Add The test Features here"
-                                  name="features">{{$featuresString}}</textarea>
-                        <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
+                    <div class="col-lg-12">
+                        <div class="course-field mb--15">
+                            <label for="description">Les Caractéristiques</label>
+                            <div id="features" name="features" class="quill-editor">{!! $test->features !!}</div>
+                            <input type="hidden" name="features" id="hiddenFeaturesInput">
+                            <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
+                        </div>
                     </div>
-                </div>
-                <div class="course-field mb--20">
-                    <h6>Vignette de la langue</h6>
+                    <div class="course-field mb--20">
+                        <h6>Vignette de la langue</h6>
 
-                    <div class="rbt-create-course-thumbnail upload-area">
-                        <div class="upload-area">
-                            <div class="brows-file-wrapper" data-black-overlay="9">
-                                <!-- actual upload which is hidden -->
-                                <input id="createinputfile" type="file" class="inputfile" name="Image">
-                                <img id="createfileImage" src="{{ asset("uploads/Test/$test->image") }}"
-                                     alt="file image">
-                                <!-- our custom upload button -->
-                                <label class="d-flex" for="createinputfile" title="No File Choosen">
-                                    <i class="feather-upload"></i>
-                                    <span class="text-center">Choisissez un fichier</span>
-                                </label>
+                        <div class="rbt-create-course-thumbnail upload-area">
+                            <div class="upload-area">
+                                <div class="brows-file-wrapper" data-black-overlay="9">
+                                    <!-- actual upload which is hidden -->
+                                    <input id="createinputfile" type="file" class="inputfile" name="Image">
+                                    <img id="createfileImage" src="{{ asset("uploads/Test/$test->image") }}"
+                                         alt="file image">
+                                    <!-- our custom upload button -->
+                                    <label class="d-flex" for="createinputfile" title="No File Choosen">
+                                        <i class="feather-upload"></i>
+                                        <span class="text-center">Choisissez un fichier</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <small><i class="feather-info"></i> <b>Size:</b> 700x430 pixels, <b>Type de Fichiers
+                                Supporté:</b>
+                            JPG, JPEG, PNG</small>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="course-field mb--15">
+                            <label for="language">Cours inclus</label>
+                            <div class="rbt-modern-select bg-transparent height-50 mb--10">
+                                <select required name="course_id" class="w-100" data-live-search="true"
+                                        title="{{$test->name}}" multiple data-size="7" data-actions-box="true"
+                                        data-selected-text-format="count > 2" id="course_id" tabindex="null">
+                                    @foreach($courses as $course)
+                                        <option name="course_id"
+                                                value="{{ $course->id }}" {{ $test->course_id == $course->id ? 'selected' : '' }}>
+                                            {{ $course->level }}
+                                        </option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                     </div>
 
-                    <small><i class="feather-info"></i> <b>Size:</b> 700x430 pixels, <b>Type de Fichiers Supporté:</b>
-                        JPG, JPEG, PNG</small>
                 </div>
-                <div class="col-lg-6">
-                    <div class="course-field mb--15">
-                        <label for="language">Cours inclus</label>
-                        <div class="rbt-modern-select bg-transparent height-50 mb--10">
-                            <select required name="course_id" class="w-100" data-live-search="true"
-                                    title="{{$test->name}}" multiple data-size="7" data-actions-box="true"
-                                    data-selected-text-format="count > 2" id="course_id" tabindex="null">
-                                @foreach($courses as $course)
-                                    <option name="course_id"
-                                            value="{{ $course->id }}" {{ $test->course_id == $course->id ? 'selected' : '' }}>
-                                        {{ $course->level }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
+                <div class="form-group mb--0">
+                    <button class="rbt-btn rbt-switch-btn btn-gradient radius-round btn-sm" type="submit">
+                        <span data-text="Submit Now">Submit Now</span>
+                    </button>
                 </div>
-
-            </div>
-            <div class="form-group mb--0">
-                <button class="rbt-btn rbt-switch-btn btn-gradient radius-round btn-sm" type="submit">
-                    <span data-text="Submit Now">Submit Now</span>
-                </button>
-            </div>
         </form>
 
         <!-- End Course Field Wrapper  -->
     </div>
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
+    <!-- Initialize Quill editor -->
+    <script>
+        // Content Quill editor
+        var contentQuill = new Quill('#content', {
+            theme: 'snow'
+        });
+
+        // Features Quill editor
+        var featuresQuill = new Quill('#features', {
+            theme: 'snow'
+        });
+
+        contentQuill.on('text-change', function () {
+            var hiddenContentInput = document.getElementById('hiddenContentInput');
+            hiddenContentInput.value = contentQuill.root.innerHTML;
+        });
+
+        featuresQuill.on('text-change', function () {
+            var hiddenFeaturesInput = document.getElementById('hiddenFeaturesInput');
+            hiddenFeaturesInput.value = featuresQuill.root.innerHTML;
+        });
+    </script>
 @endsection

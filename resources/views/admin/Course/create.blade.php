@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <h4 class="card-title">
         <i class="feather-book-open"></i>
         Informations sur le Cours :
@@ -40,7 +40,8 @@
                     <!-- Max Placements -->
                     <div class="course-field mb--15">
                         <label for="field-1">Nombre maximum de places: </label>
-                        <input id="field-1" type="number" placeholder="Entrez le nombre maximum de places disponibles" name="max_placements" required>
+                        <input id="field-1" type="number" placeholder="Entrez le nombre maximum de places disponibles"
+                               name="max_placements" required>
                         <small><i class="feather-info"></i> <b>Par exemple:</b> 100</small>
                     </div>
                     <div class="col-lg-6">
@@ -62,9 +63,8 @@
                     <div class="col-lg-6">
                         <div class="course-field mb--15">
                             <label for="description">Content</label>
-                            <textarea id="content" required name="content" rows="5"
-                                      placeholder="Add your course benefits here."></textarea>
-                            <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
+                            <div id="content" name="content" class="quill-editor" required></div>
+                            <input type="hidden" name="content" id="hiddenContentInput">
                         </div>
                     </div>
 
@@ -99,8 +99,22 @@
                     </button>
                 </div>
         </form>
-
         <!-- End Course Field Wrapper  -->
     </div>
 
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <!-- Initialize Quill editor -->
+    <script>
+        // Content Quill editor
+        var contentQuill = new Quill('#content', {
+            theme: 'snow'
+        });
+
+        contentQuill.on('text-change', function () {
+            var hiddenContentInput = document.getElementById('hiddenContentInput');
+            hiddenContentInput.value = contentQuill.root.innerHTML;
+        });
+    </script>
 @endsection

@@ -72,7 +72,6 @@
                                 <li class="color-white"><i class="feather-globe color-white"></i>{{ $langue }}</li>
                                 <li class="color-white"><i class="feather-award color-white"></i>Examen certifié</li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -95,7 +94,7 @@
                             @if((($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null)))
                                 <div class="col-xxl-12 col-xl-12 col-lg-12 text-center">
                                     <div
-                                        class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-around">
+                                            class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-around">
                                         <div class="rbt-price">
                                             <span class="current-price text-white" style="font-size: 32px">{{ $price }} MAD</span>
                                             <span class="off-price text-white">{{ $price * 1.4 }} MAD</span>
@@ -118,8 +117,8 @@
                                 <!--                        </div>-->
                                 <input type="text" name="testId" required value="{{$testId}}" hidden>
                                 <button
-                                    class="rbt-btn btn-white hover-icon-reverse w-100 d-block text-center mt--15"
-                                    type="submit">
+                                        class="rbt-btn btn-white hover-icon-reverse w-100 d-block text-center mt--15"
+                                        type="submit">
                             <span class="icon-reverse-wrapper">
                             <span class="btn-text">S'inscrire</span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -201,7 +200,7 @@
                          aria-labelledby="profile-tab-4">
                         <div class="content w-100">
                             <!-- Détails contenu ici -->
-                            @include('components.details')
+                            {!! $content !!}
                         </div>
                     </div>
                 </div>
@@ -246,43 +245,27 @@
                         <div class="col-lg-10 offset-lg-1">
 
                             <div class="tab-content advance-tab-content-style-3">
-                                <div class="tab-pane fade active show align-items-center" id="test-content" role="tabpanel"
+                                <div class="tab-pane fade active show align-items-center" id="test-content"
+                                     role="tabpanel"
                                      aria-labelledby="apercu-tab">
 
                                     <div class="py-2">
                                         <div class="card h-100 text-white">
                                             <div class="card-body rbt-course-feature-inner p-3">
                                                 <div class="d-flex gap-2 align-items-center">
-                                                    <div class="icon-container d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; border-radius: 50%; background-color: #f64d4d;">
-                                                        <img src="http://127.0.0.1:8000/assets/images/icons/book-alt.png" style="width: 24px; height: 24px; object-fit: cover;" alt="elite" class="icon">
+                                                    <div class="icon-container d-flex justify-content-center align-items-center"
+                                                         style="width: 40px; height: 40px; border-radius: 50%; background-color: #f64d4d;">
+                                                        <img src="http://127.0.0.1:8000/assets/images/icons/book-alt.png"
+                                                             style="width: 24px; height: 24px; object-fit: cover;"
+                                                             alt="elite" class="icon">
                                                     </div>
                                                     <h6 class="card-title">Detail sur {{ $title }} ?</h6>
                                                 </div>
 
                                                 <div class="row g-5 mb--30 my-1">
-
-                                                    @php
-                                                    $featuresArray = json_decode($features, true);
-                                                    $totalItems = count($featuresArray);
-                                                    // $totalItems = 6; // Total number of items
-                                                    $i = 0;
-                                                    @endphp
-
-                                                    @foreach ($featuresArray as $feature)
-                                                    @if ($i % 3 === 0)
                                                     <div class="">
-                                                        <ul class="rbt-list-style-1">
-                                                            @endif
-
-                                                            <li><i class="feather-check"></i>{{ $feature }}</li>
-
-                                                            @php $i++; @endphp
-
-                                                            @if ($i % 3 === 0 || $loop->last)
-                                                        </ul>
+                                                        {!! $features !!}
                                                     </div>
-                                                    @endif
-                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
@@ -305,19 +288,19 @@
                                                     <ul class="rbt-list-style-1">
                                                         <li><i class="feather-calendar"></i><span>Le matin de</span>
                                                             <strong
-                                                                class="text-primary"> &nbsp; 9h00 </strong> &nbsp; à
+                                                                    class="text-primary"> &nbsp; 9h00 </strong> &nbsp; à
                                                             <strong
-                                                                class="text-primary"> &nbsp; 12h00</strong></li>
+                                                                    class="text-primary"> &nbsp; 12h00</strong></li>
                                                         <li><i class="feather-calendar"></i><span>L’après-midi de</span>
                                                             &nbsp;<strong
-                                                                class="text-primary"> </strong> à <strong
-                                                                class="text-primary"> &nbsp;18h00</strong>
+                                                                    class="text-primary"> </strong> à <strong
+                                                                    class="text-primary"> &nbsp;18h00</strong>
                                                         </li>
                                                         <li><i class="feather-calendar"></i><span>Le soir de</span>
                                                             <strong
-                                                                class="text-primary"> &nbsp;19h00 </strong> &nbsp; à
+                                                                    class="text-primary"> &nbsp;19h00 </strong> &nbsp; à
                                                             <strong
-                                                                class="text-primary"> &nbsp; 22h00</strong></li>
+                                                                    class="text-primary"> &nbsp; 22h00</strong></li>
                                                     </ul>
                                                 </div>
                                                 <!-- End Feture Box  -->
@@ -343,8 +326,8 @@
                                                                 <div class="rbt-card-img">
                                                                     <a href="{{url('/Language/Course/'.$course->level)}}">
                                                                         <img
-                                                                            src="{{ asset('assets/images/course/'. $course->image) }}"
-                                                                            alt="Card image">
+                                                                                src="{{ asset('assets/images/course/'. $course->image) }}"
+                                                                                alt="Card image">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -367,7 +350,7 @@
                                                                     </div>
 
                                                                     <h4 class="rbt-card-title"><a
-                                                                            href="{{url('/Language/Course/'.$course->level)}}">{{ $course->level }}
+                                                                                href="{{url('/Language/Course/'.$course->level)}}">{{ $course->level }}
                                                                         </a>
                                                                     </h4>
 
@@ -378,7 +361,7 @@
                                                                         <div class="rbt-price">
                                                                             <span class="current-price">{{ $course->price }} MAD</span>
                                                                             <span
-                                                                                class="off-price">{{ $course->price * 1.4 }} MAD</span>
+                                                                                    class="off-price">{{ $course->price * 1.4 }} MAD</span>
                                                                         </div>
                                                                         <a class="rbt-btn-link"
                                                                            href="{{url('/Language/Course/'.$course->level)}}">En

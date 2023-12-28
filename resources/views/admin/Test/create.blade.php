@@ -10,6 +10,7 @@
 @extends('layouts.admin')
 
 @section('content')
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <h4 class="card-title">
         <i class="feather-book-open"></i>
         Informations sur le Cours :
@@ -76,16 +77,15 @@
                     <div class="col-lg-6">
                         <div class="course-field mb--15">
                             <label for="description">Content</label>
-                            <textarea id="content" required name="content" rows="5"
-                                      placeholder="Add your course benefits here."></textarea>
-                            <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
+                            <div id="content" name="content" class="quill-editor" required></div>
+                            <input type="hidden" name="content" id="hiddenContentInput">
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="course-field mb--15">
-                            <label for="description">Features (separated by commas):</label>
-                            <textarea required id="description" rows="5" placeholder="Add The test Features here"
-                                      name="features"></textarea>
+                            <label for="description">Les Caractéristiques</label>
+                            <div id="features" name="features" class="quill-editor" required></div>
+                            <input type="hidden" name="features" id="hiddenFeaturesInput">
                             <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
                         </div>
                     </div>
@@ -142,6 +142,31 @@
         </form>
         <!-- End Course Field Wrapper  -->
     </div>
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <!-- Initialize Quill editor -->
+    <script>
+        // Content Quill editor
+        var contentQuill = new Quill('#content', {
+            theme: 'snow'
+        });
+
+        // Features Quill editor
+        var featuresQuill = new Quill('#features', {
+            theme: 'snow'
+        });
+
+        contentQuill.on('text-change', function () {
+            var hiddenContentInput = document.getElementById('hiddenContentInput');
+            hiddenContentInput.value = contentQuill.root.innerHTML;
+        });
+
+        featuresQuill.on('text-change', function () {
+            var hiddenFeaturesInput = document.getElementById('hiddenFeaturesInput');
+            hiddenFeaturesInput.value = featuresQuill.root.innerHTML;
+        });
+    </script>
 @endsection
 
 <script>

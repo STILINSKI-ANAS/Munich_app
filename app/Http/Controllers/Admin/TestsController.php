@@ -42,11 +42,7 @@ class TestsController extends Controller
         $test->time = $validatedData['time'];
         $test->content = $validatedData['content'];
         $test->language_id = $validatedData['language_id'];
-
-        $featuresArray = explode(',', $validatedData['features']);
-        $featuresArray = array_filter(array_map('trim', $featuresArray));
-        $featuresJson = json_encode($featuresArray);
-        $test->features = $featuresJson;
+        $test->features = $validatedData['features'];
 
         if ($request->hasFile('Image')) {
             $file = $request->file('Image');
@@ -85,11 +81,7 @@ class TestsController extends Controller
         $test->max_placements = $validatedData['max_placements'];
         $test->language_id = $validatedData['language_id'];
         $test->course_id = $validatedData['course_id'];
-
-        $featuresArray = explode(',', $validatedData['features']);
-        $featuresArray = array_filter(array_map('trim', $featuresArray));
-        $featuresJson = json_encode($featuresArray);
-        $test->features = $featuresJson;
+        $test->features = $validatedData['features'];
 
         if ($request->hasFile('Image')) {
             $path = 'uploads/Test/' . $test->image;
