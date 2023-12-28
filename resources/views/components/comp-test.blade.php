@@ -232,13 +232,6 @@
                                         </a>
                                     </li>
                                     <li role="presentation">
-                                        <a href="#" class="tab-button" id="details-tab" data-bs-toggle="tab"
-                                           data-bs-target="#horaire" role="tab" aria-controls="horaire"
-                                           aria-selected="false">
-                                            <span class="title">Horaire</span>
-                                        </a>
-                                    </li>
-                                    <li role="presentation">
                                         <a href="#" class="tab-button" id="cours-inclue-tab" data-bs-toggle="tab"
                                            data-bs-target="#cours-inclue" role="tab" aria-controls="cours-inclue"
                                            aria-selected="false">

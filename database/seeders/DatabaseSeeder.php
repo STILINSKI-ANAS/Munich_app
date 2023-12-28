@@ -15,9 +15,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdminUserSeeder::class,
             LanguageSeeder::class,
-            CategorySeeder::class,
-            CourseSeeder::class,
-            TestSeeder::class,
+            CoursesTableSeeder::class,
+            CategoriesTableSeeder::class,
+            TestsTableSeeder::class,
+            PaiementTableSeeder::class
         ]);
         // \App\Models\User::factory(10)->create();
 

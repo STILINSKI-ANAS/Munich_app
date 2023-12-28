@@ -125,7 +125,8 @@ Route::prefix('/')->group(function () {
 
     Route::middleware(['web'])->group(function () {
         Route::get('/', [HomeController::class, 'index'])->name('root');
-        Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy']);
+        Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
+        Route::get('/thank-you', [HomeController::class, 'thankyou']);
         Route::get('/blog', [HomeController::class, 'blog']);
         Route::get('/blog1', [HomeController::class, 'blog1']);
         Route::get('/blog2', [HomeController::class, 'blog2']);
