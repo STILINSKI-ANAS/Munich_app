@@ -54,6 +54,13 @@ class HomeController extends Controller
             'categories' => $categories
         ]);
     }
+    public function thankyou()
+    {
+//        $languages = Language::all();
+//        $tests = Test::all();
+//        $categories = Category::all();
+        return view('user.thankyou');
+    }
 
 
     public function aboutUs()
