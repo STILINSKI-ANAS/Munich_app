@@ -255,7 +255,7 @@
                                                 <div class="d-flex gap-2 align-items-center">
                                                     <div class="icon-container d-flex justify-content-center align-items-center"
                                                          style="width: 40px; height: 40px; border-radius: 50%; background-color: #f64d4d;">
-                                                        <img src="http://127.0.0.1:8000/assets/images/icons/book-alt.png"
+                                                        <img src="{{ asset('assets/images/icons/book-alt.png') }}"
                                                              style="width: 24px; height: 24px; object-fit: cover;"
                                                              alt="elite" class="icon">
                                                     </div>
