@@ -57,6 +57,7 @@ class PaiementController extends Controller
             'nom' => $validatedData['nom'],
             'prenom' => $validatedData['prenom'],
             'cin' => $validatedData['cin'],
+            'email' => $validatedData['email'],
             'dateNaissance' => $validatedData['date_naissance'],
             'lieuNaissance' => $validatedData['lieu_naissance'],
             'langueMaternelle' => $validatedData['langue_maternelle'],
@@ -104,10 +105,12 @@ class PaiementController extends Controller
             ]);
         }
 
+        // update etudiant
         $etudiant->update([
             'nom' => $validatedData['nom'],
             'prenom' => $validatedData['prenom'],
             'cin' => $validatedData['cin'],
+            'email' => $validatedData['email'],
             'dateNaissance' => $validatedData['date_naissance'],
             'lieuNaissance' => $validatedData['lieu_naissance'],
             'langueMaternelle' => $validatedData['langue_maternelle'],
