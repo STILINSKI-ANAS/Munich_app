@@ -71,7 +71,7 @@
                     <div class="course-field mb--15">
                         <label for="description">Content</label>
                         <div id="content" name="content" class="quill-editor">{!! $course->content !!}</div>
-                        <input type="hidden" name="content" id="hiddenContentInput">
+                        <input type="hidden" name="content" id="hiddenContentInput" value="{{$course->content}}">
                     </div>
                 </div>
                 <div class="course-field mb--20">

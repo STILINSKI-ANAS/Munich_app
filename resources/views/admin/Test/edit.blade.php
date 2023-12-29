@@ -81,13 +81,13 @@
                     <div class="course-field mb--15">
                         <label for="description">Content</label>
                         <div id="content" name="content" class="quill-editor">{!! $test->content !!}</div>
-                        <input type="hidden" name="content" id="hiddenContentInput">
+                        <input type="hidden" name="content" id="hiddenContentInput" value="{{$test->content}}">
                     </div>
                     <div class="col-lg-12">
                         <div class="course-field mb--15">
                             <label for="description">Les Caractéristiques</label>
                             <div id="features" name="features" class="quill-editor">{!! $test->features !!}</div>
-                            <input type="hidden" name="features" id="hiddenFeaturesInput">
+                            <input type="hidden" name="features" id="hiddenFeaturesInput" value="{{$test->features}}">
                             <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
                         </div>
                     </div>
