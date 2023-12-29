@@ -110,6 +110,9 @@
                                 <h4 class="checkout-title">Votre Commande</h4>
 
                                 <div class="checkout-cart-total">
+                                    <div style="margin-bottom: 18px;">
+                                        <h4>Test</h4>
+                                    </div>
                                     <!-- Test card: image, name and price -->
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="gap-2 d-flex align-items-start justify-content-start">
@@ -134,8 +137,6 @@
                                         <p>Cours Inclue: {{ $test->course->level }}
                                             <span>{{ $course_inclue_price }}DH</span></p>
                                     @endif
-                                    <p>Sous Totale <span>{{ $sub_total }}DH</span></p>
-                                    <p>Taxe <span>{{ $tax }}DH</span></p>
 
                                     <h4 class="mt--30">Totale <span>{{ $total }}DH</span></h4>
 

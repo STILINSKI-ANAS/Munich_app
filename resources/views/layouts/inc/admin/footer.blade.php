@@ -41,7 +41,31 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-down"
                      data-sal-duration="800">
-
+                    <div class="footer-widget">
+                        <h5 class="ft-title">Notre Institut</h5>
+                        <ul class="ft-link">
+                            <li>
+                                <a href="{{ url('/privacy-policy') }}">
+                                    Politique de confidentialité
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/Instructor/register') }}">
+                                    Devenir Enseignant
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/blog') }}">
+                                    Articles
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/aboutUs') }}">
+                                    A propos de nous
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-left"
@@ -56,22 +80,22 @@
                                     href="mailto:info@institut-munich.ma">info@institut-munich.ma</a></li>
                         </ul>
 
-{{--                        <form class="newsletter-form mt--20" action="#">--}}
-{{--                            <h6 class="w-600">Newsletter</h6>--}}
-{{--                            <p class="description">Plus de 2000 de nos étudiants sont inscrits partout dans Agadir.<br>--}}
-{{--                                Ne soyez pas timide, présentez-vous !</p>--}}
+                        {{--                        <form class="newsletter-form mt--20" action="#">--}}
+                        {{--                            <h6 class="w-600">Newsletter</h6>--}}
+                        {{--                            <p class="description">Plus de 2000 de nos étudiants sont inscrits partout dans Agadir.<br>--}}
+                        {{--                                Ne soyez pas timide, présentez-vous !</p>--}}
 
-{{--                            <div class="form-group right-icon icon-email mb--20">--}}
-{{--                                <label for="email">Entrez votre e-mail ici</label>--}}
-{{--                                <input id="email" type="email">--}}
-{{--                            </div>--}}
+                        {{--                            <div class="form-group right-icon icon-email mb--20">--}}
+                        {{--                                <label for="email">Entrez votre e-mail ici</label>--}}
+                        {{--                                <input id="email" type="email">--}}
+                        {{--                            </div>--}}
 
-{{--                            <div class="form-group mb--0">--}}
-{{--                                <button class="rbt-btn rbt-switch-btn btn-gradient radius-round btn-sm" type="submit">--}}
-{{--                                    <span data-text="Soumettre">Soumettre</span>--}}
-{{--                                </button>--}}
-{{--                            </div>--}}
-{{--                        </form>--}}
+                        {{--                            <div class="form-group mb--0">--}}
+                        {{--                                <button class="rbt-btn rbt-switch-btn btn-gradient radius-round btn-sm" type="submit">--}}
+                        {{--                                    <span data-text="Soumettre">Soumettre</span>--}}
+                        {{--                                </button>--}}
+                        {{--                            </div>--}}
+                        {{--                        </form>--}}
                     </div>
                 </div>
             </div>
