@@ -18,7 +18,7 @@
                             <div class="content">
                                 <h3 class="counter without-icon color-primary"><span class="odometer" data-count="30">00</span>
                                 </h3>
-                                <span class="rbt-title-style-2 d-block">Enrolled Courses</span>
+                                <span class="rbt-title-style-2 d-block">TOTAL COURSES</span>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                             <div class="content">
                                 <h3 class="counter without-icon color-secondary"><span class="odometer" data-count="10">00</span>
                                 </h3>
-                                <span class="rbt-title-style-2 d-block">ACTIVE COURSES</span>
+                                <span class="rbt-title-style-2 d-block">TOTAL EXAMS</span>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                             <div class="content">
                                 <h3 class="counter without-icon color-violet"><span class="odometer" data-count="7">00</span>
                                 </h3>
-                                <span class="rbt-title-style-2 d-block">Completed Courses</span>
+                                <span class="rbt-title-style-2 d-block">pending Earnings</span>
                             </div>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                             <div class="content">
                                 <h3 class="counter without-icon color-coral"><span class="odometer" data-count="20">00</span>
                                 </h3>
-                                <span class="rbt-title-style-2 d-block">Total Courses</span>
+                                <span class="rbt-title-style-2 d-block">Total users</span>
                             </div>
                         </div>
                     </div>
@@ -131,61 +131,29 @@
                             <tr>
                                 <th>Course Name</th>
                                 <th>Enrolled</th>
-                                <th>Rating</th>
+                                <th>Earnings</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
                                 <th><a href="#">Accounting</a></th>
                                 <td>50</td>
-                                <td>
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </td>
+                                <td>10.000 MAD</td>
                             </tr>
                             <tr>
                                 <th><a href="#">Marketing</a></th>
                                 <td>40</td>
-                                <td>
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </td>
+                                <td>10.000 MAD</td>
                             </tr>
                             <tr>
                                 <th><a href="#">Web Design</a></th>
                                 <td>75</td>
-                                <td>
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </td>
+                                <td>10.000 MAD</td>
                             </tr>
                             <tr>
                                 <th><a href="#">Graphic</a></th>
                                 <td>20</td>
-                                <td>
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="off fas fa-star"></i>
-                                        <i class="off fas fa-star"></i>
-                                        <i class="off fas fa-star"></i>
-                                    </div>
-                                </td>
+                                <td>10.000 MAD</td>
                             </tr>
                             </tbody>
                         </table>
@@ -199,4 +167,57 @@
 
         </div>
     </div>
+    <div class="rbt-dashboard-content bg-color-white rbt-shadow-box mb--60">
+    <div class="content">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h4 class="rbt-title-style-3">My Exams</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row gy-5">
+            <div class="col-lg-12">
+                <div class="rbt-dashboard-table table-responsive">
+                    <table class="rbt-table table table-borderless">
+                        <thead>
+                        <tr>
+                            <th>Exam Name</th>
+                            <th>Enrolled</th>
+                            <th>Earnings</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th><a href="#">Accounting</a></th>
+                            <td>50</td>
+                            <td>10.000 MAD</td>
+                        </tr>
+                        <tr>
+                            <th><a href="#">Marketing</a></th>
+                            <td>40</td>
+                            <td>10.000 MAD</td>
+                        </tr>
+                        <tr>
+                            <th><a href="#">Web Design</a></th>
+                            <td>75</td>
+                            <td>10.000 MAD</td>
+                        </tr>
+                        <tr>
+                            <th><a href="#">Graphic</a></th>
+                            <td>20</td>
+                            <td>10.000 MAD</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="load-more-btn text-center">
+                    <a class="rbt-btn-link" href="#">Browse All Exams<i class="feather-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 @endsection
