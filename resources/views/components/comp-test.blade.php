@@ -87,36 +87,37 @@
             <div class="container">
                 <div class="row g-5 align-items-center content-wrapper">
                     @if(auth()->check())
-                        <form method="POST" action="{{ route('EtudiantTest') }}"
-                              enctype="multipart/form-data">
-                            @csrf
+                        @if(auth()->user()->email_verified_at != null)
+                            <form method="POST" action="{{ route('EtudiantTest') }}"
+                                  enctype="multipart/form-data">
+                                @csrf
 
-                            @if((($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null)))
-                                <div class="col-xxl-12 col-xl-12 col-lg-12 text-center">
-                                    <div
+                                @if((($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null)))
+                                    <div class="col-xxl-12 col-xl-12 col-lg-12 text-center">
+                                        <div
                                             class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-around">
-                                        <div class="rbt-price">
-                                            <span class="current-price text-white" style="font-size: 32px">{{ $price }} MAD</span>
-                                            <span class="off-price text-white">{{ $price * 1.4 }} MAD</span>
+                                            <div class="rbt-price">
+                                                <span class="current-price text-white" style="font-size: 32px">{{ $price }} MAD</span>
+                                                <span class="off-price text-white">{{ $price * 1.4 }} MAD</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <input class="text-white" name="nom" id="nom" type="text" required>
-                                    <label class="text-white">Nom de famille</label>
-                                    <span class="focus-border"></span>
-                                </div>
-                                <div class="form-group">
-                                    <input class="text-white" name="prenom" id="prenom" type="text" required>
-                                    <label class="text-white">Prénom</label>
-                                    <span class="focus-border"></span>
-                                </div>
-                                <!--                        <div>-->
-                                <!--                            <labela>supp1</labela>-->
-                                <!--                            <input type="text" name="supp1" placeholder="question supplémentaire 1">-->
-                                <!--                        </div>-->
-                                <input type="text" name="testId" required value="{{$testId}}" hidden>
-                                <button
+                                    <div class="form-group">
+                                        <input class="text-white" name="nom" id="nom" type="text" required>
+                                        <label class="text-white">Nom de famille</label>
+                                        <span class="focus-border"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="text-white" name="prenom" id="prenom" type="text" required>
+                                        <label class="text-white">Prénom</label>
+                                        <span class="focus-border"></span>
+                                    </div>
+                                    <!--                        <div>-->
+                                    <!--                            <labela>supp1</labela>-->
+                                    <!--                            <input type="text" name="supp1" placeholder="question supplémentaire 1">-->
+                                    <!--                        </div>-->
+                                    <input type="text" name="testId" required value="{{$testId}}" hidden>
+                                    <button
                                         class="rbt-btn btn-white hover-icon-reverse w-100 d-block text-center mt--15"
                                         type="submit">
                             <span class="icon-reverse-wrapper">
@@ -124,18 +125,26 @@
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                             </span>
-                                </button>
-                            @else
-                                <div class="col-xxl-12 col-xl-12 col-lg-12">
-                                    <div class="inner">
-                                        <div class="content text-start">
-                                            <h2 class="title color-white mb--0">L'examen a atteint le maximum de places
-                                                disponibles !</h2>
+                                    </button>
+                                @else
+                                    <div class="col-xxl-12 col-xl-12 col-lg-12">
+                                        <div class="inner">
+                                            <div class="content text-start">
+                                                <h2 class="title color-white mb--0">L'examen a atteint le maximum de
+                                                    places
+                                                    disponibles !</h2>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endif
-                        </form>
+                                @endif
+                            </form>
+                        @else
+                            <div class="alert alert-warning" role="alert">
+                                S'il vous plaît vérifiez votre email pour continuer. <a
+                                    href="{{ route('verification.notice') }}">Cliquez ici pour renvoyer le mail de
+                                    vérification.</a>
+                            </div>
+                        @endif
                     @else
                         {{--<div>logged out</div>--}}
                         <div class="col-xxl-6 col-xl-6 col-lg-6">
@@ -253,8 +262,9 @@
                                         <div class="card h-100 text-white">
                                             <div class="card-body rbt-course-feature-inner p-3">
                                                 <div class="d-flex gap-2 align-items-center">
-                                                    <div class="icon-container d-flex justify-content-center align-items-center"
-                                                         style="width: 40px; height: 40px; border-radius: 50%; background-color: #f64d4d;">
+                                                    <div
+                                                        class="icon-container d-flex justify-content-center align-items-center"
+                                                        style="width: 40px; height: 40px; border-radius: 50%; background-color: #f64d4d;">
                                                         <img src="{{ asset('assets/images/icons/book-alt.png') }}"
                                                              style="width: 24px; height: 24px; object-fit: cover;"
                                                              alt="elite" class="icon">
@@ -288,19 +298,19 @@
                                                     <ul class="rbt-list-style-1">
                                                         <li><i class="feather-calendar"></i><span>Le matin de</span>
                                                             <strong
-                                                                    class="text-primary"> &nbsp; 9h00 </strong> &nbsp; à
+                                                                class="text-primary"> &nbsp; 9h00 </strong> &nbsp; à
                                                             <strong
-                                                                    class="text-primary"> &nbsp; 12h00</strong></li>
+                                                                class="text-primary"> &nbsp; 12h00</strong></li>
                                                         <li><i class="feather-calendar"></i><span>L’après-midi de</span>
                                                             &nbsp;<strong
-                                                                    class="text-primary"> </strong> à <strong
-                                                                    class="text-primary"> &nbsp;18h00</strong>
+                                                                class="text-primary"> </strong> à <strong
+                                                                class="text-primary"> &nbsp;18h00</strong>
                                                         </li>
                                                         <li><i class="feather-calendar"></i><span>Le soir de</span>
                                                             <strong
-                                                                    class="text-primary"> &nbsp;19h00 </strong> &nbsp; à
+                                                                class="text-primary"> &nbsp;19h00 </strong> &nbsp; à
                                                             <strong
-                                                                    class="text-primary"> &nbsp; 22h00</strong></li>
+                                                                class="text-primary"> &nbsp; 22h00</strong></li>
                                                     </ul>
                                                 </div>
                                                 <!-- End Feture Box  -->
@@ -326,8 +336,8 @@
                                                                 <div class="rbt-card-img">
                                                                     <a href="{{url('/Language/Course/'.$course->level)}}">
                                                                         <img
-                                                                                src="{{ asset('assets/images/course/'. $course->image) }}"
-                                                                                alt="Card image">
+                                                                            src="{{ asset('assets/images/course/'. $course->image) }}"
+                                                                            alt="Card image">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -350,7 +360,7 @@
                                                                     </div>
 
                                                                     <h4 class="rbt-card-title"><a
-                                                                                href="{{url('/Language/Course/'.$course->level)}}">{{ $course->level }}
+                                                                            href="{{url('/Language/Course/'.$course->level)}}">{{ $course->level }}
                                                                         </a>
                                                                     </h4>
 
@@ -361,7 +371,7 @@
                                                                         <div class="rbt-price">
                                                                             <span class="current-price">{{ $course->price }} MAD</span>
                                                                             <span
-                                                                                    class="off-price">{{ $course->price * 1.4 }} MAD</span>
+                                                                                class="off-price">{{ $course->price * 1.4 }} MAD</span>
                                                                         </div>
                                                                         <a class="rbt-btn-link"
                                                                            href="{{url('/Language/Course/'.$course->level)}}">En
@@ -385,13 +395,11 @@
                         </div>
 
 
-
                     </div>
                 </div>
 
             </div>
         </div>
-
 
 
         <!-- End inscrir Action Bottom  -->

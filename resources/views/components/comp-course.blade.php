@@ -55,51 +55,60 @@
             <div class="container">
                 <div class="row g-5 align-items-center content-wrapper">
                     @if(auth()->check())
-                        <form method="POST" action="{{ url('/EtudiantCourse')}}" enctype="multipart/form-data">
-                            @csrf
+                        @if(auth()->user()->email_verified_at != null)
+                            <form method="POST" action="{{ url('/EtudiantCourse')}}" enctype="multipart/form-data">
+                                @csrf
 
-                            @if(($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null))
-                                <div class="col-xxl-12 col-xl-12 col-lg-12 text-center">
-                                    <div
-                                        class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-around">
-                                        <div class="rbt-price">
-                                            <span class="current-price text-white" style="font-size: 32px">{{ $price }} MAD</span>
-                                            <span class="off-price text-white">{{ $price * 1.4 }} MAD</span>
+                                @if(($totalEtudiantsInscrits < $maxPlacements) || ($maxPlacements == null))
+                                    <div class="col-xxl-12 col-xl-12 col-lg-12 text-center">
+                                        <div
+                                            class="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-around">
+                                            <div class="rbt-price">
+                                                <span class="current-price text-white" style="font-size: 32px">{{ $price }} MAD</span>
+                                                <span class="off-price text-white">{{ $price * 1.4 }} MAD</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <input class="text-white" name="nom" id="nom" type="text" required>
-                                    <label class="text-white">Nom de famille</label>
-                                    <span class="focus-border"></span>
-                                </div>
-                                <div class="form-group">
-                                    <input class="text-white" name="prenom" id="prenom" type="text" required>
-                                    <label class="text-white">Prénom</label>
-                                    <span class="focus-border"></span>
-                                </div>
+                                    <div class="form-group">
+                                        <input class="text-white" name="nom" id="nom" type="text" required>
+                                        <label class="text-white">Nom de famille</label>
+                                        <span class="focus-border"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="text-white" name="prenom" id="prenom" type="text" required>
+                                        <label class="text-white">Prénom</label>
+                                        <span class="focus-border"></span>
+                                    </div>
 
-                                <input type="text" name="courseId" required value="{{$courseId}}" hidden>
-                                <button
-                                    class="rbt-btn btn-white hover-icon-reverse w-100 d-block text-center mt--15"
-                                    type="submit">
+                                    <input type="text" name="courseId" required value="{{$courseId}}" hidden>
+                                    <button
+                                        class="rbt-btn btn-white hover-icon-reverse w-100 d-block text-center mt--15"
+                                        type="submit">
                             <span class="icon-reverse-wrapper">
                             <span class="btn-text">S'inscrire</span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                 <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                             </span>
-                                </button>
-                            @else
-                                <div class="col-xxl-12 col-xl-12 col-lg-12">
-                                    <div class="inner">
-                                        <div class="content text-start">
-                                            <h2 class="title color-white mb--0">L'examen a atteint le maximum de places
-                                                disponibles !</h2>
+                                    </button>
+                                @else
+                                    <div class="col-xxl-12 col-xl-12 col-lg-12">
+                                        <div class="inner">
+                                            <div class="content text-start">
+                                                <h2 class="title color-white mb--0">L'examen a atteint le maximum de
+                                                    places
+                                                    disponibles !</h2>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endif
-                        </form>
+                                @endif
+                            </form>
+                        @else
+                            <div class="alert alert-warning" role="alert">
+                                S'il vous plaît vérifiez votre email pour continuer. <a
+                                    href="{{ route('verification.notice') }}">Cliquez ici pour renvoyer le mail de
+                                    vérification.</a>
+                            </div>
+                        @endif
                     @else
                         {{--<div>logged out</div>--}}
                         <div class="col-xxl-6 col-xl-6 col-lg-6">
