@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\Etudiant;
 use App\Models\EtudiantCourse;
 use App\Models\EtudiantTest;
+use App\Models\Language;
 use App\Models\paiement;
 use App\Models\Test;
 use App\Notifications\ExamInvoiceNotification;
@@ -336,8 +337,8 @@ class PaiementController extends Controller
         ];
         Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_1'));
         // Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_2'));
-
-        return view('user.Paiement.ok');
+        $languages = Language::all();
+        return view('user.Paiement.ok')->with(['languages' => $languages]);
 //        dd($paiement);
 //        $this->requestPayment($cmiClient, $data);
 
@@ -419,7 +420,8 @@ class PaiementController extends Controller
         };
 
         Notification::route('mail', $data['to_email'])->notify(new ExamInvoiceNotification($data));
-        return view('user.Paiement.ok');
+        $languages = Language::all();
+        return view('user.Paiement.ok')->with(['languages' => $languages]);
     }
 
     /**
