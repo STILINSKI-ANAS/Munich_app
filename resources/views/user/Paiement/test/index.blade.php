@@ -116,7 +116,7 @@
 
                                 <div class="checkout-cart-total">
                                     <div style="margin-bottom: 18px;">
-                                        <h4>Test</h4>
+                                        <h4>Examen</h4>
                                     </div>
                                     <!-- Test card: image, name and price -->
                                     <div class="d-flex align-items-center justify-content-between">
@@ -139,8 +139,24 @@
                                     </div>
 
                                     @if($test->course_id)
-                                        <p>Cours Inclue: {{ $test->course->level }}
-                                            <span>{{ $course_inclue_price }}DH</span></p>
+                                        <p>Cours Inclue:</p>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="gap-2 d-flex align-items-start justify-content-start">
+                                                <!-- Image -->
+                                                <div class="product-image w-25">
+                                                    <img src="{{ asset('uploads/Course/'. $test->course->image) }}" alt="Card image">
+                                                </div>
+
+                                                <!-- Name -->
+                                                <div class="product-content">
+                                                    <h5 class="product-title">{{ $test->course->level }}</h5>
+                                                </div>
+                                            </div>
+                                            <!-- Price -->
+                                            <div class="product-price">
+                                                <span class="price">{{ $course_inclue_price }}DH</span>
+                                            </div>
+                                        </div>
                                     @endif
 
                                     <h4 class="mt--30">Totale <span>{{ $total }}DH</span></h4>
