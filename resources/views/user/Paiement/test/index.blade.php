@@ -6,6 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Institut Munich - Paiement</title>
+    <style>
+        .terms-label-paiment:hover {
+            color: #e22626;
+        }
+    </style>
 </head>
 <body>
 @extends('layouts.user')
@@ -179,7 +184,7 @@
                 <!-- Acceptance of Terms and Pricing Policy -->
                 <div class="mt-1 ms-3">
                     <input type="checkbox" id="terms" name="terms" value="terms">
-                    <label for="terms">J'accepte les conditions et la politique de confidentialité</label>
+                    <label for="terms" class="terms-label-paiment">J'accepte les conditions et la politique de confidentialité</label>
                 </div>
 
                 <div class="modal-footer">

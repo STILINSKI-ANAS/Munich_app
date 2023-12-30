@@ -6,6 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Institut Munich - Paiement</title>
+    <style>
+        .terms-label-paiment:hover {
+            color: #e22626;
+        }
+    </style>
 </head>
 <body>
 @extends('layouts.user')
@@ -167,35 +172,16 @@
                     avant de confirmer
                     votre commande.
                 </div>
-                <h5 class="ms-3">
-                    Les conditions et la politique de confidentialité
-                </h5>
+                <a href="{{ route('privacyPolicy') }}" target="_blank" class="p-2">Voir Les conditions et la politique
+                    de confidentialité</a>
                 <!-- Conditions and privacy policy -->
-                <div class="modal-body" style="max-height: 200px; overflow-y: auto;">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi blanditiis culpa, debitis
-                    dolor dolore ea eos exercitationem iure laboriosam mollitia officiis porro reprehenderit,
-                    repudiandae sit, velit voluptas! Adipisci, provident?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, blanditiis corporis deleniti eum minus
-                    modi molestiae, nam repellendus tempora ut vel voluptatum? Incidunt mollitia nostrum odio
-                    repellendus vero vitae voluptatum?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad deserunt dignissimos dolore, doloribus
-                    incidunt ipsa minus molestias! Aut autem consectetur exercitationem inventore maxime, provident quia
-                    recusandae rerum sed sit tempore.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quos sit temporibus velit?
-                    Architecto eaque ipsum maxime molestiae. Consequuntur eveniet ipsa labore repellat saepe soluta
-                    voluptates. At ea eos illum!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eos facere iusto minima nisi odio, qui
-                    quo, recusandae veniam voluptas voluptatem voluptatibus? Adipisci doloremque ea facere, inventore
-                    nam nostrum repellat!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aspernatur ducimus exercitationem
-                    maiores pariatur quaerat, recusandae temporibus totam! Accusantium alias dolores error illo ipsam
-                    perspiciatis quibusdam quos repellendus sit!
-                </div>
 
                 <!-- Acceptance of Terms and Pricing Policy -->
-                <div class="mt-3 ms-3">
+                <div class="mt-1 ms-3">
                     <input type="checkbox" id="terms" name="terms" value="terms">
-                    <label for="terms">J'accepte les conditions et la politique de confidentialité</label>
+                    <label for="terms" class="terms-label-paiment">
+                        J'accepte les conditions et la politique de confidentialité
+                    </label>
                 </div>
 
                 <div class="modal-footer">
