@@ -6,7 +6,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h4 class="rbt-title-style-3">Users</h4>
+                        <h4 class="rbt-title-style-3">Admin Users</h4>
+                        <p class="mb-0">Here you can manage the admin users.</p>
+                        <br>
                     </div>
                 </div>
             </div>
