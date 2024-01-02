@@ -171,6 +171,12 @@ Route::prefix('/')->group(function () {
         Route::post('/validerCoursePayment2', 'validerCoursePayment2')->name('validerCoursePayment2');
         Route::post('/validerTestPayment1', 'validerTestPayment1')->name('validerTestPayment1');
         Route::post('/validerTestPayment2', 'validerTestPayment2')->name('validerTestPayment2');
+        Route::get('/payment-success', function () {
+            return view('user.Paiement.ok');
+        })->name('paymentSuccess');
+        Route::get('/payment-fail', function () {
+            return view('user.Paiement.fail');
+        })->name('paymentFail');
 
         //notez que vous pouvez utiliser le chemin que vous voulez, mais vous devez utiliser la méthode de rappel (callback) implémentée dans la trait CmiGateway
         Route::post('/cmi/callback', [\App\Http\Controllers\PaiementController::class, 'callback'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);

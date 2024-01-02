@@ -338,7 +338,9 @@ class PaiementController extends Controller
         Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_1'));
         // Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_2'));
         $languages = Language::all();
-        return view('user.Paiement.ok')->with(['languages' => $languages]);
+
+        return redirect()->route('paymentSuccess', ['oid' => $oid, 'languages' => $languages]);
+
 //        dd($paiement);
 //        $this->requestPayment($cmiClient, $data);
 

@@ -80,7 +80,7 @@ class LoginController extends Controller
         $request->session()->invalidate();
 
         // Customize the redirect or response after logout
-        return back();
+        return redirect('/');
     }
 
     /**
