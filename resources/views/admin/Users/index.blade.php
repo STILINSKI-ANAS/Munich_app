@@ -32,8 +32,11 @@
                                     <td>
                                         <form method="post" action="{{ url('admin/Users/SetAdmin/'.$user->id) }}">
                                             @csrf
-                                            <button type="submit" class="rbt-btn btn-xs">
-                                                {{ $user->role_as == 1 ? 'Revoke Admin' : 'Make Admin' }}
+                                            <button type="submit"
+                                                    title="{{ $user->role_as == 1 ? 'Revoke Admin' : 'Make Admin' }}"
+                                                    class="btn btn-md {{ $user->role_as == 1 ? 'btn-danger' : 'btn-success' }}">
+                                                <i class="fas {{ $user->role_as == 1 ? 'fa-user-slash' : 'fa-user-shield' }}" style="margin-right: 5px;"></i>
+                                                <span>{{ $user->role_as == 1 ? 'Revoke Admin' : 'Make Admin' }}</span>
                                             </button>
                                         </form>
                                     </td>

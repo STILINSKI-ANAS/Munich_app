@@ -60,9 +60,8 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     # Users
     Route::controller(\App\Http\Controllers\Admin\UserController::class)->group(function () {
         Route::get('/Users', 'index')->name('Users');
-        Route::get('/Users/SetAdmin/{user}', 'setAdmin');
+        Route::post('/Users/SetAdmin/{user}', 'setAdmin');
     });
-
 
     Route::controller(\App\Http\Controllers\Admin\CoursController::class)->group(function () {
         Route::get('/Course', 'index');

@@ -22,10 +22,12 @@ class UserController extends Controller
      */
     public function setAdmin(User $user)
     {
-        $user->role_as = 1; // Set role_as to 1 for admin
+        // Toggle admin status
+        $user->role_as = $user->role_as == 1 ? 0 : 1;
         $user->save();
 
-        // Redirect back or to another page with a success message
-        return redirect()->back()->with('success', 'User set as admin successfully');
+        $status = $user->role_as == 1 ? 'set as admin' : 'revoked as admin';
+        // Redirect back with a success message
+        return redirect()->back()->with('success', "User's role successfully {$status}.");
     }
 }
