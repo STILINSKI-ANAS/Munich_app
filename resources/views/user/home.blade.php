@@ -22,11 +22,20 @@
                                 <!--                                <h1 class="title">Hey! Build Your <span class="theme-gradient">Life</span> <strong>With-->
                                 <!--                                        John Lee</strong></h1>-->
                                 <div class="button-group mt--30">
-                                    @if (Route::has('login'))
-                                        <a class="rbt-btn btn-gradient rbt-marquee-btn" href="{{ route('register') }}">
-                                            <span data-text="Get Started Today">S'inscrire Maintenant</span>
+                                    @guest()
+                                        @if (Route::has('login'))
+                                            <a class="rbt-btn btn-gradient rbt-marquee-btn"
+                                               href="{{ route('register') }}">
+                                                <span data-text="Get Started Today">S'inscrire Maintenant</span>
+                                            </a>
+                                        @endif
+                                    @else
+                                        <a class="rbt-btn btn-gradient" href="#">
+                                            <span>
+                                                Bienvenue {{ Auth::user()->name }}
+                                            </span>
                                         </a>
-                                    @endif
+                                    @endguest
                                 </div>
                             </div>
                         </div>
