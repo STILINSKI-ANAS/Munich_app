@@ -43,6 +43,8 @@ class TestsController extends Controller
         $test->content = $validatedData['content'];
         $test->language_id = $validatedData['language_id'];
         $test->features = $validatedData['features'];
+        $test->start_date = $validatedData['start_date'];
+        $test->end_date = $validatedData['end_date'];
 
         if ($request->hasFile('Image')) {
             $file = $request->file('Image');
@@ -82,6 +84,8 @@ class TestsController extends Controller
         $test->language_id = $validatedData['language_id'];
         $test->course_id = $validatedData['course_id'];
         $test->features = $validatedData['features'];
+        $test->start_date = $validatedData['start_date'];
+        $test->end_date = $validatedData['end_date'];
 
         if ($request->hasFile('Image')) {
             $path = 'uploads/Test/' . $test->image;

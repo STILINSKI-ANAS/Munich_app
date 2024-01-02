@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -27,6 +26,8 @@ return new class extends Migration
             $table->unsignedBigInteger('course_id')->default(1);
             $table->foreign('language_id')->references('id')->on('languages');
             $table->foreign('course_id')->references('id')->on('courses');
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
             $table->timestamps();
         });
     }

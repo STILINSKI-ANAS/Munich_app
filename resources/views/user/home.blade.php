@@ -45,9 +45,25 @@
                                                 </div>
                                                 <div class="rbt-card-body">
                                                     <ul class="rbt-meta">
-                                                        <li><i class="feather-users"></i>50 Students</li>
+                                                        <li>
+                                                            <i class="feather-calendar"></i>
+                                                            <!-- Start Date -->
+                                                            @if($test['start_date'] == null)
+                                                                {{ $test['start_date'] = 'Aucune Date' }}
+                                                            @else
+                                                                {{ $test['start_date'] }}
+                                                            @endif
+                                                        </li>
                                                         |
-                                                        <li><i class="feather-calendar"></i>11/02/2023</li>
+                                                        <li>
+                                                            <i class="feather-calendar"></i>
+                                                            <!-- End Date -->
+                                                            @if($test['end_date'] == null)
+                                                                {{ $test['end_date'] = 'Aucune Date' }}
+                                                            @else
+                                                                {{ $test['end_date'] }}
+                                                            @endif
+                                                        </li>
 
                                                     </ul>
                                                     <h4 class="rbt-card-title"><a

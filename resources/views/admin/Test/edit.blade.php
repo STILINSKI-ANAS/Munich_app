@@ -37,6 +37,26 @@
                     </div>
                 </div>
 
+                <!-- Start Date -->
+                <div class="col-lg-6">
+                    <div class="course-field mb--15">
+                        <label for="field-1">Date de début: </label>
+                        <input id="field-1" type="date" placeholder="Entrez la date de début" name="start_date"
+                               required value="{{$test->start_date }}">
+                        <small><i class="feather-info"></i> <b>Par exemple:</b> 2021-01-01</small>
+                    </div>
+                </div>
+
+                <!-- End Date -->
+                <div class="col-lg-6">
+                    <div class="course-field mb--15">
+                        <label for="field-1">Date de fin: </label>
+                        <input id="field-1" type="date" placeholder="Entrez la date de fin" name="end_date"
+                               required value="{{$test->end_date }}">
+                        <small><i class="feather-info"></i> <b>Par exemple:</b> 2021-01-01</small>
+                    </div>
+                </div>
+
                 <div class="col-lg-6">
                     <div class="course-field mb--15">
                         <label for="language">Language</label>

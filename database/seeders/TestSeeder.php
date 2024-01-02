@@ -32,6 +32,8 @@ class TestSeeder extends Seeder
                 'image' => 'WIDAF.jpg',
                 'short_description' => '-',
                 'course_id' => 1,
+                'start_date' => '2024-02-19',
+                'end_date' => '2024-05-19',
             ],
             [
                 'id' => 2,
@@ -49,6 +51,8 @@ class TestSeeder extends Seeder
                 'image' => '1693676624-DSH.jpg',
                 'short_description' => '-',
                 'course_id' => 2,
+                'start_date' => '2024-03-19',
+                'end_date' => '2024-06-19',
             ],
             [
                 'id' => 3,
@@ -66,6 +70,8 @@ class TestSeeder extends Seeder
                 'image' => 'DAF.jpg',
                 'short_description' => '-',
                 'course_id' => 2,
+                'start_date' => '2024-04-19',
+                'end_date' => '2024-07-19',
             ],
             // Add additional test records here
         ]);

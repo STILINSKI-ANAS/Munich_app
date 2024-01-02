@@ -21,6 +21,8 @@ class Test extends Model
         'short_description',
         'features',
         'course_id',
+        'start_date',
+        'end_date',
     ];
     protected $casts = [
         'features' => 'array',

@@ -38,6 +38,20 @@
                     <small><i class="feather-info"></i> <b>Par exemple:</b> 100</small>
                 </div>
 
+                <!-- Start Date -->
+                <div class="course-field mb--15">
+                    <label for="field-1">Date de début: </label>
+                    <input id="field-1" type="date" placeholder="Entrez la date de début" name="start_date" required>
+                    <small><i class="feather-info"></i> <b>Par exemple:</b> 2021-01-01</small>
+                </div>
+
+                <!-- End Date -->
+                <div class="course-field mb--15">
+                    <label for="field-1">Date de fin: </label>
+                    <input id="field-1" type="date" placeholder="Entrez la date de fin" name="end_date" required>
+                    <small><i class="feather-info"></i> <b>Par exemple:</b> 2021-01-01</small>
+                </div>
+
                 <div class="col-lg-6">
                     <div class="course-field mb--15">
                         <label for="language">Language</label>
