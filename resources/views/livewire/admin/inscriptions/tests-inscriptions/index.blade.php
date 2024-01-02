@@ -94,7 +94,7 @@
                     <td>{{ $etudiantTest->paiement->status }}</td>
                     <td>{{ $etudiantTest->paiement->amount ?? 'N/A' }}</td>
                     <td class="d-flex justify-content-around gap-2">
-                        @if ($etudiantTest->paiement->status_1 != "confirmé")
+                        @if ($etudiantTest->paiement->status_1 == "en attente")
                             <form method="POST" action="{{ route('validerTestPayment1') }}" style="width: 100%;">
                                 @csrf
                                 <input type="hidden" name="idEtudiant" value="{{ $etudiantTest->etudiant->id }}">
@@ -106,7 +106,7 @@
                                 </button>
                             </form>
                         @endif
-                        @if ($etudiantTest->paiement->status_2 != "confirmé")
+                        @if ($etudiantTest->paiement->status_2 == "en attente")
                             <form method="POST" action="{{ route('validerTestPayment2') }}" style="width: 100%;">
                                 @csrf
                                 <input type="hidden" name="idEtudiant" value="{{ $etudiantTest->etudiant->id }}">
