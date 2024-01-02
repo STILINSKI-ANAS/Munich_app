@@ -4,7 +4,8 @@
     <!-- Content Section -->
 
     <main class="rbt-main-wrapper ">
-        <div class="slider-area rbt-banner-6 variation-01 bg_image bg_image--24 header-transperent-spacer" data-black-overlay="7" style="height: 800px; margin-bottom: 25px">
+        <div class="slider-area rbt-banner-6 variation-01 bg_image bg_image--24 header-transperent-spacer"
+             data-black-overlay="7" style="height: 800px; margin-bottom: 25px">
             <div class="w-100">
                 <div class="container">
                     <div class="row align-items-center justify-content-between">
@@ -12,17 +13,20 @@
                             <div class="inner text-center">
 
                                 <div class="badge-top mb--300">
-                                    <img style= "width: 600px" src="{{ asset('assets/images/logo/logo-white_w.png') }}" alt="Institut Munich Logo">
+                                    <img style="width: 600px" src="{{ asset('assets/images/logo/logo-white_w.png') }}"
+                                         alt="Institut Munich Logo">
                                     <div class="rbt-new-badge rbt-new-badge-one">
-                                        <span class="rbt-new-badge-icon">🏆</span>  Votre porte vers le succès !
+                                        <span class="rbt-new-badge-icon">🏆</span> Votre porte vers le succès !
                                     </div>
                                 </div>
-<!--                                <h1 class="title">Hey! Build Your <span class="theme-gradient">Life</span> <strong>With-->
-<!--                                        John Lee</strong></h1>-->
+                                <!--                                <h1 class="title">Hey! Build Your <span class="theme-gradient">Life</span> <strong>With-->
+                                <!--                                        John Lee</strong></h1>-->
                                 <div class="button-group mt--30">
-                                    <a class="rbt-btn btn-gradient rbt-marquee-btn" href="#">
-                                        <span data-text="Get Started Today">S'inscrire Maintenant</span>
-                                    </a>
+                                    @if (Route::has('login'))
+                                        <a class="rbt-btn btn-gradient rbt-marquee-btn" href="{{ route('register') }}">
+                                            <span data-text="Get Started Today">S'inscrire Maintenant</span>
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -31,36 +35,38 @@
                                 <div class="swiper-wrapper">
                                     @foreach($tests as $test)
 
-                                    <div class="swiper-slide">
-                                        <div class="rbt-card variation-01 rbt-hover">
-                                            <div class="rbt-card-img">
-                                                <a href="{{url('/Language/Test/'.$test->level)}}">
-                                                    <img src="{{ asset('uploads/Test/' . $test['image']) }}" alt="{{ $test['name'] }} Images">
-                                                </a>
-                                            </div>
-                                            <div class="rbt-card-body">
-                                                <ul class="rbt-meta">
-                                                    <li><i class="feather-users"></i>50 Students</li>|
-                                                    <li><i class="feather-calendar"></i>11/02/2023</li>
+                                        <div class="swiper-slide">
+                                            <div class="rbt-card variation-01 rbt-hover">
+                                                <div class="rbt-card-img">
+                                                    <a href="{{url('/Language/Test/'.$test->level)}}">
+                                                        <img src="{{ asset('uploads/Test/' . $test['image']) }}"
+                                                             alt="{{ $test['name'] }} Images">
+                                                    </a>
+                                                </div>
+                                                <div class="rbt-card-body">
+                                                    <ul class="rbt-meta">
+                                                        <li><i class="feather-users"></i>50 Students</li>
+                                                        |
+                                                        <li><i class="feather-calendar"></i>11/02/2023</li>
 
-                                                </ul>
-                                                <h4 class="rbt-card-title"><a href="{{url('/Language/Test/'.$test->level)}}">{{ $test['name'] }}</a>
-                                                </h4>
-                                                <p class="rbt-card-text">{{ substr($test['overview'], 0, 80) }}</p>
+                                                    </ul>
+                                                    <h4 class="rbt-card-title"><a
+                                                            href="{{url('/Language/Test/'.$test->level)}}">{{ $test['name'] }}</a>
+                                                    </h4>
+                                                    <p class="rbt-card-text">{{ substr($test['overview'], 0, 80) }}</p>
 
-                                                <div class="rbt-card-bottom">
-                                                    <div class="rbt-price">
-                                                        <span class="current-price">{{ $test['price'] }} MAD</span>
+                                                    <div class="rbt-card-bottom">
+                                                        <div class="rbt-price">
+                                                            <span class="current-price">{{ $test['price'] }} MAD</span>
+                                                        </div>
+                                                        <a class="rbt-btn-link"
+                                                           href="{{url('/Language/Test/'.$test->level)}}">S'avoir
+                                                            Plus<i class="feather-arrow-right"></i></a>
                                                     </div>
-                                                    <a class="rbt-btn-link" href="{{url('/Language/Test/'.$test->level)}}">S'avoir
-                                                        Plus<i class="feather-arrow-right"></i></a>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                     @endforeach
-
-
 
 
                                 </div>
@@ -85,7 +91,8 @@
                 <div class="row g-5 mt--20 ">
                     <!-- Start Category Box Layout -->
                     @foreach($categories as $category)
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-12"  data-sal-delay="150" data-sal="slide-down" data-sal-duration="800">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-down"
+                             data-sal-duration="800">
                             <a class="rbt-cat-box rbt-cat-box-1 text-center">
                                 <div class="inner">
                                     <div class="icons">
@@ -106,60 +113,70 @@
         </div>
 
 
-
         <!-- Start About Area  -->
         <div class="rbt-about-area bg-color-white rbt-section-gapTop pb_md--80 pb_sm--80 about-style-1">
             <div class="container">
                 <div class="row g-5 align-items-center">
-                    <div class="col-lg-6"data-sal-delay="150" data-sal="slide-right" data-sal-duration="800">
+                    <div class="col-lg-6" data-sal-delay="150" data-sal="slide-right" data-sal-duration="800">
                         <div class="thumbnail-wrapper">
                             <div class="thumbnail image-1">
-                                <img data-parallax='{"x": 0, "y": -20}' src="{{ asset('assets/images/about/about-01.png')}}" alt="Education Images">
+                                <img data-parallax='{"x": 0, "y": -20}'
+                                     src="{{ asset('assets/images/about/about-01.png')}}" alt="Education Images">
                             </div>
                             <div class="thumbnail image-2 d-none d-xl-block">
-                                <img data-parallax='{"x": 0, "y": 60}' src="{{ asset('assets/images/about/about-02.png')}}" alt="Education Images">
+                                <img data-parallax='{"x": 0, "y": 60}'
+                                     src="{{ asset('assets/images/about/about-02.png')}}" alt="Education Images">
                             </div>
                             <div class="thumbnail image-3 d-none d-md-block">
-                                <img data-parallax='{"x": 0, "y": 80}' src="{{ asset('assets/images/about/about-03.png')}}" alt="Education Images">
+                                <img data-parallax='{"x": 0, "y": 80}'
+                                     src="{{ asset('assets/images/about/about-03.png')}}" alt="Education Images">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="inner pl--50 pl_sm--0 pl_md--0"data-sal-delay="150" data-sal="slide-left" data-sal-duration="800">
+                        <div class="inner pl--50 pl_sm--0 pl_md--0" data-sal-delay="150" data-sal="slide-left"
+                             data-sal-duration="800">
                             <div class="section-title text-start">
                                 <span class="subtitle bg-coral-opacity">Qui Nous Sommes</span>
                                 <h3 class="title">Découvrez Notre Institut</h3>
                             </div>
 
-                            <p class="description mt--30">Votre destination pour l'apprentissage des langues. Expérience linguistique enrichissante. Programmes adaptés à tous les niveaux et besoins. Découvrez de nouvelles cultures. Créez des liens internationaux. Ouverture de perspectives professionnelles. Rejoignez-nous dès maintenant.</p>
+                            <p class="description mt--30">Votre destination pour l'apprentissage des langues. Expérience
+                                linguistique enrichissante. Programmes adaptés à tous les niveaux et besoins. Découvrez
+                                de nouvelles cultures. Créez des liens internationaux. Ouverture de perspectives
+                                professionnelles. Rejoignez-nous dès maintenant.</p>
 
                             <!-- Start Feature List  -->
 
-                            <div class="rbt-feature-wrapper mt--20 ml_dec_20"data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                            <div class="rbt-feature-wrapper mt--20 ml_dec_20" data-sal-delay="150" data-sal="slide-up"
+                                 data-sal-duration="800">
                                 <div class="rbt-feature feature-style-2 rbt-radius">
                                     <div class="icon bg-pink-opacity">
                                         <i class="feather-heart"></i>
                                     </div>
                                     <div class="feature-content">
                                         <h6 class="feature-title">Expertise pédagogique </h6>
-                                        <p class="feature-description">Notre expertise pédagogique garantit un enseignement de qualité avec des professeurs passionnés.</p>
+                                        <p class="feature-description">Notre expertise pédagogique garantit un
+                                            enseignement de qualité avec des professeurs passionnés.</p>
                                     </div>
                                 </div>
 
-                                <div class="rbt-feature feature-style-2 rbt-radius"data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                                <div class="rbt-feature feature-style-2 rbt-radius" data-sal-delay="150"
+                                     data-sal="slide-up" data-sal-duration="800">
                                     <div class="icon bg-primary-opacity">
                                         <i class="feather-book"></i>
                                     </div>
                                     <div class="feature-content">
                                         <h6 class="feature-title">Environnement d'apprentissage stimulant</h6>
-                                        <p class="feature-description">Salles de classe modernes, activités culturelles et rencontres internationales.</p>
+                                        <p class="feature-description">Salles de classe modernes, activités culturelles
+                                            et rencontres internationales.</p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- End Feature List  -->
                             <div class="about-btn mt--40">
-                                <a class="rbt-btn btn-gradient hover-icon-reverse"  href="{{ url('/aboutUs') }}">
+                                <a class="rbt-btn btn-gradient hover-icon-reverse" href="{{ url('/aboutUs') }}">
                                     <span class="icon-reverse-wrapper">
                             <span class="btn-text">Plus Sur Nous</span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -178,7 +195,7 @@
         <div class="rbt-callto-action-area mt_dec--half">
             <div class="container">
                 <div class="row g-5">
-                    <div class="col-lg-6"data-sal-delay="150" data-sal="slide-right" data-sal-duration="800">
+                    <div class="col-lg-6" data-sal-delay="150" data-sal="slide-right" data-sal-duration="800">
                         <div class="rbt-callto-action callto-action-default bg-color-white rbt-radius shadow-1">
                             <div class="row align-items-center">
                                 <div class="col-lg-12 col-xl-5">
@@ -192,8 +209,10 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-7">
                                     <div class="video-popup-wrapper mt_lg--10 mt_md--20 mt_sm--20">
-                                        <img class="w-100 rbt-radius" src="{{ asset('assets/images/others/video-01.jpg')}}" alt="Video Images">
-                                        <a class="rbt-btn rounded-player-2 sm-size popup-video position-to-top with-animation" href="https://www.youtube.com/watch?v=Arz7mKqYaOE">
+                                        <img class="w-100 rbt-radius"
+                                             src="{{ asset('assets/images/others/video-01.jpg')}}" alt="Video Images">
+                                        <a class="rbt-btn rounded-player-2 sm-size popup-video position-to-top with-animation"
+                                           href="https://www.youtube.com/watch?v=Arz7mKqYaOE">
                                             <span class="play-icon"></span>
                                         </a>
                                     </div>
@@ -201,7 +220,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6"data-sal-delay="150" data-sal="slide-left" data-sal-duration="800">
+                    <div class="col-lg-6" data-sal-delay="150" data-sal="slide-left" data-sal-duration="800">
                         <div class="rbt-callto-action callto-action-default bg-color-white rbt-radius shadow-1">
                             <div class="row align-items-center">
                                 <div class="col-lg-12">
@@ -210,10 +229,12 @@
                                             <a href="{{ url('/Instructor/register') }}">Devenir Enseignant</a>
                                         </div>
                                         <p class="mb--15">
-                                            Si vous aspirez à devenir enseignant, nous sommes là pour vous aider à réaliser votre ambition.<br>
-                                        Ensemble, nous pouvons façonner l'avenir de l'éducation.</p>
+                                            Si vous aspirez à devenir enseignant, nous sommes là pour vous aider à
+                                            réaliser votre ambition.<br>
+                                            Ensemble, nous pouvons façonner l'avenir de l'éducation.</p>
                                         <div class="about-btn mt--40">
-                                            <a class="rbt-btn btn-gradient hover-icon-reverse" href="{{ url('/Instructor/register') }}">
+                                            <a class="rbt-btn btn-gradient hover-icon-reverse"
+                                               href="{{ url('/Instructor/register') }}">
                                     <span class="icon-reverse-wrapper">
                             <span class="btn-text">Rejoignez maintenant</span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
@@ -244,7 +265,8 @@
                 </div>
                 <div class="row g-5 hanger-line">
                     <!-- Start Single Counter  -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12"data-sal-delay="150" data-sal="slide-left" data-sal-duration="800">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-left"
+                         data-sal-duration="800">
                         <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
                             <div class="top-circle-shape"></div>
                             <div class="inner">
@@ -262,7 +284,8 @@
                     <!-- End Single Counter  -->
 
                     <!-- Start Single Counter  -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--60 mt_md--30 mt_sm--30 mt_mobile--60"data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--60 mt_md--30 mt_sm--30 mt_mobile--60"
+                         data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
                         <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
                             <div class="top-circle-shape"></div>
                             <div class="inner">
@@ -280,7 +303,8 @@
                     <!-- End Single Counter  -->
 
                     <!-- Start Single Counter  -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--60 mt_sm--60"data-sal-delay="150" data-sal="slide-right" data-sal-duration="800">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--60 mt_sm--60" data-sal-delay="150"
+                         data-sal="slide-right" data-sal-duration="800">
                         <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
                             <div class="top-circle-shape"></div>
                             <div class="inner">
@@ -298,7 +322,8 @@
                     <!-- End Single Counter  -->
 
                     <!-- Start Single Counter  -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--60 mt_md--30 mt_sm--30 mt_mobile--60"data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--60 mt_md--30 mt_sm--30 mt_mobile--60"
+                         data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
                         <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
                             <div class="top-circle-shape"></div>
                             <div class="inner">
@@ -422,8 +447,10 @@
                         <div class="rbt-testimonial-box style-2">
                             <div class="inner">
                                 <div class="description">
-                                    <p class="subtitle-3">Institut Munich is the best language institute I have ever known in Agadir Morocco.
-                                        In my opinion they have the highest quality in german language learning around.</p>
+                                    <p class="subtitle-3">Institut Munich is the best language institute I have ever
+                                        known in Agadir Morocco.
+                                        In my opinion they have the highest quality in german language learning
+                                        around.</p>
                                     <div class="clint-info-wrapper">
                                         <div class="client-info">
                                             <h5 class="title">Sami Adili</h5>
@@ -440,8 +467,10 @@
                         <div class="rbt-testimonial-box style-2">
                             <div class="inner">
                                 <div class="description">
-                                    <p class="subtitle-3">Great institute with a great teachers and skilled management stuff.
-                                        this institute takes the language learning in Agadir and Morocco to another level.</p>
+                                    <p class="subtitle-3">Great institute with a great teachers and skilled management
+                                        stuff.
+                                        this institute takes the language learning in Agadir and Morocco to another
+                                        level.</p>
                                     <div class="clint-info-wrapper">
                                         <div class="client-info">
                                             <h5 class="title">Mustapha</h5>
@@ -458,7 +487,8 @@
                         <div class="rbt-testimonial-box style-2">
                             <div class="inner">
                                 <div class="description">
-                                    <p class="subtitle-3">Im learning deutsch in it. And i can say that, Its one of the greatest school in agadir..
+                                    <p class="subtitle-3">Im learning deutsch in it. And i can say that, Its one of the
+                                        greatest school in agadir..
                                         it makes you love the languge that you learn😍😍 …</p>
                                     <div class="clint-info-wrapper">
                                         <div class="client-info">
@@ -476,7 +506,9 @@
                         <div class="rbt-testimonial-box style-2">
                             <div class="inner">
                                 <div class="description">
-                                    <p class="subtitle-3">Institut Munich is the best language institute I have ever known in Agadir Morocco. In my opinion they have the highest quality in german language learning around.
+                                    <p class="subtitle-3">Institut Munich is the best language institute I have ever
+                                        known in Agadir Morocco. In my opinion they have the highest quality in german
+                                        language learning around.
                                     </p>
                                     <div class="clint-info-wrapper">
                                         <div class="client-info">
@@ -494,7 +526,9 @@
                         <div class="rbt-testimonial-box style-2">
                             <div class="inner">
                                 <div class="description">
-                                    <p class="subtitle-3">Great institute with a great teachers and skilled management stuff. this institute takes the language learning in Agadir and Morocco to another level.
+                                    <p class="subtitle-3">Great institute with a great teachers and skilled management
+                                        stuff. this institute takes the language learning in Agadir and Morocco to
+                                        another level.
                                     </p>
                                     <div class="clint-info-wrapper">
                                         <div class="client-info">
@@ -511,8 +545,10 @@
                         <div class="rbt-testimonial-box style-2">
                             <div class="inner">
                                 <div class="description">
-                                    <p class="subtitle-3">Institut Munich is the best language institute I have ever known in Agadir Morocco.
-                                        In my opinion they have the highest quality in german language learning around.</p>
+                                    <p class="subtitle-3">Institut Munich is the best language institute I have ever
+                                        known in Agadir Morocco.
+                                        In my opinion they have the highest quality in german language learning
+                                        around.</p>
                                     <div class="clint-info-wrapper">
                                         <div class="client-info">
                                             <h5 class="title">Sami Adili</h5>
@@ -529,8 +565,10 @@
                         <div class="rbt-testimonial-box style-2">
                             <div class="inner">
                                 <div class="description">
-                                    <p class="subtitle-3">Great institute with a great teachers and skilled management stuff.
-                                        this institute takes the language learning in Agadir and Morocco to another level.</p>
+                                    <p class="subtitle-3">Great institute with a great teachers and skilled management
+                                        stuff.
+                                        this institute takes the language learning in Agadir and Morocco to another
+                                        level.</p>
                                     <div class="clint-info-wrapper">
                                         <div class="client-info">
                                             <h5 class="title">Mustapha</h5>
@@ -547,7 +585,8 @@
                         <div class="rbt-testimonial-box style-2">
                             <div class="inner">
                                 <div class="description">
-                                    <p class="subtitle-3">Im learning deutsch in it. And i can say that, Its one of the greatest school in agadir..
+                                    <p class="subtitle-3">Im learning deutsch in it. And i can say that, Its one of the
+                                        greatest school in agadir..
                                         it makes you love the languge that you learn😍😍 …</p>
                                     <div class="clint-info-wrapper">
                                         <div class="client-info">
@@ -565,7 +604,9 @@
                         <div class="rbt-testimonial-box style-2">
                             <div class="inner">
                                 <div class="description">
-                                    <p class="subtitle-3">Institut Munich is the best language institute I have ever known in Agadir Morocco. In my opinion they have the highest quality in german language learning around.
+                                    <p class="subtitle-3">Institut Munich is the best language institute I have ever
+                                        known in Agadir Morocco. In my opinion they have the highest quality in german
+                                        language learning around.
                                     </p>
                                     <div class="clint-info-wrapper">
                                         <div class="client-info">
@@ -583,7 +624,9 @@
                         <div class="rbt-testimonial-box style-2">
                             <div class="inner">
                                 <div class="description">
-                                    <p class="subtitle-3">Great institute with a great teachers and skilled management stuff. this institute takes the language learning in Agadir and Morocco to another level.
+                                    <p class="subtitle-3">Great institute with a great teachers and skilled management
+                                        stuff. this institute takes the language learning in Agadir and Morocco to
+                                        another level.
                                     </p>
                                     <div class="clint-info-wrapper">
                                         <div class="client-info">
@@ -615,10 +658,11 @@
                 </div>
                 <div class="row g-5">
 
-                    <div class="col-lg-7"data-sal-delay="150" data-sal="slide-right" data-sal-duration="800">
+                    <div class="col-lg-7" data-sal-delay="150" data-sal="slide-right" data-sal-duration="800">
                         <!-- Start Tab Content  -->
                         <div class="rbt-team-tab-content tab-content" id="myTabContent">
-                            <div class="tab-pane fade active show" id="team-tab1" role="tabpanel" aria-labelledby="team-tab1-tab">
+                            <div class="tab-pane fade active show" id="team-tab1" role="tabpanel"
+                                 aria-labelledby="team-tab1-tab">
                                 <div class="inner">
                                     <div class="rbt-team-thumbnail">
                                         <div class="thumb">
@@ -634,7 +678,8 @@
                                 <span class="location">CO Miego, AD,USA</span>
                                             </span>
                                         </div>
-                                        <p>Histudy The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+                                        <p>Histudy The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+                                            below for those interested.</p>
                                         <ul class="social-icon social-default mt--20 justify-content-start">
                                             <li><a href="https://www.facebook.com/">
                                                     <i class="feather-facebook"></i>
@@ -677,7 +722,8 @@
                                 <span class="location">CO Miego, AD,USA</span>
                                             </span>
                                         </div>
-                                        <p>Education The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+                                        <p>Education The standard chunk of Lorem Ipsum used since the 1500s is
+                                            reproduced below for those interested.</p>
                                         <ul class="social-icon social-default mt--20 justify-content-start">
                                             <li><a href="https://www.facebook.com/">
                                                     <i class="feather-facebook"></i>
@@ -720,7 +766,8 @@
                                 <span class="location">CO Miego, AD,USA</span>
                                             </span>
                                         </div>
-                                        <p>React The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+                                        <p>React The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+                                            below for those interested.</p>
                                         <ul class="social-icon social-default mt--20 justify-content-start">
                                             <li><a href="https://www.facebook.com/">
                                                     <i class="feather-facebook"></i>
@@ -763,7 +810,8 @@
                                 <span class="location">CO Miego, AD,USA</span>
                                             </span>
                                         </div>
-                                        <p>Histudy The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+                                        <p>Histudy The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+                                            below for those interested.</p>
                                         <ul class="social-icon social-default mt--20 justify-content-start">
                                             <li><a href="https://www.facebook.com/">
                                                     <i class="feather-facebook"></i>
@@ -806,7 +854,8 @@
                                 <span class="location">CO Miego, AD,USA</span>
                                             </span>
                                         </div>
-                                        <p>Histudy The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+                                        <p>Histudy The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+                                            below for those interested.</p>
                                         <ul class="social-icon social-default mt--20 justify-content-start">
                                             <li><a href="https://www.facebook.com/">
                                                     <i class="feather-facebook"></i>
@@ -849,7 +898,8 @@
                                 <span class="location">CO Miego, AD,USA</span>
                                             </span>
                                         </div>
-                                        <p>Histudy The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+                                        <p>Histudy The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+                                            below for those interested.</p>
                                         <ul class="social-icon social-default mt--20 justify-content-start">
                                             <li><a href="https://www.facebook.com/">
                                                     <i class="feather-facebook"></i>
@@ -881,11 +931,12 @@
                         <!-- End Tab Content  -->
                     </div>
 
-                    <div class="col-lg-5"data-sal-delay="150" data-sal="slide-left" data-sal-duration="800">
+                    <div class="col-lg-5" data-sal-delay="150" data-sal="slide-left" data-sal-duration="800">
                         <!-- Start Tab Nav  -->
                         <ul class="rbt-team-tab-thumb nav nav-tabs" id="myTab" role="tablist">
                             <li>
-                                <a class="active" id="team-tab1-tab" data-bs-toggle="tab" data-bs-target="#team-tab1" role="tab" aria-controls="team-tab1" aria-selected="true">
+                                <a class="active" id="team-tab1-tab" data-bs-toggle="tab" data-bs-target="#team-tab1"
+                                   role="tab" aria-controls="team-tab1" aria-selected="true">
                                     <div class="rbt-team-thumbnail">
                                         <div class="thumb">
                                             <img src="assets/images/team/team-01.jpg" alt="Testimonial Images">
@@ -895,7 +946,8 @@
                             </li>
 
                             <li>
-                                <a id="team-tab2-tab" data-bs-toggle="tab" data-bs-target="#team-tab2" role="tab" aria-controls="team-tab2" aria-selected="false">
+                                <a id="team-tab2-tab" data-bs-toggle="tab" data-bs-target="#team-tab2" role="tab"
+                                   aria-controls="team-tab2" aria-selected="false">
                                     <div class="rbt-team-thumbnail">
                                         <div class="thumb">
                                             <img src="assets/images/team/team-02.jpg" alt="Testimonial Images">
@@ -905,7 +957,8 @@
                             </li>
 
                             <li>
-                                <a id="team-tab3-tab" data-bs-toggle="tab" data-bs-target="#team-tab3" role="tab" aria-controls="team-tab3" aria-selected="false">
+                                <a id="team-tab3-tab" data-bs-toggle="tab" data-bs-target="#team-tab3" role="tab"
+                                   aria-controls="team-tab3" aria-selected="false">
                                     <div class="rbt-team-thumbnail">
                                         <div class="thumb">
                                             <img src="assets/images/team/team-03.jpg" alt="Testimonial Images">
@@ -914,7 +967,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a id="team-tab4-tab" data-bs-toggle="tab" data-bs-target="#team-tab4" role="tab" aria-controls="team-tab4" aria-selected="false">
+                                <a id="team-tab4-tab" data-bs-toggle="tab" data-bs-target="#team-tab4" role="tab"
+                                   aria-controls="team-tab4" aria-selected="false">
                                     <div class="rbt-team-thumbnail">
                                         <div class="thumb">
                                             <img src="assets/images/team/team-04.jpg" alt="Testimonial Images">
@@ -924,7 +978,8 @@
                             </li>
 
                             <li>
-                                <a id="team-tab5-tab" data-bs-toggle="tab" data-bs-target="#team-tab5" role="tab" aria-controls="team-tab5" aria-selected="false">
+                                <a id="team-tab5-tab" data-bs-toggle="tab" data-bs-target="#team-tab5" role="tab"
+                                   aria-controls="team-tab5" aria-selected="false">
                                     <div class="rbt-team-thumbnail">
                                         <div class="thumb">
                                             <img src="assets/images/team/team-05.jpg" alt="Testimonial Images">
@@ -934,7 +989,8 @@
                             </li>
 
                             <li>
-                                <a id="team-tab6-tab" data-bs-toggle="tab" data-bs-target="#team-tab6" role="tab" aria-controls="team-tab6" aria-selected="false">
+                                <a id="team-tab6-tab" data-bs-toggle="tab" data-bs-target="#team-tab6" role="tab"
+                                   aria-controls="team-tab6" aria-selected="false">
                                     <div class="rbt-team-thumbnail">
                                         <div class="thumb">
                                             <img src="assets/images/team/team-06.jpg" alt="Testimonial Images">
@@ -975,7 +1031,8 @@
                 <!-- Start Card Area -->
                 <div class="row row--15">
                     <!-- Start Single Card  -->
-                    <div class="col-lg-6 col-md-12 col-sm-12 col-12 mt--30" data-sal-delay="150" data-sal="slide-right" data-sal-duration="800">
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-12 mt--30" data-sal-delay="150" data-sal="slide-right"
+                         data-sal-duration="800">
                         <div class="rbt-card variation-02 height-330 rbt-hover">
                             <div class="rbt-card-img">
                                 <a href="blog-details.html">
@@ -983,19 +1040,28 @@
                             </div>
                             <div class="rbt-card-body">
                                 <h5 class="rbt-card-title"><a href="{{ url('/blog1') }}">Apprendre l’allemand</a></h5>
-                                <p class="rbt-card-text">L'allemand, une langue aux multiples facettes, vous invite à une aventure passionnante à travers les...</p>
+                                <p class="rbt-card-text">L'allemand, une langue aux multiples facettes, vous invite à
+                                    une aventure passionnante à travers les...</p>
 
                                 <div class="rbt-card-bottom">
-                                    <a class="transparent-button"href="{{ url('/blog1') }}">En savoir plus<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
+                                    <a class="transparent-button" href="{{ url('/blog1') }}">En savoir plus<i>
+                                            <svg width="17" height="12" xmlns="http://www.w3.org/2000/svg">
+                                                <g stroke="#27374D" fill="none" fill-rule="evenodd">
+                                                    <path d="M10.614 0l5.629 5.629-5.63 5.629"/>
+                                                    <path stroke-linecap="square" d="M.663 5.572h14.594"/>
+                                                </g>
+                                            </svg>
+                                        </i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- End Single Card  -->
-                    <div class="col-lg-6 col-md-12 col-sm-12 col-12 mt--30" >
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-12 mt--30">
 
                         <!-- Start Single Card  -->
-                        <div class="rbt-card card-list variation-02 rbt-hover"data-sal-delay="150" data-sal="slide-down" data-sal-duration="800">
+                        <div class="rbt-card card-list variation-02 rbt-hover" data-sal-delay="150"
+                             data-sal="slide-down" data-sal-duration="800">
                             <div class="rbt-card-img">
                                 <a href="{{ url('/blog2') }}">
                                     <img src="assets/images/blog/blog-card-02.jpg" alt="Image de la carte"> </a>
@@ -1003,14 +1069,22 @@
                             <div class="rbt-card-body">
                                 <h5 class="rbt-card-text">Les Tests d'Allemand Importants</h5>
                                 <div class="rbt-card-bottom">
-                                    <a class="transparent-button" href="{{ url('/blog2') }}">Lire l'article<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
+                                    <a class="transparent-button" href="{{ url('/blog2') }}">Lire l'article<i>
+                                            <svg width="17" height="12" xmlns="http://www.w3.org/2000/svg">
+                                                <g stroke="#27374D" fill="none" fill-rule="evenodd">
+                                                    <path d="M10.614 0l5.629 5.629-5.63 5.629"/>
+                                                    <path stroke-linecap="square" d="M.663 5.572h14.594"/>
+                                                </g>
+                                            </svg>
+                                        </i></a>
                                 </div>
                             </div>
                         </div>
                         <!-- End Single Card  -->
 
                         <!-- Start Single Card  -->
-                        <div class="rbt-card card-list variation-02 rbt-hover mt--30"data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                        <div class="rbt-card card-list variation-02 rbt-hover mt--30" data-sal-delay="150"
+                             data-sal="slide-up" data-sal-duration="800">
                             <div class="rbt-card-img">
                                 <a href="{{ url('/blog3') }}">
                                     <img src="assets/images/blog/blog-card-03.jpg" alt="Image de la carte"> </a>
@@ -1018,22 +1092,37 @@
                             <div class="rbt-card-body">
                                 <h5 class="rbt-card-text">Étudier en Allemagne</h5>
                                 <div class="rbt-card-bottom">
-                                    <a class="transparent-button" href="{{ url('/blog3') }}">Lire l'article<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
+                                    <a class="transparent-button" href="{{ url('/blog3') }}">Lire l'article<i>
+                                            <svg width="17" height="12" xmlns="http://www.w3.org/2000/svg">
+                                                <g stroke="#27374D" fill="none" fill-rule="evenodd">
+                                                    <path d="M10.614 0l5.629 5.629-5.63 5.629"/>
+                                                    <path stroke-linecap="square" d="M.663 5.572h14.594"/>
+                                                </g>
+                                            </svg>
+                                        </i></a>
                                 </div>
                             </div>
                         </div>
                         <!-- End Single Card  -->
 
                         <!-- Start Single Card  -->
-                        <div class="rbt-card card-list variation-02 rbt-hover mt--30"data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                        <div class="rbt-card card-list variation-02 rbt-hover mt--30" data-sal-delay="150"
+                             data-sal="slide-up" data-sal-duration="800">
                             <div class="rbt-card-img">
                                 <a href=""{{ url('/blog4') }}">
-                                    <img src="assets/images/blog/blog-card-01.jpg" alt="Image de la carte"> </a>
+                                <img src="assets/images/blog/blog-card-01.jpg" alt="Image de la carte"> </a>
                             </div>
                             <div class="rbt-card-body">
                                 <h5 class="rbt-card-text">Guide Complet du Visa Schengen</h5>
                                 <div class="rbt-card-bottom">
-                                    <a class="transparent-button" href="{{ url('/blog4') }}">Lire l'article<i><svg width="17" height="12" xmlns="http://www.w3.org/2000/svg"><g stroke="#27374D" fill="none" fill-rule="evenodd"><path d="M10.614 0l5.629 5.629-5.63 5.629"/><path stroke-linecap="square" d="M.663 5.572h14.594"/></g></svg></i></a>
+                                    <a class="transparent-button" href="{{ url('/blog4') }}">Lire l'article<i>
+                                            <svg width="17" height="12" xmlns="http://www.w3.org/2000/svg">
+                                                <g stroke="#27374D" fill="none" fill-rule="evenodd">
+                                                    <path d="M10.614 0l5.629 5.629-5.63 5.629"/>
+                                                    <path stroke-linecap="square" d="M.663 5.572h14.594"/>
+                                                </g>
+                                            </svg>
+                                        </i></a>
                                 </div>
                             </div>
                         </div>
@@ -1052,11 +1141,15 @@
                         <div class="inner text-center">
                             <div class="section-title text-center">
                                 <span class="subtitle bg-white-opacity">Abonnez-Vous</span>
-                                <h3 class="title color-white"data-sal-delay="150" data-sal="slide-down" data-sal-duration="800">Abonnez-Vous À Notre Newsletter</h3>
-                                <p class="description color-white mt--20"data-sal-delay="150" data-sal="slide-down" data-sal-duration="800">Recevoir Des Informations Sur Nos Cours, Nos Événements Spéciaux Et Nos Offres Exclusives.</p>
+                                <h3 class="title color-white" data-sal-delay="150" data-sal="slide-down"
+                                    data-sal-duration="800">Abonnez-Vous À Notre Newsletter</h3>
+                                <p class="description color-white mt--20" data-sal-delay="150" data-sal="slide-down"
+                                   data-sal-duration="800">Recevoir Des Informations Sur Nos Cours, Nos Événements
+                                    Spéciaux Et Nos Offres Exclusives.</p>
                             </div>
-                            <form action="{{ url('/Subscribe')}}" method="post" class="newsletter-form-1 mt--40"data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                                    @csrf
+                            <form action="{{ url('/Subscribe')}}" method="post" class="newsletter-form-1 mt--40"
+                                  data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                                @csrf
                                 <input type="email" name="email" placeholder="Entrez votre adresse e-mail">
                                 <button type="submit" class="rbt-btn btn-md btn-gradient hover-icon-reverse">
                                     <span class="icon-reverse-wrapper">
@@ -1066,7 +1159,8 @@
                                     </span>
                                 </button>
                             </form>
-                            <span class="note-text color-white mt--20"data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Pas de publicité, pas d'essai, pas d'engagement</span>
+                            <span class="note-text color-white mt--20" data-sal-delay="150" data-sal="slide-up"
+                                  data-sal-duration="800">Pas de publicité, pas d'essai, pas d'engagement</span>
 
                             <div class="row row--15 mt--50">
                                 <!-- Start Single Counter -->

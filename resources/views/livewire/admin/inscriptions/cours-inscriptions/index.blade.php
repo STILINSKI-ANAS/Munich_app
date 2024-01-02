@@ -101,27 +101,29 @@
                         <td>
                             <span class="">{{ $etudiant->status }}</span>
                         </td>
-                        <td class="d-flex justify-content-around gap-2 flex-column">
+                        <td class="d-flex justify-content-around gap-2">
                             @if ($etudiant->status_1 == "en attente")
-                                <form method="POST" action="{{ route('validerCoursePayment1') }}">
+                                <form method="POST" action="{{ route('validerCoursePayment1') }}" style="width: 100%;">
                                     @csrf
                                     <input type="hidden" name="idEtudiant" value="{{ $etudiant->id }}">
                                     <input type="hidden" name="idCourse" value="{{ $etudiant->courses[0]->id }}">
                                     <button type="submit"
-                                            class="rbt-btn btn-xs bg-color-primary color-white radius-round"
-                                            title="Valider 1">
-                                        Valider 1
+                                            class="rbt-btn btn-xs bg-color-primary color-white radius-round equal-width-btn"
+                                            style="width: 100%; min-width: 80px;"
+                                            title="CB">
+                                        CB
                                     </button>
                                 </form>
                             @endif
                             @if ($etudiant->status_2 == "en attente")
-                                <form method="POST" action="{{ route('validerCoursePayment2') }}">
+                                <form method="POST" action="{{ route('validerCoursePayment2') }}" style="width: 100%;">
                                     @csrf
                                     <input type="hidden" name="idEtudiant" value="{{ $etudiant->id }}">
                                     <button type="submit"
-                                            class="rbt-btn btn-xs bg-color-secondary color-white radius-round"
-                                            title="Valider 2">
-                                        Valider 2
+                                            class="rbt-btn btn-xs bg-color-secondary color-white radius-round equal-width-btn"
+                                            style="width: 100%; min-width: 80px;"
+                                            title="V">
+                                        V
                                     </button>
                                 </form>
                             @endif

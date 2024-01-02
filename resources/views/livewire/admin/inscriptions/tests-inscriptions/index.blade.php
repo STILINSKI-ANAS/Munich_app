@@ -93,26 +93,28 @@
                     <td>{{ $etudiantTest->paiement->oid }}</td>
                     <td>{{ $etudiantTest->paiement->status }}</td>
                     <td>{{ $etudiantTest->paiement->amount ?? 'N/A' }}</td>
-                    <td class="d-flex justify-content-around gap-2 flex-column">
+                    <td class="d-flex justify-content-around gap-2">
                         @if ($etudiantTest->paiement->status_1 != "confirmé")
-                            <form method="POST" action="{{ route('validerTestPayment1') }}">
+                            <form method="POST" action="{{ route('validerTestPayment1') }}" style="width: 100%;">
                                 @csrf
                                 <input type="hidden" name="idEtudiant" value="{{ $etudiantTest->etudiant->id }}">
                                 <input type="hidden" name="etudiantTest" value="{{ $etudiantTest->id }}">
-                                <button type="submit" class="rbt-btn btn-xs bg-color-primary color-white radius-round"
-                                        title="Valider 1">
-                                    Valider 1
+                                <button type="submit" class="rbt-btn btn-xs bg-color-primary color-white radius-round equal-width-btn"
+                                        title="CB"
+                                        style="width: 100%; min-width: 80px;">
+                                    CB
                                 </button>
                             </form>
                         @endif
                         @if ($etudiantTest->paiement->status_2 != "confirmé")
-                            <form method="POST" action="{{ route('validerTestPayment2') }}">
+                            <form method="POST" action="{{ route('validerTestPayment2') }}" style="width: 100%;">
                                 @csrf
                                 <input type="hidden" name="idEtudiant" value="{{ $etudiantTest->etudiant->id }}">
                                 <input type="hidden" name="etudiantTest" value="{{ $etudiantTest->id }}">
-                                <button type="submit" class="rbt-btn btn-xs bg-color-secondary color-white radius-round"
-                                        title="Valider 2">
-                                    Valider 2
+                                <button type="submit" class="rbt-btn btn-xs bg-color-secondary color-white radius-round equal-width-btn"
+                                        title="V"
+                                        style="width: 100%; min-width: 80px;">
+                                    V
                                 </button>
                             </form>
                         @endif
