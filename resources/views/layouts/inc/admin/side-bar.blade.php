@@ -14,7 +14,9 @@
                         <li><a href="{{ url('admin/Languages') }}"><i class="feather-message-square"></i><span>Langues</span></a></li>
                         <li><a href="{{ url('admin/Course') }}"><i class="feather-book-open"></i><span>Cours</span></a></li>
                         <li><a href="{{ url('admin/Test') }}"><i class="feather-help-circle"></i><span>Tests</span></a></li>
-                        <li><a href="{{ url('admin/Announcements') }}"><i class="feather-volume-2"></i><span>Annonces</span></a></li>                    </ul>
+                        <li><a href="{{ url('admin/Announcements') }}"><i class="feather-volume-2"></i><span>Annonces</span></a></li>
+                        <li><a href="{{ url('admin/Users') }}"><i class="feather-users"></i><span>Utilisateurs (Admin)</span></a></li>
+                    </ul>
                 </nav>
 
                 <div class="section-title mt--40 mb--20">

@@ -58,7 +58,7 @@
                                                             <i class="feather-calendar"></i>
                                                             <!-- Start Date -->
                                                             @if($test['start_date'] == null)
-                                                                {{ $test['start_date'] = 'Aucune Date' }}
+                                                                {{ $test['start_date'] = 'Aucune date de début' }}
                                                             @else
                                                                 {{ $test['start_date'] }}
                                                             @endif
@@ -68,7 +68,7 @@
                                                             <i class="feather-calendar"></i>
                                                             <!-- End Date -->
                                                             @if($test['end_date'] == null)
-                                                                {{ $test['end_date'] = 'Aucune Date' }}
+                                                                {{ $test['end_date'] = 'Aucune date de fin' }}
                                                             @else
                                                                 {{ $test['end_date'] }}
                                                             @endif
