@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $languages = Language::all();
-        $tests = Test::all();
+        $tests = Test::where('is_hidden', false)->get();
         $categories = Category::all();
         $annocements = Announcement::all();
 //        $this->addurltosession($request);
@@ -46,7 +46,7 @@ class HomeController extends Controller
     public function privacyPolicy()
     {
         $languages = Language::all();
-        $tests = Test::all();
+        $tests = Test::where('is_hidden', false)->get();
         $categories = Category::all();
         return view('user.politiques')->with([
             'languages' => $languages,
@@ -54,10 +54,11 @@ class HomeController extends Controller
             'categories' => $categories
         ]);
     }
+
     public function thankyou()
     {
 //        $languages = Language::all();
-//        $tests = Test::all();
+//        $tests = Test::where('is_hidden', false)->get();
 //        $categories = Category::all();
         return view('user.thankyou');
     }
@@ -66,7 +67,7 @@ class HomeController extends Controller
     public function aboutUs()
     {
         $languages = Language::all();
-        $tests = Test::all();
+        $tests = Test::where('is_hidden', false)->get();
         $categories = Category::all();
         return view('user.aboutus')->with([
             'languages' => $languages,
@@ -80,7 +81,7 @@ class HomeController extends Controller
     public function blog()
     {
         $languages = Language::all();
-        $tests = Test::all();
+        $tests = Test::where('is_hidden', false)->get();
         $categories = Category::all();
         return view('user.blog')->with([
             'languages' => $languages,
@@ -92,7 +93,7 @@ class HomeController extends Controller
     public function blog1()
     {
         $languages = Language::all();
-        $tests = Test::all();
+        $tests = Test::where('is_hidden', false)->get();
         $categories = Category::all();
         return view('user.Blogs.blogDetails1')->with([
             'languages' => $languages,
@@ -104,7 +105,7 @@ class HomeController extends Controller
     public function blog2()
     {
         $languages = Language::all();
-        $tests = Test::all();
+        $tests = Test::where('is_hidden', false)->get();
         $categories = Category::all();
         return view('user.Blogs.blogDetails2')->with([
             'languages' => $languages,
@@ -116,7 +117,7 @@ class HomeController extends Controller
     public function blog3()
     {
         $languages = Language::all();
-        $tests = Test::all();
+        $tests = Test::where('is_hidden', false)->get();
         $categories = Category::all();
         return view('user.Blogs.blogDetails3')->with([
             'languages' => $languages,
@@ -128,7 +129,7 @@ class HomeController extends Controller
     public function blog4()
     {
         $languages = Language::all();
-        $tests = Test::all();
+        $tests = Test::where('is_hidden', false)->get();
         $categories = Category::all();
         return view('user.Blogs.blogDetails4')->with([
             'languages' => $languages,
@@ -140,7 +141,7 @@ class HomeController extends Controller
     public function blog5()
     {
         $languages = Language::all();
-        $tests = Test::all();
+        $tests = Test::where('is_hidden', false)->get();
         $categories = Category::all();
         return view('user.Blogs.blogDetails5')->with([
             'languages' => $languages,
@@ -153,7 +154,9 @@ class HomeController extends Controller
     public function getLanguageCourses($languageName)
     {
         $languages = Language::all();
-        $courses = Language::Where('name', $languageName)->first()->courses;
+        $lang = Language::where('name', $languageName)->first();
+        $courses = $lang ? $lang->courses()->where('is_hidden', false)->get() : [];
+
         return view('user.Course.courses')->with([
             'courses' => $courses,
             'languages' => $languages
@@ -164,7 +167,9 @@ class HomeController extends Controller
     {
         try {
             $languages = Language::all();
-            $course = Course::Where('level', $courseLevel)->firstOrFail();
+            $course = Course::Where('level', $courseLevel)
+                ->where('is_hidden', false)
+                ->firstOrFail();
 
             // Le nombres des etudiants inscrits dans le test
             $totalEtudiantsInscrits = $course->etudiants()->count();
@@ -184,11 +189,16 @@ class HomeController extends Controller
     public function getLanguageTests($languageName, Request $request)
     {
         $languages = Language::all();
-        $lang = Language::Where('name', $languageName)->first();
-        $tests = $lang ? $lang->tests : [];
-//        dump($tests);
-//        dd($tests);
-//        $this->addurltosession($request);
+        $lang = Language::where('name', $languageName)->first();
+
+        if ($lang) {
+            // Retrieve only tests where 'is_hidden' is false
+            $tests = $lang->tests()->where('is_hidden', false)->get();
+        } else {
+            $tests = [];
+        }
+
+        // Rest of your code
         return view('user.Test.tests')->with([
             'tests' => $tests,
             'languages' => $languages,
