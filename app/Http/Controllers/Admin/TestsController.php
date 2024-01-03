@@ -72,8 +72,11 @@ class TestsController extends Controller
 
     public function update(TestFormRequest $request, $test)
     {
+
         $test = Test::findOrFail($test);
+
         $validatedData = $request->validated();
+//        dd($validatedData['start_date']);
         $test->name = $validatedData['name'];
         $test->level = $validatedData['level'];
         $test->overview = $validatedData['overview'];
@@ -101,6 +104,7 @@ class TestsController extends Controller
         }
 
         $test->update();
+//        dd($test);
         return redirect('/admin/Test')->with('message', 'Test added successfully');
     }
 }

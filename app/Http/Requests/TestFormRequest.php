@@ -30,6 +30,8 @@ class TestFormRequest extends FormRequest
             'price' => ['required'],
             'max_placements' => ['nullable'],
             'name' => ['required'],
+            'start_date'=>['nullable'],
+            'end_date'=>['nullable'],
             'language_id' => ['required'],
             'course_id' => ['nullable'],
             'Image' => ['nullable', 'mimes:jpg,jpeg,png']

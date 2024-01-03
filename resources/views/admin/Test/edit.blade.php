@@ -42,7 +42,7 @@
                     <div class="course-field mb--15">
                         <label for="field-1">Date de début: </label>
                         <input id="field-1" type="date" placeholder="Entrez la date de début" name="start_date"
-                               required value="{{$test->start_date }}">
+                                value="{{$test->start_date }}">
                         <small><i class="feather-info"></i> <b>Par exemple:</b> 2021-01-01</small>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                     <div class="course-field mb--15">
                         <label for="field-1">Date de fin: </label>
                         <input id="field-1" type="date" placeholder="Entrez la date de fin" name="end_date"
-                               required value="{{$test->end_date }}">
+                                value="{{$test->end_date }}">
                         <small><i class="feather-info"></i> <b>Par exemple:</b> 2021-01-01</small>
                     </div>
                 </div>
