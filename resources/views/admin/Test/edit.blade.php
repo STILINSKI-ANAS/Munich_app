@@ -81,6 +81,7 @@
                     <small class="d-block mt_dec--5"><i class="feather-info"></i> The test Price Includes Your Author
                         Fee.</small>
                 </div>
+
                 <div class="col-lg-12">
                     <div class="course-field mb--15">
                         <label for="whatLearn">Time</label>
@@ -133,6 +134,15 @@
                         <small><i class="feather-info"></i> <b>Size:</b> 700x430 pixels, <b>Type de Fichiers
                                 Supporté:</b>
                             JPG, JPEG, PNG</small>
+                    </div>
+                    <!-- is hidden -->
+                    <div class="course-field mb--15">
+                        <label>Hide Course:</label>
+                        <input id="includeCourse" type="checkbox"
+                               name="is_hidden" {{ $test->is_hidden ? 'checked' : '' }}>
+                        <label for="includeCourse" style="margin-bottom: 10px;">Hide</label>
+                        <small style="margin-bottom: 10px;"><i class="feather-info"></i> Check to hide this course from
+                            users.</small>
                     </div>
                     <div class="col-lg-6">
                         <div class="course-field mb--15">

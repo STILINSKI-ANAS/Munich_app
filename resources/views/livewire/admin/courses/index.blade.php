@@ -41,6 +41,16 @@
             </div>
         </div>
     </div>
+    @if (session()->has('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+    @if (session()->has('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <table class="rbt-table table table-borderless">
         <thead>
         <tr>
@@ -78,7 +88,7 @@
                     <div class="rbt-button-group justify-content-start">
                         <a class="rbt-btn btn-xs bg-primary-opacity radius-round"
                            href="{{ url('admin/Course/'.$course->id.'/edit') }}" title="Edit"><i
-                                    class="feather-edit pl--0"></i></a>
+                                class="feather-edit pl--0"></i></a>
                         <a wire:click.prevent="createButton({{ $course->id }})"
                            onclick="toggleButton({{ $course->id }})"
                            class="rbt-btn btn-xs bg-color-danger-opacity radius-round color-danger" href="#"

@@ -72,6 +72,8 @@ class CoursController extends Controller
         $course->time = $validatedData['time'];
         $course->max_placements = $validatedData['max_placements'];
         $course->language_id = $validatedData['language_id'];
+        $course->is_hidden = $request->has('is_hidden');
+
         if ($request->hasFile('Image')) {
             $path = 'uploads/Course/' . $course->image;
             if (File::exists($path)) {

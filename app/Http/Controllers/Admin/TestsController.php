@@ -86,6 +86,7 @@ class TestsController extends Controller
         $test->features = $validatedData['features'];
         $test->start_date = $validatedData['start_date'];
         $test->end_date = $validatedData['end_date'];
+        $test->is_hidden = $request->has('is_hidden');
 
         if ($request->hasFile('Image')) {
             $path = 'uploads/Test/' . $test->image;

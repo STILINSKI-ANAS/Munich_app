@@ -74,6 +74,15 @@
                         <input type="hidden" name="content" id="hiddenContentInput" value="{{$course->content}}">
                     </div>
                 </div>
+
+                <!-- is hidden -->
+                <div class="course-field mb--15">
+                    <label>Hide Course:</label>
+                    <input id="includeCourse" type="checkbox" name="is_hidden" {{ $course->is_hidden ? 'checked' : '' }}>
+                    <label for="includeCourse" style="margin-bottom: 10px;">Hide</label>
+                    <small style="margin-bottom: 10px;"><i class="feather-info"></i> Check to hide this course from users.</small>
+                </div>
+
                 <div class="course-field mb--20">
                     <h6>Course Thumbnail</h6>
                     <div class="rbt-create-course-thumbnail upload-area">

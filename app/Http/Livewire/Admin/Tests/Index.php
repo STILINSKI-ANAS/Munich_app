@@ -11,6 +11,7 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithPagination;
+
     protected $paginationTheme = 'bootstrap';
     public $name;
     public $showSubmitButton = 'hidden';
@@ -24,7 +25,8 @@ class Index extends Component
 //        dd($this->tests);
     }
 
-    public function createButton($test_id){
+    public function createButton($test_id)
+    {
         $this->test_id = $test_id;
         $this->showSubmitButton = '';
     }
@@ -38,15 +40,21 @@ class Index extends Component
 
     public function destroyTest()
     {
-        $test = Test::find($this->test_id);
-//        dd($language);
-        if ($test->Image){
-            $path = 'uploads/language/'. $test->Image;
-            File::delete($path);
+        try {
+            $test = Test::find($this->test_id);
+            if ($test->Image) {
+                $path = 'uploads/language/' . $test->Image;
+                File::delete($path);
+            }
+            $test->delete();
+        } catch (\Throwable $th) {
+            session()->flash('error', 'L\'examen ne peut pas être supprimé, car il est lié à d\'autres tables comme les inscriptions');
+            return redirect()->back();
         }
-        $test->delete();
         $this->showSubmitButton = 'hidden';
         $this->mount();
+        session()->flash('success', 'L\'examen a été supprimé avec succès');
+        return redirect()->back();
     }
 //    public function deleteConfirmation($test_id)
 //    {

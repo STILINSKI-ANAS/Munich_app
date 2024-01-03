@@ -18,6 +18,7 @@ class Course extends Model
         'price',
         'max_placements',
         'language_id',
+        'is_hidden'
     ];
 
     public function language()

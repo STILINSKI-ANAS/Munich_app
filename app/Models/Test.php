@@ -23,6 +23,7 @@ class Test extends Model
         'course_id',
         'start_date',
         'end_date',
+        'is_hidden'
     ];
     protected $casts = [
         'features' => 'array',
