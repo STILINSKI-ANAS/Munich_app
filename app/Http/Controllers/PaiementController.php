@@ -128,7 +128,7 @@ class PaiementController extends Controller
         $test = Test::findOrFail($validatedData['test_id']);
 
         // Proceed with the payment process
-        return $this->savePayment($validatedData, $etudiant, $test, null);
+        return $this->savePayment($validatedData, $etudiant, $test, $etudiantTest);
     }
 
     /**
@@ -316,7 +316,7 @@ class PaiementController extends Controller
     /**
      * Save New Paiement Method (can be test or course) so dynamic
      */
-    protected function savePayment(array $validatedData, $etudiant, $test, $course)
+    protected function savePayment(array $validatedData, $etudiant, $test, $etudiantTest)
     {
         $date = now();
 
@@ -324,6 +324,7 @@ class PaiementController extends Controller
         $lastPaiement = paiement::latest('id')->firstOr(function () {
             return new paiement(['id' => 1]);
         });
+        // dd($lastPaiement);
 
         $lastPaiementId = $lastPaiement->id;
 
@@ -349,29 +350,10 @@ class PaiementController extends Controller
             'etudiant_id' => $etudiant->id,
         ];
 
-        if ($test) {
-            $paiementData['paymentable_id'] = $test->id;
-            $paiementData['paymentable_type'] = EtudiantTest::class;
-        } elseif ($course) {
-            $paiementData['paymentable_id'] = $course->id;
-            $paiementData['paymentable_type'] = EtudiantCourse::class;
-        }
-
         $paiement = Paiement::create($paiementData);
-
-        if ($test) {
-            $etudiantTest = EtudiantTest::find($validatedData['EtudTestId']);
-            if ($etudiantTest) {
-                $etudiantTest->update(['paiement_id' => $paiement->id]);
-            }
-            // Else clause to handle when EtudiantTest does not exist
-        } elseif ($course) {
-            $etudiantCourse = EtudiantCourse::find($validatedData['EtudCourseId']);
-            if ($etudiantCourse) {
-                $etudiantCourse->update(['paiement_id' => $paiement->id]);
-            }
-            // Else clause to handle when EtudiantCourse does not exist
-        }
+        $etudiantTest->update(['paiement_id' => $paiement->id]);
+        dd($etudiantTest);
+        
 
         $data = [
             'to_name' => $validatedData['nom'] . ' ' . $validatedData['prenom'],
