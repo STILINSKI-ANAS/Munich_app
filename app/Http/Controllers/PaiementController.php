@@ -128,7 +128,7 @@ class PaiementController extends Controller
         $test = Test::findOrFail($validatedData['test_id']);
 
         // Proceed with the payment process
-        return $this->savePayment($validatedData, $etudiant, $test, $etudiantTest);
+        return $this->savePayment($validatedData, $etudiant, $test, null, $etudiantTest, null);
     }
 
     /**
@@ -182,7 +182,7 @@ class PaiementController extends Controller
 
         $course = Course::findOrFail($validatedData['course_id']);
 
-        return $this->savePayment($validatedData, $etudiant, null, $course);
+        return $this->savePayment($validatedData, $etudiant, null, $course, null, $etudiantCourse);
     }
 
     /**
@@ -316,7 +316,7 @@ class PaiementController extends Controller
     /**
      * Save New Paiement Method (can be test or course) so dynamic
      */
-    protected function savePayment(array $validatedData, $etudiant, $test, $etudiantTest)
+    protected function savePayment(array $validatedData, $etudiant, $test, $course, $etudiantTest = null, $etudiantCourse = null)
     {
         $date = now();
 
@@ -370,6 +370,7 @@ class PaiementController extends Controller
 
         return redirect()->route('paymentSuccess', ['oid' => $oid, 'languages' => $languages]);
     }
+
     /**
      * Ok response from cmi
      */
