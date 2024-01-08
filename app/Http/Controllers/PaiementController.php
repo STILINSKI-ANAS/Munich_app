@@ -22,6 +22,53 @@ class PaiementController extends Controller
     use \Combindma\Cmi\Traits\CmiGateway;
 
     /**
+     * Telc Test Payment
+     */
+    public function showTestTelcPayment(Request $request)
+    {
+        // Fetch the testId from query parameters
+        // Default to 1 if not provided
+        $testId = $request->query('testId', 1);
+
+        // Fetch the test details from the database
+        $test = Test::findOrFail($testId);
+
+        // Assume the price and other details are attributes of the Test model
+        $amount = $test->price;
+        $tax = 0;
+        $total = $amount + $tax;
+
+        // Dummy values for etudiant and etudTestId
+        // Replace these with actual logic if needed
+        $etudiant = ['id' => null]; // Use actual etudiant data if available
+        $etudTestId = null; // Use actual etudTestId if available
+
+        $course_inclue_price = 0;
+
+        // check if test has course_id
+        if ($test->course_id) {
+            $course = $test->course;
+            $course_inclue_price = $course->price;
+            $amount += $course->price;
+        }
+
+        $sub_total = $amount;
+        $tax = 0;
+        $total = $amount + $tax;
+
+        // Return the payment view with the test details
+        return view('user.Paiement.test.static-test', [
+            'tax' => $tax,
+            'total' => $total,
+            'test' => $test,
+            'etudiant' => (object)$etudiant, // Casting array to object for consistency
+            'etudTestId' => $etudTestId,
+            'course_inclue_price' => $course_inclue_price,
+        ]);
+    }
+
+
+    /**
      * Store Test Payment 1
      */
     public function testPayment(Request $request)
@@ -40,35 +87,47 @@ class PaiementController extends Controller
             'ville_residence' => 'required',
             'pays_residence' => 'required',
             'amount' => 'required',
-            'EtudId' => 'required',
-            'EtudTestId' => 'required',
+            'EtudId' => 'sometimes|nullable',
+            'EtudTestId' => 'sometimes|nullable',
             'test_id' => 'required',
         ]);
-//        return view('user.Paiement.ok');
-        $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
 
-        $etudiantTest = EtudiantTest::findOrFail($validatedData['EtudTestId']);
-        if ($etudiantTest) {
-            $etudiantTest->update([
-                'type' => $validatedData['ecrit_or_oral'],
+        // Handle Etudiant creation or update
+        if (!empty($validatedData['EtudId'])) {
+            $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
+            $etudiant->update([
+                'nom' => $validatedData['nom'],
+                'prenom' => $validatedData['prenom'],
+                'cin' => $validatedData['cin'],
+                'email' => $validatedData['email'],
+                'dateNaissance' => $validatedData['date_naissance'],
+                'lieuNaissance' => $validatedData['lieu_naissance'],
+                'langueMaternelle' => $validatedData['langue_maternelle'],
+                'sexe' => $validatedData['sexe'],
+                'paysNaissance' => $validatedData['pays_naissance'],
+                'villeResidence' => $validatedData['ville_residence'],
+                'paysResidence' => $validatedData['pays_residence'],
             ]);
+        } else {
+            $etudiant = Etudiant::create($validatedData);
         }
 
-        $etudiant->update([
-            'nom' => $validatedData['nom'],
-            'prenom' => $validatedData['prenom'],
-            'cin' => $validatedData['cin'],
-            'email' => $validatedData['email'],
-            'dateNaissance' => $validatedData['date_naissance'],
-            'lieuNaissance' => $validatedData['lieu_naissance'],
-            'langueMaternelle' => $validatedData['langue_maternelle'],
-            'sexe' => $validatedData['sexe'],
-            'paysNaissance' => $validatedData['pays_naissance'],
-            'villeResidence' => $validatedData['ville_residence'],
-            'paysResidence' => $validatedData['pays_residence'],
-        ]);
+        // Fetch or create the EtudiantTest
+        if (!empty($validatedData['EtudTestId'])) {
+            $etudiantTest = EtudiantTest::findOrFail($validatedData['EtudTestId']);
+        } else {
+            $etudiantTest = new EtudiantTest([
+                'etudiant_id' => $etudiant->id,
+                'test_id' => $validatedData['test_id'],
+                'type' => $validatedData['ecrit_or_oral'],
+            ]);
+            $etudiantTest->save();
+        }
+
+        // Fetch the Test
         $test = Test::findOrFail($validatedData['test_id']);
 
+        // Proceed with the payment process
         return $this->savePayment($validatedData, $etudiant, $test, null);
     }
 
@@ -261,12 +320,12 @@ class PaiementController extends Controller
     {
         $date = now();
 
-        // Get last paiement id
-        $last_paiement = paiement::latest('id')->firstOr(function () {
+        // Get last payment id
+        $lastPaiement = paiement::latest('id')->firstOr(function () {
             return new paiement(['id' => 1]);
         });
 
-        $last_paiement_id = $last_paiement->id;
+        $lastPaiementId = $lastPaiement->id;
 
         // Determine the oid based on whether it's a test or course payment
         $oid = 'FC-' . $etudiant->id . '-' . date('Y') . '-';
@@ -280,17 +339,7 @@ class PaiementController extends Controller
             $description = 'Inscription au cours avec succès';
         }
 
-        $oid .= $last_paiement_id;
-
-//        $paiement = paiement::create([
-//            'oid' => $oid,
-//            'status' => 'en attente',
-//            'amount' => $validatedData['amount'],
-//            'date' => $date,
-//            'etudiant_id' => $etudiant->id,
-//            'test_id' => $test ? $test->id : null,
-//            'course_id' => $course ? $course->id : null,
-//        ]);
+        $oid .= $lastPaiementId;
 
         $paiementData = [
             'oid' => $oid,
@@ -310,18 +359,18 @@ class PaiementController extends Controller
 
         $paiement = Paiement::create($paiementData);
 
-//        $etudiantTest = EtudiantTest::find($validatedData['EtudTestId']);
-//
-//        $etudiantTest->update(['paiement_id' => $paiement->id]);
-
-        $etudiantTest = null;
-        $etudiantCourse = null;
         if ($test) {
             $etudiantTest = EtudiantTest::find($validatedData['EtudTestId']);
-            $etudiantTest->update(['paiement_id' => $paiement->id]);
+            if ($etudiantTest) {
+                $etudiantTest->update(['paiement_id' => $paiement->id]);
+            }
+            // Else clause to handle when EtudiantTest does not exist
         } elseif ($course) {
             $etudiantCourse = EtudiantCourse::find($validatedData['EtudCourseId']);
-            $etudiantCourse->update(['paiement_id' => $paiement->id]);
+            if ($etudiantCourse) {
+                $etudiantCourse->update(['paiement_id' => $paiement->id]);
+            }
+            // Else clause to handle when EtudiantCourse does not exist
         }
 
         $data = [
@@ -335,58 +384,12 @@ class PaiementController extends Controller
             'course' => $course,
             'oid' => $oid
         ];
+
         Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_1'));
-        // Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_2'));
+
         $languages = Language::all();
 
         return redirect()->route('paymentSuccess', ['oid' => $oid, 'languages' => $languages]);
-
-//        dd($paiement);
-//        $this->requestPayment($cmiClient, $data);
-
-//        try {
-//            $cmiClient = new Cmi();
-//            $cmiClient->setOid($oid);
-//            $cmiClient->setAmount($validatedData['amount']);
-//            $cmiClient->setBillToName($validatedData['nom'] . ' ' . $validatedData['prenom']);
-//            $cmiClient->setEmail($validatedData['email']);
-//            $cmiClient->setTel('212600000000');
-//            $cmiClient->setCurrency('504');
-//            $cmiClient->setDescription('ceci est un exemple à utiliser');
-//
-//            // TODO: save the payment in the database if the payment is successful
-//            $paiement = paiement::create([
-//                'oid' => $oid,
-//                'status' => 'confirmé',
-//                'amount' => $validatedData['amount'],
-//                'date' => $date,
-//                'etudiant_id' => $etudiant->id,
-//                'test_id' => $test ? $test->id : null,
-//                'course_id' => $course ? $course->id : null,
-//            ]);
-//
-//            // TODO: update etudiant status to 'confirmé' if the payment is successful
-//            $etudiant->update([
-//                'status' => 'confirmé',
-//            ]);
-//
-//            // TODO: send an invoice to the etudiant if the payment is successful via email
-//            $data = [
-//                'to_name' => $validatedData['nom'] . ' ' . $validatedData['prenom'],
-//                'to_email' => $validatedData['email'],
-//                'subject' => $test ? 'Inscription au test' : 'Inscription au cours',
-//                'body' => $description,
-//                'amount' => $validatedData['amount'],
-//                'date' => $date,
-//                'test' => $test,
-//                'course' => $course,
-//                'oid' => $oid,
-//            ];
-//
-//            return $this->requestPayment($cmiClient, $data);
-//        } catch (\Exception $e) {
-//            return $e->getMessage();
-//        }
     }
 
     /**

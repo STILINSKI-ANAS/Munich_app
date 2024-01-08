@@ -91,7 +91,7 @@ class EtudiantTestController extends Controller
             // Update the attributes of the Etudiant model
             $etudiant->update($validatedData);
 
-            return view('user.Paiement.index', ['EtudId' => $etudiant->id]);
+                return view('user.Paiement.index', ['EtudId' => $etudiant->id]);
 //            return redirect(url('/inscriptionstep3'));
 //            return dump($etudiant);
         } catch (\Exception $e) {

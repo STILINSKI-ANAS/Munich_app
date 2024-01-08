@@ -151,6 +151,9 @@ Route::prefix('/')->group(function () {
         Route::get('/Language/Test/{Test}', [HomeController::class, 'getTest']);
 
         Route::get('/Language/Course/{courseId}', [HomeController::class, 'getCourse'])->name('getCourse');
+
+        # Static paiement routes
+        Route::get('/payment-for-telc', [\App\Http\Controllers\PaiementController::class, 'showTestTelcPayment'])->name('showTestTelcPayment');
     });
 
     Route::controller(\App\Http\Controllers\InstructorController::class)->group(function () {
