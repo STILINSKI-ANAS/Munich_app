@@ -276,7 +276,7 @@ class PaiementController extends Controller
         $payment = paiement::findOrFail($etudiantTest->paiement_id);
         $payment->update(['status_1' => 'confirmé']);
 
-        Mail::to($user->email)->send(new PayementValidation($data, 'emails.email_2'));
+        Mail::to($etudiant->email)->send(new PayementValidation($data, 'emails.email_2'));
 
         return view('admin.inscriptions.tests-inscriptions.index');
     }
