@@ -91,7 +91,7 @@
                         {{ $etudiantTest->created_at->format('Y-m-d') }}
                     </td>
                     <td>{{ $etudiantTest->paiement->oid }}</td>
-                    <td>{{ $etudiantTest->paiement->status }}</td>
+                    <td>{{ $etudiantTest->paiement->status_2 }}</td>
                     <td>{{ $etudiantTest->paiement->amount ?? 'N/A' }}</td>
                     <td class="d-flex justify-content-around gap-2">
                         @if ($etudiantTest->paiement->status_1 == "en attente")
