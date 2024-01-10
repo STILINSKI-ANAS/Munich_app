@@ -50,9 +50,14 @@
                                     <div class="col-6 mb--20">
                                         <label>Email*</label>
                                         <input type="email" placeholder="Email Address" name="email"
-                                               value="{{ $etudiant->user->email }}">
+                                               value="{{ $etudiant->user->email }}" required>
                                     </div>
+                                    <!-- Email error -->
+                                    <div class="alert alert-danger"
+                                         id="emailError" role="alert"
+                                         style="display: none; margin-bottom: 8px;">
 
+                                    </div>
                                     <div class="col-6 mb--20">
                                         <label>Date de naissance*</label>
                                         <input type="date" placeholder="Date de naissance" name="date_naissance"/>
@@ -198,15 +203,38 @@
 <script src="{{ asset('assets/js/vendor/jquery.js')}}"></script>
 <script>
     $(document).ready(function () {
+        // Function to validate email
+        function validateEmail(email) {
+            var re = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
         // Show the confirmation modal when the "Place order" button is clicked
         $('#placeOrderButton').click(function () {
             $('#confirmationModal').modal('show');
         });
 
         // Handle the "Confirm Order" button in the confirmation modal
-        $('#confirmOrderButton').click(function () {
-            // Submit the form when the confirmation is confirmed
-            $('#paymentForm2').submit();
+        $('#confirmOrderButton').click(function (event) {
+            var email = $('input[name="email"]').val();
+            if (!validateEmail(email)) {
+                event.preventDefault(); // Prevent form submission
+
+                // Close the modal
+                $('#confirmationModal').modal('hide');
+
+                $('#emailError')
+                    .show()
+                    .text('Veuillez saisir une adresse email valide.');
+
+                // Wait 3 seconds and hide
+                setTimeout(function () {
+                    $('#emailError').hide();
+                }, 3000);
+
+                return false; // Stop the function
+            }
+            $('#paymentForm2').submit(); // Submit the form if email is valid
         });
 
         // Disable the Confirm Order button initially
@@ -216,14 +244,6 @@
         $("#terms").change(function () {
             // Enable the Confirm Order button if the checkbox is checked, disable it otherwise
             $("#confirmOrderButton").prop("disabled", !this.checked);
-        });
-
-        // Add an event listener for the Confirm Order button click (you can replace this with your actual logic)
-        $("#confirmOrderButton").click(function () {
-            // Your logic to handle the confirmation goes here
-            // For example, you can close the modal or submit the form
-            // For now, let's just log a message to the console
-            console.log("Order confirmed!");
         });
     });
 </script>

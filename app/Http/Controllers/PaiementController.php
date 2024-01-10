@@ -349,7 +349,9 @@ class PaiementController extends Controller
         ];
 
         $paiement = Paiement::create($paiementData);
-        $etudiantTest->update(['paiement_id' => $paiement->id]);
+        if ($etudiantTest != null) {
+            $etudiantTest->update(['paiement_id' => $paiement->id]);
+        }
 //        dd($etudiantTest);
 
 
