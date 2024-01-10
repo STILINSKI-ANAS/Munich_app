@@ -83,6 +83,7 @@ class PaiementController extends Controller
             'langue_maternelle' => 'required',
             'sexe' => 'required',
             'ecrit_or_oral' => 'required',
+            'niveau' => 'required',
             'pays_naissance' => 'required',
             'ville_residence' => 'required',
             'pays_residence' => 'required',
@@ -120,6 +121,7 @@ class PaiementController extends Controller
                 'etudiant_id' => $etudiant->id,
                 'test_id' => $validatedData['test_id'],
                 'type' => $validatedData['ecrit_or_oral'],
+                'niveau' => $validatedData['niveau'],
             ]);
             $etudiantTest->save();
         }
@@ -136,7 +138,6 @@ class PaiementController extends Controller
      */
     public function coursePayment(Request $request)
     {
-
         $validatedData = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',

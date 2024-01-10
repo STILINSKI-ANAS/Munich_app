@@ -93,6 +93,14 @@
                                             <option value="Ecrit et Oral">Ecrit et Oral</option>
                                         </select>
                                     </div>
+                                    <!-- B1 or B2 -->
+                                    <div class="col-6 mb--20">
+                                        <label>Niveau* (B1 ou B2)</label>
+                                        <select name="niveau" id="niveau">
+                                            <option value="B1">B1</option>
+                                            <option value="B2">B2</option>
+                                        </select>
+                                    </div>
 
                                     <!-- Hidden inputs for: EtudId, EtudTestId, amount -->
                                     <input type="text" name="EtudId" required value="{{ $etudiant->id }}" hidden>

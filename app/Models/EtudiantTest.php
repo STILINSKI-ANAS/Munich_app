@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 class EtudiantTest extends Pivot
 {
     use HasFactory;
+
     public $incrementing = true;
 
     protected $fillable = [
@@ -16,6 +17,7 @@ class EtudiantTest extends Pivot
         'id',
         'paiement_id',
         'type',
+        'niveau'
     ];
 
     protected $table = 'etudiant_tests';
@@ -23,12 +25,14 @@ class EtudiantTest extends Pivot
 
     public function etudiant()
     {
-        return $this->belongsTo(Etudiant::class,'etudiant_id');
+        return $this->belongsTo(Etudiant::class, 'etudiant_id');
     }
+
     public function test()
     {
-        return $this->belongsTo(Test::class,'test_id');
+        return $this->belongsTo(Test::class, 'test_id');
     }
+
     public function paiement()
     {
         return $this->belongsTo(paiement::class);
