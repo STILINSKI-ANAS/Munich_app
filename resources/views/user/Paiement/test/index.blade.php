@@ -18,7 +18,7 @@
 @section('content')
     <div class="checkout_area bg-color-white rbt-section-gap">
         <div class="container">
-            <h1>Paiement</h1>
+            <h2>Inscription "{{ $test->name }}"</h2>
             <form method="post" id="paymentForm" action="{{ route('testPaymentProcess') }}"
                   enctype="multipart/form-data">
                 @csrf
@@ -144,7 +144,8 @@
                                             <div class="gap-2 d-flex align-items-start justify-content-start">
                                                 <!-- Image -->
                                                 <div class="product-image w-25">
-                                                    <img src="{{ asset('uploads/Course/'. $test->course->image) }}" alt="Card image">
+                                                    <img src="{{ asset('uploads/Course/'. $test->course->image) }}"
+                                                         alt="Card image">
                                                 </div>
 
                                                 <!-- Name -->
@@ -164,7 +165,7 @@
                                     <button id="placeOrderButton" class="rbt-btn btn-gradient hover-icon-reverse"
                                             type="button">
                                         <span class="icon-reverse-wrapper">
-                                            <span class="btn-text">Lancer la commande</span>
+                                            <span class="btn-text">S'inscrire</span>
                                             <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                             <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         </span>
@@ -194,19 +195,21 @@
                     avant de confirmer
                     votre commande.
                 </div>
-                <a href="{{ route('privacyPolicy') }}" target="_blank" class="p-2">Voir Les conditions et la politique de confidentialité</a>
+                <a href="{{ route('privacyPolicy') }}" target="_blank" class="p-2">Voir Les conditions et la politique
+                    de confidentialité</a>
                 <!-- Conditions and privacy policy -->
 
                 <!-- Acceptance of Terms and Pricing Policy -->
                 <div class="mt-1 ms-3">
                     <input type="checkbox" id="terms" name="terms" value="terms">
-                    <label for="terms" class="terms-label-paiment">J'accepte les conditions et la politique de confidentialité</label>
+                    <label for="terms" class="terms-label-paiment">J'accepte les conditions et la politique de
+                        confidentialité</label>
                 </div>
 
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
                     <button class="btn btn-primary" id="confirmOrderButton">
-                        Confirmer la commande
+                        Valider
                     </button>
                 </div>
             </div>

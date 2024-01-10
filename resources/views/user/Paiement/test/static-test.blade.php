@@ -18,7 +18,7 @@
 @section('content')
     <div class="checkout_area bg-color-white rbt-section-gap">
         <div class="container">
-            <h1>Paiement</h1>
+            <h2>Inscription "{{ $test->name }}"</h2>
             <form method="post" id="paymentForm" action="{{ route('testPaymentProcess') }}"
                   enctype="multipart/form-data">
                 @csrf
@@ -162,7 +162,7 @@
                                     <button id="placeOrderButton" class="rbt-btn btn-gradient hover-icon-reverse"
                                             type="button">
                                         <span class="icon-reverse-wrapper">
-                                            <span class="btn-text">Lancer la commande</span>
+                                            <span class="btn-text">S'inscrire</span>
                                             <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                             <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         </span>
@@ -206,7 +206,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
                     <button class="btn btn-primary" id="confirmOrderButton">
-                        Confirmer la commande
+                        Valider
                     </button>
                 </div>
             </div>
