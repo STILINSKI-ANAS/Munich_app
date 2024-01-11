@@ -18,7 +18,7 @@
 @section('content')
     <div class="checkout_area bg-color-white rbt-section-gap">
         <div class="container">
-            <h2>Inscription "{{ $test->name }}"</h2>
+            <h2>Inscription {{ $test->name }}</h2>
             <form method="post" id="paymentForm" action="{{ route('testPaymentProcess') }}"
                   enctype="multipart/form-data">
                 @csrf
@@ -30,7 +30,7 @@
                             </div>
                             <!-- Billing Address -->
                             <div id="billing-form">
-                                <h4 class="checkout-title mt--5">Votre Information</h4>
+                                <h4 class="checkout-title mt--5">Vos Information</h4>
                                 <div class="row">
                                     <div class="col-md-6 col-12 mb--20">
                                         <label>Prénom*</label>
@@ -122,7 +122,7 @@
                             <!-- Cart Total -->
                             <div class="col-12 mb--60">
 
-                                <h4 class="checkout-title">Votre Commande</h4>
+{{--                                <h4 class="checkout-title">Votre Inscription</h4>--}}
 
                                 <div class="checkout-cart-total">
                                     <div style="margin-bottom: 18px;">
@@ -203,7 +203,7 @@
                 <div class="p-1">
                     Est que le <b>Nom</b>, <b>Prénom</b> et <b>Email</b> sont corrects? Si non, veuillez les corriger
                     avant de confirmer
-                    votre commande.
+                    votre Inscription.
                 </div>
                 <a href="{{ route('privacyPolicy') }}" target="_blank" class="p-2">Voir Les conditions et la politique
                     de confidentialité</a>
