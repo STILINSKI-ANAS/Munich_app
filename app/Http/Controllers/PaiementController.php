@@ -73,6 +73,7 @@ class PaiementController extends Controller
      */
     public function testPayment(Request $request)
     {
+
         $validatedData = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
@@ -93,6 +94,7 @@ class PaiementController extends Controller
             'test_id' => 'required',
         ]);
 
+
         // Handle Etudiant creation or update
         if (!empty($validatedData['EtudId'])) {
             $etudiant = Etudiant::findOrFail($validatedData['EtudId']);
@@ -110,8 +112,21 @@ class PaiementController extends Controller
                 'paysResidence' => $validatedData['pays_residence'],
             ]);
         } else {
-            $etudiant = Etudiant::create($validatedData);
+            $etudiant = Etudiant::create([
+                'nom' => $validatedData['nom'],
+                'prenom' => $validatedData['prenom'],
+                'cin' => $validatedData['cin'],
+                'email' => $validatedData['email'],
+                'dateNaissance' => $validatedData['date_naissance'],
+                'lieuNaissance' => $validatedData['lieu_naissance'],
+                'langueMaternelle' => $validatedData['langue_maternelle'],
+                'sexe' => $validatedData['sexe'],
+                'paysNaissance' => $validatedData['pays_naissance'],
+                'villeResidence' => $validatedData['ville_residence'],
+                'paysResidence' => $validatedData['pays_residence'],
+            ]);
         }
+
 
         // Fetch or create the EtudiantTest
         if (!empty($validatedData['EtudTestId'])) {
@@ -125,6 +140,7 @@ class PaiementController extends Controller
             ]);
             $etudiantTest->save();
         }
+//        dd($etudiant, $etudiantTest);
 
         // Fetch the Test
         $test = Test::findOrFail($validatedData['test_id']);
