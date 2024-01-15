@@ -382,9 +382,13 @@ class PaiementController extends Controller
             'course' => $course,
             'oid' => $oid
         ];
-
-        Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_1'));
-
+        try {
+            Mail::to($validatedData['email'])->send(new PayementMail($data, 'emails.email_1'));
+        } catch (\Exception $e) {
+            // Handle the exception (e.g., log it, ignore it, or provide a default behavior)
+            // For example, you might log the error and proceed with the code execution
+            \Log::error('Email sending failed: ' . $e->getMessage());
+        }
         $languages = Language::all();
 
         return redirect()->route('paymentSuccess', ['oid' => $oid, 'languages' => $languages]);
