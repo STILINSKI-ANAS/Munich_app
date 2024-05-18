@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Announcement;
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Etudiant;
 use App\Models\Language;
 use App\Models\Subscriber;
 use App\Models\Test;
@@ -205,6 +206,64 @@ class HomeController extends Controller
             'language' => $languageName,
         ]);
     }
+    public function preinscription()
+    {
+        $languages = Language::all();
+        $tests = Test::all();
+
+
+        return view('user.Test.tests-call-to-action')->with([
+            'tests' => $tests,
+            'languages' => $languages,
+        ]);;
+    }
+
+    public function admission($testId)
+    {
+        try {
+            // Retrieve the test based on the provided test ID
+            $test = Test::findOrFail($testId);
+
+            // Retrieve all languages
+            $languages = Language::all();
+
+            // Count the total number of enrolled students
+            $totalEtudiantsInscrits = $test->etudiants()->count();
+
+            // Set the language attribute of the test to the name of the associated language
+            $test->language = $test->language()->first()->name;
+
+            // Pass data to the admission view
+            return view('user.Test.admission')->with([
+                'test' => $test,
+                'languages' => $languages,
+                'totalEtudiantsInscrits' => $totalEtudiantsInscrits,
+            ]);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Test not found.');
+        }
+    }
+
+
+    public function searchCustomer(Request $request)
+    {
+        // Validate the CIN input
+        $request->validate([
+            'cin' => 'required|string', // Add any additional validation rules here
+        ]);
+
+        // Retrieve the customer from the database based on the provided CIN
+        $customer = Etudiant::where('cin', $request->cin)->first();
+
+        if ($customer) {
+            // If the customer exists, pre-fill the form with their information
+            return view('user.Test.pre-fill')->with('customer', $customer);
+        } else {
+            // If the customer doesn't exist, render the form without pre-filled information
+            return view('user.Test.without-pre-fill');
+        }
+    }
+
 
     public function addurltosession(Request $request)
     {

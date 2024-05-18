@@ -19,12 +19,12 @@
                                     <li>
                                         <div class="icon-right"><i class="feather-chevron-right"></i></div>
                                     </li>
-                                    <li class="rbt-breadcrumb-item active">Calendrier des sessions</li>
+                                    <li class="rbt-breadcrumb-item active">Preinscription</li>
                                 </ul>
                                 <!-- End Breadcrumb Area  -->
 
                                 <div class=" title-wrapper">
-                                    <h1 class="title mb--0">Calendrier des sessions</h1>
+                                    <h1 class="title mb--0">Veuillez bien choisir un examen</h1>
                                 </div>
 
 
@@ -106,7 +106,7 @@
                                             <li><p><i class="feather-calendar"></i>Date Limite :
                                                     <!-- End Date -->
 
-                                                @if($test['end_date'] == null)
+                                                    @if($test['end_date'] == null)
                                                         {{ $test['end_date'] = '01/01/2024' }}
                                                     @else
                                                         {{ $test['end_date'] }}
@@ -116,18 +116,22 @@
 
                                         <div class="rbt-card-bottom">
                                             <div class="rbt-price">
-                                                <span class="current-price">A1|ZA1</span>
+                                                <div class="button-group mt--30">
+                                                    <a class="rbt-btn btn-gradient rbt-marquee-btn" href="{{ route('test.admission', ['testId' => $test->id]) }}">
+                                                        <span data-text="Se pré-inscrire">Se pré-inscrire</span>
+                                                    </a>
+
+
+
+                                                </div>
                                             </div>
-                                            <a class="rbt-btn-link">Samedi 25 mai 2024</a>
+                                            <span class="rbt-badge variation-02 bg-primary-opacity">Samedi 25 mai 2024</span>
                                         </div>
+
                                     </div>
+
                                 </div>
-
                             </div>
-
-
-
-
 
                         @endforeach
                     </div>

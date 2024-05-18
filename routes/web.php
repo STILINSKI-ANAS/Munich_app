@@ -37,6 +37,9 @@ Route::get('/home', function () {
     return redirect()->route('root');
 });
 
+Route::get('/calendrier', 'CalendarController@index')->name('calendar');
+
+
 Auth::routes(['verify' => true]);
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
@@ -149,6 +152,13 @@ Route::prefix('/')->group(function () {
         Route::get('/{Language}/Tests', [HomeController::class, 'getLanguageTests']);
         Route::get('/Language/Test/create', [HomeController::class, 'createDummyTests']);
         Route::get('/Language/Test/{Test}', [HomeController::class, 'getTest']);
+        Route::get('/Test/preinscription',[HomeController::class, 'preinscription']);
+        Route::get('/Test/admission/{testId}', [HomeController::class, 'admission'])->name('test.admission');
+
+        Route::post('/search/customer', [HomeController::class, 'searchCustomer'])->name('search.customer');
+
+
+
 
         Route::get('/Language/Course/{courseId}', [HomeController::class, 'getCourse'])->name('getCourse');
     });

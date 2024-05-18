@@ -73,20 +73,10 @@
                                 <li class="with-megamenu has-menu-child-item position-static">
                                     <a href="{{url('/')}}">Accueil</a>
                                 </li>
+
+
                                 <li class="has-dropdown has-menu-child-item">
-                                    <a href="#">Cours de langue
-                                        <i class="feather-chevron-down"></i>
-                                    </a>
-                                    <ul class="submenu">
-                                        @foreach($languages as $language)
-                                            <li class="has-dropdown"><a
-                                                    href="{{url('/'.$language->name.'/Courses/')}}">{{$language->name}}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                                <li class="has-dropdown has-menu-child-item">
-                                    <a href="#">Examens International
+                                    <a href="#">Calendrier des Examens
                                         <i class="feather-chevron-down"></i>
                                     </a>
                                     <ul class="submenu">
@@ -97,11 +87,26 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li class="with-megamenu has-menu-child-item position-static">
-                                    <a href="#">Orientation</a>
+                                <li class="has-dropdown has-menu-child-item">
+                                    <a href="#">Inscription
+                                        <i class="feather-chevron-down"></i>
+                                    </a>
+                                    <ul class="submenu">
+                                            <li class="has-dropdown">
+                                                <a href="{{ url('/Test/preinscription') }}">Preinscription</a>
+
+                                            </li>
+                                            <li class="has-dropdown"><a
+                                                    href="#">Paiement</a>
+                                            </li>
+                                            <li class="has-dropdown"><a
+                                                    href="#">Convocation</a>
+                                            </li>
+                                    </ul>
+
                                 </li>
                                 <li class="with-megamenu has-menu-child-item position-static">
-                                    <a href="#">Formation continue</a>
+                                    <a href="#">Resultat</a>
                                 </li>
                                 <li class="has-dropdown has-menu-child-item">
                                     <a href="#">l'instut
