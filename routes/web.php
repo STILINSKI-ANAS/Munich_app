@@ -1,9 +1,15 @@
 <?php
 
+use App\Http\Controllers\ExamController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\RegistrationController;
+use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaiementController;
 use App\Http\Livewire\Admin\Inscriptions\TestsInscriptions\Index;
 use App\Mail\EmailService;
 use App\Mail\GreetingEmail;
+use App\Models\Test;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -18,11 +24,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//Route::get('/payment-for-telc', [PaiementController::class, 'showTestTelcPayment']);
 
+//Route::get('/payment-for-telc', function (Request $request) {
+//    PaiementController::showTestTelcPayment($request);
+//});
+//Route::get('/dump-and-die', [\App\Http\Controllers\PaiementController::class, 'showTestTelcPayment'])->name('showTestTelcPayment');
 Route::get('/account', function () {
     return view('welcome');
 });
-
+//Route::get('/payment-for-telc', [\App\Http\Controllers\PaiementController::class, 'showTestTelcPayment'])->name('showTestTelcPayment');
 Route::get('/admin', function () {
     return view('admin.dashboard');
 });
@@ -218,3 +229,19 @@ Route::controller(\App\Http\Controllers\Admin\EtudiantController::class)->group(
 
 # Static paiement routes
 Route::get('/payment-for-telc', [\App\Http\Controllers\PaiementController::class, 'showTestTelcPayment'])->name('showTestTelcPayment');
+//Route::get('/process-test', [PaiementController::class, 'showTestTelcPayment'])->name('process-test');
+
+Route::get('/exams', [ExamController::class, 'index'])->name('exams');
+Route::prefix('registration')->group(function () {
+    Route::get('/step1', [RegistrationController::class, 'step1'])->name('registration.step1');
+    Route::post('/step1', [RegistrationController::class, 'postStep1'])->name('registration.postStep1');
+    Route::get('/step2', [RegistrationController::class, 'step2'])->name('registration.step2');
+    Route::post('/step2', [RegistrationController::class, 'postStep2'])->name('registration.postStep2');
+    Route::get('/validate-email/{token}', [RegistrationController::class, 'validateEmail'])->name('registration.validate_email');
+});
+
+Route::prefix('payment')->group(function () {
+    Route::get('/form', [PaymentController::class, 'form'])->name('payment.form');
+    Route::post('/submit', [PaymentController::class, 'submit'])->name('payment.submit');
+    Route::get('/confirm', [PaymentController::class, 'confirm'])->name('payment.confirm');
+});
