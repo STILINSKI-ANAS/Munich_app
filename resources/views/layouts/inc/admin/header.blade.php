@@ -93,7 +93,7 @@
                                     </a>
                                     <ul class="submenu">
                                             <li class="has-dropdown">
-                                                <a href="{{ url('/Test/preinscription') }}">Preinscription</a>
+                                                <a href="{{ url('/exams') }}">Preinscription</a>
 
                                             </li>
                                             <li class="has-dropdown"><a
