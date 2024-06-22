@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Exam;
+use App\Models\Language;
 use App\Models\Registration;
+use App\Models\Test;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -10,10 +14,23 @@ use Illuminate\Support\Str;
 class RegistrationController extends Controller
 {
     //
+
+    private function getCommonData()
+    {
+        $languages = Language::all();
+        $tests = Test::where('is_hidden', false)->get();
+        $categories = Category::all();
+
+        return compact('languages', 'tests', 'categories');
+    }
+
     public function step1(Request $request)
     {
-        $request->session()->put('exam_id', $request->exam_id);
-        return view('user.registration.step1');
+        $exam = Exam::findOrFail($request->exam_id);
+        $request->session()->put('exam_id', $exam->id);
+
+        $data = array_merge($this->getCommonData(), compact('exam'));
+        return view('user.registration.step1', $data);
     }
 
     public function postStep1(Request $request)
@@ -24,7 +41,7 @@ class RegistrationController extends Controller
 
     public function step2()
     {
-        return view('user.registration.step2');
+        return view('user.registration.step2', $this->getCommonData());
     }
 
     public function postStep2(Request $request)
@@ -40,7 +57,6 @@ class RegistrationController extends Controller
         $registration->birth_place = $request->birth_place;
         $registration->birth_country = $request->birth_country;
         $registration->modules = json_encode($request->modules);
-//        $registration->exam_id = $request->exam_id; // Associer l'inscription à un examen
         $registration->exam_id = $request->session()->get('exam_id'); // Associer l'inscription à un examen
 
         if ($request->hasFile('photo')) {
@@ -63,7 +79,6 @@ class RegistrationController extends Controller
 
         return redirect()->route('exams')->with('success', 'Registration completed successfully! Please check your email to validate it.');
     }
-
 
     public function validateEmail($token)
     {

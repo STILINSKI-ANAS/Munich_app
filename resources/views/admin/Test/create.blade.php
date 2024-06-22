@@ -80,29 +80,8 @@
                             <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="course-field mb--15">
-                            <label for="whatLearn">Overview</label>
-                            <textarea id="overview" name="overview" required rows="5"
-                                      placeholder="Add your course benefits here."></textarea>
-                            <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="course-field mb--15">
-                            <label for="description">Content</label>
-                            <div id="content" name="content" class="quill-editor" required></div>
-                            <input type="hidden" name="content" id="hiddenContentInput">
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="course-field mb--15">
-                            <label for="description">Les Caractéristiques</label>
-                            <div id="features" name="features" class="quill-editor" required></div>
-                            <input type="hidden" name="features" id="hiddenFeaturesInput">
-                            <small class="d-block mt_dec--5"><i class="feather-info"></i> Enter for per line.</small>
-                        </div>
-                    </div>
+
+
                     <div class="course-field mb--20">
                         <h6>Vignette de l'examen</h6>
                         <div class="rbt-create-course-thumbnail upload-area">

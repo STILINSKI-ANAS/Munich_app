@@ -99,8 +99,10 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::get('/Test/create', 'create');
         Route::get('/Test/{Test}/edit', 'edit');
         Route::post('/Test', 'store');
-        Route::put('Test/{Test}', 'update');
+        Route::put('/Test/{Test}', 'update'); // Ensure that the update route is defined with the correct URI pattern
+
     });
+
 
     Route::controller(\App\Http\Controllers\Admin\AnnouncementsController::class)->group(function () {
         Route::get('/Announcements', 'index');
@@ -110,6 +112,31 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::put('Announcements/{Announcements}', 'update');
     });
 
+
+    // hakeem added
+    Route::controller(App\Http\Controllers\Admin\ExamController::class)->group(function () {
+        Route::get('/exams', 'index')->name('admin.exams.index');
+        Route::get('/exams/create', 'create')->name('admin.exams.create');
+        Route::post('/exams', 'store')->name('admin.exams.store');
+        Route::get('/exams/{exam}/edit', 'edit')->name('admin.exams.edit');
+        Route::put('/exams/{exam}', 'update')->name('admin.exams.update');
+        Route::delete('/exams/{exam}', 'destroy')->name('admin.exams.destroy');
+    });
+
+
+    Route::controller(App\Http\Controllers\Admin\RegistrationController::class)->group(function () {
+        Route::get('/registrations', 'index')->name('admin.registrations.index');
+        Route::get('/registrations/{registration}/edit', 'edit')->name('admin.registrations.edit');
+        Route::put('/registrations/{registration}', 'update')->name('admin.registrations.update');
+    });
+
+
+
+    Route::controller(App\Http\Controllers\Admin\PaymentController::class)->group(function () {
+        Route::get('payments', [App\Http\Controllers\Admin\PaymentController::class, 'index'])->name('admin.payments.index');
+        Route::get('payments/{id}', [App\Http\Controllers\Admin\PaymentController::class, 'show'])->name('admin.payments.show');
+        Route::post('payments/{id}/verify', [App\Http\Controllers\Admin\PaymentController::class, 'verify'])->name('admin.payments.verify');
+    });
     Route::get('Cours', [\App\Http\Controllers\Admin\CoursController::class, 'index']);
     Route::get('Tests', [\App\Http\Controllers\Admin\TestsController::class, 'index']);
     Route::get('Orders', [\App\Http\Controllers\Admin\OrdersController::class, 'index']);
@@ -245,3 +272,8 @@ Route::prefix('payment')->group(function () {
     Route::post('/submit', [PaymentController::class, 'submit'])->name('payment.submit');
     Route::get('/confirm', [PaymentController::class, 'confirm'])->name('payment.confirm');
 });
+
+
+
+
+

@@ -38,13 +38,10 @@ class TestsController extends Controller
         $test = new Test();
         $test->name = $validatedData['name'];
         $test->level = $validatedData['level'];
-        $test->overview = $validatedData['overview'];
         $test->price = $validatedData['price'];
         $test->max_placements = $validatedData['max_placements'];
         $test->time = $validatedData['time'];
-        $test->content = $validatedData['content'];
         $test->language_id = $validatedData['language_id'];
-        $test->features = $validatedData['features'];
         $test->start_date = $validatedData['start_date'];
         $test->end_date = $validatedData['end_date'];
 
@@ -74,39 +71,50 @@ class TestsController extends Controller
 
     public function update(TestFormRequest $request, $test)
     {
+        // Confirmation of receiving the form submission
 
+        // Retrieving the test by its ID
         $test = Test::findOrFail($test);
 
-        $validatedData = $request->validated();
-//        dd($validatedData['start_date']);
-        $test->name = $validatedData['name'];
-        $test->level = $validatedData['level'];
-        $test->overview = $validatedData['overview'];
-        $test->price = $validatedData['price'];
-        $test->time = $validatedData['time'];
-        $test->content = $validatedData['content'];
-        $test->max_placements = $validatedData['max_placements'];
-        $test->language_id = $validatedData['language_id'];
-        $test->course_id = $validatedData['course_id'];
-        $test->features = $validatedData['features'];
-        $test->start_date = $validatedData['start_date'];
-        $test->end_date = $validatedData['end_date'];
-        $test->is_hidden = $request->has('is_hidden');
+        dd($test); // Debugging to check if the test model is fetched correctly
 
+        // Validating the submitted data
+        $validatedData = $request->validated();
+
+
+        // Update the test attributes with the validated data
+        $test->update([
+            'name' => $validatedData['name'],
+            'level' => $validatedData['level'],
+            'price' => $validatedData['price'],
+            'time' => $validatedData['time'],
+            'max_placements' => $validatedData['max_placements'],
+            'language_id' => $validatedData['language_id'],
+            'course_id' => $validatedData['course_id'],
+            'start_date' => $validatedData['start_date'],
+            'end_date' => $validatedData['end_date'],
+            'is_hidden' => $request->has('is_hidden')
+        ]);
+
+        dd('Test updated successfully!'); // Debugging to check if the update operation is successful
+
+
+        // Handling the update of the test image
         if ($request->hasFile('Image')) {
             $path = 'uploads/Test/' . $test->image;
             if (File::exists($path)) {
                 File::delete($path);
             }
-            $file = $request->Image;
-            $ext = $file->getClientOriginalName();
-            $filename = time() . '-' . $ext;
+            $file = $request->file('Image');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time() . '-' . $file->getClientOriginalName();
             $file->move('uploads/Test/', $filename);
-            $test->image = $filename;
+            $test->update(['image' => $filename]);
         }
 
-        $test->update();
-//        dd($test);
-        return redirect('/admin/Test')->with('message', 'Test added successfully');
+        // Redirect after updating
+        return redirect('/admin/Test')->with('message', 'Test mis à jour avec succès');
     }
+
+
 }

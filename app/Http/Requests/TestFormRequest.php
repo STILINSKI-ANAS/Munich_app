@@ -17,24 +17,47 @@ class TestFormRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, mixed>
      */
     public function rules(): array
     {
         return [
             'level' => ['required'],
-            'overview' => ['required'],
-            'content' => ['required'],
-            'features' => ['required'],
-            'time' => ['required'],
-            'price' => ['required'],
-            'max_placements' => ['nullable'],
-            'name' => ['required'],
-            'start_date'=>['nullable'],
-            'end_date'=>['nullable'],
+            'max_placements' => ['required', 'integer', 'min:1'],
+            'start_date' => ['required', 'date'],
+            'end_date' => ['required', 'date', 'after:start_date'],
             'language_id' => ['required'],
-            'course_id' => ['nullable'],
-            'Image' => ['nullable', 'mimes:jpg,jpeg,png']
+            'price' => ['required', 'numeric', 'min:0'],
+            'time' => ['nullable'],
+            'name' => ['required'],
+            'Image' => ['nullable', 'image', 'mimes:jpg,jpeg,png'],
+            'is_hidden' => ['nullable', 'boolean'],
+            'course_id' => ['nullable', 'exists:courses,id'],
+        ];
+    }
+
+    /**
+     * Get custom error messages for validator errors.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'max_placements.min' => 'Le nombre maximum de places doit être au moins :min.',
+            'start_date.required' => 'La date de début est requise.',
+            'start_date.date' => 'La date de début doit être une date valide.',
+            'end_date.required' => 'La date de fin est requise.',
+            'end_date.date' => 'La date de fin doit être une date valide.',
+            'end_date.after' => 'La date de fin doit être postérieure à la date de début.',
+            'language_id.required' => 'La langue est requise.',
+            'price.required' => 'Le prix est requis.',
+            'price.numeric' => 'Le prix doit être un nombre.',
+            'price.min' => 'Le prix ne peut pas être inférieur à :min.',
+            'Image.image' => 'Le fichier doit être une image.',
+            'Image.mimes' => 'Le fichier doit être de type :jpg, :jpeg ou :png.',
+            'is_hidden.boolean' => 'La valeur du champ de masquage doit être vrai ou faux.',
+            'course_id.exists' => 'Le cours sélectionné est invalide.',
         ];
     }
 }

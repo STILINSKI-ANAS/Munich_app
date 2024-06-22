@@ -48,7 +48,7 @@
                         @include('layouts.inc.admin.side-bar')
                     </div>
 
-                    <div class="col-lg-10 ">
+                    <div class="col-lg-10">
                         {{--content--}}
                         @yield('content')
 

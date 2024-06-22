@@ -25,8 +25,21 @@
 
                                 <div class=" title-wrapper">
                                     <h1 class="title mb--0">Se pré-inscrire en ligne</h1>
+
+
                                 </div>
 
+                                <div class="col-lg-12 mt--30">
+                                    <div class="profile-content rbt-shadow-box">
+                                        <h4 class="rbt-title-style-3">Examen: PREFUNG A1</h4>
+                                        <div class="row g-5">
+                                            <div class="col-lg-8">
+                                                <p class="mt--10 mb--20"><i class="feather-calendar"></i>  Date d'examen: Le Samedi 1 juin 2024 à 9:00</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -42,20 +55,130 @@
                     <div class="row g-5 checkout-form">
                         <div class="col-lg-12">
                             <div class="checkout-content-wrapper">
-                                <h4 class="checkout-title">Veuillez saisir votre CIN</h4>
-                                <form action="{{ route('search.customer') }}" method="POST">
-                                    @csrf
-                                    <div class="row">
-                                        <div class="col-md-12 col-12 mb--20">
-                                            <label for="cin">CIN*</label>
-                                            <input type="text" id="cin" name="cin" placeholder="Votre numéro de carte nationale">
+                                <form >
+
+                                    <!-- Module selection -->
+                                    <div class="mb-3">
+                                        <h5 class="rbt-title-style-3"><i class="fas fa-clipboard-list"></i> Veuillez choisir le(s) module(s)</h5>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="ecrit" id="module_ecrit" name="modules[]">
+                                            <label class="form-check-label" for="module_ecrit">L'écrit</label>
                                         </div>
-                                        <!-- You can add more input fields or content here if needed -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="orale" id="module_orale" name="modules[]">
+                                            <label class="form-check-label" for="module_orale">L'orale</label>
+                                        </div>
                                     </div>
-                                    <button type="submit" class="rbt-btn btn-gradient rbt-marquee-btn justify-content-end">
-                                        <span data-text="Se pré-inscrire">Suivant <i class="fas fa-arrow-right ms-2"></i></span>
-                                    </button>
+
+                                    <!-- Personal information -->
+                                    <div class="mb-3">
+                                        <h5 class="rbt-title-style-3"><i class="fas fa-user"></i> Veuillez saisir vos informations personnelles</h5>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="prenom" class="form-label">Prénom *</label>
+                                                <input type="text" class="form-control" id="prenom" name="prenom" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="nom" class="form-label">Nom de famille *</label>
+                                                <input type="text" class="form-control" id="nom" name="nom" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="cin" class="form-label">N° CIN *</label>
+                                                <input type="text" class="form-control" id="cin" name="cin" required>
+                                            </div>
+                                            <div class="col-md-4 col-12 mb--20">
+                                                <label for="sexe">Sexe *</label>
+                                                <div class="rbt-modern-select bg-transparent height-50 mb--10">
+                                                    <select class="w-100" id="sexe" name="sexe">
+                                                        <option value="">Choisir...</option>
+                                                        <option value="homme">Homme</option>
+                                                        <option value="femme">Femme</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="date-naissance" class="form-label">Date de naissance *</label>
+                                                <input type="date" class="form-control" id="date-naissance" name="date-naissance" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="telephone" class="form-label">Numéro de téléphone *</label>
+                                                <input type="tel" class="form-control" id="telephone" name="telephone" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="email" class="form-label">Email *</label>
+                                                <input type="email" class="form-control" id="email" name="email" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="lieu_naissance" class="form-label">Lieu de naissance *</label>
+                                                <input type="text" class="form-control" id="lieu_naissance" name="lieu_naissance" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="pays_naissance" class="form-label">Pays de naissance *</label>
+                                                <input type="text" class="form-control" id="pays_naissance" name="pays_naissance" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- File upload -->
+                                    <div class="mb-3">
+                                        <h5 class="rbt-title-style-3"><i class="fas fa-file-upload"></i> Téléchargez vos documents</h5>
+
+                                        <div class="course-field mb--20">
+                                            <h6>CIN</h6>
+                                            <div class="rbt-create-course-thumbnail upload-area">
+                                                <div class="upload-area">
+                                                    <div class="brows-file-wrapper" data-black-overlay="9">
+                                                        <!-- actual upload which is hidden -->
+                                                        <input name="createinputfile" id="createinputfile" type="file" class="inputfile">
+                                                        <img id="createfileImage" src="assets/images/others/thumbnail-placeholder.svg" alt="file image">
+                                                        <!-- our custom upload button -->
+                                                        <label class="d-flex" for="createinputfile" title="No File Choosen">
+                                                            <i class="feather-upload"></i>
+                                                            <span class="text-center">Choose a File</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <small><i class="feather-info"></i> <b>Scanne de votre carte nationalle:</b> <b>File
+                                                    Support:</b> JPG, JPEG, PNG, WEBP</small>
+                                        </div>
+                                        <div class="course-field mb--20">
+                                            <h6>CV</h6>
+                                            <div class="rbt-create-course-thumbnail upload-area">
+                                                <div class="upload-area">
+                                                    <div class="brows-file-wrapper" data-black-overlay="9">
+                                                        <!-- actual upload which is hidden -->
+                                                        <input name="createinputfile" id="createinputfile" type="file" class="inputfile">
+                                                        <img id="createfileImage" src="assets/images/others/thumbnail-placeholder.svg" alt="file image">
+                                                        <!-- our custom upload button -->
+                                                        <label class="d-flex" for="createinputfile" title="No File Choosen">
+                                                            <i class="feather-upload"></i>
+                                                            <span class="text-center">Choose a File</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <small><i class="feather-info"></i> <b>Scanne de votre  Curriculum Vitae:</b> <b>File
+                                                    Support:</b> JPG, JPEG, PNG, WEBP</small>
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- Submit button -->
+                                    <button type="submit" class="btn btn-primary rbt-btn btn-gradient rbt-marquee-btn">Validez Votre Préinscription <i class="fas fa-arrow-right ms-2"></i></button>
                                 </form>
+
                             </div>
                         </div>
                     </div>

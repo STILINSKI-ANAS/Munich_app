@@ -3,26 +3,49 @@
 @section('content')
     <main class="rbt-main-wrapper">
         <div class="rbt-page-banner-wrapper">
+            <!-- Start Banner BG Image  -->
             <div class="rbt-banner-image"></div>
+            <!-- End Banner BG Image  -->
             <div class="rbt-banner-content">
+
+                <!-- Start Banner Content Top  -->
                 <div class="rbt-banner-content-top">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
+                                <!-- Start Breadcrumb Area  -->
                                 <ul class="page-list">
-                                    <li class="rbt-breadcrumb-item"><a href="{{ route('exams') }}">Calendrier des examens</a></li>
+                                    <li class="rbt-breadcrumb-item"><a href="index.html">Accueil</a></li>
                                     <li>
                                         <div class="icon-right"><i class="feather-chevron-right"></i></div>
                                     </li>
                                     <li class="rbt-breadcrumb-item active">Preinscription</li>
                                 </ul>
-                                <div class="title-wrapper">
+                                <!-- End Breadcrumb Area  -->
+
+                                <div class=" title-wrapper">
                                     <h1 class="title mb--0">Se pré-inscrire en ligne</h1>
+
+
+                                </div>
+
+                                <div class="col-lg-12 mt--30">
+                                    <div class="profile-content rbt-shadow-box">
+                                        <h4 class="rbt-title-style-3">Examen: PREFUNG A1</h4>
+                                        <div class="row g-5">
+                                            <div class="col-lg-8">
+                                                <p class="mt--10 mb--20"><i class="feather-calendar"></i>  Date d'examen: Le Samedi 1 juin 2024 à 9:00</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- End Banner Content Top  -->
+
             </div>
         </div>
 
@@ -32,10 +55,9 @@
                     <div class="row g-5 checkout-form">
                         <div class="col-lg-12">
                             <div class="checkout-content-wrapper">
-                                <form method="POST" action="{{ route('registration.postStep2') }}" enctype="multipart/form-data">
-                                    @csrf
-                                    <input type="hidden" name="exam_id" value="{{ session('exam_id') }}">
+                                <form >
 
+                                    <!-- Module selection -->
                                     <div class="mb-3">
                                         <h5 class="rbt-title-style-3"><i class="fas fa-clipboard-list"></i> Veuillez choisir le(s) module(s)</h5>
 
@@ -49,43 +71,40 @@
                                         </div>
                                     </div>
 
+                                    <!-- Personal information -->
                                     <div class="mb-3">
                                         <h5 class="rbt-title-style-3"><i class="fas fa-user"></i> Veuillez saisir vos informations personnelles</h5>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label for="first_name" class="form-label">Prénom *</label>
-                                                <input type="text" class="form-control" id="first_name" name="first_name" required>
+                                                <label for="prenom" class="form-label">Prénom *</label>
+                                                <input type="text" class="form-control" id="prenom" name="prenom" required>
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="last_name" class="form-label">Nom de famille *</label>
-                                                <input type="text" class="form-control" id="last_name" name="last_name" required>
+                                                <label for="nom" class="form-label">Nom de famille *</label>
+                                                <input type="text" class="form-control" id="nom" name="nom" required>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-4">
-                                                <label for="cin" class="form-label">N° CIN *</label>
+                                            <div class="col-md-6">
+                                                <label for="nom" class="form-label">N° CIN *</label>
                                                 <input type="text" class="form-control" id="cin" name="cin" required>
                                             </div>
-                                            <div class="col-md-4 col-12 mb--20">
-                                                <label for="gender">Sexe *</label>
+                                            <div class="col-md-6 col-12 mb--20">
+                                                <label for="sexe">Sexe *</label>
                                                 <div class="rbt-modern-select bg-transparent height-50 mb--10">
-                                                    <select class="w-100" id="gender" name="gender">
-                                                        <option value="">Choisir...</option>
-                                                        <option value="homme">Homme</option>
-                                                        <option value="femme">Femme</option>
+                                                    <select class="w-100">
+                                                        <option>Choisir...</option>
+                                                        <option>Homme</option>
+                                                        <option>Femme</option>
+
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
-                                                <label for="birth_date" class="form-label">Date de naissance *</label>
-                                                <input type="date" class="form-control" id="birth_date" name="birth_date" required>
-                                            </div>
                                         </div>
-
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label for="phone" class="form-label">Numéro de téléphone *</label>
-                                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                                                <label for="telephone" class="form-label">Numéro de téléphone *</label>
+                                                <input type="tel" class="form-control" id="telephone" name="telephone" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="email" class="form-label">Email *</label>
@@ -94,16 +113,17 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label for="birth_place" class="form-label">Lieu de naissance *</label>
-                                                <input type="text" class="form-control" id="birth_place" name="birth_place" required>
+                                                <label for="lieu_naissance" class="form-label">Lieu de naissance *</label>
+                                                <input type="text" class="form-control" id="lieu_naissance" name="lieu_naissance" required>
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="birth_country" class="form-label">Pays de naissance *</label>
-                                                <input type="text" class="form-control" id="birth_country" name="birth_country" required>
+                                                <label for="pays_naissance" class="form-label">Pays de naissance *</label>
+                                                <input type="text" class="form-control" id="pays_naissance" name="pays_naissance" required>
                                             </div>
                                         </div>
                                     </div>
 
+                                    <!-- File upload -->
                                     <div class="mb-3">
                                         <h5 class="rbt-title-style-3"><i class="fas fa-file-upload"></i> Téléchargez vos documents</h5>
 
@@ -112,42 +132,54 @@
                                             <div class="rbt-create-course-thumbnail upload-area">
                                                 <div class="upload-area">
                                                     <div class="brows-file-wrapper" data-black-overlay="9">
-                                                        <input name="cin_document" id="cin_document" type="file" class="inputfile">
+                                                        <!-- actual upload which is hidden -->
+                                                        <input name="createinputfile" id="createinputfile" type="file" class="inputfile">
                                                         <img id="createfileImage" src="assets/images/others/thumbnail-placeholder.svg" alt="file image">
-                                                        <label class="d-flex" for="cin_document" title="No File Choosen">
+                                                        <!-- our custom upload button -->
+                                                        <label class="d-flex" for="createinputfile" title="No File Choosen">
                                                             <i class="feather-upload"></i>
                                                             <span class="text-center">Choose a File</span>
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <small><i class="feather-info"></i> <b>Scanne de votre carte nationalle:</b> <b>File Support:</b> JPG, JPEG, PNG, WEBP</small>
+
+                                            <small><i class="feather-info"></i> <b>Scanne de votre carte nationalle:</b> <b>File
+                                                    Support:</b> JPG, JPEG, PNG, WEBP</small>
                                         </div>
                                         <div class="course-field mb--20">
-                                            <h6>Photo</h6>
+                                            <h6>CV</h6>
                                             <div class="rbt-create-course-thumbnail upload-area">
                                                 <div class="upload-area">
                                                     <div class="brows-file-wrapper" data-black-overlay="9">
-                                                        <input name="photo" id="photo" type="file" class="inputfile">
+                                                        <!-- actual upload which is hidden -->
+                                                        <input name="createinputfile" id="createinputfile" type="file" class="inputfile">
                                                         <img id="createfileImage" src="assets/images/others/thumbnail-placeholder.svg" alt="file image">
-                                                        <label class="d-flex" for="photo" title="No File Choosen">
+                                                        <!-- our custom upload button -->
+                                                        <label class="d-flex" for="createinputfile" title="No File Choosen">
                                                             <i class="feather-upload"></i>
                                                             <span class="text-center">Choose a File</span>
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <small><i class="feather-info"></i> <b>Photo:</b> <b>File Support:</b> JPG, JPEG, PNG, WEBP</small>
+
+                                            <small><i class="feather-info"></i> <b>Scanne de votre  Curriculum Vitae:</b> <b>File
+                                                    Support:</b> JPG, JPEG, PNG, WEBP</small>
                                         </div>
+
                                     </div>
 
+
+                                    <!-- Submit button -->
                                     <button type="submit" class="btn btn-primary rbt-btn btn-gradient rbt-marquee-btn">Validez Votre Préinscription <i class="fas fa-arrow-right ms-2"></i></button>
                                 </form>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+
 @endsection

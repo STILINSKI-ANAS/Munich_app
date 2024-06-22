@@ -10,24 +10,18 @@ class Test extends Model
     use HasFactory;
 
     protected $fillable = [
-        'level',
-        'overview',
-        'content',
-        'time',
         'name',
+        'level',
+        'time',
         'price',
         'max_placements',
         'Image',
-        'short_description',
-        'features',
         'course_id',
         'start_date',
         'end_date',
         'is_hidden'
     ];
-    protected $casts = [
-        'features' => 'array',
-    ];
+
 
 
     public function language()

@@ -7,6 +7,7 @@ use App\Models\Exam;
 use App\Models\Language;
 use App\Models\Test;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ExamController extends Controller
 {
@@ -17,11 +18,14 @@ class ExamController extends Controller
         $tests = Test::where('is_hidden', false)->get();
         $categories = Category::all();
         $exams = Exam::all();
-        return view('user.exams.index')->with([
-            'languages' => $languages,
-            'tests' => $tests,
-            'categories' => $categories,
-            'exams' => $exams
-        ]);
+        // Fetch distinct levels and their counts
+        $levels = Exam::select('level', DB::raw('count(*) as total'))
+            ->groupBy('level')
+            ->get();
+
+        return view('user.exams.index', compact('exams', 'levels','tests','categories','languages'));
     }
+
+
+
 }
