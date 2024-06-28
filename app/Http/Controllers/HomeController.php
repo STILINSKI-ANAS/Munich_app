@@ -6,10 +6,12 @@ use App\Models\Announcement;
 use App\Models\Category;
 use App\Models\Course;
 use App\Models\Etudiant;
+use App\Models\Exam;
 use App\Models\Language;
 use App\Models\Subscriber;
 use App\Models\Test;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -190,21 +192,15 @@ class HomeController extends Controller
     public function getLanguageTests($languageName, Request $request)
     {
         $languages = Language::all();
-        $lang = Language::where('name', $languageName)->first();
+        $tests = Test::where('is_hidden', false)->get();
+        $categories = Category::all();
+        $exams = Exam::all();
+        // Fetch distinct levels and their counts
+        $levels = Exam::select('level', DB::raw('count(*) as total'))
+            ->groupBy('level')
+            ->get();
 
-        if ($lang) {
-            // Retrieve only tests where 'is_hidden' is false
-            $tests = $lang->tests()->where('is_hidden', false)->get();
-        } else {
-            $tests = [];
-        }
-
-        // Rest of your code
-        return view('user.Test.tests')->with([
-            'tests' => $tests,
-            'languages' => $languages,
-            'language' => $languageName,
-        ]);
+        return view('user.Test.tests', compact('exams', 'levels','tests','categories','languages'));
     }
     public function preinscription()
     {
