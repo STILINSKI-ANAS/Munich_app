@@ -15,9 +15,13 @@ class ExamController extends Controller
     public function index()
     {
         $exams = Exam::all();
-        $exams = Exam::paginate(10); // Paginate the exams
+//        $exams = Exam::paginate(10); // Paginate the exams
+        $levels = Exam::select('level', DB::raw('count(*) as total'))
+            ->groupBy('level')
+            ->get();
 
-        return view('user.exams.index', compact('exams'));
+
+        return view('user.exams.index', compact('exams', 'levels'));
     }
 
 

@@ -12,6 +12,20 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.png')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <style>
+        .modal-backdrop {
+            z-index: 1040 !important;
+        }
+        .modal {
+            z-index: 1050 !important;
+        }
+        body.modal-open {
+            overflow: auto;
+        }
+        body.modal-open[style] {
+            padding-right: 0 !important;
+        }
+    </style>
 
     <!-- CSS
 	============================================ -->

@@ -25,16 +25,16 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('*', function ($view) {
-            $languages = Language::all();
-            $tests = Test::where('is_hidden', false)->get();
-            $categories = Category::all();
-            $exams = Exam::all();
-            $levels = Exam::select('level', DB::raw('count(*) as total'))
+        View::composer(['layouts.inc.admin.header'], function ($view) {
+            $header_languages = Language::all();
+            $header_tests = Test::where('is_hidden', false)->get();
+            $header_categories = Category::all();
+            $header_exams = Exam::all();
+            $header_levels = Exam::select('level', DB::raw('count(*) as total'))
                 ->groupBy('level')
                 ->get();
 
-            $view->with(compact('languages', 'tests', 'categories', 'exams', 'levels'));
+            $view->with(compact('header_languages', 'header_tests', 'header_categories', 'header_exams', 'header_levels'));
         });
     }
 }

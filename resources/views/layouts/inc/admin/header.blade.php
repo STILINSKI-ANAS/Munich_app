@@ -57,32 +57,30 @@
                 <div class="header-left rbt-header-content">
                     <div class="header-info">
                         <div class="logo">
-                            <a href="{{url('/')}}">
+                            <a href="{{ url('/') }}">
                                 <img src="{{ asset('assets/images/logo/logo-white.png') }}" alt="Institut Munich Logo">
                             </a>
                         </div>
                     </div>
                 </div>
 
-
-                @if (isset($languages))
+                @if (isset($header_languages))
 
                     <div class="rbt-main-navigation d-none d-xl-block">
                         <nav class="mainmenu-nav">
                             <ul class="mainmenu">
                                 <li class="with-megamenu has-menu-child-item position-static">
-                                    <a href="{{url('/')}}">Accueil</a>
+                                    <a href="{{ url('/') }}">Accueil</a>
                                 </li>
-
 
                                 <li class="has-dropdown has-menu-child-item">
                                     <a href="#">Calendrier des Examens
                                         <i class="feather-chevron-down"></i>
                                     </a>
                                     <ul class="submenu">
-                                        @foreach($languages as $language)
+                                        @foreach($header_languages as $language)
                                             <li class="has-dropdown"><a
-                                                    href="{{url('/'.$language->name.'/Tests/')}}">{{$language->name}}</a>
+                                                    href="{{ url('/'.$language->name.'/Tests/') }}">{{ $language->name }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -185,10 +183,6 @@
                         </ul>
                     @endguest
 
-
-
-
-
                     <!-- Start Mobile-Menu-Bar -->
                     <div class="mobile-menu-bar d-block d-xl-none">
                         <div class="hamberger">
@@ -199,10 +193,9 @@
                     </div>
                     <!-- Start Mobile-Menu-Bar -->
                 </div>
-
-
             </div>
             <!-- Start Search Dropdown  -->
             <!-- End Search Dropdown  -->
+        </div>
         </div>
 </header>

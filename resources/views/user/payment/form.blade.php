@@ -55,25 +55,36 @@
                                             <input type="date" class="form-control" id="payment_date" name="payment_date" required>
                                         </div>
 
-                                        <div class="mb-4">
-                                            <label for="payment_receipt" class="form-label">Reçu de paiement</label>
-
-
+                                        <div class="course-field mb--20">
+                                            <h6>Payment Receipt</h6>
                                             <div class="rbt-create-course-thumbnail upload-area">
                                                 <div class="upload-area">
                                                     <div class="brows-file-wrapper" data-black-overlay="9">
-                                                        <input name="payment_receipt" required id="payment_receipt" type="file" class="inputfile">
-                                                        <img id="createfileImage" src="assets/images/others/thumbnail-placeholder.svg" alt="file image">
-                                                        <label class="d-flex" for="payment_receipt" title="No File Choosen">
+                                                        <input name="payment_receipt" id="payment_receipt" type="file" class="inputfile" />
+                                                        <img id="paymentReceiptImage" src="{{ asset('assets/images/others/thumbnail-placeholder.svg') }}" alt="Payment Receipt">
+                                                        <label class="d-flex" for="payment_receipt" title="No File Chosen">
                                                             <i class="feather-upload"></i>
                                                             <span class="text-center">Choose a File</span>
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <small><i class="feather-info"></i> <b>Scanne de votre carte nationalle:</b> <b>File Support:</b> JPG, JPEG, PNG, WEBP</small>
-
+                                            <small><i class="feather-info"></i> <b>Size:</b> As per requirement, <b>File Support:</b> JPG, JPEG, PNG, GIF, WEBP</small>
                                         </div>
+                                        <script>
+                                            function previewImage(inputId, imgId) {
+                                                const input = document.getElementById(inputId);
+                                                const img = document.getElementById(imgId);
+                                                input.addEventListener('change', function() {
+                                                    const [file] = this.files;
+                                                    if (file) {
+                                                        img.src = URL.createObjectURL(file);
+                                                    }
+                                                });
+                                            }
+
+                                            previewImage('payment_receipt', 'paymentReceiptImage');
+                                        </script>
 
 
 

@@ -40,14 +40,12 @@ class ExamController extends Controller
 
         // Debugging output
 
-
+        $levels = Exam::select('level', DB::raw('count(*) as total'))
+            ->groupBy('level')
+            ->get();
         // Append the request parameters to the pagination links
         $exams->appends($request->except('page'));
-        dd([
-            'class' => get_class($exams),
-            'methods' => get_class_methods($exams),
-        ]);
-        return view('admin.exams.index', compact('exams'));
+        return view('admin.exams.index', compact('exams', 'levels'));
     }
     public function testPagination(Request $request)
     {

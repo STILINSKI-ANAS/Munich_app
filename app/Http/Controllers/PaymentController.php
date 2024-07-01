@@ -35,7 +35,7 @@ class PaymentController extends Controller
             $payment->payment_date = $request->payment_date;
 
             if ($request->hasFile('payment_receipt')) {
-                $payment->payment_receipt = $request->payment_receipt->store('payment_receipts');
+                $payment->payment_receipt = $request->file('payment_receipt')->store('payment_receipts', 'private');
             }
 
             $payment->save();

@@ -56,6 +56,23 @@ class RegistrationController extends Controller
 
     public function postStep2(Request $request)
     {
+        // Validate the request input
+        $request->validate([
+//            'first_name' => 'required|string|max:255',
+//            'last_name' => 'required|string|max:255',
+//            'gender' => 'required|string',
+//            'birth_date' => 'required|date',
+//            'phone' => 'required|string|max:20',
+//            'email' => 'required|email|max:255',
+//            'birth_place' => 'required|string|max:255',
+//            'birth_country' => 'required|string|max:255',
+            'modules' => 'required|array|min:1',
+            'photo' => 'required|file|mimes:jpeg,png',
+            'cin_document' => 'required|file|mimes:jpeg,png'
+        ], [
+            'modules.required' => 'Veuillez choisir au moins un module.'
+        ]);
+
         $registration = Registration::where('cin', $request->session()->get('cin'))->first();
 
         if (!$registration) {
@@ -84,6 +101,7 @@ class RegistrationController extends Controller
 
         $token = Str::random(32);
         $registration->email_validation_token = $token;
+        $registration->payment_ref = 'f';
         $registration->save();
 
         // Send validation email
@@ -94,6 +112,7 @@ class RegistrationController extends Controller
 
         return redirect()->route('exams')->with('success', 'Registration completed successfully! Please check your email to validate it.');
     }
+
 
     public function validateEmail($token)
     {

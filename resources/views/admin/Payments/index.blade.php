@@ -70,7 +70,7 @@
                                 <tbody>
                                 @foreach($payments as $payment)
                                     <tr>
-                                        <td>{{ $payment->registration->registration_reference }}</td>
+                                        <td>{{ $payment->registration->cin }}</td>
                                         <td>{{ $payment->payment_reference }}</td>
                                         <td>{{ $payment->payment_date }}</td>
                                         <td>

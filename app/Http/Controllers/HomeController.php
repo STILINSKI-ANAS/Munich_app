@@ -192,7 +192,10 @@ class HomeController extends Controller
     public function getLanguageTests($languageName, Request $request)
     {
         $exams = Exam::all();
-        return view('user.Test.tests', compact('exams'));
+        $levels = Exam::select('level', DB::raw('count(*) as total'))
+            ->groupBy('level')
+            ->get();
+        return view('user.Test.tests', compact('exams','levels'));
     }
     public function preinscription()
     {

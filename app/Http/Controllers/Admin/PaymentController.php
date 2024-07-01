@@ -44,4 +44,20 @@ class PaymentController extends Controller
 
         return redirect()->route('admin.payments.index')->with('success', 'Payment verified successfully.');
     }
+
+    public function showReceipt(Payment $payment)
+    {
+//        if (!auth()->user()->isAdmin()) {
+//            abort(403);
+//        }
+
+        $path = storage_path('app/private/' . $payment->payment_receipt);
+//        dd($path);
+        if (!file_exists($path)) {
+            abort(404);
+        }
+
+        return response()->file($path);
+    }
+
 }

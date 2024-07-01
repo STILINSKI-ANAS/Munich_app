@@ -1,18 +1,29 @@
 <?php
 
-use App\Http\Controllers\Admin\TestController;
+use App\Http\Controllers\Admin\AnnouncementsController;
+use App\Http\Controllers\Admin\CoursController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EtudiantController;
+use App\Http\Controllers\Admin\ExamController as AdminExamController;
+use App\Http\Controllers\Admin\LanguaguesController;
+use App\Http\Controllers\Admin\OrdersController;
+use App\Http\Controllers\Admin\PaymentController as AdminPaymentController;
+use App\Http\Controllers\Admin\RegistrationController as AdminRegistrationController;
+use App\Http\Controllers\Admin\ResultController as AdminResultController;
+use App\Http\Controllers\Admin\ConvocationController as AdminConvocationController;
+use App\Http\Controllers\Admin\TestsController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ConvocationController;
+use App\Http\Controllers\EtudiantCourseController;
+use App\Http\Controllers\EtudiantTestController;
 use App\Http\Controllers\ExamController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InstructorController;
+use App\Http\Controllers\PaiementController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ResultController;
-use Illuminate\Http\Request;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PaiementController;
-use App\Http\Livewire\Admin\Inscriptions\TestsInscriptions\Index;
-use App\Mail\EmailService;
 use App\Mail\GreetingEmail;
-use App\Models\Test;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -27,282 +38,137 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-//Route::get('/payment-for-telc', [PaiementController::class, 'showTestTelcPayment']);
 
-//Route::get('/payment-for-telc', function (Request $request) {
-//    PaiementController::showTestTelcPayment($request);
-//});
-//Route::get('/dump-and-die', [\App\Http\Controllers\PaiementController::class, 'showTestTelcPayment'])->name('showTestTelcPayment');
-
-Route::get('/test-pagination', [TestController::class, 'testPagination']);
-
-Route::get('/account', function () {
-    return view('welcome');
-});
-//Route::get('/payment-for-telc', [\App\Http\Controllers\PaiementController::class, 'showTestTelcPayment'])->name('showTestTelcPayment');
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-});
-Route::get('/user', function () {
-    return view('layouts.user');
-});
-
-// Email Verification
-Route::get('/email/verify', 'VerificationController@show')->name('verification.notice');
-
-Route::get('/home', function () {
-    return redirect()->route('root');
-});
-
-Route::get('/calendrier', 'CalendarController@index')->name('calendar');
-
-
+// Authentication Routes
 Auth::routes(['verify' => true]);
 
+// Admin Routes
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('Dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('Dashboard');
+    Route::get('Dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
-    Route::controller(\App\Http\Controllers\Admin\LanguaguesController::class)->group(function () {
-        Route::get('/Languages', 'index');
+    Route::controller(LanguaguesController::class)->group(function () {
+        Route::get('/Languages', 'index')->name('admin.languages');
         Route::get('/Languages/create', 'create');
         Route::get('/Languages/{language}/edit', 'edit');
         Route::post('/Languages', 'store');
-        Route::put('Languages/{Language}', 'update');
-    });
-    Route::controller(\App\Http\Controllers\Admin\EtudiantController::class)->group(function () {
-        Route::get('/Etudiant', 'index');
-        Route::get('/Etudiant/create', 'create');
-        Route::get('/Etudiant/edit/{etudiant}', 'edit');
-        Route::post('/Etudiant', 'store');
-        Route::put('Etudiant/{etudiant}', 'update');
+        Route::put('/Languages/{Language}', 'update');
     });
 
-    # Users
-    Route::controller(\App\Http\Controllers\Admin\UserController::class)->group(function () {
-        Route::get('/Users', 'index')->name('Users');
-        Route::post('/Users/SetAdmin/{user}', 'setAdmin');
-    });
-
-    Route::controller(\App\Http\Controllers\Admin\CoursController::class)->group(function () {
-        Route::get('/Course', 'index');
-        Route::get('/Course/create', 'create');
-        Route::get('/Course/{Course}/edit', 'edit');
-        Route::post('/Course', 'store');
-        Route::put('Course/{Course}', 'update');
-    });
-    Route::get('Cours', [\App\Http\Controllers\Admin\CoursController::class, 'index']);
-
-    Route::controller(\App\Http\Controllers\Admin\OrdersController::class)->group(function () {
-        Route::get('/Orders', 'index');
-        Route::get('/Orders/create', 'create');
-        Route::get('/Orders/{Order}/edit', 'edit');
-        Route::post('/Orders', 'store');
-        Route::put('Orders/{Order}', 'update');
-    });
-
-    Route::controller(\App\Http\Controllers\Admin\TestsController::class)->group(function () {
-        Route::get('/Test', 'index');
-        Route::get('/Test/create', 'create');
-        Route::get('/Test/{Test}/edit', 'edit');
-        Route::post('/Test', 'store');
-        Route::put('/Test/{Test}', 'update'); // Ensure that the update route is defined with the correct URI pattern
-
-    });
-
-
-    Route::controller(\App\Http\Controllers\Admin\AnnouncementsController::class)->group(function () {
-        Route::get('/Announcements', 'index');
+    Route::controller(AnnouncementsController::class)->group(function () {
+        Route::get('/Announcements', 'index')->name('admin.announcements');
         Route::get('/Announcements/create', 'create');
         Route::get('/Announcements/{Announcements}/edit', 'edit');
         Route::post('/Announcements', 'store');
-        Route::put('Announcements/{Announcements}', 'update');
+        Route::put('/Announcements/{Announcements}', 'update');
     });
 
+    Route::controller(UserController::class)->group(function () {
+        Route::get('/Users', 'index')->name('admin.users');
+        Route::post('/Users/SetAdmin/{user}', 'setAdmin');
+    });
 
-    // hakeem added
-    Route::controller(App\Http\Controllers\Admin\ExamController::class)->group(function () {
+    Route::controller(AdminExamController::class)->group(function () {
         Route::get('/exams', 'index')->name('admin.exams.index');
         Route::get('/exams/create', 'create')->name('admin.exams.create');
         Route::post('/exams', 'store')->name('admin.exams.store');
         Route::get('/exams/{exam}/edit', 'edit')->name('admin.exams.edit');
         Route::put('/exams/{exam}', 'update')->name('admin.exams.update');
         Route::delete('/exams/{exam}', 'destroy')->name('admin.exams.destroy');
-
         Route::get('/exams/test', 'testPagination')->name('admin.exams.test');
     });
 
-
-    Route::controller(App\Http\Controllers\Admin\RegistrationController::class)->group(function () {
+    Route::controller(AdminRegistrationController::class)->group(function () {
         Route::get('/registrations', 'index')->name('admin.registrations.index');
         Route::get('/registrations/{registration}/edit', 'edit')->name('admin.registrations.edit');
         Route::put('/registrations/{registration}', 'update')->name('admin.registrations.update');
     });
 
-
-
-    Route::controller(App\Http\Controllers\Admin\PaymentController::class)->group(function () {
-        Route::get('payments', [App\Http\Controllers\Admin\PaymentController::class, 'index'])->name('admin.payments.index');
-        Route::get('payments/{id}', [App\Http\Controllers\Admin\PaymentController::class, 'show'])->name('admin.payments.show');
-        Route::post('payments/{id}/verify', [App\Http\Controllers\Admin\PaymentController::class, 'verify'])->name('admin.payments.verify');
+    Route::controller(AdminPaymentController::class)->group(function () {
+        Route::get('/payments', 'index')->name('admin.payments.index');
+        Route::get('/payments/{id}', 'show')->name('admin.payments.show');
+        Route::post('/payments/{id}/verify', 'verify')->name('admin.payments.verify');
+        Route::get('payments/{payment}/receipt', 'showReceipt')->name('admin.payments.receipt');
     });
-    Route::get('Cours', [\App\Http\Controllers\Admin\CoursController::class, 'index']);
-    Route::get('Tests', [\App\Http\Controllers\Admin\TestsController::class, 'index']);
-    Route::get('Orders', [\App\Http\Controllers\Admin\OrdersController::class, 'index']);
-    Route::get('Clients', [\App\Http\Controllers\Admin\ClientsController::class, 'index']);
-    Route::get('CoursInscriptions', [\App\Http\Controllers\Admin\CoursInscriptionsController::class, 'index']);
-    Route::get('TestsInscriptions', [\App\Http\Controllers\Admin\TestsInscriptionsController::class, 'index']);
 
+    Route::controller(AdminConvocationController::class)->group(function () {
+        Route::get('/convocations', 'index')->name('admin.convocations.index');
+        Route::get('/convocations/{id}/download', 'download')->name('admin.convocations.download');
+    });
 
-    Route::get('/results', [\App\Http\Controllers\Admin\ResultController::class, 'index'])->name('admin.results.index');
-    Route::get('/results/export', [\App\Http\Controllers\Admin\ResultController::class, 'export'])->name('admin.results.export');
-    Route::post('/results/import', [\App\Http\Controllers\Admin\ResultController::class, 'import'])->name('admin.results.import');
-    Route::get('/results/template', [\App\Http\Controllers\Admin\ResultController::class, 'downloadTemplate'])->name('admin.results.downloadTemplate');
-
-    Route::get('/convocations', [\App\Http\Controllers\Admin\ConvocationController::class, 'index'])->name('admin.convocations.index');
-    Route::get('/convocations/{id}/download', [\App\Http\Controllers\Admin\ConvocationController::class, 'download'])->name('admin.convocations.download');
-
-
+    Route::controller(AdminResultController::class)->group(function () {
+        Route::get('/results', 'index')->name('admin.results.index');
+        Route::get('/results/export', 'export')->name('admin.results.export');
+        Route::post('/results/import', 'import')->name('admin.results.import');
+        Route::get('/results/template', 'downloadTemplate')->name('admin.results.downloadTemplate');
+    });
 });
 
-Route::prefix('/')->group(function () {
+// Normal User Routes
+Route::middleware(['web'])->group(function () {
 
-//    Route::controller(\App\Http\Controllers\HomeController::class)->group(function () {
-//        Route::get('/', 'index')->name('root');
-//        Route::get('/privacy-policy', 'privacyPolicy');
-//        Route::get('/blog', 'blog');
-//        Route::get('/blog1', 'blog1');
-//        Route::get('/blog2', 'blog2');
-//        Route::get('/blog3', 'blog3');
-//        Route::get('/blog4', 'blog4');
-//        Route::get('/blog5', 'blog5');
-//
-//        Route::post('/Subscribe', 'subscribe');
-//
-//        Route::get('/aboutUs', 'aboutUs');
-//
-//        Route::get('/{Language}/Courses', 'getLanguageCourses');
-//        Route::get('/Language/Course/{Course}', 'getCourse');
-//        Route::get('/{Language}/Tests', 'getLanguageTests');
-//        Route::get('/Language/Test/create', 'createDummyTests');
-//        Route::get('/Language/Test/{Test}', 'getTest');
-//
-//        Route::get('/Language/Course/{courseId}', 'HomeController@getCourse')->name('getCourse');
-//    });
+    Route::get('/', [HomeController::class, 'index'])->name('root');
+    Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
+    Route::get('/thank-you', [HomeController::class, 'thankyou']);
+    Route::get('/blog', [HomeController::class, 'blog']);
+    Route::get('/blog1', [HomeController::class, 'blog1']);
+    Route::get('/blog2', [HomeController::class, 'blog2']);
+    Route::get('/blog3', [HomeController::class, 'blog3']);
+    Route::get('/blog4', [HomeController::class, 'blog4']);
+    Route::get('/blog5', [HomeController::class, 'blog5']);
+    Route::post('/Subscribe', [HomeController::class, 'subscribe']);
+    Route::get('/aboutUs', [HomeController::class, 'aboutUs'])->name('aboutUs');
+    Route::post('/search/customer', [HomeController::class, 'searchCustomer'])->name('search.customer');
+    Route::get('/{Language}/Courses', [HomeController::class, 'getLanguageCourses']);
+    Route::get('/Language/Course/{Course}', [HomeController::class, 'getCourse']);
+    Route::get('/{Language}/Tests', [HomeController::class, 'getLanguageTests']);
+    Route::get('/Language/Test/create', [HomeController::class, 'createDummyTests']);
+    Route::get('/Language/Test/{Test}', [HomeController::class, 'getTest']);
+    Route::get('/Test/preinscription', [HomeController::class, 'preinscription']);
+    Route::get('/Test/admission/{testId}', [HomeController::class, 'admission'])->name('test.admission');
+    Route::get('/Language/Course/{courseId}', [HomeController::class, 'getCourse'])->name('getCourse');
 
-    Route::middleware(['web'])->group(function () {
-        Route::get('/', [HomeController::class, 'index'])->name('root');
-        Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
-        Route::get('/thank-you', [HomeController::class, 'thankyou']);
-        Route::get('/blog', [HomeController::class, 'blog']);
-        Route::get('/blog1', [HomeController::class, 'blog1']);
-        Route::get('/blog2', [HomeController::class, 'blog2']);
-        Route::get('/blog3', [HomeController::class, 'blog3']);
-        Route::get('/blog4', [HomeController::class, 'blog4']);
-        Route::get('/blog5', [HomeController::class, 'blog5']);
-
-        Route::post('/Subscribe', [HomeController::class, 'subscribe']);
-
-        Route::get('/aboutUs', [HomeController::class, 'aboutUs']);
-
-        Route::get('/{Language}/Courses', [HomeController::class, 'getLanguageCourses']);
-        Route::get('/Language/Course/{Course}', [HomeController::class, 'getCourse']);
-        Route::get('/{Language}/Tests', [HomeController::class, 'getLanguageTests']);
-        Route::get('/Language/Test/create', [HomeController::class, 'createDummyTests']);
-        Route::get('/Language/Test/{Test}', [HomeController::class, 'getTest']);
-        Route::get('/Test/preinscription',[HomeController::class, 'preinscription']);
-        Route::get('/Test/admission/{testId}', [HomeController::class, 'admission'])->name('test.admission');
-
-        Route::post('/search/customer', [HomeController::class, 'searchCustomer'])->name('search.customer');
-
-
-
-
-        Route::get('/Language/Course/{courseId}', [HomeController::class, 'getCourse'])->name('getCourse');
+    Route::controller(ExamController::class)->group(function () {
+        Route::get('/exams', 'index')->name('exams');
     });
 
-    Route::controller(\App\Http\Controllers\InstructorController::class)->group(function () {
+    Route::controller(RegistrationController::class)->group(function () {
+        Route::prefix('registration')->group(function () {
+            Route::get('/step1', 'step1')->name('registration.step1');
+            Route::post('/step1', 'postStep1')->name('registration.postStep1');
+            Route::get('/step2', 'step2')->name('registration.step2');
+            Route::post('/step2', 'postStep2')->name('registration.postStep2');
+            Route::get('/validate-email/{token}', 'validateEmail')->name('registration.validate_email');
+        });
+    });
+
+    Route::controller(ResultController::class)->group(function () {
+        Route::get('/results', 'showCinForm')->name('results.form');
+        Route::post('/results/search', 'searchResults')->name('results.search');
+        Route::get('/results/{id}', 'show')->name('results.show');
+    });
+
+    Route::controller(PaymentController::class)->group(function () {
+        Route::prefix('payment')->group(function () {
+            Route::get('/form', 'form')->name('payment.form');
+            Route::post('/submit', 'submit')->name('payment.submit');
+            Route::get('/confirm', 'confirm')->name('payment.confirm');
+            Route::get('/prepayement', 'prepayement')->name('payment.prepayement');
+        });
+    });
+
+    Route::controller(ConvocationController::class)->group(function () {
+        Route::prefix('convocation')->group(function () {
+            Route::get('/form', 'form')->name('convocation.form');
+            Route::post('/submit', 'submit')->name('convocation.submit');
+        });
+    });
+
+    Route::controller(InstructorController::class)->group(function () {
         Route::get('/Instructor/register', 'index');
         Route::post('/Instructor/Register', 'store');
     });
-    Route::controller(\App\Http\Controllers\EtudiantTestController::class)->group(function () {
-        Route::get('/EtudiantTests', 'showTests');
-//        Route::post('/EtudiantTest', 'store')->name('EtudiantTest');
-        Route::match(['get', 'post'], '/EtudiantTest', 'store')->name('EtudiantTest');
-        Route::post('/inscriptionstep2', 'step2')->name('inscriptionstep2');
-    });
-    Route::controller(\App\Http\Controllers\PaiementController::class)->group(function () {
-        Route::get('/inscriptionstep3', 'index');
-        Route::post('/testPaymentProcess', 'testPayment')->name('testPaymentProcess');
-        Route::post('/coursePaymentProcess', 'coursePayment')->name('coursePaymentProcess');
-        Route::post('/validerCoursePayment1', 'validerCoursePayment1')->name('validerCoursePayment1');
-        Route::post('/validerCoursePayment2', 'validerCoursePayment2')->name('validerCoursePayment2');
-        Route::post('/validerTestPayment1', 'validerTestPayment1')->name('validerTestPayment1');
-        Route::post('/validerTestPayment2', 'validerTestPayment2')->name('validerTestPayment2');
-        Route::get('/payment-success', function () {
-            return view('user.Paiement.ok');
-        })->name('paymentSuccess');
-        Route::get('/payment-fail', function () {
-            return view('user.Paiement.fail');
-        })->name('paymentFail');
 
-        //notez que vous pouvez utiliser le chemin que vous voulez, mais vous devez utiliser la méthode de rappel (callback) implémentée dans la trait CmiGateway
-        Route::post('/cmi/callback', [\App\Http\Controllers\PaiementController::class, 'callback'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
 
-        // dans la trait CmiGateway, cette méthode est vide pour que vous puissiez implémenter votre propre processus après un paiement réussi
-        Route::post('/cmi/ok', [\App\Http\Controllers\PaiementController::class, 'okUrl'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
-
-        // la fail url redirigera l'utilisateur vers shopUrl avec une erreur pour que l'utilisateur puisse essayer de payer à nouveau
-        Route::post('/cmi/fail', [\App\Http\Controllers\PaiementController::class, 'failUrl'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
-        //Route::post('/inscriptionstep2', 'step2')->name('inscriptionstep2');
-    });
-    Route::controller(\App\Http\Controllers\EtudiantCourseController::class)->group(function () {
-        Route::post('/EtudiantCourse', 'store')->name('EtudiantCourse');
-    });
+    // Static Routes
+    Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 });
-
-Route::get('/send-greeting-email', function () {
-    $recipientEmail = 'hakeemkadim@gmail.com';
-
-    Mail::to($recipientEmail)->send(new GreetingEmail());
-
-    return "Greeting email sent successfully!";
-});
-
-Route::controller(\App\Http\Controllers\Admin\EtudiantController::class)->group(function () {
-    Route::get('/create-user/{etudiant_id}', 'createAndAttachUser');
-    Route::get('/get-user/{user_id}', 'getUserAndAttachedEtudiant');
-});
-
-# Static paiement routes
-Route::get('/payment-for-telc', [\App\Http\Controllers\PaiementController::class, 'showTestTelcPayment'])->name('showTestTelcPayment');
-//Route::get('/process-test', [PaiementController::class, 'showTestTelcPayment'])->name('process-test');
-
-Route::get('/exams', [ExamController::class, 'index'])->name('exams');
-Route::prefix('registration')->group(function () {
-    Route::get('/step1', [RegistrationController::class, 'step1'])->name('registration.step1');
-    Route::post('/step1', [RegistrationController::class, 'postStep1'])->name('registration.postStep1');
-    Route::get('/step2', [RegistrationController::class, 'step2'])->name('registration.step2');
-    Route::post('/step2', [RegistrationController::class, 'postStep2'])->name('registration.postStep2');
-    Route::get('/validate-email/{token}', [RegistrationController::class, 'validateEmail'])->name('registration.validate_email');
-});
-
-Route::get('/results', [ResultController::class, 'showCinForm'])->name('results.form');
-Route::post('/results/search', [ResultController::class, 'searchResults'])->name('results.search');
-Route::get('/results/{id}', [ResultController::class, 'show'])->name('results.show');
-
-Route::prefix('payment')->group(function () {
-    Route::get('/form', [PaymentController::class, 'form'])->name('payment.form');
-    Route::post('/submit', [PaymentController::class, 'submit'])->name('payment.submit');
-    Route::get('/confirm', [PaymentController::class, 'confirm'])->name('payment.confirm');
-    Route::get('/prepayement', [PaymentController::class, 'prepayement'])->name('payment.prepayement');
-});
-Route::prefix('convocation')->group(function () {
-    Route::get('/form', [ConvocationController::class, 'form'])->name('convocation.form');
-    Route::post('/submit', [ConvocationController::class, 'submit'])->name('convocation.submit');
-    //Route::get('/confirm', [PaymentController::class, 'confirm'])->name('payment.confirm');
-});
-
-
-
-
-

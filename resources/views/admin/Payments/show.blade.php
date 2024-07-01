@@ -18,29 +18,14 @@
                         <div class="row mb--20">
                             <div class="col-md-6">
                                 <div class="course-field mb--15">
-                                    <label for="registration_reference">Référence d'inscription :</label>
-                                    <input id="registration_reference" type="text" class="form-control" value="{{ $payment->registration->registration_reference }}" disabled>
+                                    <label>Référence d'inscription :</label>
+                                    <p>{{ $payment->registration->cin }}</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="course-field mb--15">
-                                    <label for="payment_reference">Référence de paiement :</label>
-                                    <input id="payment_reference" type="text" class="form-control" value="{{ $payment->payment_reference }}" disabled>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb--20">
-                            <div class="col-md-6">
-                                <div class="course-field mb--15">
-                                    <label for="payment_date">Date de paiement :</label>
-                                    <input id="payment_date" type="date" class="form-control" value="{{ $payment->payment_date }}" disabled>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="course-field mb--15">
-                                    <label for="payment_receipt">Reçu de paiement :</label>
-                                    <a href="{{ asset('storage/' . $payment->payment_receipt) }}" target="_blank" class="btn btn-info w-100">Voir le reçu</a>
+                                    <label>Référence de paiement :</label>
+                                    <p>{{ $payment->payment_reference }}</p>
                                 </div>
                             </div>
                         </div>
@@ -48,14 +33,29 @@
                         <div class="row mb--20">
                             <div class="col-md-6">
                                 <div class="course-field mb--15">
-                                    <label for="exam_title">Examen :</label>
-                                    <input id="exam_title" type="text" class="form-control" value="{{ $payment->registration->exam->title }}" disabled>
+                                    <label>Date de paiement :</label>
+                                    <p>{{ $payment->payment_date }}</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="course-field mb--15">
-                                    <label for="exam_date">Date de l'examen :</label>
-                                    <input id="exam_date" type="text" class="form-control" value="{{ $payment->registration->exam->exam_date }}" disabled>
+                                    <label>Reçu de paiement :</label>
+                                    <a href="{{ route('admin.payments.receipt', $payment->id) }}" target="_blank" class="btn btn-info w-100">Voir le reçu</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb--20">
+                            <div class="col-md-6">
+                                <div class="course-field mb--15">
+                                    <label>Examen :</label>
+                                    <p>{{ $payment->registration->exam->title }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="course-field mb--15">
+                                    <label>Date de l'examen :</label>
+                                    <p>{{ $payment->registration->exam->exam_date }}</p>
                                 </div>
                             </div>
                         </div>
@@ -63,8 +63,8 @@
                         <div class="row mb--20">
                             <div class="col-md-12">
                                 <div class="course-field mb--15">
-                                    <label for="modules">Modules :</label>
-                                    <input id="modules" type="text" class="form-control" value="{{ is_array(json_decode($payment->registration->modules, true)) ? implode(', ', json_decode($payment->registration->modules, true)) : $payment->registration->modules }}" disabled>
+                                    <label>Modules :</label>
+                                    <p>{{ is_array(json_decode($payment->registration->modules, true)) ? implode(', ', json_decode($payment->registration->modules, true)) : $payment->registration->modules }}</p>
                                 </div>
                             </div>
                         </div>

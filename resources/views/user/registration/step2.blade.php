@@ -32,6 +32,16 @@
                     <div class="row g-5 checkout-form">
                         <div class="col-lg-12">
                             <div class="checkout-content-wrapper">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
                                 <form method="POST" action="{{ route('registration.postStep2') }}" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="exam_id" value="{{ session('exam_id') }}">
@@ -98,7 +108,8 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="birth_country" class="form-label">Pays de naissance *</label>
-                                                <input type="text" class="form-control" id="birth_country" name="birth_country" value="{{ old('birth_country', $registration->birth_country ?? '') }}" required>
+                                                <input type="text" class="form-control" id="birth_country"
+                                                       name="birth_country" value="{{ old('birth_country', $registration->birth_country ?? '') }}" required>
                                             </div>
                                         </div>
                                     </div>
@@ -107,37 +118,54 @@
                                         <h5 class="rbt-title-style-3"><i class="fas fa-file-upload"></i> Téléchargez vos documents</h5>
 
                                         <div class="course-field mb--20">
-                                            <h6>CIN</h6>
+                                            <h6>CIN Document</h6>
                                             <div class="rbt-create-course-thumbnail upload-area">
                                                 <div class="upload-area">
                                                     <div class="brows-file-wrapper" data-black-overlay="9">
-                                                        <input name="cin_document" id="cin_document" type="file" class="inputfile">
-                                                        <img id="createfileImage" src="assets/images/others/thumbnail-placeholder.svg" alt="file image">
-                                                        <label class="d-flex" for="cin_document" title="No File Choosen">
+                                                        <input name="cin_document" id="cin_document" type="file" class="inputfile" />
+                                                        <img id="cinDocumentImage" src="{{ asset('assets/images/others/thumbnail-placeholder.svg') }}" alt="CIN Document">
+                                                        <label class="d-flex" for="cin_document" title="No File Chosen">
                                                             <i class="feather-upload"></i>
                                                             <span class="text-center">Choose a File</span>
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <small><i class="feather-info"></i> <b>Scanne de votre carte nationalle:</b> <b>File Support:</b> JPG, JPEG, PNG, WEBP</small>
+                                            <small><i class="feather-info"></i> <b>Size:</b> As per requirement, <b>File Support:</b> JPG, JPEG, PNG, GIF, WEBP</small>
                                         </div>
+
                                         <div class="course-field mb--20">
                                             <h6>Photo</h6>
                                             <div class="rbt-create-course-thumbnail upload-area">
                                                 <div class="upload-area">
                                                     <div class="brows-file-wrapper" data-black-overlay="9">
-                                                        <input name="photo" id="photo" type="file" class="inputfile">
-                                                        <img id="createfileImage" src="assets/images/others/thumbnail-placeholder.svg" alt="file image">
-                                                        <label class="d-flex" for="photo" title="No File Choosen">
+                                                        <input name="photo" id="photo" type="file" class="inputfile" />
+                                                        <img id="photoImage" src="{{ asset('assets/images/others/thumbnail-placeholder.svg') }}" alt="Photo">
+                                                        <label class="d-flex" for="photo" title="No File Chosen">
                                                             <i class="feather-upload"></i>
                                                             <span class="text-center">Choose a File</span>
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <small><i class="feather-info"></i> <b>Photo:</b> <b>File Support:</b> JPG, JPEG, PNG, WEBP</small>
+                                            <small><i class="feather-info"></i> <b>Size:</b> As per requirement, <b>File Support:</b> JPG, JPEG, PNG, GIF, WEBP</small>
                                         </div>
+
+                                        <script>
+                                            function previewImage(inputId, imgId) {
+                                                const input = document.getElementById(inputId);
+                                                const img = document.getElementById(imgId);
+                                                input.addEventListener('change', function() {
+                                                    const [file] = this.files;
+                                                    if (file) {
+                                                        img.src = URL.createObjectURL(file);
+                                                    }
+                                                });
+                                            }
+
+                                            previewImage('cin_document', 'cinDocumentImage');
+                                            previewImage('photo', 'photoImage');
+                                        </script>
                                     </div>
 
                                     <button type="submit" class="btn btn-primary rbt-btn btn-gradient rbt-marquee-btn">Validez Votre Préinscription <i class="fas fa-arrow-right ms-2"></i></button>
