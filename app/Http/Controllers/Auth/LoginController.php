@@ -41,7 +41,7 @@ class LoginController extends Controller
         $tests = Test::all();
         $categories = Category::all();
         if (Auth::user()->role_as == '1') {
-            return redirect()->route('Dashboard', [
+            return redirect()->route('admin.dashboard', [
                 'languages' => $languages,
                 'tests' => $tests,
                 'categories' => $categories,
