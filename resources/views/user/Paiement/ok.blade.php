@@ -8,7 +8,7 @@
                     <div class="card-header"></div>
 
                     <div class="card-body">
-                        <div class="alert alert-success" role="alert">
+                        <div class="rbt-default-badge" role="alert">
                             Un email vous a été envoyé vous expliquant les modalités de paiement
                         </div>
                     </div>

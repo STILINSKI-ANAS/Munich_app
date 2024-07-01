@@ -33,7 +33,7 @@
                         <div class="col-lg-12">
                             <div class="checkout-content-wrapper">
                                 @if ($errors->any())
-                                    <div class="alert alert-danger">
+                                    <div class="rbt-default-badge">
                                         <ul>
                                             @foreach ($errors->all() as $error)
                                                 <li>{{ $error }}</li>

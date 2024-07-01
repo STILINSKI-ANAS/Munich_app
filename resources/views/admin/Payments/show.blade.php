@@ -19,13 +19,13 @@
                             <div class="col-md-6">
                                 <div class="course-field mb--15">
                                     <label>Référence d'inscription :</label>
-                                    <p>{{ $payment->registration->cin }}</p>
+                                    <p><strong>{{ $payment->registration->cin }}</strong></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="course-field mb--15">
                                     <label>Référence de paiement :</label>
-                                    <p>{{ $payment->payment_reference }}</p>
+                                    <p><strong>{{ $payment->payment_reference }}</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -34,28 +34,31 @@
                             <div class="col-md-6">
                                 <div class="course-field mb--15">
                                     <label>Date de paiement :</label>
-                                    <p>{{ $payment->payment_date }}</p>
+                                    <p><strong>{{ $payment->payment_date }}</strong></p>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="course-field mb--15">
+                            <div class="col-md-12">
+                                <div class="course-field mb-3">
                                     <label>Reçu de paiement :</label>
-                                    <a href="{{ route('admin.payments.receipt', $payment->id) }}" target="_blank" class="btn btn-info w-100">Voir le reçu</a>
+                                    <div class="receipt-image">
+                                        <img src="{{ route('admin.payments.receipt', $payment->id) }}" alt="Reçu de paiement" class="img-fluid w-100">
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="row mb--20">
                             <div class="col-md-6">
                                 <div class="course-field mb--15">
                                     <label>Examen :</label>
-                                    <p>{{ $payment->registration->exam->title }}</p>
+                                    <p><strong>{{ $payment->registration->exam->title }} {{ $payment->registration->exam->level }}</strong></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="course-field mb--15">
                                     <label>Date de l'examen :</label>
-                                    <p>{{ $payment->registration->exam->exam_date }}</p>
+                                    <p><strong>{{ $payment->registration->exam->exam_date }}</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +67,7 @@
                             <div class="col-md-12">
                                 <div class="course-field mb--15">
                                     <label>Modules :</label>
-                                    <p>{{ is_array(json_decode($payment->registration->modules, true)) ? implode(', ', json_decode($payment->registration->modules, true)) : $payment->registration->modules }}</p>
+                                    <p><strong>{{ is_array(json_decode($payment->registration->modules, true)) ? implode(', ', json_decode($payment->registration->modules, true)) : $payment->registration->modules }}</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +81,7 @@
                                             <button type="submit" class="rbt-btn btn-primary">Vérifier le paiement</button>
                                         </form>
                                     @else
-                                        <span class="badge bg-success text-white">Paiement vérifié</span>
+                                        <span class="rbt-badge-6 bg-primary-opacity">Paiement vérifié</span>
                                     @endif
                                 </div>
                             </div>

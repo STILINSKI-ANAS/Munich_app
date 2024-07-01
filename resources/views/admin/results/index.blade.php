@@ -27,15 +27,43 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 text-right">
-                                        <a href="{{ route('admin.results.export') }}" class="btn btn-success">Exporter les résultats</a>
-                                        <a href="{{ route('admin.results.downloadTemplate') }}" class="btn btn-secondary">Télécharger le modèle</a>
-                                        <form method="POST" action="{{ route('admin.results.import') }}" enctype="multipart/form-data" class="d-inline-block">
+                                    <div class="col-lg-12 text-right">
+                                        <div class="btn-group mb-3" role="group">
+                                            <div class="rbt-button-group justify-content-start mb-3">
+                                                <a href="{{ route('admin.results.export') }}" class="rbt-btn btn-xs bg-primary-opacity radius-round" title="Exporter les résultats">
+                                                    <i class="feather-download pl--0"></i> Exporter les résultats
+                                                </a>
+                                                <a href="{{ route('admin.results.downloadTemplate') }}" class="rbt-btn btn-xs bg-primary-opacity radius-round" title="Télécharger le modèle">
+                                                    <i class="feather-download pl--0"></i> Télécharger le modèle
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <form method="POST" action="{{ route('admin.results.import') }}" enctype="multipart/form-data" class=" col-12 d-inline-block">
                                             @csrf
-                                            <input type="file" name="file" required>
-                                            <button type="submit" class="btn btn-primary">Importer les résultats</button>
+                                            <div class="course-field mb-3">
+                                                <h6>Importer les résultats</h6>
+                                                <div class="rbt-create-course-thumbnail upload-area">
+                                                    <div class="upload-area">
+                                                        <div class="brows-file-wrapper" data-black-overlay="9">
+                                                            <!-- actual upload which is hidden -->
+                                                            <input name="file" id="inputGroupFile04" type="file" class="inputfile" accept=".xlsx, .xls" required>
+                                                            <!-- our custom upload button -->
+                                                            <label class="d-flex" for="inputGroupFile04" title="No File Chosen">
+                                                                <i class="feather-upload"></i>
+                                                                <span class="text-center">Choisir un fichier</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <small><i class="feather-info"></i> <b>Format supporté:</b> Excel (.xlsx, .xls)</small>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <button type="submit" class="rbt-btn btn-xs bg-primary-opacity radius-round"><i class="feather-upload pl--0"></i> Importer les résultats</button>
+                                            </div>
                                         </form>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -61,11 +89,31 @@
                                     <tr>
                                         <td>{{ $result->convocation->registration->first_name }} {{ $result->convocation->registration->last_name }}</td>
                                         <td>{{ $result->convocation->exam->title }} {{ $result->convocation->exam->level }}</td>
-                                        <td>{{ $result->ecrit }}</td>
+                                        <td>
+                                            @if($result->ecrit == 'passé')
+                                                <span class="rbt-badge-5 bg-color-success-opacity color-success">Passé</span>
+                                            @else
+                                                <span class="rbt-badge-5 bg-color-danger-opacity color-danger">Échoué</span>
+                                            @endif
+                                        </td>
                                         <td>{{ $result->note_ecrit }}</td>
-                                        <td>{{ $result->orale }}</td>
+                                        <td>
+                                            @if($result->orale == 'passé')
+                                                <span class="rbt-badge-5 bg-color-success-opacity color-success">Passé</span>
+                                            @else
+                                                <span class="rbt-badge-5 bg-color-danger-opacity color-danger">Échoué</span>
+                                            @endif
+                                        </td>
                                         <td>{{ $result->note_orale }}</td>
-                                        <td>{{ $result->resultats }}</td>
+
+                                        <td>
+                                            @if($result->resultats == 'F')
+                                                <span class="rbt-badge-5 bg-color-danger-opacity color-danger">F</span>
+                                            @else
+                                                <span class="rbt-badge-5 bg-color-success-opacity color-success">{{ $result->resultats }}</span>
+                                            @endif
+                                            </td>
+
                                     </tr>
                                 @endforeach
                                 </tbody>

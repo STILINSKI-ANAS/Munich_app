@@ -8,7 +8,7 @@
                     <div class="card-header">Votre paiement a échoué</div>
 
                     <div class="card-body">
-                        <div class="alert alert-danger" role="alert">
+                        <div class="rbt-default-badge" role="alert">
                             Votre paiement a échoué. Veuillez réessayer plus tard.
                             Merci de votre compréhension.
                         </div>

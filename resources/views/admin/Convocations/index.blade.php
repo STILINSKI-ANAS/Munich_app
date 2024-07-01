@@ -3,9 +3,10 @@
 @section('content')
     <main class="rbt-main-wrapper">
         <div class="container">
-            <div class="section-title mt--40 mb--20">
-                <h2 class="rbt-title-style-1">Convocations</h2>
-            </div>
+
+
+
+
 
             <div class="col-lg-12">
                 <!-- Start Convocations Management -->
@@ -15,7 +16,22 @@
                             <h4 class="rbt-title-style-3">Gérer les convocations</h4>
                         </div>
 
-                        <hr class="mt--30">
+                        <!-- Start Call To Action  -->
+                        <div class="rbt-callto-action rbt-cta-default style-2">
+                            <div class="content-wrapper overflow-hidden pt--30 pb--30 bg-color-primary-opacity">
+                                <div class="row gy-5 align-items-end">
+                                    <div class="col-lg-8">
+                                        <div class="inner">
+                                            <div class="content text-left">
+                                                <h5 class="mb--5">Gérez les convocations des étudiants.</h5>
+                                                <p class="b3">Voir et vérifier les convocations existants.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Call To Action  -->
 
                         <div class="rbt-dashboard-table table-responsive mobile-table-750 mt--30">
                             <table class="rbt-table table table-borderless">
@@ -34,7 +50,10 @@
                                         <td>{{ $convocation->exam->title }} {{ $convocation->exam->level }}</td>
                                         <td>{{ \Carbon\Carbon::parse($convocation->exam->exam_date)->format('d/m/Y') }}</td>
                                         <td>
-                                            <a href="{{ route('admin.convocations.download', $convocation->id) }}" class="btn btn-primary">Télécharger</a>
+                                            <div class="rbt-button-group justify-content-start">
+                                                <a href="{{ route('admin.convocations.download', $convocation->id) }}" class="rbt-btn btn-xs bg-primary-opacity radius-round" title="Télécharger"><i class="feather-download pl--0"></i>
+                                                    Télécharger</a>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
