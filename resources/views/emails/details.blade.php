@@ -43,9 +43,13 @@
             font-size: 14px;
             color: #999;
         }
+        .payment-ref {
+            color: red;
+            font-size: 24px;
+            text-align: center;
+            /*margin: 20px 0;*/
+        }
     </style>
-
-
 </head>
 <body>
 <div class="container">
@@ -63,10 +67,16 @@
             @endphp
             {{ is_array($modules) ? implode(', ', $modules) : 'N/A' }}
         </li>
-        <li><strong class="text-success">Date de l'examen :</strong> {{ $registration->exam_date }}</li>
-        <li><strong class="text-success">Centre de l'examen :</strong> {{ $registration->exam_center }}</li>
-        <li><strong class="text-success">Frais d'inscription :</strong> {{ $registration->exam_fee }} MAD</li>
+        <li><strong class="text-success">Date de l'examen :</strong> {{ $registration->exam->exam_date }}</li>
+        <li><strong class="text-success">Centre de l'examen :</strong> {{ $registration->exam->exam_center }}</li>
+        <li><strong class="text-success">Frais d'inscription :</strong> {{ $registration->exam->exam_fee }} MAD</li>
     </ul>
+    <div>
+        voici votre Référence de paiement:
+        <div class="payment-ref">
+            {{ $registration->payment_ref }}
+        </div>
+    </div>
 
     <p>Afin de finaliser votre inscription, nous vous prions de procéder au paiement des frais d'examen et des frais de Vorbereitung dans un délai de 48 heures. Passé ce délai, votre candidature sera automatiquement transférée sur la liste d'attente, et nous ne pourrons garantir votre participation à la session d'examen.</p>
 
@@ -77,7 +87,8 @@
         <li><strong class="text-success">Titulaire du compte:</strong> CDLFC Institut-Munich</li>
         <li><strong class="text-success">RIB:</strong> 007010000798200000010641</li>
         <li><strong class="text-success">CODE SWIFT:</strong> BCMAMAMC</li>
-        <li><strong class="text-success">Montant total à payer:</strong> {{ $registration->exam_fee }} MAD</li>
+        <li><strong class="text-success">Montant total à payer:</strong> {{ $registration->exam->exam_fee }} MAD</li>
+        <li><strong class="text-success">Référence de paiement:</strong> {{ $registration->payment_ref }}</li>
     </ul>
 
     <p>Il est nécessaire et obligatoire d'envoyer le reçu du virement sur lequel le candidat mentionnera son nom et prénom.</p>

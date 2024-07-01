@@ -26,8 +26,8 @@
                         <li><a href="{{ url('admin/exams') }}"><i class="feather-calendar"></i><span>Calendrier des examens</span></a></li>
                         <li><a href="{{ url('admin/registrations') }}"><i class="feather-users"></i><span>Inscriptions</span></a></li>
                         <li><a href="{{ url('admin/payments') }}"><i class="feather-dollar-sign"></i><span>Paiement</span></a></li>
-                        <li><a href="#"><i class="feather-file-text"></i><span>Convocation</span></a></li>
-                        <li><a href="#"><i class="feather-award"></i><span>Résultats</span></a></li>
+                        <li><a href="{{ url('admin/convocations') }}"><i class="feather-file-text"></i><span>Convocation</span></a></li>
+                        <li><a href="{{ url('admin/results') }}"><i class="feather-award"></i><span>Résultats</span></a></li>
                     </ul>
                 </nav>
 

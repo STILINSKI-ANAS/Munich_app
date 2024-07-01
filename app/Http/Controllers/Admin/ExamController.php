@@ -12,22 +12,9 @@ use Illuminate\Support\Facades\DB;
 
 class ExamController extends Controller
 {
-    private function getCommonData()
-    {
-        $languages = Language::all();
-        $tests = Test::where('is_hidden', false)->get();
-        $categories = Category::all();
-        $levels = Exam::select('level', DB::raw('count(*) as total'))
-            ->groupBy('level')
-            ->get();
-
-        return compact('languages', 'tests', 'categories', 'levels');
-    }
 
     public function index(Request $request)
     {
-        $data = $this->getCommonData();
-
         $query = Exam::query();
 
         // Filter by levels
@@ -48,86 +35,140 @@ class ExamController extends Controller
             $query->where('max_placements', '>=', $request->input('max_placements'));
         }
 
-        $data['exams'] = $query->paginate(10);
+        // Add sorting if needed, before calling paginate
+        $exams = $query->paginate(10);
 
-        return view('admin.exams.index', $data);
+        // Debugging output
+
+
+        // Append the request parameters to the pagination links
+        $exams->appends($request->except('page'));
+        dd([
+            'class' => get_class($exams),
+            'methods' => get_class_methods($exams),
+        ]);
+        return view('admin.exams.index', compact('exams'));
     }
+    public function testPagination(Request $request)
+    {
+        $exams = Exam::paginate(10);
+        $exams->appends($request->all());
+
+        return view('admin.exams.test', compact('exams'));
+    }
+
+
+
 
     public function create()
     {
-        $data = $this->getCommonData();
-        return view('admin.exams.create', $data);
+        return view('admin.exams.create');
     }
+
+//    public function store(Request $request)
+//    {
+//        $request->validate([
+//            'title' => 'required|string|max:255',
+//            'level' => 'required|string|max:255',
+//            'max_placements' => 'required|integer|min:1',
+//            'start_date' => 'required|date',
+//            'end_date' => 'required|date|after_or_equal:start_date',
+//            'exam_date' => 'required|date|after_or_equal:end_date',
+//            'exam_center' => 'required|string|max:255',
+//            'exam_fee' => 'required|numeric|min:0',
+//            'is_hidden' => 'boolean',
+//            'image' => 'nullable|image|max:2048',
+//            'language_id' => 'required|exists:languages,id',
+//            'course_id' => 'required|exists:courses,id',
+//        ]);
+//
+//        $data = $request->all();
+//
+//        if ($request->hasFile('image')) {
+//            $data['image'] = $request->file('image')->store('images/exams');
+//        }
+//
+//        Exam::create($data);
+//
+//        return redirect()->route('admin.exams.index')->with('success', 'Exam created successfully');
+//    }
 
     public function store(Request $request)
     {
         $request->validate([
             'title' => 'required|string|max:255',
             'level' => 'required|string|max:255',
-            'max_placements' => 'required|integer|min:1',
+            'max_placements' => 'required|integer',
             'start_date' => 'required|date',
-            'end_date' => 'required|date|after_or_equal:start_date',
-            'exam_date' => 'required|date|after_or_equal:end_date',
+            'end_date' => 'required|date',
+            'exam_date' => 'required|date',
             'exam_center' => 'required|string|max:255',
-            'exam_fee' => 'required|numeric|min:0',
-            'is_hidden' => 'boolean',
-            'image' => 'nullable|image|max:2048',
-            'language_id' => 'required|exists:languages,id',
-            'course_id' => 'required|exists:courses,id',
+            'exam_fee' => 'required|numeric',
         ]);
 
-        $data = $request->all();
+        Exam::create($request->all());
 
-        if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('images/exams');
-        }
-
-        Exam::create($data);
-
-        return redirect()->route('admin.exams.index')->with('success', 'Exam created successfully');
+        return redirect()->route('admin.exams.index')->with('success', 'Examen créé avec succès.');
     }
 
-    public function edit(Exam $exam)
+    public function edit($id)
     {
-        $languages = Language::all();
-        $tests = Test::where('is_hidden', false)->get();
-        $categories = Category::all();
+        $exam = Exam::findOrFail($id);
 
-        return view('admin.exams.edit', compact('exam', 'tests', 'categories', 'languages'));
+        return view('admin.exams.edit', compact('exam'));
     }
 
-    public function update(Request $request, Exam $exam)
+//    public function update(Request $request, Exam $exam)
+//    {
+//        $request->validate([
+//            'title' => 'required|string|max:255',
+//            'level' => 'required|string|max:255',
+//            'max_placements' => 'required|integer|min:1',
+//            'start_date' => 'required|date',
+//            'end_date' => 'required|date|after_or_equal:start_date',
+//            'exam_date' => 'required|date|after_or_equal:end_date',
+//            'exam_center' => 'required|string|max:255',
+//            'exam_fee' => 'required|numeric|min:0',
+//            'is_hidden' => 'boolean',
+//            'image' => 'nullable|image|max:2048',
+//            'language_id' => 'required|exists:languages,id',
+//            'course_id' => 'required|exists:courses,id',
+//        ]);
+//
+//        $data = $request->all();
+//
+//        if ($request->hasFile('image')) {
+//            $data['image'] = $request->file('image')->store('images/exams');
+//        }
+//
+//        $exam->update($data);
+//
+//        return redirect()->route('admin.exams.index')->with('success', 'Exam updated successfully');
+//    }
+
+    public function update(Request $request, $id)
     {
         $request->validate([
             'title' => 'required|string|max:255',
             'level' => 'required|string|max:255',
-            'max_placements' => 'required|integer|min:1',
+            'max_placements' => 'required|integer',
             'start_date' => 'required|date',
-            'end_date' => 'required|date|after_or_equal:start_date',
-            'exam_date' => 'required|date|after_or_equal:end_date',
+            'end_date' => 'required|date',
+            'exam_date' => 'required|date',
             'exam_center' => 'required|string|max:255',
-            'exam_fee' => 'required|numeric|min:0',
-            'is_hidden' => 'boolean',
-            'image' => 'nullable|image|max:2048',
-            'language_id' => 'required|exists:languages,id',
-            'course_id' => 'required|exists:courses,id',
+            'exam_fee' => 'required|numeric',
         ]);
 
-        $data = $request->all();
+        $exam = Exam::findOrFail($id);
+        $exam->update($request->all());
 
-        if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('images/exams');
-        }
-
-        $exam->update($data);
-
-        return redirect()->route('admin.exams.index')->with('success', 'Exam updated successfully');
+        return redirect()->route('admin.exams.index')->with('success', 'Examen mis à jour avec succès.');
     }
-
-    public function destroy(Exam $exam)
+    public function destroy($id)
     {
+        $exam = Exam::findOrFail($id);
         $exam->delete();
 
-        return redirect()->route('admin.exams.index')->with('success', 'Exam deleted successfully');
+        return redirect()->route('admin.exams.index')->with('success', 'Examen supprimé avec succès.');
     }
 }

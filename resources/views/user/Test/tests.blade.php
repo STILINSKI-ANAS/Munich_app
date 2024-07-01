@@ -22,12 +22,12 @@
                                     <li>
                                         <div class="icon-right"><i class="feather-chevron-right"></i></div>
                                     </li>
-                                    <li class="rbt-breadcrumb-item active">Preinscription</li>
+                                    <li class="rbt-breadcrumb-item active">Calendrier des sessions</li>
                                 </ul>
                                 <!-- End Breadcrumb Area  -->
 
                                 <div class=" title-wrapper">
-                                    <h1 class="title mb--0">Veuillez bien choisir un examen</h1>
+                                    <h1 class="title mb--0">Calendrier des sessions</h1>
                                 </div>
 
 
@@ -90,13 +90,7 @@
                                                 </ul>
                                                 <div class="rbt-card-bottom">
                                                     <div class="rbt-price">
-                                                        <div class="button-group mt--30">
-                                                            <form method="GET" action="{{ route('registration.step1') }}">
-                                                                @csrf
-                                                                <input type="hidden" name="exam_id" value="{{ $exam->id }}">
-                                                                <button type="submit" class="rbt-btn btn-gradient rbt-marquee-btn">S'inscrire</button>
-                                                            </form>
-                                                        </div>
+
                                                     </div>
                                                     <span class="rbt-badge variation-02 bg-primary-opacity">{{ \Carbon\Carbon::parse($exam->exam_date)->format('l d F Y') }}</span>
                                                 </div>

@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\TestController;
+use App\Http\Controllers\ConvocationController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\ResultController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaiementController;
@@ -30,6 +33,9 @@ use Illuminate\Support\Facades\Route;
 //    PaiementController::showTestTelcPayment($request);
 //});
 //Route::get('/dump-and-die', [\App\Http\Controllers\PaiementController::class, 'showTestTelcPayment'])->name('showTestTelcPayment');
+
+Route::get('/test-pagination', [TestController::class, 'testPagination']);
+
 Route::get('/account', function () {
     return view('welcome');
 });
@@ -121,6 +127,8 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::get('/exams/{exam}/edit', 'edit')->name('admin.exams.edit');
         Route::put('/exams/{exam}', 'update')->name('admin.exams.update');
         Route::delete('/exams/{exam}', 'destroy')->name('admin.exams.destroy');
+
+        Route::get('/exams/test', 'testPagination')->name('admin.exams.test');
     });
 
 
@@ -143,6 +151,17 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('Clients', [\App\Http\Controllers\Admin\ClientsController::class, 'index']);
     Route::get('CoursInscriptions', [\App\Http\Controllers\Admin\CoursInscriptionsController::class, 'index']);
     Route::get('TestsInscriptions', [\App\Http\Controllers\Admin\TestsInscriptionsController::class, 'index']);
+
+
+    Route::get('/results', [\App\Http\Controllers\Admin\ResultController::class, 'index'])->name('admin.results.index');
+    Route::get('/results/export', [\App\Http\Controllers\Admin\ResultController::class, 'export'])->name('admin.results.export');
+    Route::post('/results/import', [\App\Http\Controllers\Admin\ResultController::class, 'import'])->name('admin.results.import');
+    Route::get('/results/template', [\App\Http\Controllers\Admin\ResultController::class, 'downloadTemplate'])->name('admin.results.downloadTemplate');
+
+    Route::get('/convocations', [\App\Http\Controllers\Admin\ConvocationController::class, 'index'])->name('admin.convocations.index');
+    Route::get('/convocations/{id}/download', [\App\Http\Controllers\Admin\ConvocationController::class, 'download'])->name('admin.convocations.download');
+
+
 });
 
 Route::prefix('/')->group(function () {
@@ -267,10 +286,20 @@ Route::prefix('registration')->group(function () {
     Route::get('/validate-email/{token}', [RegistrationController::class, 'validateEmail'])->name('registration.validate_email');
 });
 
+Route::get('/results', [ResultController::class, 'showCinForm'])->name('results.form');
+Route::post('/results/search', [ResultController::class, 'searchResults'])->name('results.search');
+Route::get('/results/{id}', [ResultController::class, 'show'])->name('results.show');
+
 Route::prefix('payment')->group(function () {
     Route::get('/form', [PaymentController::class, 'form'])->name('payment.form');
     Route::post('/submit', [PaymentController::class, 'submit'])->name('payment.submit');
     Route::get('/confirm', [PaymentController::class, 'confirm'])->name('payment.confirm');
+    Route::get('/prepayement', [PaymentController::class, 'prepayement'])->name('payment.prepayement');
+});
+Route::prefix('convocation')->group(function () {
+    Route::get('/form', [ConvocationController::class, 'form'])->name('convocation.form');
+    Route::post('/submit', [ConvocationController::class, 'submit'])->name('convocation.submit');
+    //Route::get('/confirm', [PaymentController::class, 'confirm'])->name('payment.confirm');
 });
 
 

@@ -14,16 +14,10 @@ class ExamController extends Controller
     //
     public function index()
     {
-        $languages = Language::all();
-        $tests = Test::where('is_hidden', false)->get();
-        $categories = Category::all();
         $exams = Exam::all();
-        // Fetch distinct levels and their counts
-        $levels = Exam::select('level', DB::raw('count(*) as total'))
-            ->groupBy('level')
-            ->get();
+        $exams = Exam::paginate(10); // Paginate the exams
 
-        return view('user.exams.index', compact('exams', 'levels','tests','categories','languages'));
+        return view('user.exams.index', compact('exams'));
     }
 
 

@@ -8,6 +8,11 @@
         \Carbon\Carbon::setLocale('fr');
     @endphp
     <main class="rbt-main-wrapper">
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <div class="rbt-page-banner-wrapper">
             <div class="rbt-banner-image"></div>
             <div class="rbt-banner-content">

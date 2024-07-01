@@ -92,21 +92,21 @@
                                         <i class="feather-chevron-down"></i>
                                     </a>
                                     <ul class="submenu">
-                                            <li class="has-dropdown">
-                                                <a href="{{ url('/exams') }}">Preinscription</a>
+                                        <li class="has-dropdown">
+                                            <a href="{{ url('/exams') }}">Preinscription</a>
 
-                                            </li>
-                                            <li class="has-dropdown"><a
-                                                    href="{{ url('payment/form') }}">Paiement</a>
-                                            </li>
-                                            <li class="has-dropdown"><a
-                                                    href="#">Convocation</a>
-                                            </li>
+                                        </li>
+                                        <li class="has-dropdown"><a
+                                                href="{{ url('payment/form') }}">Paiement</a>
+                                        </li>
+                                        <li class="has-dropdown"><a
+                                                href="{{ url('convocation/form') }}">Convocation</a>
+                                        </li>
                                     </ul>
 
                                 </li>
                                 <li class="with-megamenu has-menu-child-item position-static">
-                                    <a href="#">Resultat</a>
+                                    <a href="{{ url('/results') }}">Resultat</a>
                                 </li>
                                 <li class="has-dropdown has-menu-child-item">
                                     <a href="#">l'instut

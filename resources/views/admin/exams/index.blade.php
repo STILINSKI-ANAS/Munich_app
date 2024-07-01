@@ -8,14 +8,12 @@
             </div>
 
             <div class="col-lg-12">
-                <!-- Start Enrole Course  -->
                 <div class="rbt-dashboard-content bg-color-white rbt-shadow-box">
                     <div class="content">
                         <div class="section-title">
                             <h4 class="rbt-title-style-3">Gérer les examens</h4>
                         </div>
 
-                        <!-- Start Call To Action  -->
                         <div class="rbt-callto-action rbt-cta-default style-2">
                             <div class="content-wrapper overflow-hidden pt--30 pb--30 bg-color-primary-opacity">
                                 <div class="row gy-5 align-items-end">
@@ -29,7 +27,7 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="call-to-btn text-start text-lg-end position-relative">
-                                            <a class="rbt-btn btn-sm rbt-switch-btn rbt-switch-y" href="{{ url('admin/exams/create') }}">
+                                            <a class="rbt-btn btn-sm rbt-switch-btn rbt-switch-y" href="{{ route('admin.exams.create') }}">
                                                 <span data-text="Ajouter un nouvel examen">Ajouter un nouvel examen</span>
                                             </a>
                                         </div>
@@ -37,10 +35,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End Call To Action  -->
 
-                        <!-- Start Filter -->
-                        <form method="GET" action="{{ url('admin/exams') }}">
+                        <form method="GET" action="{{ route('admin.exams.index') }}">
                             <div class="rbt-dashboard-filter-wrapper mt--60">
                                 <div class="row g-5">
                                     <div class="col-lg-4">
@@ -52,7 +48,6 @@
                                                         <option value="{{ $level->level }}" {{ in_array($level->level, request()->input('levels', [])) ? 'selected' : '' }}>{{ $level->level }}</option>
                                                     @endforeach
                                                 </select>
-
                                             </div>
                                         </div>
                                     </div>
@@ -80,7 +75,6 @@
                                 </div>
                             </div>
                         </form>
-                        <!-- End Filter -->
 
                         <hr class="mt--30">
 
@@ -112,10 +106,10 @@
                                         <td>{{ $exam->exam_fee }}</td>
                                         <td>
                                             <div class="rbt-button-group justify-content-end">
-                                                <a class="rbt-btn-link left-icon" href="{{ url('admin/exams/' . $exam->id . '/edit') }}">
+                                                <a class="rbt-btn-link left-icon" href="{{ route('admin.exams.edit', $exam->id) }}">
                                                     <i class="feather-edit"></i> Modifier
                                                 </a>
-                                                <form action="{{ url('admin/exams/' . $exam->id) }}" method="POST" style="display:inline-block;">
+                                                <form action="{{ route('admin.exams.destroy', $exam->id) }}" method="POST" style="display:inline-block;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="rbt-btn-link left-icon" style="border: none; background: none; color: #dc3545;">
@@ -134,7 +128,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- End Enrole Course  -->
             </div>
         </div>
     </main>

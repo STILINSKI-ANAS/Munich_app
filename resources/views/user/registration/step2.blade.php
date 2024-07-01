@@ -38,13 +38,12 @@
 
                                     <div class="mb-3">
                                         <h5 class="rbt-title-style-3"><i class="fas fa-clipboard-list"></i> Veuillez choisir le(s) module(s)</h5>
-
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="ecrit" id="module_ecrit" name="modules[]">
+                                            <input class="form-check-input" type="checkbox" value="ecrit" id="module_ecrit" name="modules[]" {{ isset($registration) && in_array('ecrit', json_decode($registration->modules)) ? 'checked' : '' }}>
                                             <label class="form-check-label" for="module_ecrit">L'écrit</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="orale" id="module_orale" name="modules[]">
+                                            <input class="form-check-input" type="checkbox" value="orale" id="module_orale" name="modules[]" {{ isset($registration) && in_array('orale', json_decode($registration->modules)) ? 'checked' : '' }}>
                                             <label class="form-check-label" for="module_orale">L'orale</label>
                                         </div>
                                     </div>
@@ -54,52 +53,52 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label for="first_name" class="form-label">Prénom *</label>
-                                                <input type="text" class="form-control" id="first_name" name="first_name" required>
+                                                <input type="text" class="form-control" id="first_name" name="first_name" value="{{ old('first_name', $registration->first_name ?? '') }}" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="last_name" class="form-label">Nom de famille *</label>
-                                                <input type="text" class="form-control" id="last_name" name="last_name" required>
+                                                <input type="text" class="form-control" id="last_name" name="last_name" value="{{ old('last_name', $registration->last_name ?? '') }}" required>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <label for="cin" class="form-label">N° CIN *</label>
-                                                <input type="text" class="form-control" id="cin" name="cin" required>
+                                                <input type="text" class="form-control" id="cin" name="cin" value="{{ old('cin', session('cin')) }}" required>
                                             </div>
                                             <div class="col-md-4 col-12 mb--20">
                                                 <label for="gender">Sexe *</label>
                                                 <div class="rbt-modern-select bg-transparent height-50 mb--10">
                                                     <select class="w-100" id="gender" name="gender">
                                                         <option value="">Choisir...</option>
-                                                        <option value="homme">Homme</option>
-                                                        <option value="femme">Femme</option>
+                                                        <option value="homme" {{ old('gender', $registration->gender ?? '') == 'homme' ? 'selected' : '' }}>Homme</option>
+                                                        <option value="femme" {{ old('gender', $registration->gender ?? '') == 'femme' ? 'selected' : '' }}>Femme</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <label for="birth_date" class="form-label">Date de naissance *</label>
-                                                <input type="date" class="form-control" id="birth_date" name="birth_date" required>
+                                                <input type="date" class="form-control" id="birth_date" name="birth_date" value="{{ old('birth_date', $registration->birth_date ?? '') }}" required>
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label for="phone" class="form-label">Numéro de téléphone *</label>
-                                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                                                <input type="tel" class="form-control" id="phone" name="phone" value="{{ old('phone', $registration->phone ?? '') }}" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="email" class="form-label">Email *</label>
-                                                <input type="email" class="form-control" id="email" name="email" required>
+                                                <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $registration->email ?? '') }}" required>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label for="birth_place" class="form-label">Lieu de naissance *</label>
-                                                <input type="text" class="form-control" id="birth_place" name="birth_place" required>
+                                                <input type="text" class="form-control" id="birth_place" name="birth_place" value="{{ old('birth_place', $registration->birth_place ?? '') }}" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="birth_country" class="form-label">Pays de naissance *</label>
-                                                <input type="text" class="form-control" id="birth_country" name="birth_country" required>
+                                                <input type="text" class="form-control" id="birth_country" name="birth_country" value="{{ old('birth_country', $registration->birth_country ?? '') }}" required>
                                             </div>
                                         </div>
                                     </div>

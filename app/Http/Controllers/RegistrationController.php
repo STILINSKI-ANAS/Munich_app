@@ -35,19 +35,34 @@ class RegistrationController extends Controller
 
     public function postStep1(Request $request)
     {
-        $request->session()->put('cin', $request->cin);
+        $cin = $request->cin;
+        $request->session()->put('cin', $cin);
+
+        $registration = Registration::where('cin', $cin)->first();
+        if ($registration) {
+            // Pass the registration data to the next step
+            return redirect()->route('registration.step2')->with('registration', $registration);
+        }
+
         return redirect()->route('registration.step2');
     }
 
     public function step2()
     {
-        return view('user.registration.step2', $this->getCommonData());
+        $registration = session('registration', null);
+
+        return view('user.registration.step2', array_merge($this->getCommonData(), compact('registration')));
     }
 
     public function postStep2(Request $request)
     {
-        $registration = new Registration();
-        $registration->cin = $request->session()->get('cin');
+        $registration = Registration::where('cin', $request->session()->get('cin'))->first();
+
+        if (!$registration) {
+            $registration = new Registration();
+            $registration->cin = $request->session()->get('cin');
+        }
+
         $registration->first_name = $request->first_name;
         $registration->last_name = $request->last_name;
         $registration->gender = $request->gender;
@@ -86,17 +101,22 @@ class RegistrationController extends Controller
         if ($registration) {
             $registration->email_verified = true;
             $registration->email_validation_token = null;
-            $registration->save();
 
+            // Generate a payment reference
+            $randomNumbers = rand(1000, 9999);
+            $paymentRef = $registration->cin . '-' . $registration->exam->title . '-' . $registration->exam->level . '-' . $randomNumbers;
+            $registration->payment_ref = strtoupper($paymentRef);
+
+            $registration->save();
             // Send details email
             Mail::send('emails.details', ['registration' => $registration], function ($message) use ($registration) {
                 $message->to($registration->email);
                 $message->subject('Registration Details');
             });
 
-            return redirect()->route('exams')->with('success', 'Email validated successfully!');
+            return redirect()->route('payment.prepayement')->with('success', 'Email validated successfully!');
         }
 
-        return redirect()->route('exams')->with('error', 'Invalid token!');
+        return redirect()->route('payment.prepayement')->with('error', 'Invalid token!');
     }
 }

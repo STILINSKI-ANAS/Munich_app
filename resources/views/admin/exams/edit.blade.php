@@ -1,148 +1,88 @@
 @extends('layouts.admin')
 
 @section('content')
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <h4 class="card-title">
-        <i class="feather-book-open"></i>
-        Modifier l'examen :
-    </h4>
-    <div class="card-body">
-        <!-- Start Exam Field Wrapper  -->
-        <form action="{{ route('admin.exams.update', $exam->id) }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
-            <div class="rbt-course-field-wrapper rbt-default-form">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="course-field mb--15">
-                            <label for="title">Titre :</label>
-                            <input id="title" type="text" placeholder="Entrez le titre de l'examen" name="title" value="{{ $exam->title }}" required>
-                        </div>
-                    </div>
+    <main class="rbt-main-wrapper">
+        <div class="container">
+            <div class="section-title mt--40 mb--20">
+                <h2 class="rbt-title-style-1">Modifier l'examen</h2>
+            </div>
 
-                    <div class="col-md-6">
-                        <div class="course-field mb--15">
-                            <label for="level">Niveau :</label>
-                            <input id="level" type="text" placeholder="Entrez le niveau" name="level" value="{{ $exam->level }}" required>
-                        </div>
-                    </div>
+            <div class="col-lg-12">
+                <div class="rbt-dashboard-content bg-color-white rbt-shadow-box">
+                    <div class="content">
+                        <form method="POST" action="{{ route('admin.exams.update', $exam->id) }}">
+                            @csrf
+                            @method('PUT')
 
-                    <div class="col-md-6">
-                        <div class="course-field mb--15">
-                            <label for="max_placements">Nombre maximum de places :</label>
-                            <input id="max_placements" type="number" placeholder="Entrez le nombre maximum de places disponibles" name="max_placements" value="{{ $exam->max_placements }}" required>
-                            <small><i class="feather-info"></i> <b>Par exemple :</b> 100</small>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="course-field mb--15">
-                            <label for="start_date">Date de début :</label>
-                            <input id="start_date" type="date" name="start_date" value="{{ $exam->start_date }}" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="course-field mb--15">
-                            <label for="end_date">Date de fin :</label>
-                            <input id="end_date" type="date" name="end_date" value="{{ $exam->end_date }}" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="course-field mb--15">
-                            <label for="exam_date">Date de l'examen :</label>
-                            <input id="exam_date" type="date" name="exam_date" value="{{ $exam->exam_date }}" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="course-field mb--15">
-                            <label for="exam_center">Centre d'examen :</label>
-                            <input id="exam_center" type="text" placeholder="Entrez le centre d'examen" name="exam_center" value="{{ $exam->exam_center }}" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="course-field mb--15">
-                            <label for="exam_fee">Frais d'examen :</label>
-                            <input id="exam_fee" type="number" placeholder="Entrez les frais d'examen" name="exam_fee" value="{{ $exam->exam_fee }}" required>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="course-field mb--20">
-                        <label class="form-check-label d-inline-block" for="flexSwitchCheckDefault">Public
-                            Est caché :</label>
-                        <div class="form-check form-switch mb--10">
-                            <input class="form-check-input" type="checkbox" id="is_hidden" name="is_hidden" {{ $exam->is_hidden ? 'checked' : '' }}>
-                        </div>
-                        <small><i class="feather-info"></i> Vous pouvez cacher les examens jusqu'au moment où vous voulez les lancer.</small>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="course-field mb--15">
-                            <label for="language_id">Langue</label>
-                            <div class="rbt-modern-select bg-transparent height-50 mb--10">
-                                <div class="dropdown bootstrap-select show-tick w-100">
-                                    <select required name="language_id" class="w-100" data-live-search="true" title="Sélectionner ici" data-size="7" data-actions-box="true" data-selected-text-format="count > 2" id="language_id">
-                                        @foreach($languages as $language)
-                                            <option value="{{ $language->id }}" {{ $language->id == $exam->language_id ? 'selected' : '' }}>{{ $language->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Titre</label>
+                                <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $exam->title) }}" required>
+                                @error('title')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="col-md-6">
-                        <div class="course-field mb--15">
-                            <label for="course_id">Cours</label>
-                            <div class="rbt-modern-select bg-transparent height-50 mb--10">
-                                <div class="dropdown bootstrap-select show-tick w-100">
-                                    <select required name="course_id" class="w-100" data-live-search="true" title="Sélectionner ici" data-size="7" data-actions-box="true" data-selected-text-format="count > 2" id="course_id">
-                                        @foreach($categories as $category)
-                                            <option value="{{ $category->id }}" {{ $category->id == $exam->course_id ? 'selected' : '' }}>{{ $category->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                            <div class="mb-3">
+                                <label for="level" class="form-label">Niveau</label>
+                                <input type="text" class="form-control" id="level" name="level" value="{{ old('level', $exam->level) }}" required>
+                                @error('level')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="col-md-12">
-                        <div class="course-field mb--20">
-                            <h6>Image de l'examen</h6>
-                            <div class="rbt-create-course-thumbnail upload-area">
-                                <div class="upload-area">
-                                    <div class="brows-file-wrapper" data-black-overlay="9">
-                                        <!-- actual upload which is hidden -->
-                                        <input name="image" id="createinputfile" type="file" class="inputfile">
-                                        <img id="createfileImage" src="{{ $exam->image ? asset('storage/' . $exam->image) : asset('assets/images/others/thumbnail-placeholder.svg') }}" alt="file image">
-                                        <!-- our custom upload button -->
-                                        <label class="d-flex" for="createinputfile" title="No File Choosen">
-                                            <i class="feather-upload"></i>
-                                            <span class="text-center">Choisir un fichier</span>
-                                        </label>
-                                    </div>
-                                </div>
+                            <div class="mb-3">
+                                <label for="max_placements" class="form-label">Places max</label>
+                                <input type="number" class="form-control" id="max_placements" name="max_placements" value="{{ old('max_placements', $exam->max_placements) }}" required>
+                                @error('max_placements')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
-                            <small><i class="feather-info"></i> <b>Taille :</b> 700x430 pixels, <b>Formats supportés :</b> JPG, JPEG, PNG</small>
-                        </div>
-                    </div>
 
-                    <div class="col-md-12">
-                        <div class="form-group mb--0">
-                            <button class="rbt-btn rbt-switch-btn btn-gradient radius-round btn-sm" type="submit">
-                                <span data-text="Modifier maintenant">Modifier maintenant</span>
-                            </button>
-                        </div>
+                            <div class="mb-3">
+                                <label for="start_date" class="form-label">Date de début</label>
+                                <input type="date" class="form-control" id="start_date" name="start_date" value="{{ old('start_date', $exam->start_date) }}" required>
+                                @error('start_date')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="end_date" class="form-label">Date de fin</label>
+                                <input type="date" class="form-control" id="end_date" name="end_date" value="{{ old('end_date', $exam->end_date) }}" required>
+                                @error('end_date')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exam_date" class="form-label">Date de l'examen</label>
+                                <input type="date" class="form-control" id="exam_date" name="exam_date" value="{{ old('exam_date', $exam->exam_date) }}" required>
+                                @error('exam_date')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exam_center" class="form-label">Centre d'examen</label>
+                                <input type="text" class="form-control" id="exam_center" name="exam_center" value="{{ old('exam_center', $exam->exam_center) }}" required>
+                                @error('exam_center')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exam_fee" class="form-label">Frais d'examen</label>
+                                <input type="number" step="0.01" class="form-control" id="exam_fee" name="exam_fee" value="{{ old('exam_fee', $exam->exam_fee) }}" required>
+                                @error('exam_fee')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <button type="submit" class="rbt-btn btn-primary">Mettre à jour l'examen</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </form>
-        <!-- End Exam Field Wrapper  -->
-    </div>
+        </div>
+    </main>
 @endsection
